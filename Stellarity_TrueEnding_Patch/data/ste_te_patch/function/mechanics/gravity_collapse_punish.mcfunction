@@ -6,7 +6,8 @@
 tag @s add ste_afk_punished
 
 # AEC прямо под ногами игрока (dragon_breath — без ванильного ovrworld-партикла)
-summon area_effect_cloud ~ ~ ~ {Radius:3f,Duration:80,Particle:"minecraft:dragon_breath",Tags:["ste_grav_cloud"]}
+summon area_effect_cloud ~ ~ ~ {Radius:3f,Duration:80,custom_particle:{type:"minecraft:dragon_breath"},Tags:["ste_grav_cloud"]}
+
 
 # Визуал
 particle reverse_portal ~ ~ ~ 3 1 3 0.3 200 force

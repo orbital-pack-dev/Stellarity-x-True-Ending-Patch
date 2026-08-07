@@ -6,10 +6,10 @@
 # Контекст: вызывается in minecraft:the_end из main_tick.
 # =====================================================================
 
+execute store result score @s temp_health run data get entity @s Health 1
+
 # --- ФАЗА 1: Первое "убийство" дракона ---
-# Если здоровье <= 1f и флага last_stand ещё нет
-execute in minecraft:the_end as @e[type=ender_dragon,tag=stellarity.dragon,tag=!ste_te_last_stand,tag=!ste_te_death_triggered] if data entity @s {Health:1f} run function ste_te_patch:mechanics/last_stand_phase1
+execute as @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1,tag=!ste_te_death_triggered] at @s if score $dead ste_te_flags matches 0 if score @s temp_health matches ..1 run function ste_te_patch:mechanics/last_stand_phase1
 
 # --- ФАЗА 2: Реальная смерть ---
-# HP снова <= 1f, флаг last_stand ЕСТЬ — запускаем финальную последовательность
-execute in minecraft:the_end as @e[type=ender_dragon,tag=stellarity.dragon,tag=ste_te_last_stand,tag=!ste_te_death_triggered] if data entity @s {Health:1f} run function ste_te_patch:mechanics/last_stand_phase2
+execute as @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1,tag=!ste_te_death_triggered] at @s if score $dead ste_te_flags matches 1 if score @s temp_health matches ..1 run function ste_te_patch:mechanics/last_stand_phase2

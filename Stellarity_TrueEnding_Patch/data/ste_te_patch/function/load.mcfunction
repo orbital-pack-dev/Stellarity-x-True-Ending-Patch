@@ -26,5 +26,16 @@ scoreboard objectives add ste_te_m14 dummy "STE-TE Mech 14"
 scoreboard objectives add ste_te_m_timer dummy "STE-TE Marker Timer"
 scoreboard objectives add ste_te_laststand_cd dummy "STE-TE LastStand CD"
 
+# Новые объективы (v2.0)
+scoreboard objectives add ste_te_flags dummy
+scoreboard objectives add temp_health dummy
+
+# Инициализация
+scoreboard players set $dead ste_te_flags 0
+scoreboard players set $crystals_gone ste_te_flags 0
+scoreboard players set $guards_spawned ste_te_flags 0
+scoreboard players set $guard_cooldown ste_te_flags 0
+scoreboard players set $ring_radius ste_te_flags 0
+
 # Клок для ротатора атак
 scoreboard players set ste_te_rotation_clock ste_te_misc 0

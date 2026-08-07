@@ -10,7 +10,7 @@ scoreboard players set @s trueEnding_bosstime 1100
 tp @s ~ ~15 ~
 
 # Ловушка из дыхания: area_effect_cloud с dragon_breath AT дракона (было ~-15)
-execute at @s positioned ~ ~-15 ~ run summon area_effect_cloud ~ ~ ~ {Radius:5f,Duration:100,Particle:"minecraft:dragon_breath"}
+execute at @s positioned ~ ~-15 ~ run summon area_effect_cloud ~ ~ ~ {Radius:5f,Duration:100,custom_particle:{type:"minecraft:dragon_breath"}}
 execute at @s positioned ~ ~-14 ~ run particle dragon_breath ~ ~ ~ 5 1 5 0.15 300 force
 execute at @s positioned ~ ~-13 ~ run particle smoke ~ ~ ~ 5 0 5 0.3 200 force
 

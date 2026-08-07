@@ -1,20 +1,19 @@
 # =====================================================================
 # ste_te_patch:mechanics/anti_mace_blast
-# Взрыв при посадке против булавы. Контекст: AS ender_dragon AT дракона.
 # =====================================================================
 
 tag @s add ste_te_mace_cooldown
 
-# AEC над Драконом (не на оверворлд 0,66,0 — а AT дракона ~4 блока выше)
-execute at @s run summon area_effect_cloud ~ ~4 ~ {Radius:8f,Duration:100,Particle:"minecraft:dragon_breath",Tags:["ste_te_mace_cloud"]}
+# AEC над Драконом
+execute at @s positioned ~ ~4 ~ run summon area_effect_cloud ~ ~ ~ {Radius:8f,Duration:100,custom_particle:{type:"minecraft:dragon_breath"},Tags:["ste_te_mace_cloud"]}
 
 # Урон игрокам рядом с Драконом
-execute at @s as @a[distance=..20] run damage @s 20 minecraft:mob_attack by @e[type=ender_dragon,tag=stellarity.dragon,limit=1,sort=nearest]
+execute at @s as @a[distance=..20] run damage @s 20 minecraft:mob_attack by @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1,sort=nearest]
 
 # Отбрасывание вверх
-execute at @s as @a[distance=..20] run data merge entity @s {Motion:[0.0,2.0,0.0]}
+execute at @s as @a[distance=..20] run data modify entity @s Motion set value [0.0,2.0,0.0]
 
-# Спецэффекты AT дракона (dragon_breath, не overworld-партикл)
+# Спецэффекты AT дракона
 execute at @s run particle dragon_breath ~ ~4 ~ 8 1 8 0.3 400 force
 execute at @s run particle flash{color:[0.6, 0.0, 1.0, 1.0]} ~ ~4 ~ 0 0 0 0 1 force
 execute at @s run particle explosion ~ ~2 ~ 3 1 3 0 15 force

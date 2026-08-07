@@ -1,14 +1,16 @@
 # =====================================================================
 # ste_te_patch:mechanics/crystal_guards
-# Кристальные стражи. Фантомы респавнятся у живых кристаллов.
-# Вызывается in minecraft:the_end из main_tick на тике 55.
 # =====================================================================
 
-# Принудительный (пере)спавн: у каждого кристалла без живого стража спавним нового
-execute in minecraft:the_end as @e[type=end_crystal] at @s unless entity @e[type=phantom,tag=ste_te_guard,distance=..4,limit=1] run summon phantom ~ ~2 ~ {Tags:["ste_te_guard"],Health:20.0f,Silent:0b}
+# Тикаем кулдаун
+execute if score $guard_cooldown ste_te_flags matches 1.. run scoreboard players remove $guard_cooldown ste_te_flags 1
 
-# Пока хоть один страж жив → дракон неуязвим (resist 255)
-execute in minecraft:the_end if entity @e[type=phantom,tag=ste_te_guard] as @e[type=ender_dragon,tag=stellarity.dragon] run effect give @s resistance 5 255 true
+# Спавним фантома если: кристалл защищен, нет фантомов рядом, и кулдаун 0
+execute in minecraft:the_end as @e[type=end_crystal,tag=ste_te_guarded] at @s unless entity @e[type=phantom,tag=ste_crystal_guard,distance=..5] if score $guard_cooldown ste_te_flags matches 0 run summon phantom ~ ~2 ~ {Tags:["ste_crystal_guard"],Health:20f,Silent:0b}
+execute in minecraft:the_end as @e[type=end_crystal,tag=ste_te_guarded] at @s unless entity @e[type=phantom,tag=ste_crystal_guard,distance=..5] if score $guard_cooldown ste_te_flags matches 0 run scoreboard players set $guard_cooldown ste_te_flags 20
 
-# Партиклы стражей AT стража
-execute in minecraft:the_end as @e[type=phantom,tag=ste_te_guard] at @s run particle soul_fire_flame ~ ~1 ~ 0.5 0.5 0.5 0.1 3 force
+# Партиклы стражей
+execute in minecraft:the_end as @e[type=phantom,tag=ste_crystal_guard] at @s run particle soul_fire_flame ~ ~1 ~ 0.5 0.5 0.5 0.1 3 force
+
+# Даем сопротивление Дракону, если есть стражи
+execute if entity @e[type=phantom,tag=ste_crystal_guard] run effect give @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] resistance 2 255 true

@@ -4,7 +4,6 @@
 
 # Ставим флаг - кристаллы уничтожены
 scoreboard players set $crystals_gone ste_te_flags 1
-tag @s add ste_te_crystals_gone
 
 # Снимаем принудительный щит
 tag @s remove stellarity.dragon.invulnerable

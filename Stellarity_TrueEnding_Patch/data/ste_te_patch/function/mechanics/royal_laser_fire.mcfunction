@@ -3,18 +3,15 @@
 # Контекст: AS ender_dragon AT дракона, in the_end.
 # =====================================================================
 
-# Телепортируемся в центр арены
-tp @s 0 95 0
-
-# --- 8 фаерболов в 8 сторон (AT дракона, т.е. 0 95 0 после ТП) ---
-execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,power:[1.5,0.0,0.0]}
-execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,power:[-1.5,0.0,0.0]}
-execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,power:[0.0,0.0,1.5]}
-execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,power:[0.0,0.0,-1.5]}
-execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,power:[1.1,0.0,1.1]}
-execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,power:[-1.1,0.0,-1.1]}
-execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,power:[1.1,0.0,-1.1]}
-execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,power:[-1.1,0.0,1.1]}
+# --- 8 фаерболов в 8 сторон (AT дракона) ---
+execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,Motion:[1.5,0.0,0.0],acceleration_power:0.1d,Tags:["te_fireball"]}
+execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,Motion:[-1.5,0.0,0.0],acceleration_power:0.1d,Tags:["te_fireball"]}
+execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,Motion:[0.0,0.0,1.5],acceleration_power:0.1d,Tags:["te_fireball"]}
+execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,Motion:[0.0,0.0,-1.5],acceleration_power:0.1d,Tags:["te_fireball"]}
+execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,Motion:[1.1,0.0,1.1],acceleration_power:0.1d,Tags:["te_fireball"]}
+execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,Motion:[-1.1,0.0,-1.1],acceleration_power:0.1d,Tags:["te_fireball"]}
+execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,Motion:[1.1,0.0,-1.1],acceleration_power:0.1d,Tags:["te_fireball"]}
+execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,Motion:[-1.1,0.0,1.1],acceleration_power:0.1d,Tags:["te_fireball"]}
 
 # --- Кольцо end_rod AT дракона ---
 execute at @s run particle end_rod ~ ~ ~ 10 0.5 10 0.8 600 force
