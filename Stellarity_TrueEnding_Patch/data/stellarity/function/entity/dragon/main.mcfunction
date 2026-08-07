@@ -1,3 +1,15 @@
+# =====================================================================
+# PATCH OVERRIDE: stellarity:entity/dragon/main
+# Оригинальный файл: Stellarity-5.5.4/data/stellarity/function/entity/dragon/main.mcfunction
+#
+# ИЗМЕНЕНИЯ:
+#   - УДАЛЕНО: Phase monitor и вызовы атак Stellarity (fireball, shulker_hell,
+#     ball_of_blight, chainfire, take_off, roar_breath, revive_crystals)
+#   - УДАЛЕНО: Тик-даун кулдаунов атак Stellarity
+#   - СОХРАНЕНО: Счётчик кристаллов и логика неуязвимости (нужна для синхронизации с TE)
+#   - СОХРАНЕНО: Bossbar, музыка, партиклы-трейл, heartbeat, смерть/портал
+# =====================================================================
+
 # End Crystal stuff
   scoreboard players reset #crystal_count stellarity.misc
   # Count Crystals (only the ones with the bottom part count)
@@ -26,24 +38,23 @@
 
           execute if predicate kohara:chance/6percent run function stellarity:entity/dragon/beam_thingy/spawn
 
-        # Bossbar Visbility
+        # Bossbar Visibility
           bossbar set stellarity:ender_dragon players
           bossbar set stellarity:ender_dragon players @a[predicate=stellarity:location/dragons_den/in_main_area]
           bossbar set stellarity:crystal_count players
           bossbar set stellarity:crystal_count players @a[predicate=stellarity:location/dragons_den/in_main_area]
 
-        # Music
+        # Music (Stellarity)
           execute if entity @s[tag=!stellarity.to_portal,tag=!stellarity.at_portal] run function stellarity:entity/dragon/music/tick
 
-        # KEEP: Trail and visual stuff
+        # Trail visuals (Stellarity)
           execute store result score @s stellarity.misc run data get entity @s DragonPhase
           execute unless score @s[tag=!stellarity.at_portal] stellarity.misc matches 5..7 run function stellarity:entity/dragon/trail
 
-        # Heartbeat while below 25% health
-        # It only gets quicker and quicker as the Dragon knows it is closer to its death
+        # Heartbeat sound below 25% health
           execute if score @s stellarity.dragon.health_percent matches ..25 run function stellarity:entity/dragon/heartbeat/main
 
-        # Fly to portal to die
+        # Fly to portal to die (Stellarity death sequence)
           execute if score @s[tag=!stellarity.at_portal] stellarity.dragon.health matches 0..1 run function stellarity:entity/dragon/death/fly_to_portal
           execute if score @s stellarity.dragon.health matches 0..1 if score @s[tag=stellarity.to_portal] stellarity.misc matches 5..7 run tag @s add stellarity.at_portal
           execute if entity @s[tag=stellarity.at_portal] run function stellarity:entity/dragon/death/at_portal_loop

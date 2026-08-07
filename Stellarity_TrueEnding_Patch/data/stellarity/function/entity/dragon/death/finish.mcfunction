@@ -1,3 +1,10 @@
+# =====================================================================
+# PATCH OVERRIDE: stellarity:entity/dragon/death/finish
+# Оригинальный файл: Stellarity-5.5.4/data/stellarity/function/entity/dragon/death/finish.mcfunction
+#
+# ДОБАВЛЕНО В КОНЕЦ: Полная зачистка True Ending и сброс тегов-флагов патча.
+# =====================================================================
+
 # Moved from some Far End function I cannot remember
   function stellarity:structure/exit_portal/activated/generate
 
@@ -27,44 +34,52 @@ execute if score #stellarity.config stellarity.config.boss_status_messages match
     # 'Free The End'
       advancement grant @a[distance=..100,advancements={minecraft:end/kill_dragon=false}] only minecraft:end/kill_dragon
 
-    # Activate Altar of The Accursed. Now we shall all witness horrible dark magic emerging and crafting fantastic gear!
-      # Wonderful! Like ancient forces of darkness were always supposed to 
-
+    # Activate Altar of The Accursed.
       # regenerate if needed
-        # Run backup check to see if altar exists
-
         execute in minecraft:the_end positioned 50 76 -39 unless entity @e[type=marker,tag=stellarity.altar_of_the_accursed,distance=..32] run function stellarity:entity/dragon/death/regenerate_altar_check
 
-      # just miraculously connect some random trash into things that are a lot better!
         schedule function stellarity:entity/dragon/death/activate_altar_of_the_accursed_sound 5s
         schedule function stellarity:entity/dragon/death/activate_altar_of_the_accursed 8s
 
       ## Leftover ash
-        # 500 seconds is 8 minutes 20 seconds
-          scoreboard players set #stellarity.dragon.ash_duration stellarity.misc 500
+        scoreboard players set #stellarity.dragon.ash_duration stellarity.misc 500
 
-        # Delay the track by 13s
-          execute unless entity @e[type=marker,tag=stellarity.altar_of_the_accursed,tag=stellarity.altar_of_the_accursed_activated] run \
-          schedule function stellarity:entity/dragon/play_track 230t
-          # Or by 3.5 seconds if Altar has been unlocked
-            execute if entity @e[type=marker,tag=stellarity.altar_of_the_accursed,tag=stellarity.altar_of_the_accursed_activated] run \
-            schedule function stellarity:entity/dragon/play_track 70t
+        execute unless entity @e[type=marker,tag=stellarity.altar_of_the_accursed,tag=stellarity.altar_of_the_accursed_activated] run \
+        schedule function stellarity:entity/dragon/play_track 230t
+          execute if entity @e[type=marker,tag=stellarity.altar_of_the_accursed,tag=stellarity.altar_of_the_accursed_activated] run \
+          schedule function stellarity:entity/dragon/play_track 70t
 
-# -------------------------------------------------------------------------------------------------------------------------------------------------------------
-# TRUE ENDING BRIDGE LOGIC (Death Event Reset)
-# -------------------------------------------------------------------------------------------------------------------------------------------------------------
+# =============================================================
+# TRUE ENDING BRIDGE — СБРОС ПРИ ЗАВЕРШЕНИИ БОЯ
+# Выполняется когда Stellarity подтверждает смерть и генерирует портал.
+# =============================================================
 
-# Reset True Ending crystal count to allow for proper respawning detection next time
-scoreboard players reset crystals_left trueEnding_storage
-scoreboard players reset crystals_left_pretick trueEnding_storage
-
-# Clean up True Ending's specific markers / entities that might be left over from the fight
-kill @e[type=marker,tag=trueEnding_endspike]
-kill @e[type=marker,tag=trueEnding_ultrafireball]
+# Зачищаем все TE боевые сущности (финальная зачистка, если win_sync не успел)
 kill @e[type=marker,tag=trueEnding_shockwave]
 kill @e[type=marker,tag=trueEnding_shockwave2]
 kill @e[type=marker,tag=trueEnding_pad]
+kill @e[type=marker,tag=trueEnding_ultrafireball]
+kill @e[type=marker,tag=trueEnding_dragonparticle]
 kill @e[type=phantom,tag=trueEnding_guardphantom]
+kill @e[type=marker,tag=trueEnding_endspike]
+kill @e[type=marker,tag=trueEnding_endspike_caged]
+kill @e[type=ender_dragon,tag=trueEnding_mirrordragon]
+kill @e[type=marker,tag=trueEnding_pivot]
 
-# Make sure the dragon entity itself loses its TE tag (vanilla actually deletes the entity after death animation, but just to be sure)
-execute as @e[type=ender_dragon] run tag @s remove trueEnding_dragon_particlechecked
+# Сброс глобальных TE-скорбордов (чтобы следующий спаун начинался чисто)
+scoreboard players reset crystals_left trueEnding_storage
+scoreboard players reset crystals_left_pretick trueEnding_storage
+scoreboard players reset respawn_ender_dragon trueEnding_storage
+
+# Сброс музыки TE у игроков
+execute in the_end positioned 0 80 0 as @a[distance=..256] run scoreboard players reset @s trueEnding_music
+
+# Сброс флагов-патча (для корректного следующего призыва)
+# (Дракон к этому моменту уже умирает, но его entity ещё может существовать)
+execute as @e[type=ender_dragon,tag=ste_te_crystals_gone] run tag @s remove ste_te_crystals_gone
+execute as @e[type=ender_dragon,tag=ste_te_death_cleanup_done] run tag @s remove ste_te_death_cleanup_done
+execute as @e[type=ender_dragon,tag=trueEnding_dragon_particlechecked] run tag @s remove trueEnding_dragon_particlechecked
+execute as @e[type=ender_dragon] run tag @s remove trueEnding_halfhealth
+execute as @e[type=ender_dragon] run tag @s remove trueEnding_quarterhealth
+execute as @e[type=ender_dragon] run tag @s remove trueEnding_inattack
+execute as @e[type=ender_dragon] run tag @s remove trueEnding_inattack_doubledive

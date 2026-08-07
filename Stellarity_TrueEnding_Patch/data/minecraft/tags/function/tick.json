@@ -1,5 +1,8 @@
 {
   "values": [
-    "ste_te_patch:sync"
+    "ste_te_patch:entity_sync",
+    "ste_te_patch:crystal_sync",
+    "ste_te_patch:attack_rotation",
+    "ste_te_patch:win_sync"
   ]
 }
