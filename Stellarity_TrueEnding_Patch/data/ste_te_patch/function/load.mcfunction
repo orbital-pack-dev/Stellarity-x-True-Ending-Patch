@@ -1,5 +1,5 @@
 # =====================================================================
-# ste_te_patch LOAD — инициализация скорбордов патча
+# ste_te_patch:load — инициализация скорбордов патча
 # =====================================================================
 
 scoreboard objectives add ste_te_rotation dummy "STE-TE Rotation"
@@ -23,6 +23,8 @@ scoreboard objectives add ste_te_m11 dummy "STE-TE Mech 11"
 scoreboard objectives add ste_te_m12 dummy "STE-TE Mech 12"
 scoreboard objectives add ste_te_m13 dummy "STE-TE Mech 13"
 scoreboard objectives add ste_te_m14 dummy "STE-TE Mech 14"
+scoreboard objectives add ste_te_m_timer dummy "STE-TE Marker Timer"
+scoreboard objectives add ste_te_laststand_cd dummy "STE-TE LastStand CD"
 
 # Клок для ротатора атак
 scoreboard players set ste_te_rotation_clock ste_te_misc 0

@@ -1,23 +1,23 @@
 # =====================================================================
 # ste_te_patch:mechanics/air_ring_blast
-# Вызывается из air_ring.mcfunction когда есть цели в воздухе.
-# Контекст: AS ender_dragon AT дракона.
+# Контекст: AS ender_dragon AT дракона, in the_end.
+# Наказание игроков в воздухе Y >= 85.
 # =====================================================================
 
-# Кольцо из dragon_breath вокруг всех воздушных игроков
-execute at @a[distance=..100,y=85,dy=100] run particle dragon_breath ~ ~ ~ 5 1 5 0.2 200 force
-execute at @a[distance=..100,y=85,dy=100] run particle dragon_breath ~ ~2 ~ 5 1 5 0.2 200 force
-execute at @a[distance=..100,y=85,dy=100] run particle dragon_breath ~ ~-2 ~ 5 1 5 0.2 100 force
+# Кольцо dragon_breath AT каждого воздушного игрока
+execute in minecraft:the_end as @a[y=85,dy=100,distance=..100] at @s run particle dragon_breath ~ ~ ~ 5 1 5 0.2 200 force
+execute in minecraft:the_end as @a[y=85,dy=100,distance=..100] at @s run particle dragon_breath ~ ~2 ~ 5 1 5 0.2 200 force
+execute in minecraft:the_end as @a[y=85,dy=100,distance=..100] at @s run particle dragon_breath ~ ~-2 ~ 5 1 5 0.2 100 force
 
 # Тьма на 5 сек
-effect give @a[distance=..100,y=85,dy=100] darkness 5 0 true
+execute in minecraft:the_end as @a[y=85,dy=100,distance=..100] run effect give @s darkness 5 0 true
 
-# Принудительный сброс скорости (тянем вниз)
-execute as @a[distance=..100,y=85,dy=100] run data merge entity @s {Motion:[0.0,-1.5,0.0]}
+# Принудительный сброс скорости вниз AT игрока
+execute in minecraft:the_end as @a[y=85,dy=100,distance=..100] at @s run data merge entity @s {Motion:[0.0,-1.5,0.0]}
 
-# Звуки
+# Звуки AT дракона
 playsound minecraft:entity.ender_dragon.shoot hostile @a[distance=..256] ~ ~ ~ 5 0.5
 playsound minecraft:ambient.crimson_forest.additions hostile @a[distance=..128] ~ ~ ~ 3 0.8
 
-# Визуальное предупреждение — молния рядом
-execute at @a[distance=..100,y=85,dy=100] run summon lightning_bolt ~ ~ ~
+# Молния AT каждого игрока
+execute in minecraft:the_end as @a[y=85,dy=100,distance=..100] at @s run summon lightning_bolt ~ ~ ~

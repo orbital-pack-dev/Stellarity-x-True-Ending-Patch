@@ -1,15 +1,14 @@
 # =====================================================================
 # ste_te_patch:mechanics/crystal_guards
-# Стражи кристаллов.
-# Вызывается из main_tick на тике 55.
+# Кристальные стражи. Фантомы респавнятся у живых кристаллов.
+# Вызывается in minecraft:the_end из main_tick на тике 55.
 # =====================================================================
 
-# Инициализация (только 1 раз — нет тега ste_te_guards_spawned)
-execute as @e[type=ender_dragon,tag=trueEnding_dragon_particlechecked,tag=!ste_te_guards_spawned] run tag @s add ste_te_guards_spawned
-execute as @e[type=ender_dragon,tag=trueEnding_dragon_particlechecked,tag=ste_te_guards_spawned,scores={ste_te_m8=0}] at @s run function ste_te_patch:mechanics/crystal_guards_spawn
+# Принудительный (пере)спавн: у каждого кристалла без живого стража спавним нового
+execute in minecraft:the_end as @e[type=end_crystal] at @s unless entity @e[type=phantom,tag=ste_te_guard,distance=..4,limit=1] run summon phantom ~ ~2 ~ {Tags:["ste_te_guard"],Health:20.0f,Silent:0b}
 
-# Помечаем что уже проинициализировали (счётчик > 0 после спавна)
-execute as @e[type=ender_dragon,tag=trueEnding_dragon_particlechecked] if score @s ste_te_m8 matches 0 run scoreboard players set @s ste_te_m8 1
+# Пока хоть один страж жив → дракон неуязвим (resist 255)
+execute in minecraft:the_end if entity @e[type=phantom,tag=ste_te_guard] as @e[type=ender_dragon,tag=stellarity.dragon] run effect give @s resistance 5 255 true
 
-# Поддержание: Если у interaction нет рядом фантома-стража → удаляем заглушку
-execute as @e[type=interaction,tag=ste_te_crystal_hitbox] at @s unless entity @e[type=phantom,tag=ste_te_guard,distance=..5] run kill @s
+# Партиклы стражей AT стража
+execute in minecraft:the_end as @e[type=phantom,tag=ste_te_guard] at @s run particle soul_fire_flame ~ ~1 ~ 0.5 0.5 0.5 0.1 3 force

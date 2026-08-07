@@ -1,32 +1,31 @@
 # =====================================================================
 # ste_te_patch:mechanics/royal_laser_fire
-# Исполнение атаки. Контекст: AS ender_dragon AT дракона.
+# Контекст: AS ender_dragon AT дракона, in the_end.
 # =====================================================================
 
 # Телепортируемся в центр арены
-tp @e[type=ender_dragon,tag=trueEnding_dragon_particlechecked,limit=1] 0 95 0
+tp @s 0 95 0
 
-# --- 8 фаерболов в 8 сторон --- (N,S,E,W,NE,NW,SE,SW)
-execute positioned 0 95 0 run summon fireball ~ ~ ~ {ExplosionPower:3b,Motion:[1.5,-0.3,0.0]}
-execute positioned 0 95 0 run summon fireball ~ ~ ~ {ExplosionPower:3b,Motion:[-1.5,-0.3,0.0]}
-execute positioned 0 95 0 run summon fireball ~ ~ ~ {ExplosionPower:3b,Motion:[0.0,-0.3,1.5]}
-execute positioned 0 95 0 run summon fireball ~ ~ ~ {ExplosionPower:3b,Motion:[0.0,-0.3,-1.5]}
-execute positioned 0 95 0 run summon fireball ~ ~ ~ {ExplosionPower:3b,Motion:[1.1,-0.3,1.1]}
-execute positioned 0 95 0 run summon fireball ~ ~ ~ {ExplosionPower:3b,Motion:[-1.1,-0.3,-1.1]}
-execute positioned 0 95 0 run summon fireball ~ ~ ~ {ExplosionPower:3b,Motion:[1.1,-0.3,-1.1]}
-execute positioned 0 95 0 run summon fireball ~ ~ ~ {ExplosionPower:3b,Motion:[-1.1,-0.3,1.1]}
+# --- 8 фаерболов в 8 сторон (AT дракона, т.е. 0 95 0 после ТП) ---
+execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,power:[1.5,0.0,0.0]}
+execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,power:[-1.5,0.0,0.0]}
+execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,power:[0.0,0.0,1.5]}
+execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,power:[0.0,0.0,-1.5]}
+execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,power:[1.1,0.0,1.1]}
+execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,power:[-1.1,0.0,-1.1]}
+execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,power:[1.1,0.0,-1.1]}
+execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,power:[-1.1,0.0,1.1]}
 
-# --- Кольцо end_rod (имитация луча) ---
-execute positioned 0 95 0 run particle end_rod ~ ~ ~ 10 0.5 10 0.8 600 force
-execute positioned 0 93 0 run particle end_rod ~ ~ ~ 12 0.3 12 0.6 400 force
+# --- Кольцо end_rod AT дракона ---
+execute at @s run particle end_rod ~ ~ ~ 10 0.5 10 0.8 600 force
+execute at @s run particle end_rod ~ ~-2 ~ 12 0.3 12 0.6 400 force
 
 # --- Вспышка ---
-execute positioned 0 95 0 run particle flash{color:[1.0, 0.4, 0.0, 1.0]} ~ ~ ~ 0 0 0 0 1 force
+execute at @s run particle flash{color:[1.0, 0.4, 0.0, 1.0]} ~ ~ ~ 0 0 0 0 1 force
 
 # --- Звуки ---
-playsound minecraft:entity.ender_dragon.shoot hostile @a[distance=..256] 0 95 0 10 0.1
-playsound minecraft:entity.warden.sonic_boom hostile @a[distance=..256] 0 95 0 8 0.7
-playsound minecraft:entity.ender_dragon.growl hostile @a[distance=..256] 0 95 0 10 1.2
+execute at @s run playsound minecraft:entity.ender_dragon.shoot hostile @a[distance=..256] ~ ~ ~ 10 0.1
+execute at @s run playsound minecraft:entity.warden.sonic_boom hostile @a[distance=..256] ~ ~ ~ 8 0.7
+execute at @s run playsound minecraft:entity.ender_dragon.growl hostile @a[distance=..256] ~ ~ ~ 10 1.2
 
-# --- Title-предупреждение ---
 title @a[distance=..200] actionbar {"text":"ROYAL LASER","color":"gold","bold":true}
