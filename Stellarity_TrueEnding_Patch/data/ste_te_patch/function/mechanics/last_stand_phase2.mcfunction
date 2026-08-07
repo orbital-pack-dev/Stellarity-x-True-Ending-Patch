@@ -14,8 +14,11 @@ execute at @s run particle explosion_emitter ~ ~ ~ 0 0 0 0 3 force
 execute at @s run particle flash{color:[1.0, 1.0, 1.0, 1.0]} ~ ~ ~ 0 0 0 0 5 force
 execute at @s run particle dragon_breath ~ ~ ~ 15 15 15 0.8 1000 force
 
-# Вызов True Ending смерти
-function true_ending:boss/death
+# Вызов True Ending смерти (система kill_dragon True Ending)
+function true_ending:other/kill_dragon
+
+# Снимаем Invulnerable, чтобы Stellarity/ваниль могли завершить дракона
+data modify entity @s Invulnerable set value 0b
 
 # --- Передача управления Stellarity для fly_to_portal / at_portal_loop ---
 # Stellarity дальше сам подхватит at_portal_loop

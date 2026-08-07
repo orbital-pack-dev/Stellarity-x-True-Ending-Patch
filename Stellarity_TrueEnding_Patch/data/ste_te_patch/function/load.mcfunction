@@ -35,6 +35,7 @@ scoreboard players set $dead ste_te_flags 0
 scoreboard players set $crystals_gone ste_te_flags 0
 scoreboard players set $guards_spawned ste_te_flags 0
 scoreboard players set $guard_cooldown ste_te_flags 0
+scoreboard players set $shield_dropped ste_te_flags 0
 scoreboard players set $ring_radius ste_te_flags 0
 
 # Клок для ротатора атак

@@ -3,15 +3,15 @@
 # Контекст: AS ender_dragon AT дракона, in the_end.
 # =====================================================================
 
-# --- 8 фаерболов в 8 сторон (AT дракона) ---
-execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,Motion:[1.5,0.0,0.0],acceleration_power:0.1d,Tags:["te_fireball"]}
-execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,Motion:[-1.5,0.0,0.0],acceleration_power:0.1d,Tags:["te_fireball"]}
-execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,Motion:[0.0,0.0,1.5],acceleration_power:0.1d,Tags:["te_fireball"]}
-execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,Motion:[0.0,0.0,-1.5],acceleration_power:0.1d,Tags:["te_fireball"]}
-execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,Motion:[1.1,0.0,1.1],acceleration_power:0.1d,Tags:["te_fireball"]}
-execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,Motion:[-1.1,0.0,-1.1],acceleration_power:0.1d,Tags:["te_fireball"]}
-execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,Motion:[1.1,0.0,-1.1],acceleration_power:0.1d,Tags:["te_fireball"]}
-execute at @s run summon fireball ~ ~ ~ {ExplosionPower:3b,Motion:[-1.1,0.0,1.1],acceleration_power:0.1d,Tags:["te_fireball"]}
+# --- 8 фаерболов в 8 сторон (AT дракона). Мощность 5 (проверено в игре: 3 слабо) ---
+execute at @s run summon fireball ~ ~ ~ {ExplosionPower:5b,Motion:[1.5,0.0,0.0],acceleration_power:0.1d,Tags:["te_fireball"]}
+execute at @s run summon fireball ~ ~ ~ {ExplosionPower:5b,Motion:[-1.5,0.0,0.0],acceleration_power:0.1d,Tags:["te_fireball"]}
+execute at @s run summon fireball ~ ~ ~ {ExplosionPower:5b,Motion:[0.0,0.0,1.5],acceleration_power:0.1d,Tags:["te_fireball"]}
+execute at @s run summon fireball ~ ~ ~ {ExplosionPower:5b,Motion:[0.0,0.0,-1.5],acceleration_power:0.1d,Tags:["te_fireball"]}
+execute at @s run summon fireball ~ ~ ~ {ExplosionPower:5b,Motion:[1.1,0.0,1.1],acceleration_power:0.1d,Tags:["te_fireball"]}
+execute at @s run summon fireball ~ ~ ~ {ExplosionPower:5b,Motion:[-1.1,0.0,-1.1],acceleration_power:0.1d,Tags:["te_fireball"]}
+execute at @s run summon fireball ~ ~ ~ {ExplosionPower:5b,Motion:[1.1,0.0,-1.1],acceleration_power:0.1d,Tags:["te_fireball"]}
+execute at @s run summon fireball ~ ~ ~ {ExplosionPower:5b,Motion:[-1.1,0.0,1.1],acceleration_power:0.1d,Tags:["te_fireball"]}
 
 # --- Кольцо end_rod AT дракона ---
 execute at @s run particle end_rod ~ ~ ~ 10 0.5 10 0.8 600 force

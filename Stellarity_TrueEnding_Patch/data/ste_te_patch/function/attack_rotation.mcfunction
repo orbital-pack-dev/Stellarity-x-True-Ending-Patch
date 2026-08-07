@@ -27,10 +27,11 @@
 # Ротатор срабатывает раз в 10 секунд (200 тиков) через 5tick-клок.
 # =====================================================================
 
-# Ротатор работает только если дракон в idle (bosstime 219) и не атакует
-execute in the_end as @e[type=ender_dragon,tag=trueEnding_dragon_particlechecked,tag=!trueEnding_mirrordragon,tag=!trueEnding_inattack,tag=!ste_te_crystals_gone] if score @s trueEnding_bosstime matches 219 at @s run function ste_te_patch:rotation_select
+# Ротатор работает только если дракон в idle (bosstime 219), не атакует,
+# И все кристаллы уничтожены ($crystals_gone == 1)
+execute in the_end as @e[type=ender_dragon,tag=trueEnding_dragon_particlechecked,tag=!trueEnding_mirrordragon,tag=!trueEnding_inattack] if score $crystals_gone ste_te_flags matches 1 if score @s trueEnding_bosstime matches 219 at @s run function ste_te_patch:rotation_select
 
 # Сброс клока если достиг 200 (200 тиков = 10 сек)
 execute if score ste_te_rotation_clock ste_te_misc matches 200.. run scoreboard players set ste_te_rotation_clock ste_te_misc 0
-# Тикаем клок только пока дракон в idle
-execute in the_end if entity @e[type=ender_dragon,tag=trueEnding_dragon_particlechecked,tag=!trueEnding_mirrordragon,tag=!trueEnding_inattack,tag=!ste_te_crystals_gone,scores={trueEnding_bosstime=219}] run scoreboard players add ste_te_rotation_clock ste_te_misc 1
+# Тикаем клок только пока дракон в idle и кристаллы разрушены
+execute in the_end if score $crystals_gone ste_te_flags matches 1 if entity @e[type=ender_dragon,tag=trueEnding_dragon_particlechecked,tag=!trueEnding_mirrordragon,tag=!trueEnding_inattack,scores={trueEnding_bosstime=219}] run scoreboard players add ste_te_rotation_clock ste_te_misc 1

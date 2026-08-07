@@ -5,7 +5,7 @@
 
 # Для каждого незащищённого кристалла
 execute as @e[type=end_crystal,tag=!ste_te_guarded] at @s run tag @s add ste_te_guarded
-execute as @e[type=end_crystal,tag=ste_te_guarded] at @s run summon phantom ~ ~3 ~ {Tags:["ste_te_guard"],Health:20.0f,Silent:0b}
+execute as @e[type=end_crystal,tag=ste_te_guarded] at @s run summon phantom ~ ~3 ~ {Tags:["ste_crystal_guard"],Health:20.0f,Silent:0b}
 execute as @e[type=end_crystal,tag=ste_te_guarded] at @s run summon interaction ~ ~ ~ {Tags:["ste_te_crystal_hitbox"],width:2.0f,height:2.0f}
 
 # Эффектный спавн

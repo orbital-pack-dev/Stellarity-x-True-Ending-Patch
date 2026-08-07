@@ -76,10 +76,25 @@ execute in the_end positioned 0 80 0 as @a[distance=..256] run scoreboard player
 
 # Сброс флагов-патча (для корректного следующего призыва)
 # (Дракон к этому моменту уже умирает, но его entity ещё может существовать)
-execute as @e[type=ender_dragon,tag=ste_te_crystals_gone] run tag @s remove ste_te_crystals_gone
 execute as @e[type=ender_dragon,tag=ste_te_death_cleanup_done] run tag @s remove ste_te_death_cleanup_done
 execute as @e[type=ender_dragon,tag=trueEnding_dragon_particlechecked] run tag @s remove trueEnding_dragon_particlechecked
 execute as @e[type=ender_dragon] run tag @s remove trueEnding_halfhealth
 execute as @e[type=ender_dragon] run tag @s remove trueEnding_quarterhealth
 execute as @e[type=ender_dragon] run tag @s remove trueEnding_inattack
 execute as @e[type=ender_dragon] run tag @s remove trueEnding_inattack_doubledive
+execute as @e[type=ender_dragon,tag=stellarity.ender_dragon] run tag @s remove ste_te_check_mace
+execute as @e[type=ender_dragon] run tag @s remove ste_te_meteor_rain_done
+execute as @e[type=ender_dragon] run tag @s remove ste_te_mirror_done
+execute as @e[type=ender_dragon] run tag @s remove ste_te_last_stand
+execute as @e[type=ender_dragon] run tag @s remove ste_te_death_triggered
+execute as @e[type=ender_dragon] run tag @s remove ste_te_50_percent_triggered
+execute as @e[type=ender_dragon] run tag @s remove ste_ai_locked
+execute as @e[type=ender_dragon] run tag @s remove ste_ai_air_threat
+execute as @e[type=ender_dragon] run tag @s remove ste_ai_close_threat
+
+# Сброс scoreboard-флагов патча для повторного боя
+scoreboard players set $dead ste_te_flags 0
+scoreboard players set $crystals_gone ste_te_flags 0
+scoreboard players set $guards_spawned ste_te_flags 0
+scoreboard players set $guard_cooldown ste_te_flags 0
+scoreboard players set $shield_dropped ste_te_flags 0
