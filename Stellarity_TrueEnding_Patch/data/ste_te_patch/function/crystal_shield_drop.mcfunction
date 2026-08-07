@@ -1,23 +1,22 @@
 # =====================================================================
-# crystal_shield_drop.mcfunction
-# Выполняется единожды при обнулении кристаллов.
-# Контекст: выполняется AS дракона (ender_dragon).
+# ste_te_patch:crystal_shield_drop
 # =====================================================================
 
-# Помечаем, чтобы не сработало повторно в этом бою
+# Ставим флаг - кристаллы уничтожены
+scoreboard players set $crystals_gone ste_te_flags 1
 tag @s add ste_te_crystals_gone
 
-# Однократный запуск фазы и звука через защелку-флаг
-execute unless entity @s[tag=ste_te_sound_played] run scoreboard players set @s trueEnding_bosstime 5000
-execute unless entity @s[tag=ste_te_sound_played] run playsound minecraft:entity.ender_dragon.growl hostile @a[distance=..256] ~ ~ ~ 10 0.8
-tag @s add ste_te_sound_played
-
-# Гарантируем: снять бессмертие (Stellarity уже делает это через hide_bossbar, но страхуемся)
-data modify entity @s Invulnerable set value 0b
+# Снимаем принудительный щит
 tag @s remove stellarity.dragon.invulnerable
+data modify entity @s Invulnerable set value 0b
 
-# Убрать TE-флаг "inattack" если он висел от предыдущей атаки
-tag @s remove trueEnding_inattack
+# Спецэффекты и звук
+execute at @s run playsound minecraft:entity.ender_dragon.ambient hostile @a[distance=..256] ~ ~ ~ 10 0.5
+execute at @s run particle flash{color:[1.0, 1.0, 1.0, 1.0]} ~ ~ ~ 0 0 0 0 1 force
+execute at @s run particle dragon_breath ~ ~ ~ 10 10 10 0.1 500 force
 
-# Сброс счётчика кристаллов в претик TE (чтобы не сработал phase_end_crystals_destroyed_init ещё раз)
-scoreboard players set crystals_left_pretick trueEnding_storage 0
+# Устанавливаем таймер боя True Ending
+scoreboard players set @s trueEnding_bosstime 5000
+
+title @a[distance=..256] title {"text":"THE SHIELD IS BROKEN","color":"dark_red","bold":true}
+title @a[distance=..256] subtitle {"text":"Finish the beast!","color":"red"}

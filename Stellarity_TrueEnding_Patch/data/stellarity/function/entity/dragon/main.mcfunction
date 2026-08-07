@@ -55,7 +55,7 @@
           execute if score @s stellarity.dragon.health_percent matches ..25 run function stellarity:entity/dragon/heartbeat/main
 
         # Fly to portal to die (Stellarity death sequence)
-          execute if score @s[tag=!stellarity.at_portal] stellarity.dragon.health matches 0..1 run function stellarity:entity/dragon/death/fly_to_portal
+          execute unless score $dead ste_te_flags matches 1 if score @s[tag=!stellarity.at_portal] stellarity.dragon.health matches 0..1 run function stellarity:entity/dragon/death/fly_to_portal
           execute if score @s stellarity.dragon.health matches 0..1 if score @s[tag=stellarity.to_portal] stellarity.misc matches 5..7 run tag @s add stellarity.at_portal
           execute if entity @s[tag=stellarity.at_portal] run function stellarity:entity/dragon/death/at_portal_loop
 
