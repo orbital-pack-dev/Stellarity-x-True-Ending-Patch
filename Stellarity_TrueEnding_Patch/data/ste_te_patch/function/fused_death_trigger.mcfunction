@@ -23,6 +23,13 @@ particle flash{color:[1.0, 1.0, 1.0, 1.0]} ~ ~ ~ 0 0 0 0 3 force @a[distance=..2
 playsound minecraft:entity.ender_dragon.growl hostile @a[distance=..256] ~ ~ ~ 10 0.6
 playsound minecraft:block.conduit.deactivate hostile @a[distance=..256] ~ ~ ~ 10 0.8
 
+# ---------- BUG FIX #5: ВЫСОТА И ВЫПАДЕНИЕ ЛУТА ----------
+# Телепортируем на +8 по Y, чтобы Дракон висел точно над кастомным алтарем
+tp @s ~ ~8 ~
+
+# Спавним кастомный лут Stellarity (Элитры, Меч) прямо над алтарем в момент "Удара в сердце"
+loot spawn ~ ~ ~ loot stellarity:entity/ender_dragon
+
 # -----------------------------------------------------------------------
 # ШАГ 2: ПЕРЕДАЧА В STELLARITY DEATH SEQUENCE
 # Снимаем TE-бессмертие и передаём управление Stellarity

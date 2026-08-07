@@ -7,9 +7,10 @@
 # Помечаем, чтобы не сработало повторно в этом бою
 tag @s add ste_te_crystals_gone
 
-# Принудительно устанавливаем TE-таймер на 5000 (начало фазы "все кристаллы уничтожены")
-# phase_end_crystals_destroyed снимает NoAI, запускает частицы и в итоге сбрасывает bosstime обратно в 219
-scoreboard players set @s trueEnding_bosstime 5000
+# Однократный запуск фазы и звука через защелку-флаг
+execute unless entity @s[tag=ste_te_sound_played] run scoreboard players set @s trueEnding_bosstime 5000
+execute unless entity @s[tag=ste_te_sound_played] run playsound minecraft:entity.ender_dragon.growl hostile @a[distance=..256] ~ ~ ~ 10 0.8
+tag @s add ste_te_sound_played
 
 # Гарантируем: снять бессмертие (Stellarity уже делает это через hide_bossbar, но страхуемся)
 data modify entity @s Invulnerable set value 0b

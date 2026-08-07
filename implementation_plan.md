@@ -1,73 +1,84 @@
-# Stellarity x True Ending (Boss Fight) Patch Plan
+# Architectural Expansion: 14 New Mechanics
 
-Цель патча — объединить логику боя Дракона из **True Ending** с визуальной частью, звуком, генерацией и структурой Алтаря/Кристаллов из **Stellarity**. 
-
-Анализ показал следующие зоны ответственности и точки конфликтов, которые необходимо разрешить путем создания файлов-переопределений (overrides) в нашем патче `Stellarity_TrueEnding_Patch`.
+This plan details the addition of 14 custom mechanics to the Stellarity x True Ending Dragon Boss Fight, orchestrated by a highly efficient, modular state machine to preserve TPS.
 
 ## User Review Required
-
 > [!IMPORTANT]
-> Пожалуйста, проверь предложенный список переопределений (заглушек). Если я упустил какой-то визуальный эффект из True Ending, который ты хотел бы оставить (например, частицы ударных волн от атак дракона), дай мне знать! В текущем плане отключается **весь** эмбиент и музыка True Ending, и **вся** логика атак Stellarity.
+> This is a massive expansion that fundamentally changes the difficulty and flow of the boss fight. The mechanics introduce anti-cheese systems (anti-mace, anti-AFK, anti-air), new phases, and highly destructive elements. 
 
 ## Open Questions
-
 > [!WARNING]
-> Ударные волны и новые фаерболы (ультра-фаерболы) из True Ending имеют свои визуальные частицы. Должны ли мы оставить их (так как они часть логики атак True Ending), или попытаться заменить их на частицы из Stellarity? (По умолчанию мы оставляем визуализацию самих атак True Ending, но отключаем общий фон/музыку).
+> 1. **Destructive Fireballs:** Should Gast Fireballs destroy *all* End Stone, or should we limit it to specific areas to avoid completely destroying the main portal/altar? (Currently planning standard explosion with `ExplosionPower:3b` and `gamerule mobGriefing true`).
+> 2. **Gravity Collapse:** For tracking AFK players (>13s), do you want a strict position check (X/Y/Z delta = 0), or a small radius (e.g., player hasn't moved more than 2 blocks)?
+> 3. **Island Wrath:** Finding a "random place" on the island. Should the dragon randomly pick one of the 10 crystal pillars to land on, or just a random coordinate in a 40-block radius?
 
-## Proposed Changes
+## Proposed Architecture
 
-Мы создадим дата-пак `Stellarity_TrueEnding_Patch`, который будет загружаться **выше** обоих модов и переопределять конфликтующие функции.
+To maintain 20 TPS, we will implement a global `ste_te_timer` (0-100 ticks) in a new `main_tick` loop. Instead of checking every player every tick, heavy operations are distributed across specific ticks (e.g., AFK check on tick 10, Armor check on tick 20, AI evaluation on tick 50).
 
-### Stellarity overrides (Отключение логики фаз и атак)
+### Core Tick Infrastructure
+#### [NEW] [main_tick.mcfunction](file:///c:/Users/1/Documents/GitHub/Stellarity-x-True-Ending-Patch/Stellarity_TrueEnding_Patch/data/ste_te_patch/function/main_tick.mcfunction)
+- Controls a rolling 1-100 tick counter.
+- Evaluates phase transitions and triggers the modular mechanic files at specific intervals.
+- Hooked into `tick.json`.
 
-Stellarity имеет единый контроллер Дракона, который вызывает музыку, меняет bossbar, но также управляет фазами (strafing, landing, breath attack, fireball) и возрождением кристаллов. Мы переопределим главный файл так, чтобы он сохранил только визуал и музыку.
-
-#### [MODIFY] [main.mcfunction](file:///c:/Users/1/Documents/GitHub/Stellarity-x-True-Ending-Patch/Stellarity_TrueEnding_Patch/data/stellarity/function/entity/dragon/main.mcfunction)
-- **Оставляем**: 
-  - Подсчет кристаллов и логику неуязвимости.
-  - Обновление кастомного Bossbar.
-  - Музыку (`stellarity:entity/dragon/music/tick`).
-  - Партиклы (`stellarity:entity/dragon/trail`).
-  - Визуал луча (`beam_thingy`).
-- **Удаляем (заглушаем)**:
-  - Phase monitor (строки 49-65: проверки на strafing, landing, вызовы атак `fireball`, `shulker_hell`, `ball_of_blight` и т.д.).
-  - Систему возрождения кристаллов (revive_crystals), если хотим, чтобы True Ending контролировал баланс (либо можем оставить, если нужно, чтобы кристаллы восстанавливались по логике Stellarity - *по умолчанию удаляем, так как бой из TE*).
-  
----
-
-### True Ending overrides (Отключение визуала, эмбиента и структур)
-
-True Ending имеет функции `tick` и `a_main` (в boss и ambience). Нам нужно отключить их визуальную составляющую, музыку и логику респавна (так как алтарь и генерация от Stellarity).
-
-#### [MODIFY] [a_main.mcfunction (ambience)](file:///c:/Users/1/Documents/GitHub/Stellarity-x-True-Ending-Patch/Stellarity_TrueEnding_Patch/data/true_ending/function/ambience/a_main.mcfunction)
-- Делаем файл **пустым** или удаляем вызовы партиклов. Это отключит свечение кристаллов, пыльцу и другие эффекты фона от True Ending, отдавая приоритет атмосфере Stellarity.
-
-#### [MODIFY] [a_main_no_dragon.mcfunction (ambience)](file:///c:/Users/1/Documents/GitHub/Stellarity-x-True-Ending-Patch/Stellarity_TrueEnding_Patch/data/true_ending/function/ambience/a_main_no_dragon.mcfunction)
-- Делаем файл **пустым**. Отключает эмбиент TE при отсутствии дракона.
-
-#### [MODIFY] [music.mcfunction](file:///c:/Users/1/Documents/GitHub/Stellarity-x-True-Ending-Patch/Stellarity_TrueEnding_Patch/data/true_ending/function/music.mcfunction)
-- Делаем файл **пустым**. Это полностью отключит саундтрек True Ending, чтобы играла только музыка Stellarity.
-
-#### [MODIFY] [a_main.mcfunction (respawning)](file:///c:/Users/1/Documents/GitHub/Stellarity-x-True-Ending-Patch/Stellarity_TrueEnding_Patch/data/true_ending/function/respawning/a_main.mcfunction)
-- Делаем файл **пустым**. Отключает анимацию и логику возрождения дракона из True Ending. Всю работу с Алтарем, установкой 4-х кристаллов и Яйцом Дракона возьмет на себя Stellarity.
-
-#### [MODIFY] [tick.mcfunction](file:///c:/Users/1/Documents/GitHub/Stellarity-x-True-Ending-Patch/Stellarity_TrueEnding_Patch/data/true_ending/function/tick.mcfunction)
-- *Опционально*: если пустые функции не сработают гладко, мы можем переопределить `tick.mcfunction` из True Ending, удалив вызовы `#ambience`, `#music` и `#respawn animation`, оставив только вызов `#dragon` (`true_ending:boss/a_main`) и счетчики. Это более чистый подход.
+#### [MODIFY] [load.mcfunction](file:///c:/Users/1/Documents/GitHub/Stellarity-x-True-Ending-Patch/Stellarity_TrueEnding_Patch/data/ste_te_patch/function/load.mcfunction)
+- Add new scoreboards: `ste_te_timer`, `ste_te_afk_time`, `ste_te_dive_count`, `ste_te_charges`, etc.
 
 ---
 
-### Сохраняемые элементы (Без изменений)
-- **Логика боя (True Ending)**: Оставляем нетронутыми `true_ending:boss/*`, где спавнятся фантомы, ударные волны и ультра-фаерболы.
-- **Генерация и Алтарь (Stellarity)**: Структуры Stellarity остаются без изменений, так как True Ending не вмешивается в генерацию мира.
+### Mechanics Modules (in `mechanics/` folder)
+
+#### [NEW] [meteor_rain.mcfunction](file:///c:/Users/1/Documents/GitHub/Stellarity-x-True-Ending-Patch/Stellarity_TrueEnding_Patch/data/ste_te_patch/function/mechanics/meteor_rain.mcfunction)
+- Triggered once when HP <= 20%.
+- Spawns a marker array, creates shadow particles, and drops `fireball` entities from the sky.
+
+#### [NEW] [air_ring.mcfunction](file:///c:/Users/1/Documents/GitHub/Stellarity-x-True-Ending-Patch/Stellarity_TrueEnding_Patch/data/ste_te_patch/function/mechanics/air_ring.mcfunction)
+- Triggered every 30s. Targets `@a[y=85..]`.
+- Creates `dragon_breath` ring, applies Darkness, modifies `Motion` to pull players down.
+
+#### [NEW] [gravity_collapse.mcfunction](file:///c:/Users/1/Documents/GitHub/Stellarity-x-True-Ending-Patch/Stellarity_TrueEnding_Patch/data/ste_te_patch/function/mechanics/gravity_collapse.mcfunction)
+- AFK punishment system. If AFK score > 13s, spawns `area_effect_cloud` at pillars doing damage and Levitation.
+
+#### [NEW] [royal_laser.mcfunction](file:///c:/Users/1/Documents/GitHub/Stellarity-x-True-Ending-Patch/Stellarity_TrueEnding_Patch/data/ste_te_patch/function/mechanics/royal_laser.mcfunction)
+- 5-min cooldown after Phase 2. Summons 8 fireballs radially and casts an `end_rod` sweeping beam.
+
+#### [NEW] [fake_dive.mcfunction](file:///c:/Users/1/Documents/GitHub/Stellarity-x-True-Ending-Patch/Stellarity_TrueEnding_Patch/data/ste_te_patch/function/mechanics/fake_dive.mcfunction)
+- Hooks into TE's dive logic. On the 3rd dive in the cycle, dragon teleports `^ ^15 ^` instead of crashing, leaving a dragon breath trap.
+
+#### [NEW] [adaptive_ai.mcfunction](file:///c:/Users/1/Documents/GitHub/Stellarity-x-True-Ending-Patch/Stellarity_TrueEnding_Patch/data/ste_te_patch/function/mechanics/adaptive_ai.mcfunction)
+- Runs every 100 ticks (5s). Scans player states.
+- Applies tags to the dragon to queue specific counter-attacks (Meteor, Tail Whip, Mirror Clones).
+- Includes logic to prevent back-to-back duplicate attacks.
+
+#### [NEW] [destructive_fireballs.mcfunction](file:///c:/Users/1/Documents/GitHub/Stellarity-x-True-Ending-Patch/Stellarity_TrueEnding_Patch/data/ste_te_patch/function/mechanics/destructive_fireballs.mcfunction)
+- Modifies naturally spawning or boss-fired fireballs to have `ExplosionPower:3b`.
+
+#### [NEW] [crystal_guards.mcfunction](file:///c:/Users/1/Documents/GitHub/Stellarity-x-True-Ending-Patch/Stellarity_TrueEnding_Patch/data/ste_te_patch/function/mechanics/crystal_guards.mcfunction)
+- On boss spawn, creates a Phantom (`Size:3`, 20HP) and an `interaction` hitbox at each crystal.
+- `interaction` blocks hits until the Phantom dies.
+
+#### [NEW] [tail_whip.mcfunction](file:///c:/Users/1/Documents/GitHub/Stellarity-x-True-Ending-Patch/Stellarity_TrueEnding_Patch/data/ste_te_patch/function/mechanics/tail_whip.mcfunction)
+- Close-range punish. Uses `end_rod` particles and `tp` manipulation or high `ExplosionPower:0b` creepers to simulate 15-block knockback.
+
+#### [NEW] [mirror_clones.mcfunction](file:///c:/Users/1/Documents/GitHub/Stellarity-x-True-Ending-Patch/Stellarity_TrueEnding_Patch/data/ste_te_patch/function/mechanics/mirror_clones.mcfunction)
+- Triggers at 25% HP. Summons 2 decoy dragons mimicking motion. If a decoy is hit, immediately transitions all dragons into the TE Triple Dive phase.
+
+#### [NEW] [island_wrath.mcfunction](file:///c:/Users/1/Documents/GitHub/Stellarity-x-True-Ending-Patch/Stellarity_TrueEnding_Patch/data/ste_te_patch/function/mechanics/island_wrath.mcfunction)
+- Teleports dragon to a randomized arena point. Spawns particle cylinder. Deals map-wide knockback and damage.
+
+#### [NEW] [shard_charge.mcfunction](file:///c:/Users/1/Documents/GitHub/Stellarity-x-True-Ending-Patch/Stellarity_TrueEnding_Patch/data/ste_te_patch/function/mechanics/shard_charge.mcfunction)
+- Tracks crystal destruction, leaves a marker. Dragon collision with marker gives a `$charges` score. >=3 charges triggers early Laser phase.
+
+#### [NEW] [heavy_armor.mcfunction](file:///c:/Users/1/Documents/GitHub/Stellarity-x-True-Ending-Patch/Stellarity_TrueEnding_Patch/data/ste_te_patch/function/mechanics/heavy_armor.mcfunction)
+- Scans `Inventory[{id:"minecraft:netherite_*"}]`. Applies dynamic `Slowness` based on piece count.
+
+#### [NEW] [anti_mace_perch.mcfunction](file:///c:/Users/1/Documents/GitHub/Stellarity-x-True-Ending-Patch/Stellarity_TrueEnding_Patch/data/ste_te_patch/function/mechanics/anti_mace_perch.mcfunction)
+- Triggers when Dragon enters perch state. Scans for Mace in player hands. Drops high-damage upward-knockback AEC over the portal to deny plunge attacks.
 
 ## Verification Plan
 
-### Manual Verification
-1. Зайти в Энд и убедиться, что Алтарь и Кристаллы сгенерировались от Stellarity.
-2. Начать бой с Драконом.
-3. Проверить:
-   - Играет ли музыка из Stellarity.
-   - Использует ли Дракон новые атаки (фантомы, dive, ударные волны) из True Ending.
-   - Отсутствуют ли стандартные атаки Stellarity, которые могли бы конфликтовать (например, "шар порчи" или shulker hell).
-4. Убить дракона и проверить, что алтарь корректно активировался и появилось Яйцо Дракона (от Stellarity).
-5. Попробовать призвать дракона заново 4-мя кристаллами, чтобы убедиться, что респавн работает штатно через Stellarity.
+### Automated/Manual Verification
+- I will write the code for all 14 files and link them in the tick loop.
+- We will need to verify syntax across all 14 files, especially handling `interaction` entities and complex `data merge` commands.
+- You will need to manually load the datapack in-game and spawn the dragon to test if the TPS drops and if mechanics trigger at the correct thresholds.

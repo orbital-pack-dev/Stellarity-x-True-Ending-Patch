@@ -28,6 +28,10 @@ execute if score #crystal_count stellarity.misc matches 0.. run scoreboard playe
 execute in the_end as @e[type=ender_dragon,tag=stellarity.ender_dragon,tag=!trueEnding_mirrordragon,tag=!ste_te_crystals_gone] run data modify entity @s Invulnerable set value 1b
 execute in the_end as @e[type=ender_dragon,tag=stellarity.ender_dragon,tag=!trueEnding_mirrordragon,tag=!ste_te_crystals_gone,tag=!stellarity.dragon.invulnerable] run tag @s add stellarity.dragon.invulnerable
 
+# ЖЕСТКАЯ НЕУЯЗВИМОСТЬ: Резистанс 255 и хил до максимума
+execute in the_end as @e[type=ender_dragon,tag=stellarity.ender_dragon,tag=!trueEnding_mirrordragon,tag=!ste_te_crystals_gone] run effect give @s resistance 5 255 true
+execute in the_end as @e[type=ender_dragon,tag=stellarity.ender_dragon,tag=!trueEnding_mirrordragon,tag=!ste_te_crystals_gone] run data merge entity @s {Health:1024f}
+
 # ---------- СИГНАЛ СБРОСА ЩИТА (при первом обнулении кристаллов) ----------
 # Если Stellarity видит 0 кристаллов И флаг ещё не взведён → выполняем переход
 execute in the_end positioned 0 65 0 if entity @p[distance=..128] if score #crystal_count stellarity.misc matches 0 as @e[type=ender_dragon,tag=trueEnding_dragon_particlechecked,tag=!trueEnding_mirrordragon,tag=!ste_te_crystals_gone] at @s run function ste_te_patch:crystal_shield_drop
