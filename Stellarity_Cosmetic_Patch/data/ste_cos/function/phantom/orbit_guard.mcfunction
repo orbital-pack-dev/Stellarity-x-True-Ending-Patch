@@ -12,8 +12,8 @@ scoreboard players operation #current_id ste_cos.flags = @s ste_cos.id
 # Поворот маркера (~4°/тик)
 tp @s ~ ~ ~ ~4 ~
 
-# Фантом на орбиту (горизонталь, высота маркера сохраняется)
-execute at @s as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^4
+# Фантом на орбиту (горизонталь, высота на 3 блока выше кристалла, радиус 7)
+execute at @s positioned ~ ~3 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^7
 
 # Зафиксировать взгляд фантома к несчастию (смотрит на кристалл)
-execute at @s as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ~ ~ ~ ~ ~
+execute at @s positioned ~ ~3 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ~ ~ ~ ~ ~

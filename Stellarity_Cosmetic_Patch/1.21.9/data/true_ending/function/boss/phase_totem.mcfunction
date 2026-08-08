@@ -17,14 +17,14 @@ tag @s add trueEnding_inattack
 execute if score @s trueEnding_bosstime matches 3001 run kill @e[type=marker,tag=trueEnding_shockwave]
 execute if score @s trueEnding_bosstime matches 3001 run data modify entity @s Invulnerable set value 1b
 execute if score @s trueEnding_bosstime matches 3001.. run data modify entity @s DragonPhase set value 5
-execute if score @s trueEnding_bosstime matches 3001..3030 at @s run tp @s 0 ~.5 0
+execute if score @s trueEnding_bosstime matches 3001..3030 run tp @s ~ ~.5 ~
 execute if score @s trueEnding_bosstime matches 3031..3040 run tp @s ~ ~.25 ~
 
 
 execute if score @s trueEnding_bosstime matches 3050..3059 run tp @s ~ ~ ~ ~20 ~
 execute if score @s trueEnding_bosstime matches 3060..3069 run tp @s ~ ~ ~ ~10 ~
 
-execute if score @s trueEnding_bosstime matches 3001 run tp @s 0 80 0
+execute if score @s trueEnding_bosstime matches 3001 run tp @s 0 67 0
 
 #AAAAAA THE FINAL HIT OMG
 execute if score @s trueEnding_bosstime matches 3060.. run execute if predicate true_ending:chance/8_percent run playsound minecraft:ambient.basalt_deltas.mood hostile @a[distance=..128] ~ ~ ~ 6 1.2
