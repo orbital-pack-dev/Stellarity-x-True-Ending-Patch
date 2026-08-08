@@ -13,5 +13,14 @@
         "color": "#CB4BFF"
       }
     ]
+  },
+  "overlays": {
+    "entries": [
+      {
+        "directory": "1.21.9",
+        "min_format": 88,
+        "max_format": 9999
+      }
+    ]
   }
 }

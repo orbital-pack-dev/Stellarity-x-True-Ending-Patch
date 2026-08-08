@@ -1,15 +1,22 @@
 # =====================================================================
 # ste_cos:egg/egg_tick
-# Фича C. Подсветка Яйца-Дракона.
+# Фича C. Подсветка Яйца-Дракона (только когда яйцо реально существует).
 #
-# Просто и надёжно: на центральном портале (где появляется яйцо после
-# победы) держим маркер с заметными частицами. Играющий всегда видит,
-# где искать яйцо. Никакого сканирования и ходячих маркеров.
+# Логика (по схеме):
+#   - маркер egg_tracker стоит на яйце (спавнится на 0 66 0).
+#   - каждый тик: если в позиции маркера/вокруг есть блок dragon_egg —
+#     держим маркер там и пускаем частицы ВОКРУГ яйца.
+#   - если яйца в текущем месте нет (игрок кликнул — оно телепортнулось) —
+#     ищем новый блок яйца в радиусе X±15 / Y±7 вокруг 0 66 0 и
+#     перепривязываем маркер на найденное.
+#   - если яйца вообще нет (дракон ещё не побеждён) — частиц нет.
 # =====================================================================
 
-# Создаём маркер на месте портала, если его нет
-execute in minecraft:the_end unless entity @e[type=marker,tag=ste_cos_egg_marker] run summon marker 0 69 0 {Tags:["ste_cos_egg_marker"]}
+# Создаём маркер на алтаре, если его нет
+execute in minecraft:the_end unless entity @e[type=marker,tag=ste_cos_egg_tracker] run summon marker 0 66 0 {Tags:["ste_cos_egg_tracker"]}
 
-# Частицы вокруг маркера (световой столб, хорошо видно)
-execute in minecraft:the_end at @e[type=marker,tag=ste_cos_egg_marker,limit=1] run particle end_rod ~ ~0.5 ~ 0.5 1 0.5 0 20 force
-execute in minecraft:the_end at @e[type=marker,tag=ste_cos_egg_marker,limit=1] run particle portal ~ ~1 ~ 0.2 2 0.2 0.02 20 force
+# --- 1. Если яйцо прямо под/в маркере — держим и светим ---
+execute in minecraft:the_end as @e[type=marker,tag=ste_cos_egg_tracker,limit=1] at @s if block ~ ~ ~ minecraft:dragon_egg run function ste_cos:egg/egg_glow
+
+# --- 2. Если под маркером яйца НЕТ — искать его и перепривязать ---
+execute in minecraft:the_end as @e[type=marker,tag=ste_cos_egg_tracker,limit=1] at @s unless block ~ ~ ~ minecraft:dragon_egg run function ste_cos:egg/egg_find
