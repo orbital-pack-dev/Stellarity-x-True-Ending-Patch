@@ -1,12 +1,8 @@
 {
   "pack": {
     "pack_format": 107,
-    "min_format": 71,
-    "max_format": 9999,
-    "supported_formats": {
-      "min_inclusive": 71,
-      "max_inclusive": 9999
-    },
+    "min_format": [94, 1],
+    "max_format": [107, 1],
     "description": [
       {
         "text": "Stellarity",
@@ -30,12 +26,8 @@
     "entries": [
       {
         "directory": "1.21.9",
-        "min_format": 88,
-        "max_format": 9999,
-        "formats": {
-          "min_inclusive": 88,
-          "max_inclusive": 9999
-        }
+        "min_format": [88, 1],
+        "max_format": [107, 1]
       }
     ]
   }

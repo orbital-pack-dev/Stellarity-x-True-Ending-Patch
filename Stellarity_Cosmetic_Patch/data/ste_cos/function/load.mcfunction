@@ -14,3 +14,9 @@ scoreboard players set $guard_spawned ste_cos.flags 0
 scoreboard players set $tall ste_cos.egg 0
 scoreboard players set $xpx ste_cos.egg 0
 scoreboard players set $zpx ste_cos.egg 0
+
+# Счётчики сканера хоруса
+scoreboard players set $cxn ste_cos.flags 0
+scoreboard players set $czn ste_cos.flags 0
+scoreboard players set $pull_timer ste_cos.flags 0
+scoreboard players set $portal_timer ste_cos.flags 0
