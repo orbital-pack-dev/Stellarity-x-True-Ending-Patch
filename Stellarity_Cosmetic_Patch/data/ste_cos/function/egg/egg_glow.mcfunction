@@ -1,9 +1,19 @@
-# =====================================================================
 # ste_cos:egg/egg_glow
-# AT маркера (стоящего на блоке яйца). Частицы вокруг яйца-блока.
-# =====================================================================
+# Запускается каждый тик если маркер стоит на Яйце Дракона.
+# Позиция: центр блока.
 
-execute at @s run particle minecraft:dust_color_transition{from_color:[0.50,0.00,0.80],scale:1.2,to_color:[1.00,0.00,1.00]} ~0.5 ~0.5 ~0.5 0.3 0.3 0.3 0 10 force
-execute at @s run particle minecraft:dust_color_transition{from_color:[1.00,0.00,1.00],scale:0.8,to_color:[0.10,0.00,0.30]} ~0.5 ~0.5 ~0.5 0.4 0.4 0.4 0 5 force
-execute at @s run particle minecraft:end_rod ~0.5 ~0.6 ~0.5 0.4 0.4 0.4 0 2 force
-execute at @s run particle minecraft:portal ~0.5 ~0.5 ~0.5 0.5 0.5 0.5 0.05 10 force
+# Добавляем таймер на маркер, если его нет
+scoreboard players add @s ste_cos.flags 1
+
+# --- Непрерывные частицы (каждый тик) ---
+# Базовое фиолетовое свечение внутри яйца
+execute positioned ~0.5 ~0.2 ~0.5 run particle minecraft:dust_color_transition{from_color:[0.3,0.0,0.5],scale:0.7,to_color:[0.6,0.1,0.7]} ~ ~ ~ 0.1 0.2 0.1 0.01 2 force
+
+# Редкие вспышки (искры)
+execute if predicate kohara:chance/6percent positioned ~0.5 ~0.3 ~0.5 run particle minecraft:end_rod ~ ~ ~ 0.15 0.3 0.15 0.02 1 force
+
+# --- Оркестратор пульса (раз в 30 тиков) ---
+execute if score @s ste_cos.flags matches 30.. run scoreboard players set @s ste_cos.flags 0
+
+# Если сейчас 0-й тик пульса
+execute if score @s ste_cos.flags matches 0 run function ste_cos:egg/egg_pulse_trigger
