@@ -10,7 +10,7 @@
 tp @s ~ ~ ~ ~4 ~
 
 # Фантом на орбиту (горизонталь, высота маркера сохраняется)
-execute at @s run tp @e[type=phantom,tag=ste_cos_guard,distance=..6,limit=1] ^ ^ ^4
+execute at @s run tp @e[type=phantom,tag=ste_cos_guard,distance=..32,limit=1,sort=nearest] ^ ^ ^4
 
 # Зафиксировать взгляд фантома к несчастию (смотрит на кристалл)
-execute at @s run tp @e[type=phantom,tag=ste_cos_guard,distance=..6,limit=1] ~ ~ ~ ~ ~
+execute at @s run tp @e[type=phantom,tag=ste_cos_guard,distance=..32,limit=1,sort=nearest] ~ ~ ~ ~ ~
