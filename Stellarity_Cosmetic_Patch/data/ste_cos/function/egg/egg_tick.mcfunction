@@ -1,26 +1,15 @@
 # =====================================================================
 # ste_cos:egg/egg_tick
-# Фича C. Помогает найти Яйцо-Дракона.
+# Фича C. Подсветка Яйца-Дракона.
 #
-# Маркер ste_cos_egg_scanner буквально "топает" по кубу вокруг центра:
-#   поднимается вверх по столбцу, затем переходит на следующий (X), затем
-#   на следующий ряд (Z). Каждый шаг проверяет, не стоит ли в его позиции
-#   блок dragon_egg — если да, ставит маркер-указатель над яйцом.
-#
-# Маркер двигается относительными tp (надёжно, без score-подстановки в tp).
-# Счётчики (управление шагом) — в scoreboard ste_cos.egg.
-#
-# Вызывается каждый тик из main_tick.
+# Просто и надёжно: на центральном портале (где появляется яйцо после
+# победы) держим маркер с заметными частицами. Играющий всегда видит,
+# где искать яйцо. Никакого сканирования и ходячих маркеров.
 # =====================================================================
 
-# --- если сканера нет — создать на старте (X=-6, Z=-6, Y=58) ---
-execute in minecraft:the_end unless entity @e[type=marker,tag=ste_cos_egg_scanner] run summon marker -6 58 -6 {Tags:["ste_cos_egg_scanner"]}
+# Создаём маркер на месте портала, если его нет
+execute in minecraft:the_end unless entity @e[type=marker,tag=ste_cos_egg_marker] run summon marker 0 69 0 {Tags:["ste_cos_egg_marker"]}
 
-# --- обрабатываем текущую клетку (маркер в позиции сканирования) ---
-execute in minecraft:the_end as @e[type=marker,tag=ste_cos_egg_scanner] at @s run function ste_cos:egg/egg_check_cell
-
-# --- продвигаем сканер (вызываем на маркере) ---
-execute in minecraft:the_end as @e[type=marker,tag=ste_cos_egg_scanner] at @s run function ste_cos:egg/egg_step
-
-# --- визуал вокруг найденного яйца ---
-execute in minecraft:the_end as @e[type=marker,tag=ste_cos_egg_marker] at @s run function ste_cos:egg/egg_marker_fx
+# Частицы вокруг маркера (световой столб, хорошо видно)
+execute in minecraft:the_end at @e[type=marker,tag=ste_cos_egg_marker,limit=1] run particle end_rod ~ ~0.5 ~ 0.5 1 0.5 0 20 force
+execute in minecraft:the_end at @e[type=marker,tag=ste_cos_egg_marker,limit=1] run particle portal ~ ~1 ~ 0.2 2 0.2 0.02 20 force

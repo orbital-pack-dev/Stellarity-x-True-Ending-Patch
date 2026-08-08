@@ -1,33 +1,16 @@
 {
   "pack": {
     "pack_format": 107,
-    "min_format": [94, 1],
-    "max_format": [107, 1],
+    "min_format": 71,
+    "max_format": 9999,
+    "supported_formats": {
+      "min_inclusive": 71,
+      "max_inclusive": 9999
+    },
     "description": [
       {
-        "text": "Stellarity",
+        "text": "Stellarity x True Ending Cosmetic Patch",
         "color": "#CB4BFF"
-      },
-      {
-        "text": " x ",
-        "color": "white"
-      },
-      {
-        "text": "True Ending",
-        "color": "light_purple"
-      },
-      {
-        "text": " Cosmetic Patch",
-        "color": "#89a0b8"
-      }
-    ]
-  },
-  "overlays": {
-    "entries": [
-      {
-        "directory": "1.21.9",
-        "min_format": [88, 1],
-        "max_format": [107, 1]
       }
     ]
   }
