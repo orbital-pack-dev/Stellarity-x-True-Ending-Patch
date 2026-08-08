@@ -25,7 +25,7 @@ execute if score @s trueEnding_bosstime matches 3050..3059 run tp @s ~ ~ ~ ~20 ~
 execute if score @s trueEnding_bosstime matches 3060..3069 run tp @s ~ ~ ~ ~10 ~
 
 # BUG FIX (Пункт 4): ~2 → ~14 (на 12 блоков выше над порталом)
-execute if score @s trueEnding_bosstime matches 3001 positioned over motion_blocking run tp @s ~ ~14 ~
+execute if score @s trueEnding_bosstime matches 3001 positioned 0 65 0 positioned over motion_blocking run tp @s 0 ~14 0
 
 #AAAAAA THE FINAL HIT OMG
 execute if score @s trueEnding_bosstime matches 3060.. run execute if predicate true_ending:chance/8_percent run playsound minecraft:ambient.basalt_deltas.mood hostile @a[distance=..128] ~ ~ ~ 6 1.2

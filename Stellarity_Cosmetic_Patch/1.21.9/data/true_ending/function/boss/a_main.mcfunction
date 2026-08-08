@@ -57,7 +57,7 @@ execute unless score @s trueEnding_bosstime matches 3000.. if score @s trueEndin
 
 # PATCH (п.4): считать живые кристаллы. Пока кристаллы есть — НЕ снимать неуязвимость.
 scoreboard players reset #ste_cos_crystals ste_cos.flags
-execute as @e[type=end_crystal,distance=..200,nbt={ShowBottom:1b}] run scoreboard players add #ste_cos_crystals ste_cos.flags 1
+execute as @e[type=end_crystal,distance=..200,nbt=!{ShowBottom:0b}] run scoreboard players add #ste_cos_crystals ste_cos.flags 1
 execute unless score @s[tag=!trueEnding_inattack] trueEnding_bosstime matches 3000.. unless score @s trueEnding_health_percent matches ..100 if score #ste_cos_crystals ste_cos.flags matches 0 run data modify entity @s Invulnerable set value 0b
 
 #crystal count
