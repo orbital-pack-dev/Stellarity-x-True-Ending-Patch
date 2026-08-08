@@ -6,11 +6,14 @@
 # Радиус поиска маленький (6): работаем только со своим фантомом.
 # =====================================================================
 
+# Сохраняем ID маркера
+scoreboard players operation #current_id ste_cos.flags = @s ste_cos.id
+
 # Поворот маркера (~4°/тик)
 tp @s ~ ~ ~ ~4 ~
 
 # Фантом на орбиту (горизонталь, высота маркера сохраняется)
-execute at @s run tp @e[type=phantom,tag=ste_cos_guard,distance=..32,limit=1,sort=nearest] ^ ^ ^4
+execute at @s as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^4
 
 # Зафиксировать взгляд фантома к несчастию (смотрит на кристалл)
-execute at @s run tp @e[type=phantom,tag=ste_cos_guard,distance=..32,limit=1,sort=nearest] ~ ~ ~ ~ ~
+execute at @s as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ~ ~ ~ ~ ~

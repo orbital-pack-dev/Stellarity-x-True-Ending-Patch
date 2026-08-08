@@ -3,5 +3,6 @@
 # AS marker AT маркера. Кристалл-хозяин умер → убить фантома и маркер.
 # =====================================================================
 
-execute at @s run kill @e[type=phantom,tag=ste_cos_guard,distance=..32,limit=1,sort=nearest]
+scoreboard players operation #current_id ste_cos.flags = @s ste_cos.id
+execute at @s as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run kill @s
 kill @s

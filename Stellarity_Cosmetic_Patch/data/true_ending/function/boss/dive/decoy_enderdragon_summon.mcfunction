@@ -14,7 +14,7 @@
 # =====================================================================
 
 # Первая копия (bosstime 1020) — справа, высоко
-execute if score @s trueEnding_bosstime matches 1020 run summon ender_dragon ~12 ~128 ~10 {Tags:["trueEnding_mirrordragon","temp","stellarity.ender_dragon","stellarity.dragon.invulnerable","smithed.entity"],NoAI:1b,Silent:1b,Invulnerable:1b}
+execute if score @s trueEnding_bosstime matches 1020 run summon ender_dragon ~12 ~128 ~10 {Tags:["trueEnding_mirrordragon","trueEnding_dragon_particlechecked","stellarity.ender_dragon","stellarity.dragon.invulnerable","smithed.strict","refresh_entity_exists","smithed.entity"],NoAI:0b,Silent:1b,Invulnerable:1b}
 
 # Вторая копия (bosstime 1050) — слева, высоко
-execute if score @s trueEnding_bosstime matches 1050 run summon ender_dragon ~-12 ~128 ~10 {Tags:["trueEnding_mirrordragon","temp","stellarity.ender_dragon","stellarity.dragon.invulnerable","smithed.entity"],NoAI:1b,Silent:1b,Invulnerable:1b}
+execute if score @s trueEnding_bosstime matches 1050 run summon ender_dragon ~-12 ~128 ~10 {Tags:["trueEnding_mirrordragon","trueEnding_dragon_particlechecked","stellarity.ender_dragon","stellarity.dragon.invulnerable","smithed.strict","refresh_entity_exists","smithed.entity"],NoAI:0b,Silent:1b,Invulnerable:1b}

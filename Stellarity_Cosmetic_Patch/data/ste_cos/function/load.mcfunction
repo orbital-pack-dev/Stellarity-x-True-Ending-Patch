@@ -11,3 +11,6 @@ scoreboard objectives add ste_cos.flags dummy "STE-COS Flags"
 
 # Таймер уборки хоруса (~30 сек)
 scoreboard players set $pull_timer ste_cos.flags 0
+
+# ID для привязки маркеров к фантомам
+scoreboard objectives add ste_cos.id dummy "STE-COS IDs"
