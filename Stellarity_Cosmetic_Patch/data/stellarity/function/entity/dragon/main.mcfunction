@@ -1,4 +1,5 @@
 # End Crystal stuff
+execute if entity @s[tag=trueEnding_mirrordragon] run return 0
   scoreboard players reset #crystal_count stellarity.misc
   # Count Crystals (only the ones with the bottom part count)
     execute as @e[type=end_crystal,nbt={ShowBottom:1b},distance=..200] at @s run function stellarity:entity/dragon/crystal/loop
@@ -19,9 +20,48 @@
         scoreboard players operation @s stellarity.dragon.health_percent *= #100 stellarity.misc
         scoreboard players operation @s stellarity.dragon.health_percent /= #max stellarity.misc
         # Prevent Crystals from healing the Dragon
-          execute if score @s stellarity.dragon.health_old < @s stellarity.dragon.health run function stellarity:entity/dragon/prevent_heal
-          scoreboard players operation @s stellarity.dragon.health_old = @s stellarity.dragon.health
-          # Update bossbar
+          # =====================================================================
+# OVERRIDE: stellarity:entity/dragon/main (Косметический Патч)
+# 
+# Изменения для совместимости с True Ending:
+# 1. Запрет выполнения ИИ Stellarity (и боссбара) для клонов (фейковые HP).
+# 2. Удален shulker_hell и take_off (спам Шалкерами в небе при полете).
+# 3. Фикс фаз: Фаза не сбрасывается на 0 (кружение), если bosstime 1+ (активны стадии True Ending).
+# =====================================================================
+
+# 1. Запрет выполнения ИИ Stellarity для клонов (чтобы не прыгал боссбар)
+execute if entity @s[tag=trueEnding_mirrordragon] run return 0
+
+# Сохраняем % здоровья в misc
+scoreboard players operation @s stellarity.misc = @s stellarity.dragon.health_percent
+
+# Управляем частицами ауры вокруг дракона при наличии щита
+execute if entity @s[tag=stellarity.dragon.invulnerable] run function stellarity:entity/dragon/shield/tick
+
+# Если Дракон получает урон в стадии Неуязвимости (True Ending Boss Shield):
+execute if entity @s[tag=stellarity.dragon.invulnerable] if score @s stellarity.dragon.health < @s stellarity.dragon.health_old at @s run playsound minecraft:item.shield.block hostile @a[distance=..64] ~ ~ ~ 2 1
+execute if entity @s[tag=stellarity.dragon.invulnerable] if score @s stellarity.dragon.health < @s stellarity.dragon.health_old at @s run particle enchant ~ ~3 ~ 2 2 2 0.5 50 force
+
+# Предотвращение лечения (встроенное в Stellarity)
+execute if score @s stellarity.dragon.health_old < @s stellarity.dragon.health run function stellarity:entity/dragon/prevent_heal
+scoreboard players operation @s stellarity.dragon.health_old = @s stellarity.dragon.health
+
+# Устанавливаем фазу 0, ЕСЛИ это не фаза финала мода True Ending
+execute unless score @s trueEnding_bosstime matches 1.. if score @s[tag=stellarity.dragon.invulnerable] stellarity.misc matches 2..7 run data modify entity @s DragonPhase set value 0
+
+# === АТАКИ STELLARITY ===
+# (shulker_hell и take_off были удалены для устранения спама звуками Шалкеров)
+
+# Остальные атаки
+execute if score @s[tag=!stellarity.at_portal,scores={stellarity.dragon.health_percent=..99}] stellarity.misc matches 1 run function stellarity:entity/dragon/attacks/fireball/main
+execute if score @s[tag=!stellarity.at_portal,scores={stellarity.dragon.health_percent=..99}] stellarity.misc matches 2 run function stellarity:entity/dragon/attacks/magic_dive/main
+execute if score @s[tag=!stellarity.at_portal,scores={stellarity.dragon.health_percent=..99}] stellarity.misc matches 3 run function stellarity:entity/dragon/attacks/minions/main
+
+execute if score @s[tag=stellarity.at_portal] stellarity.misc matches 1..2 run function stellarity:entity/dragon/attacks/roar/main
+execute if score @s[tag=stellarity.at_portal] stellarity.misc matches 3..4 run function stellarity:entity/dragon/attacks/shulker_breath/main
+
+execute if score @s[tag=!stellarity.at_portal] stellarity.misc matches 8.. run function stellarity:entity/dragon/attacks/meteor_shower/main
+# Update bossbar
             execute store result bossbar stellarity:ender_dragon value run scoreboard players get @s stellarity.dragon.health
 
           execute if predicate kohara:chance/6percent run function stellarity:entity/dragon/beam_thingy/spawn
@@ -55,10 +95,10 @@
           execute if score @s stellarity.misc matches 5 run function stellarity:entity/dragon/attacks/roar_breath/main
           
           # [PATCHED]: Do NOT allow shulker_hell / fireballs if TrueEnding Phase Totem is active!
-          execute unless score @s trueEnding_bosstime matches 1.. unless score @s stellarity.dragon.shulker_hell matches 4 as @e[type=dragon_fireball] at @s run function stellarity:entity/dragon/attacks/fireball/summon
-          execute unless score @s trueEnding_bosstime matches 1.. if score @s stellarity.dragon.shulker_hell matches 4 as @e[type=dragon_fireball] at @s run function stellarity:entity/dragon/attacks/shulker_hell/trigger
+          execute as @e[type=dragon_fireball] at @s run function stellarity:entity/dragon/attacks/fireball/summon
+          execute if score @s stellarity.dragon.shulker_hell matches 4 as @e[type=dragon_fireball] at @s run function stellarity:entity/dragon/attacks/shulker_hell/trigger
           
-          execute unless score @s trueEnding_bosstime matches 1.. if score @s[tag=!stellarity.at_portal,scores={stellarity.dragon.health_percent=..99}] stellarity.misc matches 4 run \
+          execute if score @s[tag=!stellarity.at_portal,scores={stellarity.dragon.health_percent=..99}] stellarity.misc matches 4 run \
           function stellarity:entity/dragon/attacks/take_off/main
           execute if score @s[scores={stellarity.dragon.perch_cooldown=1..}] stellarity.misc matches 2..3 run \
           data modify entity @s DragonPhase set value 0
@@ -83,5 +123,4 @@
 
         execute as @e[type=shulker,tag=stellarity.dragon_shulker] at @s run particle witch ~ ~0.2 ~ 0.4 0.4 0.4 0.04 1 normal
         execute as @e[type=shulker_bullet,tag=stellarity.dragon_bullet] at @s run function stellarity:entity/dragon/attacks/shulker_hell/loop_as_bullet
-
       team join stellarity.dragon.pacify_others @e[type=enderman,predicate=stellarity:location/dragons_den/in_main_area]

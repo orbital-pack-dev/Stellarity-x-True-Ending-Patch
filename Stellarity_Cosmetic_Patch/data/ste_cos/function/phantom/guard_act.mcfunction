@@ -17,4 +17,8 @@ execute unless entity @a[distance=..20,gamemode=!spectator,gamemode=!creative] r
 
 # Спавним частицы-хвост и ареа-эффект (урон) для фантома в любом состоянии
 execute as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags at @s run particle soul_fire_flame ~ ~0.5 ~ 0.2 0.2 0.2 0.01 5 force
-execute as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags at @s run summon area_effect_cloud ~ ~0.5 ~ {Radius:4.0f,Duration:2,WaitTime:0,Particle:"dragon_breath",Effects:[{id:"minecraft:instant_damage",amplifier:0b,duration:1}]}
+execute as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags at @s run particle dragon_breath ~ ~0.5 ~ 1.5 1.5 1.5 0.01 10 force
+
+# Прямой урон и иссушение игрокам в радиусе 4 блоков
+execute as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags at @s as @a[distance=..4,gamemode=!spectator,gamemode=!creative] run damage @s 2 minecraft:magic
+execute as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags at @s run effect give @a[distance=..4,gamemode=!spectator,gamemode=!creative] minecraft:wither 5 1 true
