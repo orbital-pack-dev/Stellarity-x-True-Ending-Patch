@@ -1,0 +1,31 @@
+{
+        "initializer":{
+          "lifetime": "1",
+          "alpha": "0",
+          "size": "0"
+        },
+        "ticker": {
+        },
+        "limit": 50,
+        "has_physics": false,
+        "random_sprite": true,
+        "kill_when_not_in_view": false,
+        "render_type": "invisible",
+        "offset": [0, 0, 0],
+        "particle_emitters": [
+     {
+       "particle": "davidparticles:underwater",
+       "chance": "(player.inWater() && o.age == 1 && ((o.x - player.x) * (o.x - player.x) + (o.y - player.y) * (o.y - player.y) + (o.z - player.z) * (o.z - player.z)) > 3) ? 0.25 : 0",
+       "x": "0", 
+       "z": "0",
+       "y": "0"
+     },
+     {
+       "particle": "davidparticles:bubble",
+       "chance": "(player.inWater() && object.age == 1) ? 0.07 : 0",
+       "x": "0", 
+       "z": "0",
+       "y": "-5"
+     }
+     ]
+}

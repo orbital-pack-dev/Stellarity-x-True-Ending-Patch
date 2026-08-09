@@ -1,0 +1,14 @@
+{
+	"targets": [
+		"minecraft:jungle",
+		"minecraft:sparse_jungle",
+		"minecraft:bamboo_jungle"
+	],
+	"attributes_modifiers": {
+		"base": {
+		
+		"minecraft:visual/fog_color": "davidparticles:biomes/jungle_fog",
+		"minecraft:visual/sky_color": "davidparticles:biomes/jungle_sky"
+		}
+}
+}

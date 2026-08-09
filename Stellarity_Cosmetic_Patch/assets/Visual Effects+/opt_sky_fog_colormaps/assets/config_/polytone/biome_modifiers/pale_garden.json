@@ -1,0 +1,11 @@
+{
+	"targets": [
+		"minecraft:pale_garden"
+	],
+	"attributes_modifiers": {
+		"base": {
+
+		"minecraft:visual/fog_color": "davidparticles:biomes/pale_garden_fog",
+		"minecraft:visual/sky_color": "davidparticles:biomes/pale_garden_sky"
+		}
+}}

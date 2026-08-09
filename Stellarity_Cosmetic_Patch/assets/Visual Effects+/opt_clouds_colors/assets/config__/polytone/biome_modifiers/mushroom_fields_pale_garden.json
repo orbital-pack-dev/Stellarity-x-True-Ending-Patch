@@ -1,0 +1,14 @@
+{
+	"targets": [
+		"minecraft:mushroom_fields",
+		"minecraft:pale_garden"
+	],
+	"attributes_modifiers": {
+		"base": {
+		"visual/cloud_color": {
+			"argument": "davidparticles:clouds/clouds_pale",
+			"modifier": "override"
+		}
+		}
+}
+}

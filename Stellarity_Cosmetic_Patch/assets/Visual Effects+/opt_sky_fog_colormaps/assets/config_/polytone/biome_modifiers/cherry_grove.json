@@ -1,0 +1,12 @@
+{
+	"targets": [
+		"minecraft:cherry_grove"
+	],
+	"attributes_modifiers": {
+		"base": {
+
+		"minecraft:visual/fog_color": "davidparticles:biomes/cherry_fog",
+		"minecraft:visual/sky_color": "davidparticles:biomes/cherry_sky"
+		}
+}
+}

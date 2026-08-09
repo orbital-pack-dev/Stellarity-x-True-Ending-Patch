@@ -1,0 +1,10 @@
+{
+   "targets": [
+		"minecraft:soul_sand_valley"
+	],
+	"attributes_modifiers": {
+		"base": {
+		"minecraft:visual/fog_color": "0a9da3",
+		"minecraft:visual/sky_color": "0a9da3"
+		}
+}}

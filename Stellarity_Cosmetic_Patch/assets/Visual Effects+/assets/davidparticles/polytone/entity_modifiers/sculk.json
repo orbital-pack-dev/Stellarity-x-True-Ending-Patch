@@ -1,0 +1,12 @@
+{
+   "targets": ["minecraft:player"],
+   "emitters": [
+     {
+       "particle": "davidparticles:sculk",
+       "chance": "(o.biome() == 'minecraft:deep_dark') ? 0.65 : 0.0",
+       "x": "rand()*20 - 10", 
+       "z": "rand()*20 - 10",
+       "y": "rand()*20 - 10"
+     }
+     ]
+}

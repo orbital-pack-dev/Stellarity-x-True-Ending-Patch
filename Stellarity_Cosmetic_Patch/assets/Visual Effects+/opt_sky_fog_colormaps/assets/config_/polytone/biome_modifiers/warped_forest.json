@@ -1,0 +1,10 @@
+{
+	"targets": [
+		"minecraft:warped_forest"
+	],
+	"attributes_modifiers": {
+		"base": {
+		"minecraft:visual/fog_color": "4cb1a8",
+		"minecraft:visual/sky_color": "4cb1a8"
+		}
+}}

@@ -1,0 +1,14 @@
+{
+	"targets": [
+		"minecraft:badlands",
+		"minecraft:eroded_badlands",
+		"minecraft:wooded_badlands"
+	],
+	"attributes_modifiers": {
+		"base": {
+		
+		"visual/water_fog_color": "274c44"
+		
+	}
+}
+}

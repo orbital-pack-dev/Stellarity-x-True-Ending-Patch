@@ -1,0 +1,10 @@
+{
+	"targets": [
+		"minecraft:nether_wastes"
+	],
+	"attributes_modifiers": {
+		"base": {
+		"minecraft:visual/fog_color": "80160d",
+		"minecraft:visual/sky_color": "80160d"
+		}
+}}

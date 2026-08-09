@@ -1,0 +1,25 @@
+{
+  "initializer": {
+    "lifetime": "(70 + r.rand() * 20) * 1.1",
+    "alpha": "0.95",
+    "size": "0",
+    "custom": "clamp(r.gaussian() * 0.5 + 0.5, 0, 1) * 0.75",
+    "hitbox_size": "0.35"
+  },
+  "ticker": {
+    "dx": "bias=o.custom()-0.5; pulse=pow(sin(o.age()*0.05+bias),4); raw=(0.2+0.8*pulse)*(bias*0.6)*sin(0.125*o.age()+bias*2.4)+pulse*clamp(r.gaussian(),-1.6,1.6)*0.0025+clamp(r.gaussian(),-1.6,1.6)*0.0005; clamp(raw,-0.07,0.07)",
+    "dy": "bias=o.custom()-0.5; raw=pow(abs(sin(o.age()*0.12+bias)),8)*(0.016+r.rand()*0.012)+0.035+clamp(r.gaussian(),-1.6,1.6)*0.0005; clamp(raw,-0.015,0.035)",
+    "dz": "bias=o.custom()-0.5; pulse=pow(sin(o.age()*0.05+bias),4); raw=(0.2+0.8*pulse)*(bias*0.6)*cos(0.125*o.age()+bias*2.4)+pulse*clamp(r.gaussian(),-1.6,1.6)*0.0025+clamp(r.gaussian(),-1.6,1.6)*0.0005; clamp(raw,-0.07,0.07)",
+    "size": "(0.9 + o.custom() * 0.2) * 0.2 * min(max(o.age() / 5, 0), 1) * (1 - min(max((o.age() - o.life() + 5) / 5, 0), 1))",
+    "alpha": "0.95 + 0.05 * sin(o.age() * 0.1 + o.custom() * TAU)"
+  },
+  "render_type": "translucent",
+  "liquid_affinity": "non_liquids",
+  "exclusion_radius": 0,
+  "rotation_mode": "movement_aligned",
+  "has_physics": true,
+  "kill_on_contact": false,
+  "kill_when_still": false,
+  "kill_when_not_in_view": false,
+  "limit": 96
+}

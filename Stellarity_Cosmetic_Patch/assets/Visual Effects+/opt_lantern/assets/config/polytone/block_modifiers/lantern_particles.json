@@ -1,0 +1,23 @@
+{
+   "targets": ["minecraft:lantern", "minecraft:soul_lantern",
+                "minecraft:copper_lantern", "minecraft:exposed_copper_lantern", "minecraft:weathered_copper_lantern", "minecraft:oxidized_copper_lantern", "minecraft:waxed_copper_lantern", "minecraft:waxed_exposed_copper_lantern", "minecraft:waxed_weathered_copper_lantern", "minecraft:waxed_oxidized_copper_lantern"
+  ],
+   "particle_emitters": [
+     {
+       "particle": "davidparticles:flame_emitter",
+       "chance": "1",
+       "x": "0.5", 
+       "z": "0.5",
+       "y": "0.5",
+       "spawn_location": "lower_corner"
+     },
+     {
+       "particle": "davidparticles:block_glow_emitter",
+        "chance": "1",
+       "x": "0.5", 
+       "z": "0.5",
+       "y": "0.25",
+       "spawn_location": "lower_corner"
+     }
+     ]
+}

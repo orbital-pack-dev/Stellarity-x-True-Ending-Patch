@@ -1,0 +1,10 @@
+{
+	"targets": [
+		"minecraft:crimson_forest"
+	],
+	"attributes_modifiers": {
+		"base": {
+		"minecraft:visual/fog_color": "bf2626",
+		"minecraft:visual/sky_color": "bf2626"
+		}
+}}

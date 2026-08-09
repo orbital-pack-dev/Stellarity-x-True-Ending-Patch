@@ -1,0 +1,13 @@
+{"targets": [
+		"minecraft:deep_dark"
+	],
+	"attributes_modifiers": {
+		"base": {
+		"minecraft:visual/fog_color": "#117070",
+		"minecraft:visual/sky_color": "davidparticles:biomes/blue_sky"
+		},
+		"post_process": {
+      	"minecraft:visual/fog_color": "#117070"
+    	}
+}
+}

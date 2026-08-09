@@ -1,0 +1,15 @@
+{
+  "default_value": "§cOFF",
+
+  "allowed_values": [
+    "§aON",
+    "§cOFF"
+  ],
+
+  "presets": {
+    "high_quality": "§cOFF",
+    "potato": "§cOFF",
+    "only_fog": "§cOFF",
+    "only_fx": "§aON"
+  }
+}

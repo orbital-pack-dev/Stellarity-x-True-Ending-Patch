@@ -1,0 +1,31 @@
+{
+  "render_type": "additive_translucent",
+  "rotation_mode": "movement_aligned",
+  "random_sprite": true,
+  "lit": true,
+  "light_level": 8,
+  "initializer": {
+    "custom": "(global.dayTime() / 12000 * PI)",
+    "lifetime": "120 + random.rand() * 40",
+    "size": "(2.5 + random.rand() * 1 + 0.5) * 2.0",
+    "alpha": "0.0"
+  },
+  "ticker": {
+    "alpha": "((0.25 + 0.05 * sin(0.2 * o.age)) * (1 - 0.25 * min(global.rain() * 2, 1))) * sin((PI / o.life) * o.age) * clamp((square(o.x - p.x) + square(o.z - p.z) - 1) / 25, 0, 1) * clamp((1024 - (square(o.x - p.x) + square(o.z - p.z))) / 256, 0, 1) * clamp((12 - abs(o.y - p.y)) / 4, 0, 1)",
+    "dx": "cos(o.custom) * -0.001",
+    "dy": "sin(o.custom) * -0.0015",
+    "remove_condition": "(square(o.x - p.x) + square(o.y - p.y) + square(o.z - p.z) > 1024 || abs(o.y - p.y) > 12) ? 1 : 0"
+  },
+  "offset": [
+    0,
+    0.0,
+    0
+  ],
+  "has_physics": false,
+  "kill_when_not_in_view": false,
+  "tick_interval": 2,
+  "kill_on_contact": false,
+  "kill_when_still": false,
+  "exclusion_radius": 1,
+  "colormap": "davidparticles:lightrays/lightrays"
+}

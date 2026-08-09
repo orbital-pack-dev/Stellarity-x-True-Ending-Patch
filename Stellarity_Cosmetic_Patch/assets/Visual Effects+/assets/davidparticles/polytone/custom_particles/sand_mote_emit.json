@@ -1,0 +1,35 @@
+{
+        "initializer":{
+          "lifetime": "70",
+          "alpha": "0",
+          "size": "0",
+          "red": "0.9",
+          "green": "0.9",
+          "blue": "0.9",
+          "hitbox_size": 1.0,
+          "custom": "rand()",
+          "roll": "rand() * 2 * pi"
+        },
+        "ticker": {
+          "alpha": "0.75",
+            "dx": "(0.25 + RAIN * 0.75) + CUSTOM * 0.1 * sin(TIME * 0.2 + CUSTOM * 10)",
+            "dy": "(0.1 * cos(0.1 * TIME))*0.5",
+            "dz": "0.05 * sin(0.01 * TIME + CUSTOM * 8)",
+            "size": "2.5 * pow(min(max(AGE / 10, 0), 1), 0.5) * pow(min(max((LIFETIME - AGE) / 10, 0), 1), 0.5)",
+            "roll": "ROLL + CUSTOM * 0.06",
+            "remove_condition": "DISTANCE_SQUARED > 40*40"
+        },
+        "random_sprite": true,
+        "rotation_mode": "look_at_xyz",
+        "liquid_affinity": "non_liquids",
+        "render_type": "translucent",
+        "lit": true,
+        "light_level": 1,
+        "has_physics": true,
+        "kill_when_not_in_view": false,
+        "kill_on_contact": true,
+        "kill_when_still": true,
+        "offset": [0, -0.5, 0],
+        "exclusion_radius": 3,
+        "colormap": "davidparticles:colormap_sandstorm"
+}

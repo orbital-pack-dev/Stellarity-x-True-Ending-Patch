@@ -1,0 +1,17 @@
+{
+  "default_value": "§bFULL FX",
+
+  "allowed_values": [
+    "§bFULL FX",
+    "§dRAIN SHADER",
+    "§6TEXTURE ONLY",
+    "§cVANILLA"
+  ],
+
+  "presets": {
+    "high_quality": "§bFULL FX",
+    "potato": "§dRAIN SHADER",
+    "only_fog": "§cVANILLA",
+    "only_fx": "§bFULL FX"
+  }
+}

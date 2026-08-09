@@ -1,0 +1,10 @@
+{
+	"targets": [
+		"minecraft:basalt_deltas"
+	],
+	"attributes_modifiers": {
+		"base": {
+		"minecraft:visual/fog_color": "b8aba7",
+		"minecraft:visual/sky_color": "b8aba7"
+		}
+}}

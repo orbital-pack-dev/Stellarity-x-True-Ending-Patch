@@ -1,0 +1,12 @@
+{
+   "targets": ["minecraft:player"],
+   "emitters": [
+     {
+        "particle": "davidparticles:pollen",
+        "chance": "(g.rain() == 0 && o.y() > 47 && o.skyLight() == 15 && (o.biome() == 'minecraft:birch_forest' || o.biome() == 'minecraft:sunflower_plains' || o.biome() == 'minecraft:flower_forest' || o.biome() == 'minecraft:old_growth_birch_forest' || o.biome() == 'minecraft:meadow' || o.biome() == 'minecraft:plains' || o.biome() == 'minecraft:forest' || o.biome() == 'minecraft:cherry_grove')) ? 0.035 : 0",
+        "x": "(rand()*20 - 10)",
+        "y": "(rand()*20 - 10)",
+        "z": "(rand()*20 - 10)"
+     }
+     ]
+}

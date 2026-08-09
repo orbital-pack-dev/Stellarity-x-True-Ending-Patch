@@ -1,0 +1,17 @@
+{
+	"targets": [
+		"minecraft:mushroom_fields"
+	],
+	"attributes_modifiers": {
+		"base": {
+		"visual/fog_start_distance": {
+			"argument": "0 + (min(RAIN * 2, 1) * 144) - (min(max((57 - PLAYER_Y) / 10, 0), 1) * (0.6 + 0.4 * min(max((5 - SKY_LIGHT) / 5, 0), 1))) * ((min(RAIN * 2, 1) * 144) + 0)",
+			"modifier": "override"
+  		},
+		"visual/fog_end_distance": {
+			"argument": "14*RENDER_DISTANCE + (min(RAIN * 2, 1) * (9.5*RENDER_DISTANCE)) - (min(max((57 - PLAYER_Y) / 10, 0), 1) * (0.6 + 0.4 * min(max((5 - SKY_LIGHT) / 5, 0), 1))) * ((min(RAIN * 2, 1) * (9.5*RENDER_DISTANCE)) + 128)",
+			"modifier": "override"
+  		}
+	}
+}
+}
