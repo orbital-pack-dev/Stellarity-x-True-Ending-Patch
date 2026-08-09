@@ -3,805 +3,805 @@
 # schedule ОБНУЛЯЕТ execute-контекст между тиками, поэтому здесь всё через абсолютные
 # координаты и явный селектор маркера, а не через @s/relative.
 
-execute if block -18 65 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 65 -17
-execute if block -18 65 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 65 17
-execute if block -18 67 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 67 -17
-execute if block -18 67 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 67 17
-execute if block -17 60 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 60 -17
-execute if block -17 60 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 60 17
-execute if block -17 65 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 65 -18
-execute if block -17 65 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 65 18
-execute if block -17 67 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 67 -18
-execute if block -17 67 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 67 18
-execute if block -17 72 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 72 -17
-execute if block -17 72 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 72 17
-execute if block 17 60 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 60 -17
-execute if block 17 60 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 60 17
-execute if block 17 65 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 65 -18
-execute if block 17 65 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 65 18
-execute if block 17 67 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 67 -18
-execute if block 17 67 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 67 18
-execute if block 17 72 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 72 -17
-execute if block 17 72 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 72 17
-execute if block 18 65 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 65 -17
-execute if block 18 65 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 65 17
-execute if block 18 67 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 67 -17
-execute if block 18 67 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 67 17
-execute if block -18 60 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 60 -16
-execute if block -18 60 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 60 16
-execute if block -18 72 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 72 -16
-execute if block -18 72 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 72 16
-execute if block -16 60 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 60 -18
-execute if block -16 60 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 60 18
-execute if block -16 72 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 72 -18
-execute if block -16 72 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 72 18
-execute if block 16 60 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 60 -18
-execute if block 16 60 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 60 18
-execute if block 16 72 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 72 -18
-execute if block 16 72 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 72 18
-execute if block 18 60 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 60 -16
-execute if block 18 60 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 60 16
-execute if block 18 72 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 72 -16
-execute if block 18 72 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 72 16
-execute if block -19 66 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 66 -16
-execute if block -19 66 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 66 16
-execute if block -18 64 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 64 -17
-execute if block -18 64 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 64 17
-execute if block -18 68 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 68 -17
-execute if block -18 68 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 68 17
-execute if block -17 64 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 64 -18
-execute if block -17 64 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 64 18
-execute if block -17 68 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 68 -18
-execute if block -17 68 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 68 18
-execute if block -16 66 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 66 -19
-execute if block -16 66 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 66 19
-execute if block 16 66 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 66 -19
-execute if block 16 66 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 66 19
-execute if block 17 64 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 64 -18
-execute if block 17 64 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 64 18
-execute if block 17 68 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 68 -18
-execute if block 17 68 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 68 18
-execute if block 18 64 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 64 -17
-execute if block 18 64 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 64 17
-execute if block 18 68 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 68 -17
-execute if block 18 68 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 68 17
-execute if block 19 66 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 66 -16
-execute if block 19 66 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 66 16
-execute if block -20 59 -13 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 59 -13
-execute if block -20 59 13 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 59 13
-execute if block -20 73 -13 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 73 -13
-execute if block -20 73 13 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 73 13
-execute if block -19 65 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 65 -16
-execute if block -19 65 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 65 16
-execute if block -19 67 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 67 -16
-execute if block -19 67 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 67 16
-execute if block -16 65 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 65 -19
-execute if block -16 65 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 65 19
-execute if block -16 67 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 67 -19
-execute if block -16 67 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 67 19
-execute if block -13 59 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -13 59 -20
-execute if block -13 59 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -13 59 20
-execute if block -13 73 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -13 73 -20
-execute if block -13 73 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -13 73 20
-execute if block 13 59 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 13 59 -20
-execute if block 13 59 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 13 59 20
-execute if block 13 73 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 13 73 -20
-execute if block 13 73 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 13 73 20
-execute if block 16 65 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 65 -19
-execute if block 16 65 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 65 19
-execute if block 16 67 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 67 -19
-execute if block 16 67 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 67 19
-execute if block 19 65 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 65 -16
-execute if block 19 65 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 65 16
-execute if block 19 67 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 67 -16
-execute if block 19 67 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 67 16
-execute if block 20 59 -13 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 59 -13
-execute if block 20 59 13 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 59 13
-execute if block 20 73 -13 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 73 -13
-execute if block 20 73 13 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 73 13
-execute if block -20 61 -14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 61 -14
-execute if block -20 61 14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 61 14
-execute if block -20 71 -14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 71 -14
-execute if block -20 71 14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 71 14
-execute if block -19 64 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 64 -16
-execute if block -19 64 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 64 16
-execute if block -19 68 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 68 -16
-execute if block -19 68 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 68 16
-execute if block -16 64 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 64 -19
-execute if block -16 64 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 64 19
-execute if block -16 68 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 68 -19
-execute if block -16 68 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 68 19
-execute if block -14 61 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -14 61 -20
-execute if block -14 61 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -14 61 20
-execute if block -14 71 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -14 71 -20
-execute if block -14 71 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -14 71 20
-execute if block 14 61 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 14 61 -20
-execute if block 14 61 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 14 61 20
-execute if block 14 71 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 14 71 -20
-execute if block 14 71 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 14 71 20
-execute if block 16 64 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 64 -19
-execute if block 16 64 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 64 19
-execute if block 16 68 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 68 -19
-execute if block 16 68 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 68 19
-execute if block 19 64 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 64 -16
-execute if block 19 64 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 64 16
-execute if block 19 68 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 68 -16
-execute if block 19 68 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 68 16
-execute if block 20 61 -14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 61 -14
-execute if block 20 61 14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 61 14
-execute if block 20 71 -14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 71 -14
-execute if block 20 71 14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 71 14
-execute if block -19 60 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 60 -15
-execute if block -19 60 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 60 15
-execute if block -19 72 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 72 -15
-execute if block -19 72 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 72 15
-execute if block -18 63 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 63 -17
-execute if block -18 63 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 63 17
-execute if block -18 69 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 69 -17
-execute if block -18 69 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 69 17
-execute if block -17 63 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 63 -18
-execute if block -17 63 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 63 18
-execute if block -17 69 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 69 -18
-execute if block -17 69 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 69 18
-execute if block -15 60 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 60 -19
-execute if block -15 60 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 60 19
-execute if block -15 72 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 72 -19
-execute if block -15 72 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 72 19
-execute if block 15 60 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 60 -19
-execute if block 15 60 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 60 19
-execute if block 15 72 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 72 -19
-execute if block 15 72 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 72 19
-execute if block 17 63 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 63 -18
-execute if block 17 63 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 63 18
-execute if block 17 69 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 69 -18
-execute if block 17 69 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 69 18
-execute if block 18 63 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 63 -17
-execute if block 18 63 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 63 17
-execute if block 18 69 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 69 -17
-execute if block 18 69 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 69 17
-execute if block 19 60 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 60 -15
-execute if block 19 60 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 60 15
-execute if block 19 72 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 72 -15
-execute if block 19 72 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 72 15
-execute if block -20 66 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 66 -15
-execute if block -20 66 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 66 15
-execute if block -15 66 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 66 -20
-execute if block -15 66 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 66 20
-execute if block 15 66 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 66 -20
-execute if block 15 66 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 66 20
-execute if block 20 66 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 66 -15
-execute if block 20 66 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 66 15
-execute if block -20 65 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 65 -15
-execute if block -20 65 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 65 15
-execute if block -20 67 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 67 -15
-execute if block -20 67 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 67 15
-execute if block -19 63 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 63 -16
-execute if block -19 63 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 63 16
-execute if block -19 69 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 69 -16
-execute if block -19 69 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 69 16
-execute if block -16 63 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 63 -19
-execute if block -16 63 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 63 19
-execute if block -16 69 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 69 -19
-execute if block -16 69 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 69 19
-execute if block -15 65 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 65 -20
-execute if block -15 65 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 65 20
-execute if block -15 67 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 67 -20
-execute if block -15 67 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 67 20
-execute if block 15 65 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 65 -20
-execute if block 15 65 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 65 20
-execute if block 15 67 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 67 -20
-execute if block 15 67 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 67 20
-execute if block 16 63 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 63 -19
-execute if block 16 63 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 63 19
-execute if block 16 69 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 69 -19
-execute if block 16 69 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 69 19
-execute if block 19 63 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 63 -16
-execute if block 19 63 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 63 16
-execute if block 19 69 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 69 -16
-execute if block 19 69 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 69 16
-execute if block 20 65 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 65 -15
-execute if block 20 65 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 65 15
-execute if block 20 67 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 67 -15
-execute if block 20 67 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 67 15
-execute if block -17 59 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 59 -17
-execute if block -17 59 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 59 17
-execute if block -17 73 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 73 -17
-execute if block -17 73 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 73 17
-execute if block 17 59 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 59 -17
-execute if block 17 59 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 59 17
-execute if block 17 73 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 73 -17
-execute if block 17 73 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 73 17
-execute if block -20 64 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 64 -15
-execute if block -20 64 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 64 15
-execute if block -20 68 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 68 -15
-execute if block -20 68 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 68 15
-execute if block -18 59 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 59 -16
-execute if block -18 59 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 59 16
-execute if block -18 62 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 62 -17
-execute if block -18 62 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 62 17
-execute if block -18 70 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 70 -17
-execute if block -18 70 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 70 17
-execute if block -18 73 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 73 -16
-execute if block -18 73 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 73 16
-execute if block -17 62 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 62 -18
-execute if block -17 62 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 62 18
-execute if block -17 70 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 70 -18
-execute if block -17 70 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 70 18
-execute if block -16 59 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 59 -18
-execute if block -16 59 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 59 18
-execute if block -16 73 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 73 -18
-execute if block -16 73 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 73 18
-execute if block -15 64 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 64 -20
-execute if block -15 64 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 64 20
-execute if block -15 68 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 68 -20
-execute if block -15 68 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 68 20
-execute if block 15 64 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 64 -20
-execute if block 15 64 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 64 20
-execute if block 15 68 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 68 -20
-execute if block 15 68 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 68 20
-execute if block 16 59 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 59 -18
-execute if block 16 59 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 59 18
-execute if block 16 73 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 73 -18
-execute if block 16 73 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 73 18
-execute if block 17 62 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 62 -18
-execute if block 17 62 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 62 18
-execute if block 17 70 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 70 -18
-execute if block 17 70 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 70 18
-execute if block 18 59 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 59 -16
-execute if block 18 59 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 59 16
-execute if block 18 62 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 62 -17
-execute if block 18 62 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 62 17
-execute if block 18 70 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 70 -17
-execute if block 18 70 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 70 17
-execute if block 18 73 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 73 -16
-execute if block 18 73 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 73 16
-execute if block 20 64 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 64 -15
-execute if block 20 64 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 64 15
-execute if block 20 68 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 68 -15
-execute if block 20 68 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 68 15
-execute if block -20 60 -14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 60 -14
-execute if block -20 60 14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 60 14
-execute if block -20 72 -14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 72 -14
-execute if block -20 72 14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 72 14
-execute if block -14 60 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -14 60 -20
-execute if block -14 60 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -14 60 20
-execute if block -14 72 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -14 72 -20
-execute if block -14 72 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -14 72 20
-execute if block 14 60 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 14 60 -20
-execute if block 14 60 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 14 60 20
-execute if block 14 72 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 14 72 -20
-execute if block 14 72 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 14 72 20
-execute if block 20 60 -14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 60 -14
-execute if block 20 60 14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 60 14
-execute if block 20 72 -14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 72 -14
-execute if block 20 72 14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 72 14
-execute if block -19 62 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 62 -16
-execute if block -19 62 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 62 16
-execute if block -19 70 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 70 -16
-execute if block -19 70 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 70 16
-execute if block -16 62 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 62 -19
-execute if block -16 62 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 62 19
-execute if block -16 70 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 70 -19
-execute if block -16 70 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 70 19
-execute if block 16 62 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 62 -19
-execute if block 16 62 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 62 19
-execute if block 16 70 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 70 -19
-execute if block 16 70 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 70 19
-execute if block 19 62 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 62 -16
-execute if block 19 62 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 62 16
-execute if block 19 70 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 70 -16
-execute if block 19 70 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 70 16
-execute if block -20 63 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 63 -15
-execute if block -20 63 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 63 15
-execute if block -20 69 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 69 -15
-execute if block -20 69 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 69 15
-execute if block -15 63 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 63 -20
-execute if block -15 63 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 63 20
-execute if block -15 69 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 69 -20
-execute if block -15 69 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 69 20
-execute if block 15 63 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 63 -20
-execute if block 15 63 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 63 20
-execute if block 15 69 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 69 -20
-execute if block 15 69 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 69 20
-execute if block 20 63 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 63 -15
-execute if block 20 63 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 63 15
-execute if block 20 69 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 69 -15
-execute if block 20 69 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 69 15
-execute if block -19 59 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 59 -15
-execute if block -19 59 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 59 15
-execute if block -19 73 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 73 -15
-execute if block -19 73 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 73 15
-execute if block -15 59 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 59 -19
-execute if block -15 59 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 59 19
-execute if block -15 73 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 73 -19
-execute if block -15 73 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 73 19
-execute if block 15 59 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 59 -19
-execute if block 15 59 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 59 19
-execute if block 15 73 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 73 -19
-execute if block 15 73 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 73 19
-execute if block 19 59 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 59 -15
-execute if block 19 59 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 59 15
-execute if block 19 73 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 73 -15
-execute if block 19 73 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 73 15
-execute if block -18 61 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 61 -17
-execute if block -18 61 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 61 17
-execute if block -18 71 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 71 -17
-execute if block -18 71 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 71 17
-execute if block -17 61 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 61 -18
-execute if block -17 61 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 61 18
-execute if block -17 71 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 71 -18
-execute if block -17 71 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 71 18
-execute if block 17 61 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 61 -18
-execute if block 17 61 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 61 18
-execute if block 17 71 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 71 -18
-execute if block 17 71 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 71 18
-execute if block 18 61 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 61 -17
-execute if block 18 61 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 61 17
-execute if block 18 71 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 71 -17
-execute if block 18 71 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 71 17
-execute if block -20 62 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 62 -15
-execute if block -20 62 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 62 15
-execute if block -20 70 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 70 -15
-execute if block -20 70 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 70 15
-execute if block -15 62 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 62 -20
-execute if block -15 62 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 62 20
-execute if block -15 70 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 70 -20
-execute if block -15 70 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 70 20
-execute if block 15 62 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 62 -20
-execute if block 15 62 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 62 20
-execute if block 15 70 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 70 -20
-execute if block 15 70 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 70 20
-execute if block 20 62 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 62 -15
-execute if block 20 62 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 62 15
-execute if block 20 70 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 70 -15
-execute if block 20 70 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 70 15
-execute if block -19 61 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 61 -16
-execute if block -19 61 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 61 16
-execute if block -19 71 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 71 -16
-execute if block -19 71 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 71 16
-execute if block -16 61 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 61 -19
-execute if block -16 61 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 61 19
-execute if block -16 71 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 71 -19
-execute if block -16 71 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 71 19
-execute if block 16 61 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 61 -19
-execute if block 16 61 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 61 19
-execute if block 16 71 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 71 -19
-execute if block 16 71 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 71 19
-execute if block 19 61 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 61 -16
-execute if block 19 61 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 61 16
-execute if block 19 71 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 71 -16
-execute if block 19 71 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 71 16
-execute if block -20 59 -14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 59 -14
-execute if block -20 59 14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 59 14
-execute if block -20 73 -14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 73 -14
-execute if block -20 73 14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 73 14
-execute if block -14 59 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -14 59 -20
-execute if block -14 59 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -14 59 20
-execute if block -14 73 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -14 73 -20
-execute if block -14 73 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -14 73 20
-execute if block 14 59 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 14 59 -20
-execute if block 14 59 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 14 59 20
-execute if block 14 73 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 14 73 -20
-execute if block 14 73 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 14 73 20
-execute if block 20 59 -14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 59 -14
-execute if block 20 59 14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 59 14
-execute if block 20 73 -14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 73 -14
-execute if block 20 73 14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 73 14
-execute if block -18 66 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 66 -18
-execute if block -18 66 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 66 18
-execute if block 18 66 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 66 -18
-execute if block 18 66 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 66 18
-execute if block -18 60 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 60 -17
-execute if block -18 60 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 60 17
-execute if block -18 65 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 65 -18
-execute if block -18 65 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 65 18
-execute if block -18 67 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 67 -18
-execute if block -18 67 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 67 18
-execute if block -18 72 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 72 -17
-execute if block -18 72 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 72 17
-execute if block -17 60 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 60 -18
-execute if block -17 60 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 60 18
-execute if block -17 72 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 72 -18
-execute if block -17 72 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 72 18
-execute if block 17 60 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 60 -18
-execute if block 17 60 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 60 18
-execute if block 17 72 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 72 -18
-execute if block 17 72 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 72 18
-execute if block 18 60 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 60 -17
-execute if block 18 60 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 60 17
-execute if block 18 65 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 65 -18
-execute if block 18 65 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 65 18
-execute if block 18 67 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 67 -18
-execute if block 18 67 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 67 18
-execute if block 18 72 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 72 -17
-execute if block 18 72 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 72 17
-execute if block -20 61 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 61 -15
-execute if block -20 61 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 61 15
-execute if block -20 71 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 71 -15
-execute if block -20 71 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 71 15
-execute if block -19 66 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 66 -17
-execute if block -19 66 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 66 17
-execute if block -17 66 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 66 -19
-execute if block -17 66 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 66 19
-execute if block -15 61 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 61 -20
-execute if block -15 61 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 61 20
-execute if block -15 71 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 71 -20
-execute if block -15 71 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 71 20
-execute if block 15 61 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 61 -20
-execute if block 15 61 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 61 20
-execute if block 15 71 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 71 -20
-execute if block 15 71 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 71 20
-execute if block 17 66 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 66 -19
-execute if block 17 66 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 66 19
-execute if block 19 66 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 66 -17
-execute if block 19 66 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 66 17
-execute if block 20 61 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 61 -15
-execute if block 20 61 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 61 15
-execute if block 20 71 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 71 -15
-execute if block 20 71 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 71 15
-execute if block -19 65 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 65 -17
-execute if block -19 65 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 65 17
-execute if block -19 67 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 67 -17
-execute if block -19 67 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 67 17
-execute if block -17 65 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 65 -19
-execute if block -17 65 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 65 19
-execute if block -17 67 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 67 -19
-execute if block -17 67 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 67 19
-execute if block 17 65 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 65 -19
-execute if block 17 65 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 65 19
-execute if block 17 67 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 67 -19
-execute if block 17 67 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 67 19
-execute if block 19 65 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 65 -17
-execute if block 19 65 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 65 17
-execute if block 19 67 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 67 -17
-execute if block 19 67 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 67 17
-execute if block -18 64 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 64 -18
-execute if block -18 64 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 64 18
-execute if block -18 68 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 68 -18
-execute if block -18 68 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 68 18
-execute if block 18 64 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 64 -18
-execute if block 18 64 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 64 18
-execute if block 18 68 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 68 -18
-execute if block 18 68 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 68 18
-execute if block -19 60 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 60 -16
-execute if block -19 60 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 60 16
-execute if block -19 72 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 72 -16
-execute if block -19 72 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 72 16
-execute if block -16 60 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 60 -19
-execute if block -16 60 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 60 19
-execute if block -16 72 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 72 -19
-execute if block -16 72 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 72 19
-execute if block 16 60 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 60 -19
-execute if block 16 60 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 60 19
-execute if block 16 72 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 72 -19
-execute if block 16 72 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 72 19
-execute if block 19 60 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 60 -16
-execute if block 19 60 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 60 16
-execute if block 19 72 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 72 -16
-execute if block 19 72 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 72 16
-execute if block -19 64 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 64 -17
-execute if block -19 64 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 64 17
-execute if block -19 68 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 68 -17
-execute if block -19 68 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 68 17
-execute if block -17 64 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 64 -19
-execute if block -17 64 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 64 19
-execute if block -17 68 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 68 -19
-execute if block -17 68 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 68 19
-execute if block 17 64 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 64 -19
-execute if block 17 64 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 64 19
-execute if block 17 68 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 68 -19
-execute if block 17 68 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 68 19
-execute if block 19 64 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 64 -17
-execute if block 19 64 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 64 17
-execute if block 19 68 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 68 -17
-execute if block 19 68 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 68 17
-execute if block -20 66 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 66 -16
-execute if block -20 66 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 66 16
-execute if block -16 66 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 66 -20
-execute if block -16 66 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 66 20
-execute if block 16 66 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 66 -20
-execute if block 16 66 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 66 20
-execute if block 20 66 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 66 -16
-execute if block 20 66 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 66 16
-execute if block -20 65 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 65 -16
-execute if block -20 65 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 65 16
-execute if block -20 67 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 67 -16
-execute if block -20 67 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 67 16
-execute if block -18 63 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 63 -18
-execute if block -18 63 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 63 18
-execute if block -18 69 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 69 -18
-execute if block -18 69 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 69 18
-execute if block -16 65 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 65 -20
-execute if block -16 65 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 65 20
-execute if block -16 67 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 67 -20
-execute if block -16 67 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 67 20
-execute if block 16 65 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 65 -20
-execute if block 16 65 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 65 20
-execute if block 16 67 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 67 -20
-execute if block 16 67 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 67 20
-execute if block 18 63 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 63 -18
-execute if block 18 63 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 63 18
-execute if block 18 69 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 69 -18
-execute if block 18 69 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 69 18
-execute if block 20 65 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 65 -16
-execute if block 20 65 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 65 16
-execute if block 20 67 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 67 -16
-execute if block 20 67 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 67 16
-execute if block -19 63 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 63 -17
-execute if block -19 63 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 63 17
-execute if block -19 69 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 69 -17
-execute if block -19 69 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 69 17
-execute if block -17 63 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 63 -19
-execute if block -17 63 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 63 19
-execute if block -17 69 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 69 -19
-execute if block -17 69 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 69 19
-execute if block 17 63 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 63 -19
-execute if block 17 63 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 63 19
-execute if block 17 69 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 69 -19
-execute if block 17 69 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 69 19
-execute if block 19 63 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 63 -17
-execute if block 19 63 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 63 17
-execute if block 19 69 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 69 -17
-execute if block 19 69 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 69 17
-execute if block -20 64 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 64 -16
-execute if block -20 64 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 64 16
-execute if block -20 68 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 68 -16
-execute if block -20 68 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 68 16
-execute if block -16 64 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 64 -20
-execute if block -16 64 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 64 20
-execute if block -16 68 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 68 -20
-execute if block -16 68 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 68 20
-execute if block 16 64 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 64 -20
-execute if block 16 64 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 64 20
-execute if block 16 68 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 68 -20
-execute if block 16 68 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 68 20
-execute if block 20 64 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 64 -16
-execute if block 20 64 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 64 16
-execute if block 20 68 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 68 -16
-execute if block 20 68 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 68 16
-execute if block -20 60 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 60 -15
-execute if block -20 60 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 60 15
-execute if block -20 72 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 72 -15
-execute if block -20 72 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 72 15
-execute if block -15 60 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 60 -20
-execute if block -15 60 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 60 20
-execute if block -15 72 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 72 -20
-execute if block -15 72 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 72 20
-execute if block 15 60 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 60 -20
-execute if block 15 60 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 60 20
-execute if block 15 72 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 72 -20
-execute if block 15 72 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 72 20
-execute if block 20 60 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 60 -15
-execute if block 20 60 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 60 15
-execute if block 20 72 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 72 -15
-execute if block 20 72 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 72 15
-execute if block -18 59 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 59 -17
-execute if block -18 59 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 59 17
-execute if block -18 73 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 73 -17
-execute if block -18 73 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 73 17
-execute if block -17 59 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 59 -18
-execute if block -17 59 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 59 18
-execute if block -17 73 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 73 -18
-execute if block -17 73 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 73 18
-execute if block 17 59 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 59 -18
-execute if block 17 59 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 59 18
-execute if block 17 73 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 73 -18
-execute if block 17 73 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 73 18
-execute if block 18 59 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 59 -17
-execute if block 18 59 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 59 17
-execute if block 18 73 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 73 -17
-execute if block 18 73 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 73 17
-execute if block -18 62 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 62 -18
-execute if block -18 62 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 62 18
-execute if block -18 70 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 70 -18
-execute if block -18 70 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 70 18
-execute if block 18 62 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 62 -18
-execute if block 18 62 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 62 18
-execute if block 18 70 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 70 -18
-execute if block 18 70 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 70 18
-execute if block -20 63 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 63 -16
-execute if block -20 63 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 63 16
-execute if block -20 69 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 69 -16
-execute if block -20 69 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 69 16
-execute if block -16 63 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 63 -20
-execute if block -16 63 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 63 20
-execute if block -16 69 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 69 -20
-execute if block -16 69 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 69 20
-execute if block 16 63 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 63 -20
-execute if block 16 63 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 63 20
-execute if block 16 69 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 69 -20
-execute if block 16 69 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 69 20
-execute if block 20 63 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 63 -16
-execute if block 20 63 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 63 16
-execute if block 20 69 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 69 -16
-execute if block 20 69 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 69 16
-execute if block -19 59 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 59 -16
-execute if block -19 59 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 59 16
-execute if block -19 62 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 62 -17
-execute if block -19 62 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 62 17
-execute if block -19 70 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 70 -17
-execute if block -19 70 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 70 17
-execute if block -19 73 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 73 -16
-execute if block -19 73 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 73 16
-execute if block -17 62 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 62 -19
-execute if block -17 62 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 62 19
-execute if block -17 70 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 70 -19
-execute if block -17 70 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 70 19
-execute if block -16 59 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 59 -19
-execute if block -16 59 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 59 19
-execute if block -16 73 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 73 -19
-execute if block -16 73 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 73 19
-execute if block 16 59 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 59 -19
-execute if block 16 59 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 59 19
-execute if block 16 73 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 73 -19
-execute if block 16 73 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 73 19
-execute if block 17 62 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 62 -19
-execute if block 17 62 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 62 19
-execute if block 17 70 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 70 -19
-execute if block 17 70 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 70 19
-execute if block 19 59 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 59 -16
-execute if block 19 59 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 59 16
-execute if block 19 62 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 62 -17
-execute if block 19 62 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 62 17
-execute if block 19 70 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 70 -17
-execute if block 19 70 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 70 17
-execute if block 19 73 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 73 -16
-execute if block 19 73 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 73 16
-execute if block -20 62 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 62 -16
-execute if block -20 62 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 62 16
-execute if block -20 70 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 70 -16
-execute if block -20 70 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 70 16
-execute if block -16 62 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 62 -20
-execute if block -16 62 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 62 20
-execute if block -16 70 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 70 -20
-execute if block -16 70 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 70 20
-execute if block 16 62 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 62 -20
-execute if block 16 62 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 62 20
-execute if block 16 70 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 70 -20
-execute if block 16 70 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 70 20
-execute if block 20 62 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 62 -16
-execute if block 20 62 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 62 16
-execute if block 20 70 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 70 -16
-execute if block 20 70 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 70 16
-execute if block -18 61 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 61 -18
-execute if block -18 61 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 61 18
-execute if block -18 71 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 71 -18
-execute if block -18 71 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 71 18
-execute if block 18 61 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 61 -18
-execute if block 18 61 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 61 18
-execute if block 18 71 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 71 -18
-execute if block 18 71 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 71 18
-execute if block -20 59 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 59 -15
-execute if block -20 59 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 59 15
-execute if block -20 73 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 73 -15
-execute if block -20 73 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 73 15
-execute if block -15 59 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 59 -20
-execute if block -15 59 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 59 20
-execute if block -15 73 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 73 -20
-execute if block -15 73 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 73 20
-execute if block 15 59 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 59 -20
-execute if block 15 59 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 59 20
-execute if block 15 73 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 73 -20
-execute if block 15 73 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 73 20
-execute if block 20 59 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 59 -15
-execute if block 20 59 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 59 15
-execute if block 20 73 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 73 -15
-execute if block 20 73 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 73 15
-execute if block -19 61 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 61 -17
-execute if block -19 61 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 61 17
-execute if block -19 71 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 71 -17
-execute if block -19 71 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 71 17
-execute if block -17 61 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 61 -19
-execute if block -17 61 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 61 19
-execute if block -17 71 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 71 -19
-execute if block -17 71 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 71 19
-execute if block 17 61 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 61 -19
-execute if block 17 61 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 61 19
-execute if block 17 71 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 71 -19
-execute if block 17 71 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 71 19
-execute if block 19 61 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 61 -17
-execute if block 19 61 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 61 17
-execute if block 19 71 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 71 -17
-execute if block 19 71 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 71 17
-execute if block -20 61 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 61 -16
-execute if block -20 61 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 61 16
-execute if block -20 71 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 71 -16
-execute if block -20 71 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 71 16
-execute if block -16 61 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 61 -20
-execute if block -16 61 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 61 20
-execute if block -16 71 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 71 -20
-execute if block -16 71 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 71 20
-execute if block 16 61 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 61 -20
-execute if block 16 61 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 61 20
-execute if block 16 71 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 71 -20
-execute if block 16 71 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 71 20
-execute if block 20 61 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 61 -16
-execute if block 20 61 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 61 16
-execute if block 20 71 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 71 -16
-execute if block 20 71 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 71 16
-execute if block -18 60 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 60 -18
-execute if block -18 60 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 60 18
-execute if block -18 72 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 72 -18
-execute if block -18 72 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 72 18
-execute if block 18 60 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 60 -18
-execute if block 18 60 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 60 18
-execute if block 18 72 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 72 -18
-execute if block 18 72 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 72 18
-execute if block -19 66 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 66 -18
-execute if block -19 66 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 66 18
-execute if block -18 66 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 66 -19
-execute if block -18 66 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 66 19
-execute if block 18 66 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 66 -19
-execute if block 18 66 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 66 19
-execute if block 19 66 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 66 -18
-execute if block 19 66 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 66 18
-execute if block -19 60 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 60 -17
-execute if block -19 60 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 60 17
-execute if block -19 65 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 65 -18
-execute if block -19 65 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 65 18
-execute if block -19 67 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 67 -18
-execute if block -19 67 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 67 18
-execute if block -19 72 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 72 -17
-execute if block -19 72 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 72 17
-execute if block -18 65 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 65 -19
-execute if block -18 65 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 65 19
-execute if block -18 67 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 67 -19
-execute if block -18 67 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 67 19
-execute if block -17 60 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 60 -19
-execute if block -17 60 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 60 19
-execute if block -17 72 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 72 -19
-execute if block -17 72 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 72 19
-execute if block 17 60 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 60 -19
-execute if block 17 60 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 60 19
-execute if block 17 72 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 72 -19
-execute if block 17 72 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 72 19
-execute if block 18 65 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 65 -19
-execute if block 18 65 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 65 19
-execute if block 18 67 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 67 -19
-execute if block 18 67 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 67 19
-execute if block 19 60 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 60 -17
-execute if block 19 60 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 60 17
-execute if block 19 65 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 65 -18
-execute if block 19 65 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 65 18
-execute if block 19 67 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 67 -18
-execute if block 19 67 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 67 18
-execute if block 19 72 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 72 -17
-execute if block 19 72 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 72 17
-execute if block -20 66 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 66 -17
-execute if block -20 66 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 66 17
-execute if block -19 64 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 64 -18
-execute if block -19 64 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 64 18
-execute if block -19 68 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 68 -18
-execute if block -19 68 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 68 18
-execute if block -18 64 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 64 -19
-execute if block -18 64 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 64 19
-execute if block -18 68 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 68 -19
-execute if block -18 68 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 68 19
-execute if block -17 66 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 66 -20
-execute if block -17 66 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 66 20
-execute if block 17 66 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 66 -20
-execute if block 17 66 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 66 20
-execute if block 18 64 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 64 -19
-execute if block 18 64 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 64 19
-execute if block 18 68 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 68 -19
-execute if block 18 68 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 68 19
-execute if block 19 64 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 64 -18
-execute if block 19 64 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 64 18
-execute if block 19 68 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 68 -18
-execute if block 19 68 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 68 18
-execute if block 20 66 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 66 -17
-execute if block 20 66 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 66 17
-execute if block -20 65 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 65 -17
-execute if block -20 65 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 65 17
-execute if block -20 67 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 67 -17
-execute if block -20 67 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 67 17
-execute if block -17 65 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 65 -20
-execute if block -17 65 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 65 20
-execute if block -17 67 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 67 -20
-execute if block -17 67 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 67 20
-execute if block 17 65 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 65 -20
-execute if block 17 65 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 65 20
-execute if block 17 67 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 67 -20
-execute if block 17 67 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 67 20
+execute in minecraft:the_end if block -18 65 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 65 -17
+execute in minecraft:the_end if block -18 65 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 65 17
+execute in minecraft:the_end if block -18 67 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 67 -17
+execute in minecraft:the_end if block -18 67 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 67 17
+execute in minecraft:the_end if block -17 60 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 60 -17
+execute in minecraft:the_end if block -17 60 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 60 17
+execute in minecraft:the_end if block -17 65 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 65 -18
+execute in minecraft:the_end if block -17 65 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 65 18
+execute in minecraft:the_end if block -17 67 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 67 -18
+execute in minecraft:the_end if block -17 67 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 67 18
+execute in minecraft:the_end if block -17 72 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 72 -17
+execute in minecraft:the_end if block -17 72 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 72 17
+execute in minecraft:the_end if block 17 60 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 60 -17
+execute in minecraft:the_end if block 17 60 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 60 17
+execute in minecraft:the_end if block 17 65 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 65 -18
+execute in minecraft:the_end if block 17 65 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 65 18
+execute in minecraft:the_end if block 17 67 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 67 -18
+execute in minecraft:the_end if block 17 67 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 67 18
+execute in minecraft:the_end if block 17 72 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 72 -17
+execute in minecraft:the_end if block 17 72 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 72 17
+execute in minecraft:the_end if block 18 65 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 65 -17
+execute in minecraft:the_end if block 18 65 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 65 17
+execute in minecraft:the_end if block 18 67 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 67 -17
+execute in minecraft:the_end if block 18 67 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 67 17
+execute in minecraft:the_end if block -18 60 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 60 -16
+execute in minecraft:the_end if block -18 60 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 60 16
+execute in minecraft:the_end if block -18 72 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 72 -16
+execute in minecraft:the_end if block -18 72 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 72 16
+execute in minecraft:the_end if block -16 60 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 60 -18
+execute in minecraft:the_end if block -16 60 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 60 18
+execute in minecraft:the_end if block -16 72 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 72 -18
+execute in minecraft:the_end if block -16 72 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 72 18
+execute in minecraft:the_end if block 16 60 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 60 -18
+execute in minecraft:the_end if block 16 60 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 60 18
+execute in minecraft:the_end if block 16 72 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 72 -18
+execute in minecraft:the_end if block 16 72 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 72 18
+execute in minecraft:the_end if block 18 60 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 60 -16
+execute in minecraft:the_end if block 18 60 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 60 16
+execute in minecraft:the_end if block 18 72 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 72 -16
+execute in minecraft:the_end if block 18 72 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 72 16
+execute in minecraft:the_end if block -19 66 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 66 -16
+execute in minecraft:the_end if block -19 66 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 66 16
+execute in minecraft:the_end if block -18 64 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 64 -17
+execute in minecraft:the_end if block -18 64 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 64 17
+execute in minecraft:the_end if block -18 68 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 68 -17
+execute in minecraft:the_end if block -18 68 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 68 17
+execute in minecraft:the_end if block -17 64 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 64 -18
+execute in minecraft:the_end if block -17 64 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 64 18
+execute in minecraft:the_end if block -17 68 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 68 -18
+execute in minecraft:the_end if block -17 68 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 68 18
+execute in minecraft:the_end if block -16 66 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 66 -19
+execute in minecraft:the_end if block -16 66 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 66 19
+execute in minecraft:the_end if block 16 66 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 66 -19
+execute in minecraft:the_end if block 16 66 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 66 19
+execute in minecraft:the_end if block 17 64 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 64 -18
+execute in minecraft:the_end if block 17 64 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 64 18
+execute in minecraft:the_end if block 17 68 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 68 -18
+execute in minecraft:the_end if block 17 68 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 68 18
+execute in minecraft:the_end if block 18 64 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 64 -17
+execute in minecraft:the_end if block 18 64 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 64 17
+execute in minecraft:the_end if block 18 68 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 68 -17
+execute in minecraft:the_end if block 18 68 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 68 17
+execute in minecraft:the_end if block 19 66 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 66 -16
+execute in minecraft:the_end if block 19 66 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 66 16
+execute in minecraft:the_end if block -20 59 -13 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 59 -13
+execute in minecraft:the_end if block -20 59 13 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 59 13
+execute in minecraft:the_end if block -20 73 -13 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 73 -13
+execute in minecraft:the_end if block -20 73 13 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 73 13
+execute in minecraft:the_end if block -19 65 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 65 -16
+execute in minecraft:the_end if block -19 65 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 65 16
+execute in minecraft:the_end if block -19 67 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 67 -16
+execute in minecraft:the_end if block -19 67 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 67 16
+execute in minecraft:the_end if block -16 65 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 65 -19
+execute in minecraft:the_end if block -16 65 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 65 19
+execute in minecraft:the_end if block -16 67 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 67 -19
+execute in minecraft:the_end if block -16 67 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 67 19
+execute in minecraft:the_end if block -13 59 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -13 59 -20
+execute in minecraft:the_end if block -13 59 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -13 59 20
+execute in minecraft:the_end if block -13 73 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -13 73 -20
+execute in minecraft:the_end if block -13 73 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -13 73 20
+execute in minecraft:the_end if block 13 59 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 13 59 -20
+execute in minecraft:the_end if block 13 59 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 13 59 20
+execute in minecraft:the_end if block 13 73 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 13 73 -20
+execute in minecraft:the_end if block 13 73 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 13 73 20
+execute in minecraft:the_end if block 16 65 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 65 -19
+execute in minecraft:the_end if block 16 65 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 65 19
+execute in minecraft:the_end if block 16 67 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 67 -19
+execute in minecraft:the_end if block 16 67 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 67 19
+execute in minecraft:the_end if block 19 65 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 65 -16
+execute in minecraft:the_end if block 19 65 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 65 16
+execute in minecraft:the_end if block 19 67 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 67 -16
+execute in minecraft:the_end if block 19 67 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 67 16
+execute in minecraft:the_end if block 20 59 -13 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 59 -13
+execute in minecraft:the_end if block 20 59 13 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 59 13
+execute in minecraft:the_end if block 20 73 -13 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 73 -13
+execute in minecraft:the_end if block 20 73 13 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 73 13
+execute in minecraft:the_end if block -20 61 -14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 61 -14
+execute in minecraft:the_end if block -20 61 14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 61 14
+execute in minecraft:the_end if block -20 71 -14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 71 -14
+execute in minecraft:the_end if block -20 71 14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 71 14
+execute in minecraft:the_end if block -19 64 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 64 -16
+execute in minecraft:the_end if block -19 64 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 64 16
+execute in minecraft:the_end if block -19 68 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 68 -16
+execute in minecraft:the_end if block -19 68 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 68 16
+execute in minecraft:the_end if block -16 64 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 64 -19
+execute in minecraft:the_end if block -16 64 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 64 19
+execute in minecraft:the_end if block -16 68 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 68 -19
+execute in minecraft:the_end if block -16 68 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 68 19
+execute in minecraft:the_end if block -14 61 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -14 61 -20
+execute in minecraft:the_end if block -14 61 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -14 61 20
+execute in minecraft:the_end if block -14 71 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -14 71 -20
+execute in minecraft:the_end if block -14 71 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -14 71 20
+execute in minecraft:the_end if block 14 61 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 14 61 -20
+execute in minecraft:the_end if block 14 61 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 14 61 20
+execute in minecraft:the_end if block 14 71 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 14 71 -20
+execute in minecraft:the_end if block 14 71 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 14 71 20
+execute in minecraft:the_end if block 16 64 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 64 -19
+execute in minecraft:the_end if block 16 64 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 64 19
+execute in minecraft:the_end if block 16 68 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 68 -19
+execute in minecraft:the_end if block 16 68 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 68 19
+execute in minecraft:the_end if block 19 64 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 64 -16
+execute in minecraft:the_end if block 19 64 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 64 16
+execute in minecraft:the_end if block 19 68 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 68 -16
+execute in minecraft:the_end if block 19 68 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 68 16
+execute in minecraft:the_end if block 20 61 -14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 61 -14
+execute in minecraft:the_end if block 20 61 14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 61 14
+execute in minecraft:the_end if block 20 71 -14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 71 -14
+execute in minecraft:the_end if block 20 71 14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 71 14
+execute in minecraft:the_end if block -19 60 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 60 -15
+execute in minecraft:the_end if block -19 60 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 60 15
+execute in minecraft:the_end if block -19 72 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 72 -15
+execute in minecraft:the_end if block -19 72 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 72 15
+execute in minecraft:the_end if block -18 63 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 63 -17
+execute in minecraft:the_end if block -18 63 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 63 17
+execute in minecraft:the_end if block -18 69 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 69 -17
+execute in minecraft:the_end if block -18 69 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 69 17
+execute in minecraft:the_end if block -17 63 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 63 -18
+execute in minecraft:the_end if block -17 63 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 63 18
+execute in minecraft:the_end if block -17 69 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 69 -18
+execute in minecraft:the_end if block -17 69 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 69 18
+execute in minecraft:the_end if block -15 60 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 60 -19
+execute in minecraft:the_end if block -15 60 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 60 19
+execute in minecraft:the_end if block -15 72 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 72 -19
+execute in minecraft:the_end if block -15 72 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 72 19
+execute in minecraft:the_end if block 15 60 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 60 -19
+execute in minecraft:the_end if block 15 60 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 60 19
+execute in minecraft:the_end if block 15 72 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 72 -19
+execute in minecraft:the_end if block 15 72 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 72 19
+execute in minecraft:the_end if block 17 63 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 63 -18
+execute in minecraft:the_end if block 17 63 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 63 18
+execute in minecraft:the_end if block 17 69 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 69 -18
+execute in minecraft:the_end if block 17 69 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 69 18
+execute in minecraft:the_end if block 18 63 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 63 -17
+execute in minecraft:the_end if block 18 63 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 63 17
+execute in minecraft:the_end if block 18 69 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 69 -17
+execute in minecraft:the_end if block 18 69 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 69 17
+execute in minecraft:the_end if block 19 60 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 60 -15
+execute in minecraft:the_end if block 19 60 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 60 15
+execute in minecraft:the_end if block 19 72 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 72 -15
+execute in minecraft:the_end if block 19 72 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 72 15
+execute in minecraft:the_end if block -20 66 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 66 -15
+execute in minecraft:the_end if block -20 66 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 66 15
+execute in minecraft:the_end if block -15 66 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 66 -20
+execute in minecraft:the_end if block -15 66 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 66 20
+execute in minecraft:the_end if block 15 66 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 66 -20
+execute in minecraft:the_end if block 15 66 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 66 20
+execute in minecraft:the_end if block 20 66 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 66 -15
+execute in minecraft:the_end if block 20 66 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 66 15
+execute in minecraft:the_end if block -20 65 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 65 -15
+execute in minecraft:the_end if block -20 65 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 65 15
+execute in minecraft:the_end if block -20 67 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 67 -15
+execute in minecraft:the_end if block -20 67 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 67 15
+execute in minecraft:the_end if block -19 63 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 63 -16
+execute in minecraft:the_end if block -19 63 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 63 16
+execute in minecraft:the_end if block -19 69 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 69 -16
+execute in minecraft:the_end if block -19 69 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 69 16
+execute in minecraft:the_end if block -16 63 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 63 -19
+execute in minecraft:the_end if block -16 63 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 63 19
+execute in minecraft:the_end if block -16 69 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 69 -19
+execute in minecraft:the_end if block -16 69 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 69 19
+execute in minecraft:the_end if block -15 65 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 65 -20
+execute in minecraft:the_end if block -15 65 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 65 20
+execute in minecraft:the_end if block -15 67 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 67 -20
+execute in minecraft:the_end if block -15 67 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 67 20
+execute in minecraft:the_end if block 15 65 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 65 -20
+execute in minecraft:the_end if block 15 65 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 65 20
+execute in minecraft:the_end if block 15 67 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 67 -20
+execute in minecraft:the_end if block 15 67 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 67 20
+execute in minecraft:the_end if block 16 63 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 63 -19
+execute in minecraft:the_end if block 16 63 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 63 19
+execute in minecraft:the_end if block 16 69 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 69 -19
+execute in minecraft:the_end if block 16 69 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 69 19
+execute in minecraft:the_end if block 19 63 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 63 -16
+execute in minecraft:the_end if block 19 63 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 63 16
+execute in minecraft:the_end if block 19 69 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 69 -16
+execute in minecraft:the_end if block 19 69 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 69 16
+execute in minecraft:the_end if block 20 65 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 65 -15
+execute in minecraft:the_end if block 20 65 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 65 15
+execute in minecraft:the_end if block 20 67 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 67 -15
+execute in minecraft:the_end if block 20 67 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 67 15
+execute in minecraft:the_end if block -17 59 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 59 -17
+execute in minecraft:the_end if block -17 59 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 59 17
+execute in minecraft:the_end if block -17 73 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 73 -17
+execute in minecraft:the_end if block -17 73 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 73 17
+execute in minecraft:the_end if block 17 59 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 59 -17
+execute in minecraft:the_end if block 17 59 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 59 17
+execute in minecraft:the_end if block 17 73 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 73 -17
+execute in minecraft:the_end if block 17 73 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 73 17
+execute in minecraft:the_end if block -20 64 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 64 -15
+execute in minecraft:the_end if block -20 64 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 64 15
+execute in minecraft:the_end if block -20 68 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 68 -15
+execute in minecraft:the_end if block -20 68 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 68 15
+execute in minecraft:the_end if block -18 59 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 59 -16
+execute in minecraft:the_end if block -18 59 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 59 16
+execute in minecraft:the_end if block -18 62 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 62 -17
+execute in minecraft:the_end if block -18 62 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 62 17
+execute in minecraft:the_end if block -18 70 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 70 -17
+execute in minecraft:the_end if block -18 70 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 70 17
+execute in minecraft:the_end if block -18 73 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 73 -16
+execute in minecraft:the_end if block -18 73 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 73 16
+execute in minecraft:the_end if block -17 62 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 62 -18
+execute in minecraft:the_end if block -17 62 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 62 18
+execute in minecraft:the_end if block -17 70 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 70 -18
+execute in minecraft:the_end if block -17 70 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 70 18
+execute in minecraft:the_end if block -16 59 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 59 -18
+execute in minecraft:the_end if block -16 59 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 59 18
+execute in minecraft:the_end if block -16 73 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 73 -18
+execute in minecraft:the_end if block -16 73 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 73 18
+execute in minecraft:the_end if block -15 64 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 64 -20
+execute in minecraft:the_end if block -15 64 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 64 20
+execute in minecraft:the_end if block -15 68 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 68 -20
+execute in minecraft:the_end if block -15 68 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 68 20
+execute in minecraft:the_end if block 15 64 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 64 -20
+execute in minecraft:the_end if block 15 64 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 64 20
+execute in minecraft:the_end if block 15 68 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 68 -20
+execute in minecraft:the_end if block 15 68 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 68 20
+execute in minecraft:the_end if block 16 59 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 59 -18
+execute in minecraft:the_end if block 16 59 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 59 18
+execute in minecraft:the_end if block 16 73 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 73 -18
+execute in minecraft:the_end if block 16 73 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 73 18
+execute in minecraft:the_end if block 17 62 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 62 -18
+execute in minecraft:the_end if block 17 62 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 62 18
+execute in minecraft:the_end if block 17 70 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 70 -18
+execute in minecraft:the_end if block 17 70 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 70 18
+execute in minecraft:the_end if block 18 59 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 59 -16
+execute in minecraft:the_end if block 18 59 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 59 16
+execute in minecraft:the_end if block 18 62 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 62 -17
+execute in minecraft:the_end if block 18 62 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 62 17
+execute in minecraft:the_end if block 18 70 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 70 -17
+execute in minecraft:the_end if block 18 70 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 70 17
+execute in minecraft:the_end if block 18 73 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 73 -16
+execute in minecraft:the_end if block 18 73 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 73 16
+execute in minecraft:the_end if block 20 64 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 64 -15
+execute in minecraft:the_end if block 20 64 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 64 15
+execute in minecraft:the_end if block 20 68 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 68 -15
+execute in minecraft:the_end if block 20 68 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 68 15
+execute in minecraft:the_end if block -20 60 -14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 60 -14
+execute in minecraft:the_end if block -20 60 14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 60 14
+execute in minecraft:the_end if block -20 72 -14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 72 -14
+execute in minecraft:the_end if block -20 72 14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 72 14
+execute in minecraft:the_end if block -14 60 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -14 60 -20
+execute in minecraft:the_end if block -14 60 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -14 60 20
+execute in minecraft:the_end if block -14 72 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -14 72 -20
+execute in minecraft:the_end if block -14 72 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -14 72 20
+execute in minecraft:the_end if block 14 60 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 14 60 -20
+execute in minecraft:the_end if block 14 60 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 14 60 20
+execute in minecraft:the_end if block 14 72 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 14 72 -20
+execute in minecraft:the_end if block 14 72 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 14 72 20
+execute in minecraft:the_end if block 20 60 -14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 60 -14
+execute in minecraft:the_end if block 20 60 14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 60 14
+execute in minecraft:the_end if block 20 72 -14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 72 -14
+execute in minecraft:the_end if block 20 72 14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 72 14
+execute in minecraft:the_end if block -19 62 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 62 -16
+execute in minecraft:the_end if block -19 62 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 62 16
+execute in minecraft:the_end if block -19 70 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 70 -16
+execute in minecraft:the_end if block -19 70 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 70 16
+execute in minecraft:the_end if block -16 62 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 62 -19
+execute in minecraft:the_end if block -16 62 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 62 19
+execute in minecraft:the_end if block -16 70 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 70 -19
+execute in minecraft:the_end if block -16 70 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 70 19
+execute in minecraft:the_end if block 16 62 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 62 -19
+execute in minecraft:the_end if block 16 62 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 62 19
+execute in minecraft:the_end if block 16 70 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 70 -19
+execute in minecraft:the_end if block 16 70 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 70 19
+execute in minecraft:the_end if block 19 62 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 62 -16
+execute in minecraft:the_end if block 19 62 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 62 16
+execute in minecraft:the_end if block 19 70 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 70 -16
+execute in minecraft:the_end if block 19 70 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 70 16
+execute in minecraft:the_end if block -20 63 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 63 -15
+execute in minecraft:the_end if block -20 63 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 63 15
+execute in minecraft:the_end if block -20 69 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 69 -15
+execute in minecraft:the_end if block -20 69 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 69 15
+execute in minecraft:the_end if block -15 63 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 63 -20
+execute in minecraft:the_end if block -15 63 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 63 20
+execute in minecraft:the_end if block -15 69 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 69 -20
+execute in minecraft:the_end if block -15 69 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 69 20
+execute in minecraft:the_end if block 15 63 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 63 -20
+execute in minecraft:the_end if block 15 63 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 63 20
+execute in minecraft:the_end if block 15 69 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 69 -20
+execute in minecraft:the_end if block 15 69 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 69 20
+execute in minecraft:the_end if block 20 63 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 63 -15
+execute in minecraft:the_end if block 20 63 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 63 15
+execute in minecraft:the_end if block 20 69 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 69 -15
+execute in minecraft:the_end if block 20 69 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 69 15
+execute in minecraft:the_end if block -19 59 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 59 -15
+execute in minecraft:the_end if block -19 59 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 59 15
+execute in minecraft:the_end if block -19 73 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 73 -15
+execute in minecraft:the_end if block -19 73 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 73 15
+execute in minecraft:the_end if block -15 59 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 59 -19
+execute in minecraft:the_end if block -15 59 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 59 19
+execute in minecraft:the_end if block -15 73 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 73 -19
+execute in minecraft:the_end if block -15 73 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 73 19
+execute in minecraft:the_end if block 15 59 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 59 -19
+execute in minecraft:the_end if block 15 59 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 59 19
+execute in minecraft:the_end if block 15 73 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 73 -19
+execute in minecraft:the_end if block 15 73 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 73 19
+execute in minecraft:the_end if block 19 59 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 59 -15
+execute in minecraft:the_end if block 19 59 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 59 15
+execute in minecraft:the_end if block 19 73 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 73 -15
+execute in minecraft:the_end if block 19 73 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 73 15
+execute in minecraft:the_end if block -18 61 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 61 -17
+execute in minecraft:the_end if block -18 61 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 61 17
+execute in minecraft:the_end if block -18 71 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 71 -17
+execute in minecraft:the_end if block -18 71 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 71 17
+execute in minecraft:the_end if block -17 61 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 61 -18
+execute in minecraft:the_end if block -17 61 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 61 18
+execute in minecraft:the_end if block -17 71 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 71 -18
+execute in minecraft:the_end if block -17 71 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 71 18
+execute in minecraft:the_end if block 17 61 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 61 -18
+execute in minecraft:the_end if block 17 61 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 61 18
+execute in minecraft:the_end if block 17 71 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 71 -18
+execute in minecraft:the_end if block 17 71 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 71 18
+execute in minecraft:the_end if block 18 61 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 61 -17
+execute in minecraft:the_end if block 18 61 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 61 17
+execute in minecraft:the_end if block 18 71 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 71 -17
+execute in minecraft:the_end if block 18 71 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 71 17
+execute in minecraft:the_end if block -20 62 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 62 -15
+execute in minecraft:the_end if block -20 62 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 62 15
+execute in minecraft:the_end if block -20 70 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 70 -15
+execute in minecraft:the_end if block -20 70 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 70 15
+execute in minecraft:the_end if block -15 62 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 62 -20
+execute in minecraft:the_end if block -15 62 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 62 20
+execute in minecraft:the_end if block -15 70 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 70 -20
+execute in minecraft:the_end if block -15 70 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 70 20
+execute in minecraft:the_end if block 15 62 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 62 -20
+execute in minecraft:the_end if block 15 62 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 62 20
+execute in minecraft:the_end if block 15 70 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 70 -20
+execute in minecraft:the_end if block 15 70 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 70 20
+execute in minecraft:the_end if block 20 62 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 62 -15
+execute in minecraft:the_end if block 20 62 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 62 15
+execute in minecraft:the_end if block 20 70 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 70 -15
+execute in minecraft:the_end if block 20 70 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 70 15
+execute in minecraft:the_end if block -19 61 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 61 -16
+execute in minecraft:the_end if block -19 61 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 61 16
+execute in minecraft:the_end if block -19 71 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 71 -16
+execute in minecraft:the_end if block -19 71 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 71 16
+execute in minecraft:the_end if block -16 61 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 61 -19
+execute in minecraft:the_end if block -16 61 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 61 19
+execute in minecraft:the_end if block -16 71 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 71 -19
+execute in minecraft:the_end if block -16 71 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 71 19
+execute in minecraft:the_end if block 16 61 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 61 -19
+execute in minecraft:the_end if block 16 61 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 61 19
+execute in minecraft:the_end if block 16 71 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 71 -19
+execute in minecraft:the_end if block 16 71 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 71 19
+execute in minecraft:the_end if block 19 61 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 61 -16
+execute in minecraft:the_end if block 19 61 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 61 16
+execute in minecraft:the_end if block 19 71 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 71 -16
+execute in minecraft:the_end if block 19 71 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 71 16
+execute in minecraft:the_end if block -20 59 -14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 59 -14
+execute in minecraft:the_end if block -20 59 14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 59 14
+execute in minecraft:the_end if block -20 73 -14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 73 -14
+execute in minecraft:the_end if block -20 73 14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 73 14
+execute in minecraft:the_end if block -14 59 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -14 59 -20
+execute in minecraft:the_end if block -14 59 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -14 59 20
+execute in minecraft:the_end if block -14 73 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -14 73 -20
+execute in minecraft:the_end if block -14 73 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -14 73 20
+execute in minecraft:the_end if block 14 59 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 14 59 -20
+execute in minecraft:the_end if block 14 59 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 14 59 20
+execute in minecraft:the_end if block 14 73 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 14 73 -20
+execute in minecraft:the_end if block 14 73 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 14 73 20
+execute in minecraft:the_end if block 20 59 -14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 59 -14
+execute in minecraft:the_end if block 20 59 14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 59 14
+execute in minecraft:the_end if block 20 73 -14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 73 -14
+execute in minecraft:the_end if block 20 73 14 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 73 14
+execute in minecraft:the_end if block -18 66 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 66 -18
+execute in minecraft:the_end if block -18 66 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 66 18
+execute in minecraft:the_end if block 18 66 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 66 -18
+execute in minecraft:the_end if block 18 66 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 66 18
+execute in minecraft:the_end if block -18 60 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 60 -17
+execute in minecraft:the_end if block -18 60 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 60 17
+execute in minecraft:the_end if block -18 65 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 65 -18
+execute in minecraft:the_end if block -18 65 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 65 18
+execute in minecraft:the_end if block -18 67 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 67 -18
+execute in minecraft:the_end if block -18 67 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 67 18
+execute in minecraft:the_end if block -18 72 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 72 -17
+execute in minecraft:the_end if block -18 72 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 72 17
+execute in minecraft:the_end if block -17 60 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 60 -18
+execute in minecraft:the_end if block -17 60 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 60 18
+execute in minecraft:the_end if block -17 72 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 72 -18
+execute in minecraft:the_end if block -17 72 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 72 18
+execute in minecraft:the_end if block 17 60 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 60 -18
+execute in minecraft:the_end if block 17 60 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 60 18
+execute in minecraft:the_end if block 17 72 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 72 -18
+execute in minecraft:the_end if block 17 72 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 72 18
+execute in minecraft:the_end if block 18 60 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 60 -17
+execute in minecraft:the_end if block 18 60 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 60 17
+execute in minecraft:the_end if block 18 65 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 65 -18
+execute in minecraft:the_end if block 18 65 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 65 18
+execute in minecraft:the_end if block 18 67 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 67 -18
+execute in minecraft:the_end if block 18 67 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 67 18
+execute in minecraft:the_end if block 18 72 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 72 -17
+execute in minecraft:the_end if block 18 72 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 72 17
+execute in minecraft:the_end if block -20 61 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 61 -15
+execute in minecraft:the_end if block -20 61 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 61 15
+execute in minecraft:the_end if block -20 71 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 71 -15
+execute in minecraft:the_end if block -20 71 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 71 15
+execute in minecraft:the_end if block -19 66 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 66 -17
+execute in minecraft:the_end if block -19 66 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 66 17
+execute in minecraft:the_end if block -17 66 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 66 -19
+execute in minecraft:the_end if block -17 66 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 66 19
+execute in minecraft:the_end if block -15 61 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 61 -20
+execute in minecraft:the_end if block -15 61 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 61 20
+execute in minecraft:the_end if block -15 71 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 71 -20
+execute in minecraft:the_end if block -15 71 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 71 20
+execute in minecraft:the_end if block 15 61 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 61 -20
+execute in minecraft:the_end if block 15 61 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 61 20
+execute in minecraft:the_end if block 15 71 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 71 -20
+execute in minecraft:the_end if block 15 71 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 71 20
+execute in minecraft:the_end if block 17 66 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 66 -19
+execute in minecraft:the_end if block 17 66 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 66 19
+execute in minecraft:the_end if block 19 66 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 66 -17
+execute in minecraft:the_end if block 19 66 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 66 17
+execute in minecraft:the_end if block 20 61 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 61 -15
+execute in minecraft:the_end if block 20 61 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 61 15
+execute in minecraft:the_end if block 20 71 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 71 -15
+execute in minecraft:the_end if block 20 71 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 71 15
+execute in minecraft:the_end if block -19 65 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 65 -17
+execute in minecraft:the_end if block -19 65 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 65 17
+execute in minecraft:the_end if block -19 67 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 67 -17
+execute in minecraft:the_end if block -19 67 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 67 17
+execute in minecraft:the_end if block -17 65 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 65 -19
+execute in minecraft:the_end if block -17 65 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 65 19
+execute in minecraft:the_end if block -17 67 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 67 -19
+execute in minecraft:the_end if block -17 67 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 67 19
+execute in minecraft:the_end if block 17 65 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 65 -19
+execute in minecraft:the_end if block 17 65 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 65 19
+execute in minecraft:the_end if block 17 67 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 67 -19
+execute in minecraft:the_end if block 17 67 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 67 19
+execute in minecraft:the_end if block 19 65 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 65 -17
+execute in minecraft:the_end if block 19 65 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 65 17
+execute in minecraft:the_end if block 19 67 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 67 -17
+execute in minecraft:the_end if block 19 67 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 67 17
+execute in minecraft:the_end if block -18 64 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 64 -18
+execute in minecraft:the_end if block -18 64 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 64 18
+execute in minecraft:the_end if block -18 68 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 68 -18
+execute in minecraft:the_end if block -18 68 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 68 18
+execute in minecraft:the_end if block 18 64 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 64 -18
+execute in minecraft:the_end if block 18 64 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 64 18
+execute in minecraft:the_end if block 18 68 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 68 -18
+execute in minecraft:the_end if block 18 68 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 68 18
+execute in minecraft:the_end if block -19 60 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 60 -16
+execute in minecraft:the_end if block -19 60 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 60 16
+execute in minecraft:the_end if block -19 72 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 72 -16
+execute in minecraft:the_end if block -19 72 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 72 16
+execute in minecraft:the_end if block -16 60 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 60 -19
+execute in minecraft:the_end if block -16 60 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 60 19
+execute in minecraft:the_end if block -16 72 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 72 -19
+execute in minecraft:the_end if block -16 72 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 72 19
+execute in minecraft:the_end if block 16 60 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 60 -19
+execute in minecraft:the_end if block 16 60 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 60 19
+execute in minecraft:the_end if block 16 72 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 72 -19
+execute in minecraft:the_end if block 16 72 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 72 19
+execute in minecraft:the_end if block 19 60 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 60 -16
+execute in minecraft:the_end if block 19 60 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 60 16
+execute in minecraft:the_end if block 19 72 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 72 -16
+execute in minecraft:the_end if block 19 72 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 72 16
+execute in minecraft:the_end if block -19 64 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 64 -17
+execute in minecraft:the_end if block -19 64 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 64 17
+execute in minecraft:the_end if block -19 68 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 68 -17
+execute in minecraft:the_end if block -19 68 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 68 17
+execute in minecraft:the_end if block -17 64 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 64 -19
+execute in minecraft:the_end if block -17 64 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 64 19
+execute in minecraft:the_end if block -17 68 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 68 -19
+execute in minecraft:the_end if block -17 68 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 68 19
+execute in minecraft:the_end if block 17 64 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 64 -19
+execute in minecraft:the_end if block 17 64 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 64 19
+execute in minecraft:the_end if block 17 68 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 68 -19
+execute in minecraft:the_end if block 17 68 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 68 19
+execute in minecraft:the_end if block 19 64 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 64 -17
+execute in minecraft:the_end if block 19 64 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 64 17
+execute in minecraft:the_end if block 19 68 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 68 -17
+execute in minecraft:the_end if block 19 68 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 68 17
+execute in minecraft:the_end if block -20 66 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 66 -16
+execute in minecraft:the_end if block -20 66 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 66 16
+execute in minecraft:the_end if block -16 66 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 66 -20
+execute in minecraft:the_end if block -16 66 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 66 20
+execute in minecraft:the_end if block 16 66 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 66 -20
+execute in minecraft:the_end if block 16 66 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 66 20
+execute in minecraft:the_end if block 20 66 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 66 -16
+execute in minecraft:the_end if block 20 66 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 66 16
+execute in minecraft:the_end if block -20 65 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 65 -16
+execute in minecraft:the_end if block -20 65 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 65 16
+execute in minecraft:the_end if block -20 67 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 67 -16
+execute in minecraft:the_end if block -20 67 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 67 16
+execute in minecraft:the_end if block -18 63 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 63 -18
+execute in minecraft:the_end if block -18 63 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 63 18
+execute in minecraft:the_end if block -18 69 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 69 -18
+execute in minecraft:the_end if block -18 69 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 69 18
+execute in minecraft:the_end if block -16 65 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 65 -20
+execute in minecraft:the_end if block -16 65 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 65 20
+execute in minecraft:the_end if block -16 67 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 67 -20
+execute in minecraft:the_end if block -16 67 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 67 20
+execute in minecraft:the_end if block 16 65 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 65 -20
+execute in minecraft:the_end if block 16 65 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 65 20
+execute in minecraft:the_end if block 16 67 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 67 -20
+execute in minecraft:the_end if block 16 67 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 67 20
+execute in minecraft:the_end if block 18 63 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 63 -18
+execute in minecraft:the_end if block 18 63 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 63 18
+execute in minecraft:the_end if block 18 69 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 69 -18
+execute in minecraft:the_end if block 18 69 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 69 18
+execute in minecraft:the_end if block 20 65 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 65 -16
+execute in minecraft:the_end if block 20 65 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 65 16
+execute in minecraft:the_end if block 20 67 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 67 -16
+execute in minecraft:the_end if block 20 67 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 67 16
+execute in minecraft:the_end if block -19 63 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 63 -17
+execute in minecraft:the_end if block -19 63 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 63 17
+execute in minecraft:the_end if block -19 69 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 69 -17
+execute in minecraft:the_end if block -19 69 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 69 17
+execute in minecraft:the_end if block -17 63 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 63 -19
+execute in minecraft:the_end if block -17 63 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 63 19
+execute in minecraft:the_end if block -17 69 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 69 -19
+execute in minecraft:the_end if block -17 69 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 69 19
+execute in minecraft:the_end if block 17 63 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 63 -19
+execute in minecraft:the_end if block 17 63 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 63 19
+execute in minecraft:the_end if block 17 69 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 69 -19
+execute in minecraft:the_end if block 17 69 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 69 19
+execute in minecraft:the_end if block 19 63 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 63 -17
+execute in minecraft:the_end if block 19 63 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 63 17
+execute in minecraft:the_end if block 19 69 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 69 -17
+execute in minecraft:the_end if block 19 69 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 69 17
+execute in minecraft:the_end if block -20 64 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 64 -16
+execute in minecraft:the_end if block -20 64 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 64 16
+execute in minecraft:the_end if block -20 68 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 68 -16
+execute in minecraft:the_end if block -20 68 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 68 16
+execute in minecraft:the_end if block -16 64 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 64 -20
+execute in minecraft:the_end if block -16 64 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 64 20
+execute in minecraft:the_end if block -16 68 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 68 -20
+execute in minecraft:the_end if block -16 68 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 68 20
+execute in minecraft:the_end if block 16 64 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 64 -20
+execute in minecraft:the_end if block 16 64 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 64 20
+execute in minecraft:the_end if block 16 68 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 68 -20
+execute in minecraft:the_end if block 16 68 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 68 20
+execute in minecraft:the_end if block 20 64 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 64 -16
+execute in minecraft:the_end if block 20 64 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 64 16
+execute in minecraft:the_end if block 20 68 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 68 -16
+execute in minecraft:the_end if block 20 68 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 68 16
+execute in minecraft:the_end if block -20 60 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 60 -15
+execute in minecraft:the_end if block -20 60 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 60 15
+execute in minecraft:the_end if block -20 72 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 72 -15
+execute in minecraft:the_end if block -20 72 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 72 15
+execute in minecraft:the_end if block -15 60 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 60 -20
+execute in minecraft:the_end if block -15 60 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 60 20
+execute in minecraft:the_end if block -15 72 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 72 -20
+execute in minecraft:the_end if block -15 72 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 72 20
+execute in minecraft:the_end if block 15 60 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 60 -20
+execute in minecraft:the_end if block 15 60 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 60 20
+execute in minecraft:the_end if block 15 72 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 72 -20
+execute in minecraft:the_end if block 15 72 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 72 20
+execute in minecraft:the_end if block 20 60 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 60 -15
+execute in minecraft:the_end if block 20 60 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 60 15
+execute in minecraft:the_end if block 20 72 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 72 -15
+execute in minecraft:the_end if block 20 72 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 72 15
+execute in minecraft:the_end if block -18 59 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 59 -17
+execute in minecraft:the_end if block -18 59 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 59 17
+execute in minecraft:the_end if block -18 73 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 73 -17
+execute in minecraft:the_end if block -18 73 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 73 17
+execute in minecraft:the_end if block -17 59 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 59 -18
+execute in minecraft:the_end if block -17 59 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 59 18
+execute in minecraft:the_end if block -17 73 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 73 -18
+execute in minecraft:the_end if block -17 73 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 73 18
+execute in minecraft:the_end if block 17 59 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 59 -18
+execute in minecraft:the_end if block 17 59 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 59 18
+execute in minecraft:the_end if block 17 73 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 73 -18
+execute in minecraft:the_end if block 17 73 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 73 18
+execute in minecraft:the_end if block 18 59 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 59 -17
+execute in minecraft:the_end if block 18 59 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 59 17
+execute in minecraft:the_end if block 18 73 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 73 -17
+execute in minecraft:the_end if block 18 73 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 73 17
+execute in minecraft:the_end if block -18 62 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 62 -18
+execute in minecraft:the_end if block -18 62 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 62 18
+execute in minecraft:the_end if block -18 70 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 70 -18
+execute in minecraft:the_end if block -18 70 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 70 18
+execute in minecraft:the_end if block 18 62 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 62 -18
+execute in minecraft:the_end if block 18 62 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 62 18
+execute in minecraft:the_end if block 18 70 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 70 -18
+execute in minecraft:the_end if block 18 70 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 70 18
+execute in minecraft:the_end if block -20 63 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 63 -16
+execute in minecraft:the_end if block -20 63 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 63 16
+execute in minecraft:the_end if block -20 69 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 69 -16
+execute in minecraft:the_end if block -20 69 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 69 16
+execute in minecraft:the_end if block -16 63 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 63 -20
+execute in minecraft:the_end if block -16 63 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 63 20
+execute in minecraft:the_end if block -16 69 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 69 -20
+execute in minecraft:the_end if block -16 69 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 69 20
+execute in minecraft:the_end if block 16 63 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 63 -20
+execute in minecraft:the_end if block 16 63 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 63 20
+execute in minecraft:the_end if block 16 69 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 69 -20
+execute in minecraft:the_end if block 16 69 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 69 20
+execute in minecraft:the_end if block 20 63 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 63 -16
+execute in minecraft:the_end if block 20 63 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 63 16
+execute in minecraft:the_end if block 20 69 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 69 -16
+execute in minecraft:the_end if block 20 69 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 69 16
+execute in minecraft:the_end if block -19 59 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 59 -16
+execute in minecraft:the_end if block -19 59 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 59 16
+execute in minecraft:the_end if block -19 62 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 62 -17
+execute in minecraft:the_end if block -19 62 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 62 17
+execute in minecraft:the_end if block -19 70 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 70 -17
+execute in minecraft:the_end if block -19 70 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 70 17
+execute in minecraft:the_end if block -19 73 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 73 -16
+execute in minecraft:the_end if block -19 73 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 73 16
+execute in minecraft:the_end if block -17 62 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 62 -19
+execute in minecraft:the_end if block -17 62 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 62 19
+execute in minecraft:the_end if block -17 70 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 70 -19
+execute in minecraft:the_end if block -17 70 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 70 19
+execute in minecraft:the_end if block -16 59 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 59 -19
+execute in minecraft:the_end if block -16 59 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 59 19
+execute in minecraft:the_end if block -16 73 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 73 -19
+execute in minecraft:the_end if block -16 73 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 73 19
+execute in minecraft:the_end if block 16 59 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 59 -19
+execute in minecraft:the_end if block 16 59 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 59 19
+execute in minecraft:the_end if block 16 73 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 73 -19
+execute in minecraft:the_end if block 16 73 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 73 19
+execute in minecraft:the_end if block 17 62 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 62 -19
+execute in minecraft:the_end if block 17 62 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 62 19
+execute in minecraft:the_end if block 17 70 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 70 -19
+execute in minecraft:the_end if block 17 70 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 70 19
+execute in minecraft:the_end if block 19 59 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 59 -16
+execute in minecraft:the_end if block 19 59 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 59 16
+execute in minecraft:the_end if block 19 62 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 62 -17
+execute in minecraft:the_end if block 19 62 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 62 17
+execute in minecraft:the_end if block 19 70 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 70 -17
+execute in minecraft:the_end if block 19 70 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 70 17
+execute in minecraft:the_end if block 19 73 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 73 -16
+execute in minecraft:the_end if block 19 73 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 73 16
+execute in minecraft:the_end if block -20 62 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 62 -16
+execute in minecraft:the_end if block -20 62 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 62 16
+execute in minecraft:the_end if block -20 70 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 70 -16
+execute in minecraft:the_end if block -20 70 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 70 16
+execute in minecraft:the_end if block -16 62 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 62 -20
+execute in minecraft:the_end if block -16 62 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 62 20
+execute in minecraft:the_end if block -16 70 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 70 -20
+execute in minecraft:the_end if block -16 70 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 70 20
+execute in minecraft:the_end if block 16 62 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 62 -20
+execute in minecraft:the_end if block 16 62 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 62 20
+execute in minecraft:the_end if block 16 70 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 70 -20
+execute in minecraft:the_end if block 16 70 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 70 20
+execute in minecraft:the_end if block 20 62 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 62 -16
+execute in minecraft:the_end if block 20 62 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 62 16
+execute in minecraft:the_end if block 20 70 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 70 -16
+execute in minecraft:the_end if block 20 70 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 70 16
+execute in minecraft:the_end if block -18 61 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 61 -18
+execute in minecraft:the_end if block -18 61 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 61 18
+execute in minecraft:the_end if block -18 71 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 71 -18
+execute in minecraft:the_end if block -18 71 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 71 18
+execute in minecraft:the_end if block 18 61 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 61 -18
+execute in minecraft:the_end if block 18 61 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 61 18
+execute in minecraft:the_end if block 18 71 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 71 -18
+execute in minecraft:the_end if block 18 71 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 71 18
+execute in minecraft:the_end if block -20 59 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 59 -15
+execute in minecraft:the_end if block -20 59 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 59 15
+execute in minecraft:the_end if block -20 73 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 73 -15
+execute in minecraft:the_end if block -20 73 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 73 15
+execute in minecraft:the_end if block -15 59 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 59 -20
+execute in minecraft:the_end if block -15 59 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 59 20
+execute in minecraft:the_end if block -15 73 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 73 -20
+execute in minecraft:the_end if block -15 73 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -15 73 20
+execute in minecraft:the_end if block 15 59 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 59 -20
+execute in minecraft:the_end if block 15 59 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 59 20
+execute in minecraft:the_end if block 15 73 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 73 -20
+execute in minecraft:the_end if block 15 73 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 15 73 20
+execute in minecraft:the_end if block 20 59 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 59 -15
+execute in minecraft:the_end if block 20 59 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 59 15
+execute in minecraft:the_end if block 20 73 -15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 73 -15
+execute in minecraft:the_end if block 20 73 15 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 73 15
+execute in minecraft:the_end if block -19 61 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 61 -17
+execute in minecraft:the_end if block -19 61 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 61 17
+execute in minecraft:the_end if block -19 71 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 71 -17
+execute in minecraft:the_end if block -19 71 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 71 17
+execute in minecraft:the_end if block -17 61 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 61 -19
+execute in minecraft:the_end if block -17 61 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 61 19
+execute in minecraft:the_end if block -17 71 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 71 -19
+execute in minecraft:the_end if block -17 71 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 71 19
+execute in minecraft:the_end if block 17 61 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 61 -19
+execute in minecraft:the_end if block 17 61 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 61 19
+execute in minecraft:the_end if block 17 71 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 71 -19
+execute in minecraft:the_end if block 17 71 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 71 19
+execute in minecraft:the_end if block 19 61 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 61 -17
+execute in minecraft:the_end if block 19 61 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 61 17
+execute in minecraft:the_end if block 19 71 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 71 -17
+execute in minecraft:the_end if block 19 71 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 71 17
+execute in minecraft:the_end if block -20 61 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 61 -16
+execute in minecraft:the_end if block -20 61 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 61 16
+execute in minecraft:the_end if block -20 71 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 71 -16
+execute in minecraft:the_end if block -20 71 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 71 16
+execute in minecraft:the_end if block -16 61 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 61 -20
+execute in minecraft:the_end if block -16 61 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 61 20
+execute in minecraft:the_end if block -16 71 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 71 -20
+execute in minecraft:the_end if block -16 71 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -16 71 20
+execute in minecraft:the_end if block 16 61 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 61 -20
+execute in minecraft:the_end if block 16 61 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 61 20
+execute in minecraft:the_end if block 16 71 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 71 -20
+execute in minecraft:the_end if block 16 71 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 16 71 20
+execute in minecraft:the_end if block 20 61 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 61 -16
+execute in minecraft:the_end if block 20 61 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 61 16
+execute in minecraft:the_end if block 20 71 -16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 71 -16
+execute in minecraft:the_end if block 20 71 16 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 71 16
+execute in minecraft:the_end if block -18 60 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 60 -18
+execute in minecraft:the_end if block -18 60 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 60 18
+execute in minecraft:the_end if block -18 72 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 72 -18
+execute in minecraft:the_end if block -18 72 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 72 18
+execute in minecraft:the_end if block 18 60 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 60 -18
+execute in minecraft:the_end if block 18 60 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 60 18
+execute in minecraft:the_end if block 18 72 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 72 -18
+execute in minecraft:the_end if block 18 72 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 72 18
+execute in minecraft:the_end if block -19 66 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 66 -18
+execute in minecraft:the_end if block -19 66 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 66 18
+execute in minecraft:the_end if block -18 66 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 66 -19
+execute in minecraft:the_end if block -18 66 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 66 19
+execute in minecraft:the_end if block 18 66 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 66 -19
+execute in minecraft:the_end if block 18 66 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 66 19
+execute in minecraft:the_end if block 19 66 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 66 -18
+execute in minecraft:the_end if block 19 66 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 66 18
+execute in minecraft:the_end if block -19 60 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 60 -17
+execute in minecraft:the_end if block -19 60 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 60 17
+execute in minecraft:the_end if block -19 65 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 65 -18
+execute in minecraft:the_end if block -19 65 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 65 18
+execute in minecraft:the_end if block -19 67 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 67 -18
+execute in minecraft:the_end if block -19 67 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 67 18
+execute in minecraft:the_end if block -19 72 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 72 -17
+execute in minecraft:the_end if block -19 72 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 72 17
+execute in minecraft:the_end if block -18 65 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 65 -19
+execute in minecraft:the_end if block -18 65 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 65 19
+execute in minecraft:the_end if block -18 67 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 67 -19
+execute in minecraft:the_end if block -18 67 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 67 19
+execute in minecraft:the_end if block -17 60 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 60 -19
+execute in minecraft:the_end if block -17 60 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 60 19
+execute in minecraft:the_end if block -17 72 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 72 -19
+execute in minecraft:the_end if block -17 72 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 72 19
+execute in minecraft:the_end if block 17 60 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 60 -19
+execute in minecraft:the_end if block 17 60 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 60 19
+execute in minecraft:the_end if block 17 72 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 72 -19
+execute in minecraft:the_end if block 17 72 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 72 19
+execute in minecraft:the_end if block 18 65 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 65 -19
+execute in minecraft:the_end if block 18 65 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 65 19
+execute in minecraft:the_end if block 18 67 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 67 -19
+execute in minecraft:the_end if block 18 67 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 67 19
+execute in minecraft:the_end if block 19 60 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 60 -17
+execute in minecraft:the_end if block 19 60 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 60 17
+execute in minecraft:the_end if block 19 65 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 65 -18
+execute in minecraft:the_end if block 19 65 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 65 18
+execute in minecraft:the_end if block 19 67 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 67 -18
+execute in minecraft:the_end if block 19 67 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 67 18
+execute in minecraft:the_end if block 19 72 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 72 -17
+execute in minecraft:the_end if block 19 72 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 72 17
+execute in minecraft:the_end if block -20 66 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 66 -17
+execute in minecraft:the_end if block -20 66 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 66 17
+execute in minecraft:the_end if block -19 64 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 64 -18
+execute in minecraft:the_end if block -19 64 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 64 18
+execute in minecraft:the_end if block -19 68 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 68 -18
+execute in minecraft:the_end if block -19 68 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -19 68 18
+execute in minecraft:the_end if block -18 64 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 64 -19
+execute in minecraft:the_end if block -18 64 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 64 19
+execute in minecraft:the_end if block -18 68 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 68 -19
+execute in minecraft:the_end if block -18 68 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -18 68 19
+execute in minecraft:the_end if block -17 66 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 66 -20
+execute in minecraft:the_end if block -17 66 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 66 20
+execute in minecraft:the_end if block 17 66 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 66 -20
+execute in minecraft:the_end if block 17 66 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 66 20
+execute in minecraft:the_end if block 18 64 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 64 -19
+execute in minecraft:the_end if block 18 64 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 64 19
+execute in minecraft:the_end if block 18 68 -19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 68 -19
+execute in minecraft:the_end if block 18 68 19 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 18 68 19
+execute in minecraft:the_end if block 19 64 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 64 -18
+execute in minecraft:the_end if block 19 64 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 64 18
+execute in minecraft:the_end if block 19 68 -18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 68 -18
+execute in minecraft:the_end if block 19 68 18 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 19 68 18
+execute in minecraft:the_end if block 20 66 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 66 -17
+execute in minecraft:the_end if block 20 66 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 20 66 17
+execute in minecraft:the_end if block -20 65 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 65 -17
+execute in minecraft:the_end if block -20 65 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 65 17
+execute in minecraft:the_end if block -20 67 -17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 67 -17
+execute in minecraft:the_end if block -20 67 17 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -20 67 17
+execute in minecraft:the_end if block -17 65 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 65 -20
+execute in minecraft:the_end if block -17 65 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 65 20
+execute in minecraft:the_end if block -17 67 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 67 -20
+execute in minecraft:the_end if block -17 67 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] -17 67 20
+execute in minecraft:the_end if block 17 65 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 65 -20
+execute in minecraft:the_end if block 17 65 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 65 20
+execute in minecraft:the_end if block 17 67 -20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 67 -20
+execute in minecraft:the_end if block 17 67 20 minecraft:dragon_egg run return run tp @e[type=marker,tag=ste_cos_egg_tracker,limit=1] 17 67 20
 
 schedule function ste_cos:egg/egg_find_tier2_page026 1t replace
