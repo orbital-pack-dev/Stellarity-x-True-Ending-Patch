@@ -1,21 +1,16 @@
 # =====================================================================
 # ste_cos:phantom/spawn_guard
-# Спавнит стража у текущего кристалла (AS end_crystal AT кристалла).
-#
-# Маркер привязки ставится НА позицию кристалла.
-# Фантом-страж спавнится сразу на своей орбите (4 блока от маркера),
-# чтобы он был всегда рядом со СВОИМ маркером (маленький радиус поиска).
+# Спавнит стражей у текущего кристалла (AS end_crystal AT кристалла).
 # =====================================================================
 
-# Увеличиваем общий счетчик ID
-scoreboard players add #guard_id ste_cos.flags 1
+scoreboard players set #2 ste_cos.flags 2
 
-# Маркер привязки в позиции кристалла
-summon marker ~ ~ ~ {Tags:["ste_cos_guard_marker","ste_cos_guard_marker_new"]}
-execute as @e[type=marker,tag=ste_cos_guard_marker_new,distance=..1,limit=1] run scoreboard players operation @s ste_cos.id = #guard_id ste_cos.flags
-tag @e[type=marker,tag=ste_cos_guard_marker_new] remove ste_cos_guard_marker_new
+# Рандомное количество от 2 до 10 с акцентом на средние значения (5-7)
+execute store result score #r1 ste_cos.flags run random value 2..10
+execute store result score #r2 ste_cos.flags run random value 2..10
+scoreboard players operation #phantom_count ste_cos.flags = #r1 ste_cos.flags
+scoreboard players operation #phantom_count ste_cos.flags += #r2 ste_cos.flags
+scoreboard players operation #phantom_count ste_cos.flags /= #2 ste_cos.flags
 
-# Фантом-страж на орбите (4 вперёд, 3 ВВЕРХ от кристалла, чтобы не спавнился в огне)
-execute positioned ~4 ~3 ~ run summon phantom ~ ~ ~ {Tags:["ste_cos_guard","ste_cos_guard_new"],NoAI:1b,Silent:1b,Health:20.0f,PersistenceRequired:1b}
-execute as @e[type=phantom,tag=ste_cos_guard_new,distance=..6,limit=1] run scoreboard players operation @s ste_cos.id = #guard_id ste_cos.flags
-tag @e[type=phantom,tag=ste_cos_guard_new] remove ste_cos_guard_new
+# Запуск цикла
+execute if score #phantom_count ste_cos.flags matches 1.. run function ste_cos:phantom/spawn_single_guard

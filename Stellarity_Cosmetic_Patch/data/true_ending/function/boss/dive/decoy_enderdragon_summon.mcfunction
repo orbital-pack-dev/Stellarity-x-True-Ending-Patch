@@ -13,8 +13,16 @@
 #   Вызывается при bosstime 1020 и 1050 (2 копии, правая и левая).
 # =====================================================================
 
-# Первая копия (bosstime 1020) — справа, высоко
-execute if score @s trueEnding_bosstime matches 1020 run summon ender_dragon ~12 ~128 ~10 {Tags:["trueEnding_mirrordragon","trueEnding_dragon_particlechecked","stellarity.ender_dragon","stellarity.dragon.invulnerable","smithed.strict","refresh_entity_exists","smithed.entity"],NoAI:0b,Silent:1b,Invulnerable:1b}
+# Первая копия (bosstime 1020) — случайная позиция (радиус 30 от портала)
+execute if score @s trueEnding_bosstime matches 1020 positioned 0 150 0 run summon marker ~ ~ ~ {Tags:["ste_cos_decoy_pos"]}
+execute if score @s trueEnding_bosstime matches 1020 run spreadplayers 0 0 15 30 under 255 false @e[type=marker,tag=ste_cos_decoy_pos]
+execute if score @s trueEnding_bosstime matches 1020 as @e[type=marker,tag=ste_cos_decoy_pos] at @s run tp @s ~ 150 ~
+execute if score @s trueEnding_bosstime matches 1020 at @e[type=marker,tag=ste_cos_decoy_pos] run summon ender_dragon ~ ~ ~ {Tags:["trueEnding_mirrordragon","trueEnding_dragon_particlechecked","stellarity.ender_dragon","stellarity.dragon.invulnerable","smithed.strict","refresh_entity_exists","smithed.entity"],NoAI:0b,Silent:1b,Invulnerable:1b}
+execute if score @s trueEnding_bosstime matches 1020 run kill @e[type=marker,tag=ste_cos_decoy_pos]
 
-# Вторая копия (bosstime 1050) — слева, высоко
-execute if score @s trueEnding_bosstime matches 1050 run summon ender_dragon ~-12 ~128 ~10 {Tags:["trueEnding_mirrordragon","trueEnding_dragon_particlechecked","stellarity.ender_dragon","stellarity.dragon.invulnerable","smithed.strict","refresh_entity_exists","smithed.entity"],NoAI:0b,Silent:1b,Invulnerable:1b}
+# Вторая копия (bosstime 1050) — случайная позиция (радиус 30 от портала)
+execute if score @s trueEnding_bosstime matches 1050 positioned 0 150 0 run summon marker ~ ~ ~ {Tags:["ste_cos_decoy_pos"]}
+execute if score @s trueEnding_bosstime matches 1050 run spreadplayers 0 0 15 30 under 255 false @e[type=marker,tag=ste_cos_decoy_pos]
+execute if score @s trueEnding_bosstime matches 1050 as @e[type=marker,tag=ste_cos_decoy_pos] at @s run tp @s ~ 150 ~
+execute if score @s trueEnding_bosstime matches 1050 at @e[type=marker,tag=ste_cos_decoy_pos] run summon ender_dragon ~ ~ ~ {Tags:["trueEnding_mirrordragon","trueEnding_dragon_particlechecked","stellarity.ender_dragon","stellarity.dragon.invulnerable","smithed.strict","refresh_entity_exists","smithed.entity"],NoAI:0b,Silent:1b,Invulnerable:1b}
+execute if score @s trueEnding_bosstime matches 1050 run kill @e[type=marker,tag=ste_cos_decoy_pos]
