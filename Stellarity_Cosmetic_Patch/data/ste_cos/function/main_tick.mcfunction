@@ -22,10 +22,3 @@ execute as @a at @s if dimension minecraft:the_end unless entity @s[tag=ste_cos_
 execute as @a at @s if dimension minecraft:the_end unless entity @s[tag=ste_cos_chorus_cleaned] run tag @s add ste_cos_chorus_cleaned
 execute as @a at @s unless dimension minecraft:the_end if entity @s[tag=ste_cos_chorus_cleaned] run tag @s remove ste_cos_chorus_cleaned
 
-# П.6 — Сброс флага очистки кристаллов, если дракона нет (бой завершен или не начат)
-execute in minecraft:the_end unless entity @e[type=ender_dragon] run scoreboard players set #crystal_cleaned ste_cos.flags 0
-
-# Уничтожаем ванильные кристаллы (выше Y=70), если бой еще не начался
-execute in minecraft:the_end if score #crystal_cleaned ste_cos.flags matches 0 run kill @e[type=end_crystal,distance=..250,y=70,dy=200]
-execute in minecraft:the_end if score #crystal_cleaned ste_cos.flags matches 0 run kill @e[type=phantom,tag=ste_cos_guard,distance=..250]
-execute in minecraft:the_end if score #crystal_cleaned ste_cos.flags matches 0 run scoreboard players set #crystal_cleaned ste_cos.flags 1

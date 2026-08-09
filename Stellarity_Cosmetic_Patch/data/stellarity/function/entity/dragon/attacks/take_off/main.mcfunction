@@ -1,5 +1,5 @@
 execute unless score @s stellarity.dragon.perch_cooldown matches 1.. \
-at @s run \
+positioned 0 70 0 run \
 function stellarity:entity/dragon/attacks/take_off/shulkers/prepare
 
 execute unless score @s stellarity.dragon.perch_cooldown matches 10.. run \
