@@ -29,3 +29,5 @@ execute positioned ~4 ~3 ~ run summon phantom ~ ~ ~ {Tags:["ste_cos_guard","ste_
 execute as @e[type=phantom,tag=ste_cos_guard_new,distance=..8,limit=1] run scoreboard players operation @s ste_cos.id = #guard_id ste_cos.flags
 tag @e[type=phantom,tag=ste_cos_guard_new] remove ste_cos_guard_new
 
+# Убираем тег с кристалла, чтобы он больше не спавнил фантомов
+tag @s remove ste_cos_needs_phantom
