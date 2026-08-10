@@ -1,24 +1,18 @@
 # =====================================================================
 # ste_cos:phantom/guard_act
-# AS marker AT РјР°СЂРєРµСЂР°. РљСЂРёСЃС‚Р°Р»Р» Р¶РёРІ. РЈРїСЂР°РІР»РµРЅРёРµ РЎР’РћРРњ С„Р°РЅС‚РѕРјРѕРј (СЂР°РґРёСѓСЃ 6).
-#   - РРіСЂРѕРє РІ СЂР°РґРёСѓСЃРµ 20 в†’ NoAI:0b (С„Р°РЅС‚РѕРј СЃР°Рј Р°С‚Р°РєСѓРµС‚ РёРіСЂРѕРєР°).
-#   - РќРµС‚ РёРіСЂРѕРєР° в†’ NoAI:1b + РѕСЂР±РёС‚Р° СЂР°РґРёСѓСЃ 4 РІРѕРєСЂСѓРі РјР°СЂРєРµСЂР°.
+# Управляет конкретным фантомом через маркер.
 # =====================================================================
 
-# РЎРѕС…СЂР°РЅСЏРµРј ID С‚РµРєСѓС‰РµРіРѕ РјР°СЂРєРµСЂР° РІ #current_id
+# Сохраняем ID текущего маркера в #current_id
 scoreboard players operation #current_id ste_cos.flags = @s ste_cos.id
 
-# РРіСЂРѕРє СЂСЏРґРѕРј в†’ AI РІРєР»СЋС‡Р°РµРј (РґР»СЏ РЎР’РћР•Р“Рћ С„Р°РЅС‚РѕРјР°)
-execute if entity @a[distance=..20,gamemode=!spectator,gamemode=!creative] as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run data modify entity @s NoAI set value 0b
+# Всегда отключаем ванильный ИИ и крутим по орбите
+execute as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run data modify entity @s NoAI set value 1b
+execute run function ste_cos:phantom/orbit_guard
 
-# РРіСЂРѕРєР° РЅРµС‚ в†’ AI РІС‹РєР» + РѕСЂР±РёС‚Р°
-execute unless entity @a[distance=..20,gamemode=!spectator,gamemode=!creative] as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run data modify entity @s NoAI set value 1b
-execute unless entity @a[distance=..20,gamemode=!spectator,gamemode=!creative] run function ste_cos:phantom/orbit_guard
-
-# РЎРїР°РІРЅРёРј С‡Р°СЃС‚РёС†С‹-С…РІРѕСЃС‚ Рё Р°СЂРµР°-СЌС„С„РµРєС‚ (СѓСЂРѕРЅ) РґР»СЏ С„Р°РЅС‚РѕРјР° РІ Р»СЋР±РѕРј СЃРѕСЃС‚РѕСЏРЅРёРё
+# Спавним частицы-хвост и ареа-эффект (урон) для фантома в любом состоянии
 execute as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags at @s run particle soul_fire_flame ~ ~0.5 ~ 0.2 0.2 0.2 0.01 5 force
 execute as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags at @s run particle dragon_breath ~ ~0.5 ~ 1.5 1.5 1.5 0.01 10 force
 
-# РџСЂСЏРјРѕР№ СѓСЂРѕРЅ Рё РёСЃСЃСѓС€РµРЅРёРµ РёРіСЂРѕРєР°Рј РІ СЂР°РґРёСѓСЃРµ 4 Р±Р»РѕРєРѕРІ
+# Прямой урон и иссушение игрокам в радиусе 4 блоков
 execute as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags at @s as @a[distance=..4,gamemode=!spectator,gamemode=!creative] run damage @s 2 minecraft:magic
-execute as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags at @s run effect give @a[distance=..4,gamemode=!spectator,gamemode=!creative] minecraft:wither 5 1 true
