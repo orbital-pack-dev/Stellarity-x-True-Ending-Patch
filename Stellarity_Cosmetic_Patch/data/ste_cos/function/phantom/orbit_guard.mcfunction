@@ -5,15 +5,8 @@
 
 scoreboard players operation #current_id ste_cos.flags = @s ste_cos.id
 
-# Увеличиваем угол (0..359)
-scoreboard players add @s ste_cos.ry 3
-execute if score @s ste_cos.ry matches 360.. run scoreboard players remove @s ste_cos.ry 360
-
-# Сохраняем угол в хранилище для макроса
-execute store result storage ste_cos:macro ry int 1 run scoreboard players get @s ste_cos.ry
-
-# Вызываем макрос для поворота маркера
-execute as @s run function ste_cos:phantom/orbit_macro with storage ste_cos:macro
+# Вращаем armor_stand
+tp @s ~ ~ ~ ~3 ~
 
 # Фантом на орбиту
 execute if score @s ste_cos.radius matches 4 at @s rotated as @s as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^4

@@ -17,4 +17,4 @@ execute in minecraft:the_end if entity @e[type=ender_dragon,tag=stellarity.ender
 execute in minecraft:the_end if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] as @e[type=end_crystal,tag=ste_cos_needs_phantom] at @s run function ste_cos:phantom/spawn_single_guard
 
 # -- есть дракон: управление каждым стражем --
-execute in minecraft:the_end if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] as @e[type=armor_stand,tag=ste_cos_guard_marker] at @s run function ste_cos:phantom/orbit_guard
+execute in minecraft:the_end if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] as @e[type=armor_stand,tag=ste_cos_guard_marker] at @s run function ste_cos:phantom/guard_move
