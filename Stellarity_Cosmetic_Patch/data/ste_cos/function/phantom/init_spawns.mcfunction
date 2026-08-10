@@ -15,4 +15,4 @@ scoreboard players set #2 ste_cos.flags 2
 scoreboard players operation #target_count ste_cos.flags /= #2 ste_cos.flags
 
 # Раздаём теги случайным кристаллам (каждый получает максимум 1 фантома)
-execute as @e[type=end_crystal,nbt=!{ShowBottom:0b},sort=random] if score #target_count ste_cos.flags matches 1.. run function ste_cos:phantom/mark_crystal
+execute in minecraft:the_end positioned 0 65 0 as @e[type=end_crystal,distance=..400,nbt={ShowBottom:1b},sort=random] if score #target_count ste_cos.flags matches 1.. run function ste_cos:phantom/mark_crystal
