@@ -24,3 +24,4 @@ execute if score @s ste_cos.flags matches 3 positioned ~0.5 ~0.05 ~0.5 run parti
 # строились относительно позиции МАРКЕРА, а не центра блока, и вся геометрия
 # (спираль + кольцо) была смещена на пол-блока по всем трём осям.
 execute if score @s ste_cos.flags matches 0 positioned ~0.5 ~0.05 ~0.5 run function ste_cos:egg/egg_pulse_trigger
+

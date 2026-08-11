@@ -27,3 +27,8 @@ scoreboard objectives add ste_cos.max_health dummy "STE-COS Max Health"
 
 # Счётчик ID стражей
 scoreboard players set #guard_id ste_cos.flags 0
+
+# Флаги очистки кристаллов при заходе в Энд
+scoreboard players set #crystal_cleaned ste_cos.flags 0
+scoreboard players set #markers_ready ste_cos.flags 0
+scoreboard players set #phantoms_spawned ste_cos.flags 0
