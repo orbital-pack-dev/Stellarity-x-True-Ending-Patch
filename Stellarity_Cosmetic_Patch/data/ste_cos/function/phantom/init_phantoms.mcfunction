@@ -17,6 +17,8 @@ scoreboard players operation #target_count ste_cos.flags += #r2 ste_cos.flags
 scoreboard players operation #target_count ste_cos.flags /= #two ste_cos.flags
 
 # Каждому выбранному случайному маркеру без фантома — спавн стража
-execute as @e[type=armor_stand,tag=ste_cos_guard_marker,sort=random] unless entity @e[type=phantom,tag=ste_cos_guard,distance=..3,limit=1] if score #target_count ste_cos.flags matches 1.. run function ste_cos:phantom/spawn_single_guard
+# ВАЖНО: обязательно at @s — иначе summon phantom ~ ~ ~ сделается от позиции
+# выполнения init_phantoms (центр 0 65 0 → над порталом), а не у маркера.
+execute as @e[type=armor_stand,tag=ste_cos_guard_marker,sort=random] at @s unless entity @e[type=phantom,tag=ste_cos_guard,distance=..3,limit=1] if score #target_count ste_cos.flags matches 1.. run function ste_cos:phantom/spawn_single_guard
 
 # Фантомы, у которых маркер умер (кристалл сломан) — чистятся в guard_move/cleanup_current

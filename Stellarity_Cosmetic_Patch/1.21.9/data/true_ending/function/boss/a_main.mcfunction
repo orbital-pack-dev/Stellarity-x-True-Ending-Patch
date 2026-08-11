@@ -12,7 +12,9 @@ execute if score dragontrail trueEnding_settings matches 1 as @s run particle dr
 
 #if configured health is >1024, add additional health
 #only if dragon still has extra health
-execute if score dragonhealth trueEnding_settings matches 1025.. if score @s trueEnding_health_extra matches 1.. run function true_ending:boss/extra_health
+# PATCH (v8): отключено — extra_health ставит Health=1024 и ломает фазы.
+# Игрок использует Health:300, поэтому 1024-хил не нужен и вреден.
+# execute if score dragonhealth trueEnding_settings matches 1025.. if score @s trueEnding_health_extra matches 1.. run function true_ending:boss/extra_health
 execute if score @s trueEnding_health_extra matches ..0 run bossbar set true_ending:extra_health players
 execute if score 20tick trueEnding_clock matches 1 if score @s trueEnding_health_extra matches 1.. positioned 0 80 0 run bossbar set true_ending:extra_health players @a[distance=..180]
 

@@ -1,4 +1,4 @@
-﻿# Контекст: AS маркер, AT маркера.
+# Контекст: AS маркер, AT маркера.
 # Управляет фантомом: орбита + частицы + урон.
 
 scoreboard players operation #current_id ste_cos.flags = @s ste_cos.id
