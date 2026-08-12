@@ -14,11 +14,9 @@
 
 # Создаём маркер на алтаре, если его нет
 execute in minecraft:the_end unless entity @e[type=marker,tag=ste_cos_egg_tracker] run summon marker 0 66 0 {Tags:["ste_cos_egg_tracker"]}
-# Инициализируем search_stage=0 если значение никогда не выставлялось (первый тик после спавна)
-execute in minecraft:the_end as @e[type=marker,tag=ste_cos_egg_tracker,limit=1] unless score @s ste_cos.search_stage matches -2147483648..2147483647 run scoreboard players set @s ste_cos.search_stage 0
 
 # --- 1. Если яйцо прямо под/в маркере — держим и светим ---
-execute in minecraft:the_end as @e[type=marker,tag=ste_cos_egg_tracker,limit=1] at @s align xyz if block ~ ~ ~ minecraft:dragon_egg run function ste_cos:egg/egg_glow
+execute in minecraft:the_end as @e[type=marker,tag=ste_cos_egg_tracker,limit=1] at @s if block ~ ~ ~ minecraft:dragon_egg run function ste_cos:egg/egg_glow
 
 # --- 2. Если под маркером яйца НЕТ — искать его и перепривязать ---
-execute in minecraft:the_end as @e[type=marker,tag=ste_cos_egg_tracker,limit=1] at @s align xyz unless block ~ ~ ~ minecraft:dragon_egg run function ste_cos:egg/egg_find
+execute in minecraft:the_end as @e[type=marker,tag=ste_cos_egg_tracker,limit=1] at @s unless block ~ ~ ~ minecraft:dragon_egg run function ste_cos:egg/egg_find
