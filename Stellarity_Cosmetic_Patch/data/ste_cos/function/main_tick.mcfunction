@@ -23,10 +23,15 @@ execute as @a at @s if dimension minecraft:the_end unless entity @s[tag=ste_cos_
 execute as @a at @s unless dimension minecraft:the_end if entity @s[tag=ste_cos_chorus_cleaned] run tag @s remove ste_cos_chorus_cleaned
 
 # =====================================================================
-# П.4 — Боссбар фикс: белый боссбар остаётся если игрок умер/вышел из Энда
-# Если дракона нет в Энде — возвращаем розовый цвет и скрываем crystal_count
+# П.4 — Боссбар фикс: проверяем от лица Игроков. 
+# Если в радиусе 400 блоков от игрока Дракона нету, то убираем его из боссбара.
+tag @a remove ste_cos_has_dragon
+execute in minecraft:the_end as @e[type=ender_dragon,tag=stellarity.ender_dragon] at @s run tag @a[distance=..400] add ste_cos_has_dragon
+execute run bossbar set stellarity:ender_dragon players @a[tag=ste_cos_has_dragon]
+execute run bossbar set stellarity:crystal_count players @a[tag=ste_cos_has_dragon]
+
+# Возвращаем цвет по умолчанию если дракона нет
 execute in minecraft:the_end unless entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] run bossbar set stellarity:ender_dragon color pink
-execute in minecraft:the_end unless entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] run bossbar set stellarity:crystal_count visible false
 # =====================================================================
 
 # =====================================================================
@@ -41,12 +46,7 @@ execute in minecraft:the_end positioned 0 64 0 if entity @e[type=area_effect_clo
 # =====================================================================
 
 # =====================================================================
-# П.7 — Анти-краш: Окo Края (eye_of_ender) вызывает serverside locate в 1 тик
-# Убиваем очи в Энде (там они ищут End City — очень тяжёлая операция)
-execute in minecraft:the_end as @e[type=eye_of_ender] run kill @s
-# В Overworld: убиваем через 1 тик (locate уже запустился, но это лучше чем ничего)
-execute as @e[type=eye_of_ender,tag=!ste_cos_eye_tracked] run tag @s add ste_cos_eye_tracked
-execute as @e[type=eye_of_ender,tag=ste_cos_eye_tracked] run kill @s
+# П.7 — Отменено: Оки-Края больше не убиваются.
 # =====================================================================
 
 # RNG-тикер (инкремент каждый тик для разнообразия random в spawn_guard)
