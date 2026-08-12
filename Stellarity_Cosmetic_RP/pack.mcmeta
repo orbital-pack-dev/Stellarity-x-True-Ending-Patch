@@ -1,0 +1,27 @@
+{
+  "pack": {
+    "pack_format": 34,
+    "description": "\uE001 \u00A75Stellarity Cosmetic RP\n\u00A7r\u00A77Visual Effects & Particles",
+    "supported_formats": [34, 75]
+  },
+  "sodium": {
+    "ignored_shaders": [
+      "lightmap.fsh"
+    ]
+  },
+  "overlays": {
+    "entries": [
+
+      {
+        "directory": "opt_end_fx",
+        "polytone_condition": "config('davidparticles:end_fx') == '§aON'",
+        "formats": [0, 0]
+      },
+      {
+        "directory": "opt_sky_fog_colormaps",
+        "polytone_condition": "config('davidparticles:sky_fog_colormaps') == '§aON'",
+        "formats": [0, 0]
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+﻿{
+    "providers":  [
+                      {
+                          "ascent":  8,
+                          "height":  8,
+                          "file":  "ste_cos:icon_rp.png",
+                          "type":  "bitmap",
+                          "chars":  [
+                                        "\uE001"
+                                    ]
+                      },
+                      {
+                          "ascent":  8,
+                          "height":  8,
+                          "file":  "ste_cos:icon_dp.png",
+                          "type":  "bitmap",
+                          "chars":  [
+                                        "\uE002"
+                                    ]
+                      }
+                  ]
+}

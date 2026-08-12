@@ -1,9 +1,0 @@
-{
-   "targets": ["minecraft:player"],
-   "emitters": [
-    {
-       "particle": "davidparticles:snowy_weather_emitter",
-       "chance": "((o.biome() == 'minecraft:snowy_plains' || o.biome() == 'minecraft:snowy_slopes' || o.biome() == 'minecraft:snowy_beach' || o.biome() == 'minecraft:snowy_taiga' || o.biome() == 'minecraft:frozen_river' || o.biome() == 'minecraft:frozen_ocean' || o.biome() == 'minecraft:frozen_peaks' || o.biome() == 'minecraft:deep_frozen_ocean' || o.biome() == 'minecraft:ice_spikes' || o.biome() == 'minecraft:jagged_peaks' || o.biome() == 'minecraft:grove')) ? 1 : 0"
-     }
-    ] 
-}
