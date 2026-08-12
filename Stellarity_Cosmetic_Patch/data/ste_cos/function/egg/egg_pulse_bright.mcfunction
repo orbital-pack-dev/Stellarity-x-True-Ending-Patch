@@ -1,6 +1,5 @@
-# === ste_cos:egg/egg_pulse_bright ===
-# ПУЛЬС: ЯРКАЯ ФАЗА
-# Позиция и исполнитель унаследованы от egg_glow (= центр блока яйца)
+# === ПУЛЬС: ЯРКАЯ ФАЗА ===
+# Позиция и исполнитель унаследованы от pulse.mcfunction (= маркер ste_cos_egg_tracker)
 
 # --- Восходящая двойная спираль (2 стренда по 6 точек, радиус 0.5 -> 0.1) ---
 particle minecraft:dust_color_transition{from_color:[0.35,0.0,0.55],scale:0.9,to_color:[1.0,0.1,0.9]} ~0.50 ~0.20 ~0.00 0 0 0 0 1 force
@@ -43,4 +42,4 @@ particle minecraft:dust_color_transition{from_color:[0.35,0.0,0.55],scale:1.1,to
 particle minecraft:dust_color_transition{from_color:[0.35,0.0,0.55],scale:1.1,to_color:[1.0,0.1,0.9]} ~0.83 ~0.5 ~-0.34 0 0 0 0 1 force
 
 # --- Портальный "выдох" в момент пика ---
-particle minecraft:portal ~0.0 ~0.5 ~0.0 0.6 0.6 0.6 0.04 12 force
+particle minecraft:dragon_breath ~0.0 ~0.5 ~0.0 0.5 0.5 0.5 0.03 4 force

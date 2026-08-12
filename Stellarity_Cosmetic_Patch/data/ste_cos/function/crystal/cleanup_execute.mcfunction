@@ -25,7 +25,11 @@ execute in minecraft:the_end positioned 0 65 0 run kill @e[type=end_crystal,dist
 
 # Убираем и фантомов-стражей, если остались
 execute in minecraft:the_end positioned 0 65 0 run kill @e[type=phantom,tag=ste_cos_guard,distance=..250]
-execute in minecraft:the_end positioned 0 65 0 run kill @e[type=armor_stand,tag=ste_cos_guard_marker,distance=..250]
+execute in minecraft:the_end positioned 0 65 0 run kill @e[type=marker,tag=ste_cos_guard_marker,distance=..250]
+
+# Пункт 9: убираем interaction-щиты кристаллов (они больше не нужны — дракон ещё не призван)
+execute in minecraft:the_end positioned 0 65 0 run kill @e[type=minecraft:interaction,tag=ste_cos_crystal_shield,distance=..250]
 
 # Помечаем, что очистка произведена
 scoreboard players set #crystal_cleaned ste_cos.flags 1
+

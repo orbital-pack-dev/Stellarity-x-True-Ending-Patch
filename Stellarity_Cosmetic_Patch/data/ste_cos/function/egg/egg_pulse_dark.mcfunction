@@ -1,6 +1,5 @@
-# === ste_cos:egg/egg_pulse_dark ===
-# ПУЛЬС: ТЁМНАЯ ФАЗА (выдох/затухание)
-# Позиция и исполнитель унаследованы от egg_glow (= центр блока яйца)
+# === ПУЛЬС: ТЁМНАЯ ФАЗА (выдох/затухание) ===
+# Плотность вдвое ниже bright-фазы — это и создаёт эффект "дыхания", а не ровный шум
 
 # --- Затухающие остатки спирали (по 3 точки на стренд) ---
 particle minecraft:dust_color_transition{from_color:[0.8,0.0,0.7],scale:0.9,to_color:[0.08,0.0,0.18]} ~0.05 ~0.95 ~-0.09 0 0 0 0 1 force
@@ -22,4 +21,4 @@ particle minecraft:dust_color_transition{from_color:[0.8,0.0,0.7],scale:0.7,to_c
 particle minecraft:dust_color_transition{from_color:[0.8,0.0,0.7],scale:0.7,to_color:[0.08,0.0,0.18]} ~0.35 ~0.5 ~-0.35 0 0 0 0 1 force
 
 # --- Тихий "вдох" портала ---
-particle minecraft:portal ~0.0 ~0.4 ~0.0 0.3 0.3 0.3 0.01 5 force
+particle minecraft:dragon_breath ~0.0 ~0.4 ~0.0 0.2 0.2 0.2 0.01 2 force
