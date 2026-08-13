@@ -1,0 +1,17 @@
+{
+        "initializer":{
+          "lifetime": "120",
+          "alpha": "0",
+          "size": "2"
+        },
+        "ticker": {
+          "alpha": "1.0 * sin((pi / LIFETIME) * AGE)"
+        },
+        "liquid_affinity": "non_liquids",
+        "has_physics": false,
+        "render_type": "additive_translucent",
+        "exclusion_radius": 0,
+        "kill_when_not_in_view": false,
+        "lit": true,
+        "light_level": 15
+}

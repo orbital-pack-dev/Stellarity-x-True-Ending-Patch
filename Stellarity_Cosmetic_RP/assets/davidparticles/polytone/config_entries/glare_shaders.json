@@ -1,0 +1,16 @@
+{
+  "default_value": "§aON / §eYellow moon",
+
+  "allowed_values": [
+    "§aON / §eYellow moon",
+    "§aON / §bBlue moon",
+    "§cOFF"
+  ],
+
+  "presets": {
+    "high_quality": "§aON / §eYellow moon",
+    "potato": "§aON / §eYellow moon",
+    "only_fog": "§cOFF",
+    "only_fx": "§aON / §eYellow moon"
+  }
+}

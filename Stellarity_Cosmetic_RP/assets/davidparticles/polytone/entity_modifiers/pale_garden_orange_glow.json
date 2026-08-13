@@ -1,0 +1,19 @@
+{
+   "targets": ["minecraft:player"],
+   "emitters": [
+    {
+       "particle": "davidparticles:creaking_orange_glow",
+       "chance": "(g.rain() == 0 && o.y() > 47 && (o.biome() == 'minecraft:pale_garden') ) ? 0.1 : 0",
+       "x": "rand()*20 - 10", 
+       "z": "rand()*20 - 10",
+       "y": "rand()*20 - 10"
+     },
+     {
+       "particle": "minecraft:white_ash",
+       "chance": "(g.rain() == 0 && o.y() > 47 && (o.biome() == 'minecraft:pale_garden') ) ? 1.0 : 0",
+       "x": "rand()*20 - 10", 
+       "z": "rand()*20 - 10",
+       "y": "rand()*20 - 10"
+     }
+     ]
+}

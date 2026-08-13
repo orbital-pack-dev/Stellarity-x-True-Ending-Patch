@@ -1,0 +1,15 @@
+{
+  "default_value": "§aON",
+
+  "allowed_values": [
+    "§aON",
+    "§cVANILLA"
+  ],
+
+  "presets": {
+    "high_quality": "§aON",
+    "potato": "§cVANILLA",
+    "only_fog": "§cVANILLA",
+    "only_fx": "§aON"
+  }
+}
