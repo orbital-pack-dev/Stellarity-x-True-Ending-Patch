@@ -1,65 +1,9 @@
 {
-  "spyglass.env.gameVersion": "1.21.11",
-  "spyglass.env.dependencies": [
-    "@vanilla-datapack",
-    "@vanilla-resourcepack",
-    "@vanilla-mcdoc"
-  ],
-  "spyglass.env.exclude": [
-    "**/Stellarity_TrueEnding_Patch_old/**"
-  ],
-  "spyglass.env.feature": {
-    "codeActions": true,
-    "colors": true,
-    "completions": true,
-    "documentHighlighting": true,
-    "documentLinks": true,
-    "foldingRanges": true,
-    "formatting": true,
-    "hover": true,
-    "semanticColoring": true,
-    "selectionRanges": true,
-    "signatures": true,
-    "inlayHint": {
-      "enabledNodes": [
-        "mcfunction:command_child/unknown"
-      ]
-    }
-  },
-  "spyglass.lint": {
-    "idOmitDefaultNamespace": false,
-    "nbtTypeCheck": "loosely",
-    "nbtArrayLengthCheck": true
-  },
-  "spyglass.format": {
-    "eol": "auto",
-    "nbtCompoundColonSpacing": {
-      "before": 0,
-      "after": 1
-    },
-    "nbtCompoundCommaSpacing": {
-      "before": 0,
-      "after": 1
-    },
-    "nbtListCommaSpacing": {
-      "before": 0,
-      "after": 1
-    },
-    "selectorCommaSpacing": {
-      "before": 0,
-      "after": 1
-    },
-    "blockStateCommaSpacing": {
-      "before": 0,
-      "after": 1
-    }
-  },
   "files.associations": {
     "**/*.mcfunction": "mcfunction"
   },
   "files.autoSave": "onFocusChange",
   "files.exclude": {
-    "**/*.json.spyglasswork": true,
     "**/.vscode": true
   },
   "files.watcherExclude": {
@@ -69,7 +13,6 @@
   "search.exclude": {
     "**/.git/**": true,
     "**/.vscode": true,
-    "**/*.spyglasswork": true,
     "**/Stellarity_TrueEnding_Patch_old/**": true
   },
   "[json]": {
