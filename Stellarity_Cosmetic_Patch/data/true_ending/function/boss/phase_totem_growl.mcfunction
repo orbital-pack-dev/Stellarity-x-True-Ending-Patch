@@ -9,8 +9,8 @@ playsound ambient.basalt_deltas.mood hostile @a[distance=..128] ~ ~ ~ 6 1.1
 playsound ambient.basalt_deltas.mood hostile @a[distance=..128] ~ ~ ~ 6 1.2
 playsound ambient.basalt_deltas.mood hostile @a[distance=..128] ~ ~ ~ 6 1.3
 
-#particle dragon_breath ~ ~1.5 ~ 0 0 0 0.4 100 force @a[distance=..128]
-#particle dragon_breath ~ ~1.5 ~ 0 0 0 0.2 100 force @a[distance=..128]
+particle dragon_breath ~ ~1.5 ~ 0 0 0 0.4 100 force @a[distance=..128]
+particle dragon_breath ~ ~1.5 ~ 0 0 0 0.2 100 force @a[distance=..128]
 function true_ending:boss/shockwave/summon
 
 # PATCH (п.1): снятие неуязвимости при growl только если кристаллов нет.

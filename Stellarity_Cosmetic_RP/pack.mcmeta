@@ -3,7 +3,10 @@
     "pack_format": 88,
     "min_format": 75,
     "max_format": 88,
-    "description": "\uE001 \u00A76Stellarity Cosmetic RP\n\u00A7r\u00A77Visual Effects & Particles"
+    "description": [
+      {"text": "\uE000\uE001"},
+      {"text":"","extra":[{"text":"S","color":"#C454F4"},{"text":"t","color":"#C557EB"},{"text":"e","color":"#C55BE1"},{"text":"l","color":"#C65ED8"},{"text":"l","color":"#C762CE"},{"text":"a","color":"#C865C5"},{"text":"r","color":"#C869BB"},{"text":"i","color":"#C96CB2"},{"text":"t","color":"#CA70A8"},{"text":"y","color":"#CB739F"},{"text":" "},{"text":"C","color":"#CC7A8C"},{"text":"o","color":"#CD7D83"},{"text":"s","color":"#CD8179"},{"text":"m","color":"#CE8470"},{"text":"e","color":"#CF8866"},{"text":"t","color":"#D08B5D"},{"text":"i","color":"#D08F53"},{"text":"c","color":"#D1924A"},{"text":" "},{"text":"R","color":"#D39937"},{"text":"P","color":"#D39D2D"},{"text":"\n"},{"text":"V","color":"#D59D2C"},{"text":"F","color":"#D59A34"},{"text":"X","color":"#D6973D"},{"text":" "},{"text":"&","color":"#D7914D"},{"text":" "},{"text":"C","color":"#D88A5E"},{"text":"u","color":"#D98766"},{"text":"s","color":"#DA846E"},{"text":"t","color":"#DA8176"},{"text":"o","color":"#DB7E7F"},{"text":"m","color":"#DC7B87"},{"text":" "},{"text":"P","color":"#DD7597"},{"text":"a","color":"#DE729F"},{"text":"r","color":"#DE6FA8"},{"text":"t","color":"#DF6BB0"},{"text":"i","color":"#DF68B8"},{"text":"c","color":"#E065C0"},{"text":"l","color":"#E162C9"},{"text":"e","color":"#E15FD1"},{"text":" "},{"text":"P","color":"#DE5AD7"},{"text":"a","color":"#DA58D6"},{"text":"c","color":"#D756D4"},{"text":"k","color":"#D354D3"},{"text":"\n"},{"text":" "},{"text":"1","color":"#C74FCE"},{"text":".","color":"#C44DCD"},{"text":"2","color":"#C04BCB"},{"text":"1","color":"#BC49C9"},{"text":".","color":"#B847C8"},{"text":"1","color":"#B445C6"},{"text":"1","color":"#B143C5"},{"text":" "},{"text":" "},{"text":"•","color":"#A53EC0"},{"text":" "},{"text":" "},{"text":"b","color":"#9A38BC"},{"text":"y","color":"#9636BA"},{"text":" "},{"text":"V","color":"#8F32B7"},{"text":"o","color":"#8B30B5"},{"text":"i","color":"#872EB4"},{"text":"d","color":"#832DB2"},{"text":"7","color":"#7F2BB1"},{"text":"6","color":"#7C29AF"},{"text":"7","color":"#7827AE"},{"text":"6","color":"#7425AC"}]}
+    ]
   },
   "sodium": {
     "ignored_shaders": [

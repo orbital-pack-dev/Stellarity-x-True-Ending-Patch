@@ -254,31 +254,31 @@
 
 ## Creating teams
   team add stellarity.purple_glow
-  team modify stellarity.purple_glow color reset
+  team modify stellarity.purple_glow color dark_purple
 
 team add stellarity.golden_glow
-team modify stellarity.golden_glow color reset
+team modify stellarity.golden_glow color gold
 
 team add stellarity.spirit_glow
-team modify stellarity.spirit_glow color reset
+team modify stellarity.spirit_glow color aqua
 
 team add stellarity.homing_targets
-team modify stellarity.homing_targets color reset
+team modify stellarity.homing_targets color aqua
 
 team add stellarity.rave_glow
-team modify stellarity.rave_glow color reset
+team modify stellarity.rave_glow color red
 
 team add stellarity.phantom_glow
-team modify stellarity.phantom_glow color reset
+team modify stellarity.phantom_glow color green
 
 team add stellarity.empress_of_light.night_glow
-team modify stellarity.empress_of_light.night_glow color reset
+team modify stellarity.empress_of_light.night_glow color light_purple
 
 team add stellarity.empress_of_light.day_glow
-team modify stellarity.empress_of_light.day_glow color reset
+team modify stellarity.empress_of_light.day_glow color yellow
 
 team add stellarity.empress_of_light.radiant_glow
-team modify stellarity.empress_of_light.radiant_glow color reset
+team modify stellarity.empress_of_light.radiant_glow color red
 
 team add stellarity.dragons_eye.pacified
 team modify stellarity.dragons_eye.pacified friendlyFire true
@@ -288,7 +288,34 @@ team modify stellarity.dragons_eye.pacified collisionRule pushOtherTeams
 team add stellarity.dragon.pacify_others
 team modify stellarity.dragon.pacify_others friendlyFire false
 
-
+### Creating teams
+#  team add stellarity.purple_glow
+#  team modify stellarity.purple_glow color dark_purple
+#  team modify stellarity.purple_glow color reset
+# team add stellarity.golden_glow
+# team modify stellarity.golden_glow color gold
+# team modify stellarity.golden_glow color reset
+# team add stellarity.spirit_glow
+# team modify stellarity.spirit_glow color aqua
+# team modify stellarity.spirit_glow color reset
+# team add stellarity.homing_targets
+# team modify stellarity.homing_targets color aqua
+# team modify stellarity.homing_targets color reset
+# team add stellarity.rave_glow
+# team modify stellarity.rave_glow color red
+# team modify stellarity.rave_glow color reset
+# team add stellarity.phantom_glow
+# team modify stellarity.phantom_glow color green
+# team modify stellarity.phantom_glow color reset
+# team add stellarity.empress_of_light.night_glow
+# team modify stellarity.empress_of_light.night_glow color light_purple
+# team modify stellarity.empress_of_light.night_glow color reset
+# team add stellarity.empress_of_light.day_glow
+# team modify stellarity.empress_of_light.day_glow color yellow
+# team modify stellarity.empress_of_light.day_glow color reset
+# team add stellarity.empress_of_light.radiant_glow
+# team modify stellarity.empress_of_light.radiant_glow color red
+# team modify stellarity.empress_of_light.radiant_glow color reset
 
 # Scheduling loops that do not need
 # to be executed every single tick
