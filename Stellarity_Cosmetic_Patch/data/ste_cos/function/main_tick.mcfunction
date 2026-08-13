@@ -40,6 +40,11 @@ execute in minecraft:the_end if entity @e[type=ender_dragon,tag=stellarity.ender
 # =====================================================================
 
 # =====================================================================
+# П.10 — Защищаем кристаллы Энда до боя: спавним interaction-щиты на всех кристаллах, если дракона нет
+execute in minecraft:the_end unless entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] execute as @e[type=end_crystal] at @s unless entity @e[type=interaction,tag=ste_cos_crystal_shield,distance=..1,limit=1] run summon interaction ~ ~ ~ {width:2.0f,height:2.0f,Tags:["ste_cos_crystal_shield"]}
+# =====================================================================
+
+# =====================================================================
 # П.6 — Анти-краш: дыхание дракона
 # Если >40 облаков area_effect_cloud у портала (радиус 32) — убиваем самые старые
 execute in minecraft:the_end positioned 0 64 0 if entity @e[type=area_effect_cloud,distance=..32,limit=41] run kill @e[type=area_effect_cloud,distance=..32,sort=furthest,limit=15]

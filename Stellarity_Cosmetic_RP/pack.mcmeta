@@ -1,8 +1,9 @@
 {
   "pack": {
-    "pack_format": 34,
-    "description": "\uE001 \u00A75Stellarity Cosmetic RP\n\u00A7r\u00A77Visual Effects & Particles",
-    "supported_formats": [34, 75]
+    "pack_format": 88,
+    "min_format": 75,
+    "max_format": 88,
+    "description": "\uE001 \u00A76Stellarity Cosmetic RP\n\u00A7r\u00A77Visual Effects & Particles"
   },
   "sodium": {
     "ignored_shaders": [

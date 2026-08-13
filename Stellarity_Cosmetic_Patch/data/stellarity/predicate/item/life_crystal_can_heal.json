@@ -1,0 +1,18 @@
+{
+    "condition": "minecraft:all_of",
+    "terms": [
+        {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+                "movement": {
+                    "speed": 0
+                }
+            }
+        },
+        {
+            "condition": "minecraft:reference",
+            "name": "stellarity:item/holding/trinket/life_crystal"
+        }
+    ]
+}
