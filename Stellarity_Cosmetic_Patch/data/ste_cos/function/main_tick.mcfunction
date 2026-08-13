@@ -41,7 +41,7 @@ execute in minecraft:the_end if entity @e[type=ender_dragon,tag=stellarity.ender
 
 # =====================================================================
 # П.10 — Защищаем кристаллы Энда до боя: спавним interaction-щиты на всех кристаллах, если дракона нет
-execute in minecraft:the_end unless entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] execute as @e[type=end_crystal] at @s unless entity @e[type=interaction,tag=ste_cos_crystal_shield,distance=..1,limit=1] run summon interaction ~ ~ ~ {width:2.0f,height:2.0f,Tags:["ste_cos_crystal_shield"]}
+execute in minecraft:the_end unless entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] as @e[type=end_crystal] at @s unless entity @e[type=interaction,tag=ste_cos_crystal_shield,distance=..1,limit=1] run summon interaction ~ ~ ~ {width:2.0f,height:2.0f,Tags:["ste_cos_crystal_shield"]}
 # =====================================================================
 
 # =====================================================================
