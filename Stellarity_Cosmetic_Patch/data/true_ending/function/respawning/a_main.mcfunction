@@ -38,7 +38,7 @@ execute if score respawn_ender_dragon trueEnding_storage matches 525 run playsou
 
 execute if score respawn_ender_dragon trueEnding_storage matches 545.. run particle dragon_breath ~ ~62 ~ 0 0 0 .3 3 force @a[distance=..128]
 execute if score respawn_ender_dragon trueEnding_storage matches 590.. run particle end_rod ~ ~62 ~ 0 0 0 .3 3 force @a[distance=..128]
-execute if score respawn_ender_dragon trueEnding_storage matches 597..598 as @e[distance=..16,type=end_crystal] at @s run particle flash{color:-1} ~ ~ ~ 0 0 0 .2 4 force @a[distance=..128]
+execute if score respawn_ender_dragon trueEnding_storage matches 597..598 as @e[distance=..16,type=end_crystal] at @s run particle dust{color:[0.75, 0.0, 1.0], scale: 3.0} ~ ~ ~ 0 0 0 .2 4 force @a[distance=..128]
 
 
 

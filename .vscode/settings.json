@@ -1,0 +1,9 @@
+{
+  "spyglass.env.gameVersion": "1.21.11",
+  "files.associations": {
+    "**/predicates/**/*.json": "json",
+    "**/predicate/**/*.json": "json",
+    "**/advancements/**/*.json": "json",
+    "**/advancement/**/*.json": "json"
+  }
+}

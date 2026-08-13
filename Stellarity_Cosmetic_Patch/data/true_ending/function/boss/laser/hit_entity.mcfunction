@@ -6,7 +6,7 @@ particle explosion ~ ~1 ~ 0 0 0 0 1 force @a[distance=..128]
 particle end_rod ~ ~1 ~ 0 0 0 1 30 force @a[distance=..128]
 particle end_rod ~ ~1 ~ 0 0 0 .5 30 force @a[distance=..128]
 particle end_rod ~ ~1 ~ 0 0 0 .25 30 force @a[distance=..128]
-particle flash{color:-1} ~ ~1 ~ 0 0 0 .25 6 force @a[distance=..128]
+particle dust{color:[0.75, 0.0, 1.0], scale: 2.0} ~ ~1 ~ 0 0 0 .25 6 force @a[distance=..128]
 
 particle dragon_breath ~ ~1 ~ 0 0 0 .3 10 normal
 

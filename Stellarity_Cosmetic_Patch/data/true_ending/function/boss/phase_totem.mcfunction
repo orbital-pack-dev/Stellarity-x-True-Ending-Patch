@@ -21,7 +21,7 @@ execute if score @s trueEnding_bosstime matches 3060.. run particle dragon_breat
 
 execute if score @s trueEnding_bosstime matches 3080 positioned 0 100 0 run function true_ending:boss/shockwave/summon_pad
 
-execute if score @s trueEnding_bosstime matches 3081 run particle flash{color:-1} ~ ~ ~ 0 0 0 0 5 force @a[distance=..128]
+execute if score @s trueEnding_bosstime matches 3081 run particle dust{color:[0.75, 0.0, 1.0], scale: 2.0} ~ ~ ~ 0 0 0 0 5 force @a[distance=..128]
 execute if score @s trueEnding_bosstime matches 3081 run playsound entity.warden.heartbeat hostile @a[distance=..128] ~ ~ ~ 6 2
 execute if score @s trueEnding_bosstime matches 3081 run playsound entity.warden.heartbeat hostile @a[distance=..128] ~ ~ ~ 6 2
 execute if score @s trueEnding_bosstime matches 3081 run playsound entity.warden.heartbeat hostile @a[distance=..64] ~ ~ ~ 6 1.2
