@@ -31,4 +31,7 @@ scoreboard objectives add ste_cos.orbit_y dummy "STE-COS Orbit Y"
 # RNG-тикер для рандомайзера (глобальный счётчик)
 scoreboard players set #rng_ticker ste_cos.flags 0 
 scoreboard objectives add ste_cos.timer dummy "STE-COS Timer"
+scoreboard objectives add ste_cos.still_timer dummy "STE-COS Still Timer"
+scoreboard objectives add ste_cos.pos_x dummy "STE-COS Pos X"
+scoreboard objectives add ste_cos.pos_z dummy "STE-COS Pos Z"
 kill @e[type=interaction,tag=ste_cos_crystal_shield]
