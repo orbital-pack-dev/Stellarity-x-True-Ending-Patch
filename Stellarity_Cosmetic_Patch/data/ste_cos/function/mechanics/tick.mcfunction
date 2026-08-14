@@ -20,5 +20,9 @@ execute if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] run 
 # Мех.4 — Опасная зона портала (спавн драконьего дыхания у портала пока дракон далеко)
 execute if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] run function ste_cos:mechanics/portal_danger
 
-# Мех.4 — Очистка зоны портала если дракон мёртв
-execute unless entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] run kill @e[type=area_effect_cloud,tag=ste_cos_portal_danger]
+# Мех.4 — Тик волн портала
+execute as @e[type=marker,tag=ste_cos_portal_wave] at @s run function ste_cos:mechanics/portal_wave_tick
+
+# Мех.4 — Очистка волн если дракон мёртв
+execute unless entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] run scoreboard players set #wave_timer ste_cos.flags 0
+execute unless entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] run kill @e[type=marker,tag=ste_cos_portal_wave]

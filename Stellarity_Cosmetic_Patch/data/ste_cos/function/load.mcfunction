@@ -32,6 +32,9 @@ scoreboard objectives add ste_cos.orbit_y dummy "STE-COS Orbit Y"
 scoreboard players set #rng_ticker ste_cos.flags 0 
 scoreboard objectives add ste_cos.timer dummy "STE-COS Timer"
 scoreboard objectives add ste_cos.still_timer dummy "STE-COS Still Timer"
-scoreboard objectives add ste_cos.pos_x dummy "STE-COS Pos X"
-scoreboard objectives add ste_cos.pos_z dummy "STE-COS Pos Z"
+scoreboard objectives add ste_cos.walk custom:walk_one_cm
+scoreboard objectives add ste_cos.sprint custom:sprint_one_cm
+scoreboard objectives add ste_cos.crouch custom:crouch_one_cm
+scoreboard objectives add ste_cos.swim custom:swim_one_cm
+scoreboard objectives add ste_cos.fall custom:fall_one_cm
 kill @e[type=interaction,tag=ste_cos_crystal_shield]

@@ -1,4 +1,4 @@
-﻿{
+{
     "providers":  [
                       {
                           "ascent":  30,
@@ -21,7 +21,7 @@
                       {
                           "type": "space",
                           "advances": {
-                              "\uE000": -35
+                              "\uE000": -85
                           }
                       }
                   ]

@@ -1,4 +1,4 @@
-﻿## Bossbars
+## Bossbars
   # Ender Dragon
     bossbar add stellarity:ender_dragon {"translate":"entity.minecraft.ender_dragon","color":"#BF00C8"}
     bossbar set stellarity:ender_dragon color pink

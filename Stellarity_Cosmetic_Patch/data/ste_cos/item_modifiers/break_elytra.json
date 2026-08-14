@@ -2,7 +2,7 @@
     {
         "function": "minecraft:set_components",
         "components": {
-            "minecraft:damage": 431
+            "minecraft:damage": 1024
         }
     }
 ]
