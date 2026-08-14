@@ -40,9 +40,12 @@ execute if score @s ste_cos.timer matches 80.. run kill @s
 # 1. Разворачиваем камеру игрока спиной назад для дезориентации
 execute as @a[distance=..8,gamemode=!spectator,gamemode=!creative] at @s facing ^ ^ ^-1 run tp @s ~ ~ ~ ~ ~
 
-# 2. Притягиваем игрока, заставляя его пятиться назад (-0.6) строго к ближайшему маркеру вихря
-execute as @a[distance=..8,gamemode=!spectator,gamemode=!creative] at @s facing entity @e[type=marker,tag=ste_cos_vortex,limit=1,sort=nearest] eyes run tp @s ^-0.6 ^0 ^0
+# 2. Притягиваем игрока к маркеру вихря
+execute as @a[distance=..8,gamemode=!spectator,gamemode=!creative] at @s facing entity @e[type=marker,tag=ste_cos_vortex,limit=1,sort=nearest] eyes run tp @s ^ ^ ^0.6
 
+# 3. Дополнительные частицы
+particle minecraft:portal ~ ~1 ~ 3 0 3 1 10 normal
+particle minecraft:reverse_portal ~ ~1 ~ 1 0 1 0.1 5 normal
 
 # Урон и эффекты для игроков в радиусе 5 блоков
 execute as @a[distance=..5,gamemode=!spectator,gamemode=!creative] run damage @s 3 minecraft:magic

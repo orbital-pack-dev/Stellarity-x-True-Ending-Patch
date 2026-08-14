@@ -24,4 +24,4 @@ scoreboard players set @s ste_cos.swim 0
 scoreboard players set @s ste_cos.fall 0
 
 # Если простоял 13 сек (260 тиков) - запускаем вихрь
-execute if score @s ste_cos.still_timer matches 260.. run function ste_cos:mechanics/vortex_trigger
+execute if score @s ste_cos.still_timer matches 260.. at @s run function ste_cos:mechanics/vortex_trigger
