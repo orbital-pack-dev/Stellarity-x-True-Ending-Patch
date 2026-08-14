@@ -23,7 +23,7 @@ execute as @a at @s if dimension minecraft:the_end unless entity @s[tag=ste_cos_
 execute as @a at @s unless dimension minecraft:the_end if entity @s[tag=ste_cos_chorus_cleaned] run tag @s remove ste_cos_chorus_cleaned
 
 # =====================================================================
-# П.4 — Боссбар фикс: проверяем от лица Игроков. 
+# П.4 — Боссбар фикс: проверяем от лица Игроков.
 # Если в радиусе 400 блоков от игрока Дракона нету, то убираем его из боссбара.
 tag @a remove ste_cos_has_dragon
 execute in minecraft:the_end as @e[type=ender_dragon,tag=stellarity.ender_dragon] at @s run tag @a[distance=..400] add ste_cos_has_dragon
@@ -35,19 +35,8 @@ execute in minecraft:the_end unless entity @e[type=ender_dragon,tag=stellarity.e
 # =====================================================================
 
 # =====================================================================
-# П.9 — Убираем interaction-щиты когда дракон призван (в бою игрок должен ломать кристаллы)
-execute in minecraft:the_end if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] run kill @e[type=minecraft:interaction,tag=ste_cos_crystal_shield]
-# =====================================================================
-
-# =====================================================================
-# П.10 — Защищаем кристаллы Энда до боя: спавним interaction-щиты на всех кристаллах, если дракона нет
-execute in minecraft:the_end unless entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] as @e[type=end_crystal] at @s unless entity @e[type=interaction,tag=ste_cos_crystal_shield,distance=..1,limit=1] run summon interaction ~ ~ ~ {width:2.0f,height:2.0f,Tags:["ste_cos_crystal_shield"]}
-# =====================================================================
-
-# =====================================================================
-# П.6 — Анти-краш: дыхание дракона
-# Если >40 облаков area_effect_cloud у портала (радиус 32) — убиваем самые старые
-execute in minecraft:the_end positioned 0 64 0 if entity @e[type=area_effect_cloud,distance=..32,limit=41] run kill @e[type=area_effect_cloud,distance=..32,sort=furthest,limit=15]
+# П.8 — Механики боя
+execute in minecraft:the_end run function ste_cos:mechanics/tick
 # =====================================================================
 
 # =====================================================================
@@ -57,3 +46,6 @@ execute in minecraft:the_end positioned 0 64 0 if entity @e[type=area_effect_clo
 # RNG-тикер (инкремент каждый тик для разнообразия random в spawn_guard)
 scoreboard players add #rng_ticker ste_cos.flags 1
 execute if score #rng_ticker ste_cos.flags matches 25.. run scoreboard players set #rng_ticker ste_cos.flags 0
+
+
+

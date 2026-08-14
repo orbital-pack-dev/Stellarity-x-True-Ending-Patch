@@ -1,0 +1,12 @@
+{
+   "targets": ["minecraft:player"],
+   "emitters": [
+     {
+       "particle": "davidparticles:wind_emitter",
+       "chance": "1",
+       "x": "0", 
+       "z": "0",
+       "y": "0"
+     }
+     ]
+}

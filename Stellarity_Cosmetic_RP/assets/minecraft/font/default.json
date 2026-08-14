@@ -1,9 +1,9 @@
-{
+﻿{
     "providers":  [
                       {
                           "ascent":  30,
                           "height":  34,
-                          "file":  "ste_cos:icon_rp.png",
+                          "file":  "ste_cos:font/icon_rp.png",
                           "type":  "bitmap",
                           "chars":  [
                                         "\uE001"
@@ -12,7 +12,7 @@
                       {
                           "ascent":  30,
                           "height":  34,
-                          "file":  "ste_cos:icon_dp.png",
+                          "file":  "ste_cos:font/icon_dp.png",
                           "type":  "bitmap",
                           "chars":  [
                                         "\uE002"

@@ -1,0 +1,13 @@
+{"targets": [
+		"minecraft:swamp",
+		"minecraft:mangrove_swamp"
+	],
+	"attributes_modifiers": {
+		"base": {
+		"visual/cloud_color": {
+			"argument": "davidparticles:clouds/clouds_swamp",
+			"modifier": "override"
+		}
+		}
+}
+}

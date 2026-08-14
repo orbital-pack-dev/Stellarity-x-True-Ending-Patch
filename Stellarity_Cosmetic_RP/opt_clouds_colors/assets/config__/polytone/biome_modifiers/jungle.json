@@ -1,0 +1,15 @@
+{
+	"targets": [
+		"minecraft:jungle",
+		"minecraft:sparse_jungle",
+		"minecraft:bamboo_jungle"
+	],
+	"attributes_modifiers": {
+		"base": {
+		"visual/cloud_color": {
+			"argument": "davidparticles:clouds/clouds_jungle",
+			"modifier": "override"
+		}
+		}
+}
+}

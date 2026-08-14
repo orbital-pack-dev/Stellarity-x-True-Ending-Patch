@@ -1,0 +1,13 @@
+{
+	"targets": [
+		"minecraft:cherry_grove"
+	],
+	"attributes_modifiers": {
+		"base": {
+		"visual/cloud_color": {
+			"argument": "davidparticles:clouds/clouds_cherry",
+			"modifier": "override"
+		}
+		}
+}
+}

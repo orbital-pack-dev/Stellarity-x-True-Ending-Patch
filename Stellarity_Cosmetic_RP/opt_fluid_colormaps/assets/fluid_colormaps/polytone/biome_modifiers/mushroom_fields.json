@@ -1,0 +1,10 @@
+{
+	"targets": [
+		"minecraft:mushroom_fields"
+	],
+	"attributes_modifiers": {
+		"base": {
+		"visual/water_fog_color": "373542"
+		}
+}
+}

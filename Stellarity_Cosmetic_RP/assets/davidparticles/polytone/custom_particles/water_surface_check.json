@@ -1,0 +1,23 @@
+{
+        "initializer":{
+          "lifetime": "10"
+        },
+        "ticker": {
+          "remove_condition": "player.inWater() && !(camera.lookingToward(object.x, object.y, object.z) || camera.lookingToward(object.x + 2.5, object.y, object.z) || camera.lookingToward(object.x - 2.5, object.y, object.z)) ? 1 : 0"
+        },
+        "liquid_affinity": "non_liquids",
+        "has_physics": true,
+        "limit": 200,
+        "exclusion_radius": 1,
+        "render_type": "invisible",
+        "offset": [0, 0, 0],
+        "particle_emitters": [
+          {
+       "particle": "davidparticles:water_under_check",
+       "chance": "AGE == 1",
+       "x": "0", 
+       "z": "0",
+       "y": "-1"
+     }
+     ]
+}

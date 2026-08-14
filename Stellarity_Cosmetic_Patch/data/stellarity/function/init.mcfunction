@@ -1,4 +1,4 @@
-## Bossbars
+﻿## Bossbars
   # Ender Dragon
     bossbar add stellarity:ender_dragon {"translate":"entity.minecraft.ender_dragon","color":"#BF00C8"}
     bossbar set stellarity:ender_dragon color pink
@@ -329,3 +329,4 @@ team modify stellarity.dragon.pacify_others friendlyFire false
   execute store result score #difficulty stellarity.misc run difficulty
 
 execute unless score #stellarity.config stellarity.config.join_message matches 0 run schedule function stellarity:tellraw/schedule 5t
+

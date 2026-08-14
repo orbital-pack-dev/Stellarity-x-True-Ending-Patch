@@ -1,0 +1,12 @@
+{
+	"targets": [
+		"minecraft:jungle",
+		"minecraft:sparse_jungle",
+		"minecraft:bamboo_jungle"
+	],
+	"attributes_modifiers": {
+		"base": {
+		"visual/water_fog_color": "0c4e5f"
+	}
+}
+}

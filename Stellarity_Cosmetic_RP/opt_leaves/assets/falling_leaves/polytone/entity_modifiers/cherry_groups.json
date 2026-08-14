@@ -1,0 +1,12 @@
+{
+   "targets": ["minecraft:player"],
+   "emitters": [
+     {
+       "particle": "leaves:cherry_group_emitter",
+       "chance": "(o.biome() == 'minecraft:cherry_grove') ? 1.0 : 0.0",
+       "x": "0", 
+       "z": "0",
+       "y": "0"
+     }
+     ]
+}

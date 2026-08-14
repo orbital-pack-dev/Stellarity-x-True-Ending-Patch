@@ -1,0 +1,33 @@
+{
+        "initializer":{
+          "lifetime": "1000",
+          "alpha": "1",
+          "size": "0.25",
+          "custom": "rand()"
+        },
+        "ticker": {
+            "dx": " PLAYER_X - X",
+            "dy": " (PLAYER_Y + 10) - Y",
+            "dz": " PLAYER_Z - Z",
+            "remove_condition": "DISTANCE_SQUARED > 900"
+        },
+        "liquid_affinity": "any",
+        "has_physics": false,
+        "offset": [0, 1, 1],
+        "limit": 1,
+        "kill_when_not_in_view": false,
+        "render_type": "invisible",
+        "rotation_mode": "look_up",
+        "particle_emitters": [
+     {
+      "particle": "leaves:cherry_leaves_group",
+      "count": "1",
+      "chance": "(SKY_LIGHT == 15)*(RAIN == 0)*0.025",
+      "x": "rand()*30 - 20", 
+      "z": "rand()*30 - 15",
+      "y": "-POS_Y + PLAYER_Y + 2 + rand()*10",
+      "biomes":["minecraft:cherry_grove"
+  		]
+     }
+  ]
+}
