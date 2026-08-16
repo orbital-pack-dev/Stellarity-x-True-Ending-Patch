@@ -12,3 +12,11 @@ particle dragon_breath ~ ~1 ~ .6 .6 .6 0.02 1 normal
 scoreboard players add @s ste_cos.timer 1
 execute if score @s ste_cos.timer matches 20.. as @e[type=ender_dragon,tag=stellarity.ender_dragon,distance=..32] run function ste_cos:mechanics/crystal_heal
 execute if score @s ste_cos.timer matches 20.. run scoreboard players set @s ste_cos.timer 0
+
+# =====================================================================
+# Фикс "невидимых" кристаллов: создаем хитбокс, чтобы игрок мог ударить забаганный кристалл
+# =====================================================================
+# Создаем interaction, если его нет (размер 2x2 как у кристалла)
+execute unless entity @e[type=interaction,tag=ste_cos.crystal_hitbox,distance=..1] run summon interaction ~ ~ ~ {Tags:["ste_cos.crystal_hitbox"],width:2.0f,height:2.0f}
+# Если кто-то ударил interaction - взрываем кристалл (наносим 100 урона, чтобы он взорвался)
+execute as @e[type=interaction,tag=ste_cos.crystal_hitbox,distance=..1] on attacker run damage @e[type=end_crystal,distance=..1,limit=1] 100 minecraft:player_attack
