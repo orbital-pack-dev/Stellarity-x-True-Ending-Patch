@@ -60,8 +60,9 @@ execute if entity @s[tag=!stellarity.to_portal,tag=!stellarity.at_portal] run fu
 execute store result score @s stellarity.misc run data get entity @s DragonPhase
 execute unless score @s[tag=!stellarity.at_portal] stellarity.misc matches 5..7 run function stellarity:entity/dragon/trail
 
-# [PATCHED]: не форсировать кружение, пока True Ending ведёт фазу боя
-execute unless score @s trueEnding_bosstime matches 1.. if score @s[tag=stellarity.dragon.invulnerable] stellarity.misc matches 2..7 run data modify entity @s DragonPhase set value 0
+# [PATCHED]: Полностью убираем форсированное кружение (сброс в DragonPhase 0).
+# Из-за этого дракон застревал и дергался на месте, когда на него накладывался щит кристаллов!
+# execute unless score @s trueEnding_bosstime matches 1.. if score @s[tag=stellarity.dragon.invulnerable] stellarity.misc matches 2..7 run data modify entity @s DragonPhase set value 0
 
 execute if score @s stellarity.misc matches 5 run function stellarity:entity/dragon/attacks/roar_breath/main
 execute unless score @s stellarity.dragon.shulker_hell matches 4 as @e[type=dragon_fireball] at @s run function stellarity:entity/dragon/attacks/fireball/summon
