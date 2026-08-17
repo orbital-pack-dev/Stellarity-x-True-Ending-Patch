@@ -4,9 +4,12 @@
 # ТОЛЬКО внутри измерения the_end (execute in minecraft:the_end run ...).
 # =====================================================================
 
-# Мех.1 — Вихрь (stillness check)
-execute as @a[gamemode=survival] run function ste_cos:mechanics/still_check
-execute as @a[gamemode=adventure] run function ste_cos:mechanics/still_check
+# Мех.1 — Вихрь (stillness check - только в Энде, только во время битвы, радиус 400 от Дракона)
+execute if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] as @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] at @s as @a[distance=..400,gamemode=survival] run function ste_cos:mechanics/still_check
+execute if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] as @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] at @s as @a[distance=..400,gamemode=adventure] run function ste_cos:mechanics/still_check
+
+# Мех.1 — Очистка активных вихрей если дракон мёртв
+execute unless entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] run kill @e[type=marker,tag=ste_cos_vortex]
 
 # Мех.1 — Тик активных вихрей
 execute if entity @e[type=marker,tag=ste_cos_vortex,limit=1] as @e[type=marker,tag=ste_cos_vortex] at @s run function ste_cos:mechanics/vortex_tick

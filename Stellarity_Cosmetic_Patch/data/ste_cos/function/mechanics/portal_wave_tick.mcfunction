@@ -1,11 +1,11 @@
 # Движение вперед
 tp @s ^ ^ ^0.5
 
-# Частицы
-particle dragon_breath ~ ~.5 ~ .2 .2 .2 0.05 3 normal
+# Частицы на уровне верхнего блока (рельефа)
+execute at @s positioned over motion_blocking run particle dragon_breath ~ ~ ~ .2 .2 .2 0.05 3 normal
 
-# Урон игрокам поблизости
-execute as @a[distance=..2,gamemode=!spectator,gamemode=!creative] run damage @s 6 magic by @e[type=ender_dragon,limit=1]
+# Урон игрокам поблизости на уровне верхнего блока (рельефа)
+execute at @s positioned over motion_blocking as @a[distance=..2,gamemode=!spectator,gamemode=!creative] run damage @s 6 magic by @e[type=ender_dragon,limit=1]
 
 # Увеличиваем возраст
 scoreboard players add @s ste_cos.timer 1
