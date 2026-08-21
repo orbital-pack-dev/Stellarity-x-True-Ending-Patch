@@ -7,34 +7,35 @@
 gamerule max_block_modifications 1999999999
 
 # Объектив-счётчик
-scoreboard objectives add ste_cos.flags dummy "STE-COS Flags"
+scoreboard objectives add ste_cos.flags dummy '{"text":"STE-COS Flags"}'
 
 # Таймер уборки хоруса (~30 сек)
 scoreboard players set $pull_timer ste_cos.flags 0
 
 # ID для привязки маркеров к фантомам
-scoreboard objectives add ste_cos.id dummy "STE-COS IDs"
+scoreboard objectives add ste_cos.id dummy '{"text":"STE-COS IDs"}'
 
 # Здоровье для неуязвимости дракона
-scoreboard objectives add ste_cos.health dummy "STE-COS Health"
-scoreboard objectives add ste_cos.max_health dummy "STE-COS Max Health"
+scoreboard objectives add ste_cos.health dummy '{"text":"STE-COS Health"}'
+scoreboard objectives add ste_cos.max_health dummy '{"text":"STE-COS Max Health"}'
 
 # Стадия поиска яйца-дракона (0=tier1, 1=tier2 scheduled)
-scoreboard objectives add ste_cos.search_stage dummy "STE-COS Search Stage"
+scoreboard objectives add ste_cos.search_stage dummy '{"text":"STE-COS Search Stage"}'
 
 # Радиус орбиты фантома-стража (хранится на маркере, 4..8)
-scoreboard objectives add ste_cos.radius dummy "STE-COS Orbit Radius"
+scoreboard objectives add ste_cos.radius dummy '{"text":"STE-COS Orbit Radius"}'
 
 # Высота орбиты фантома (x10 от блока, хранится на маркере: 5=0.5, 10=1.0, 15=1.5, 25=2.5, 35=3.5)
-scoreboard objectives add ste_cos.orbit_y dummy "STE-COS Orbit Y"
+scoreboard objectives add ste_cos.orbit_y dummy '{"text":"STE-COS Orbit Y"}'
 
 # RNG-тикер для рандомайзера (глобальный счётчик)
 scoreboard players set #rng_ticker ste_cos.flags 0 
-scoreboard objectives add ste_cos.timer dummy "STE-COS Timer"
-scoreboard objectives add ste_cos.still_timer dummy "STE-COS Still Timer"
+scoreboard objectives add ste_cos.timer dummy '{"text":"STE-COS Timer"}'
+scoreboard objectives add ste_cos.still_timer dummy '{"text":"STE-COS Still Timer"}'
 scoreboard objectives add ste_cos.walk custom:walk_one_cm
 scoreboard objectives add ste_cos.sprint custom:sprint_one_cm
 scoreboard objectives add ste_cos.crouch custom:crouch_one_cm
 scoreboard objectives add ste_cos.swim custom:swim_one_cm
-scoreboard objectives add ste_cos.fall custom:fall_one_cm
-kill @e[type=interaction,tag=ste_cos_crystal_shield]
+# Форслоад центрального острова Энда (для предотвращения выгрузки кристаллов и сброса боя)
+execute unless score #forceloaded ste_cos.flags matches 1.. run execute in minecraft:the_end run forceload add -112 -112 112 112
+execute unless score #forceloaded ste_cos.flags matches 1.. run scoreboard players set #forceloaded ste_cos.flags 1
