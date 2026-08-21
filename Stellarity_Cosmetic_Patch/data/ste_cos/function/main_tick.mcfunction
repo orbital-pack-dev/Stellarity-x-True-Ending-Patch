@@ -23,10 +23,10 @@ execute in minecraft:the_end unless entity @e[type=ender_dragon,tag=stellarity.e
 # Автоматический спавн, когда Stellarity запускает анимацию открытия портала.
 # AEC исчезнет сам через 26 секунд (Duration: 520).
 # =====================================================================
-execute in minecraft:overworld as @e[type=marker,tag=stellarity.end_portal_animation,tag=!ste_cos.portal_lock_spawned] at @s run summon area_effect_cloud ~ ~ ~ {Duration:520,Radius:6f,Tags:["ste_cos_portal_lock"]}
+execute in minecraft:overworld as @e[type=marker,tag=stellarity.end_portal_animation,tag=!ste_cos.portal_lock_spawned] at @s run summon area_effect_cloud ~ ~ ~ {Duration:520,Radius:3.0f,RadiusPerTick:0f,custom_particle:{type:"minecraft:block",block_state:"minecraft:air"},Tags:["ste_cos_portal_lock"]}
 execute in minecraft:overworld as @e[type=marker,tag=stellarity.end_portal_animation,tag=!ste_cos.portal_lock_spawned] run tag @s add ste_cos.portal_lock_spawned
 
-execute in minecraft:overworld as @e[type=area_effect_cloud,tag=ste_cos_portal_lock] at @s run effect give @a[distance=..6] levitation 1 5 true
+execute in minecraft:overworld as @e[type=area_effect_cloud,tag=ste_cos_portal_lock] at @s run effect give @a[distance=..3] levitation 1 5 true
 
 # RNG-тикер (инкремент каждый тик для разнообразия random в spawn_guard)
 scoreboard players add #rng_ticker ste_cos.flags 1

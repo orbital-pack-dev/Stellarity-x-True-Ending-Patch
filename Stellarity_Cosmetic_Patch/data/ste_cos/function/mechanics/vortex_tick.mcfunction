@@ -41,7 +41,7 @@ execute if score @s ste_cos.timer matches 80.. run kill @s
 execute as @a[distance=..8,gamemode=!spectator,gamemode=!creative] at @s facing ^ ^ ^-1 run tp @s ~ ~ ~ ~ ~
 
 # 2. Притягиваем игрока к маркеру вихря
-execute as @a[distance=..8,gamemode=!spectator,gamemode=!creative] at @s facing entity @e[type=marker,tag=ste_cos_vortex,limit=1,sort=nearest] eyes run tp @s ^ ^ ^0.6
+execute as @a[distance=..8,gamemode=!spectator,gamemode=!creative] at @s facing entity @e[type=area_effect_cloud,tag=ste_cos_vortex,limit=1,sort=nearest] eyes run tp @s ^ ^ ^0.6
 
 # 3. Дополнительные частицы
 particle minecraft:portal ~ ~1 ~ 3 0 3 1 10 normal

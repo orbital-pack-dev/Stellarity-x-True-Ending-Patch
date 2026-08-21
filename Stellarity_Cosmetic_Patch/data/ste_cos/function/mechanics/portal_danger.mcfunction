@@ -15,4 +15,4 @@ execute if score #wave_timer ste_cos.flags matches 60.. run scoreboard players s
 
 # Дракон вернулся к порталу → сбрасываем таймер и убиваем остатки волны
 execute positioned 0 64 0 if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,distance=..25] run scoreboard players set #wave_timer ste_cos.flags 0
-execute positioned 0 64 0 if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,distance=..25] run kill @e[type=marker,tag=ste_cos_portal_wave]
+execute positioned 0 64 0 if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,distance=..25] run kill @e[type=area_effect_cloud,tag=ste_cos_portal_wave]
