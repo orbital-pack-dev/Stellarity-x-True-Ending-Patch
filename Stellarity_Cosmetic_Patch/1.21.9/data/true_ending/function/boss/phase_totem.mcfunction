@@ -43,3 +43,18 @@ execute if score @s trueEnding_bosstime matches 3081 run playsound entity.warden
 execute if score @s trueEnding_bosstime matches 3101 run scoreboard players set @s trueEnding_bosstime 3080
 
 execute at @s run tp @s 0 ~ 0
+
+# =====================================================================
+# ДОБАВЛЕНО В КОСМЕТИЧЕСКОМ ПАТЧЕ (Воскрешение Тотемом)
+# На 3090 тике дракон исцеляется и возвращается в бой.
+# =====================================================================
+# Вручную восстанавливаем 36 ХП, так как драконы иммунны к эффектам
+execute if score @s trueEnding_bosstime matches 3090 store result score @s ste_cos.timer run data get entity @s Health
+execute if score @s trueEnding_bosstime matches 3090 run scoreboard players add @s ste_cos.timer 36
+execute if score @s trueEnding_bosstime matches 3090 store result entity @s Health float 1 run scoreboard players get @s ste_cos.timer
+execute if score @s trueEnding_bosstime matches 3090 run data modify entity @s DragonPhase set value 0
+execute if score @s trueEnding_bosstime matches 3090 run data modify entity @s Invulnerable set value 0b
+execute if score @s trueEnding_bosstime matches 3090 run tag @s remove trueEnding_inattack
+execute if score @s trueEnding_bosstime matches 3090 run tag @s add ste_cos.totem_used
+execute if score @s trueEnding_bosstime matches 3090 run item replace entity @s weapon.mainhand with barrier
+execute if score @s trueEnding_bosstime matches 3090 run scoreboard players set @s trueEnding_bosstime 0

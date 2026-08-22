@@ -1,7 +1,31 @@
-﻿# Dev/tool artifacts
-Stellarity_TrueEnding_Patch_old/
-extracted_frames/
-mcmeta_1_21/
-mcmeta_summary/
-extracted_frames.py
-.spyglassrc.json
+# Ignore everything in root by default
+/*
+
+# Whitelist .gitignore and README
+!.gitignore
+!README.md
+
+# Whitelist Data Packs & Resource Packs
+!Stellarity_Cosmetic_Patch/
+!Stellarity_Cosmetic_Patch/**
+!Stellarity_Cosmetic_Patch.zip
+
+!Stellarity_Cosmetic_RP/
+!Stellarity_Cosmetic_RP/**
+!Stellarity_Cosmetic_RP.zip
+
+!Stellarity_Load_Fix/
+!Stellarity_Load_Fix/**
+!Stellarity_Load_Fix.zip
+
+!Stellarity-5.5.5/
+!Stellarity-5.5.5/**
+!Stellarity-5.5.5.zip
+
+!tru.e-ending-1.1.4d/
+!tru.e-ending-1.1.4d/**
+!tru.e-ending-1.1.4d.zip
+
+# Ignore IDE / Tool config files inside whitelisted folders
+**/.spyglassrc.json
+**/.vscode/

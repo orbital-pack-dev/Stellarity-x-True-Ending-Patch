@@ -12,6 +12,10 @@ scoreboard objectives add ste_cos.flags dummy '{"text":"STE-COS Flags"}'
 # Таймер уборки хоруса (~30 сек)
 scoreboard players set $pull_timer ste_cos.flags 0
 
+# Таймер фикса дефолтного портала (выполнится 1 раз за мир)
+execute unless score #portal_fix_done ste_cos.flags matches 1 run scoreboard players set #portal_fix_done ste_cos.flags 0
+execute unless score #portal_fix ste_cos.timer matches 1.. run scoreboard players set #portal_fix ste_cos.timer 0
+
 # ID для привязки маркеров к фантомам
 scoreboard objectives add ste_cos.id dummy '{"text":"STE-COS IDs"}'
 

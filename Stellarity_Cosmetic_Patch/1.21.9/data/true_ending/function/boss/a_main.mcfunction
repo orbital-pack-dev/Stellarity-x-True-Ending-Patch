@@ -50,7 +50,7 @@ execute if score @s[tag=!trueEnding_halfhealth] trueEnding_health_percent matche
 execute if score @s[tag=!trueEnding_quarterhealth] trueEnding_health_percent matches ..333 run scoreboard players set @s trueEnding_bosstime 2001
 execute if score @s[tag=!trueEnding_quarterhealth] trueEnding_health_percent matches ..333 run tag @s add trueEnding_quarterhealth
 
-execute unless score @s[predicate=!true_ending:holding/totem] trueEnding_bosstime matches 3000.. run scoreboard players set @s trueEnding_bosstime 3000
+execute unless score @s[predicate=!true_ending:holding/totem,tag=!ste_cos.totem_used] trueEnding_bosstime matches 3000.. run scoreboard players set @s trueEnding_bosstime 3000
 
 #=================================================
 

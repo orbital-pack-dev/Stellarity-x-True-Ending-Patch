@@ -54,6 +54,11 @@ execute in minecraft:the_end if score $pull_timer ste_cos.flags matches 0 run fu
 execute as @a[tag=!ste_cos_chorus_cleaned] at @s if dimension minecraft:the_end run function ste_cos:portal/chorus_cleaner
 execute as @a[tag=!ste_cos_chorus_cleaned] at @s if dimension minecraft:the_end run tag @s add ste_cos_chorus_cleaned
 
+# П.1b — Фикс Дефолтного Портала (Выполняется 1 раз при первом входе в Энд)
+execute in minecraft:the_end if score #portal_fix_done ste_cos.flags matches 0 run scoreboard players add #portal_fix ste_cos.timer 1
+execute in minecraft:the_end if score #portal_fix ste_cos.timer matches 1..360 run function ste_cos:portal/fix_tick
+execute in minecraft:the_end if score #portal_fix ste_cos.timer matches 361.. run scoreboard players set #portal_fix_done ste_cos.flags 1
+
 # П.8 — Механики боя
 execute in minecraft:the_end run function ste_cos:mechanics/tick
 

@@ -10,7 +10,7 @@ particle dragon_breath ~ ~1 ~ .6 .6 .6 0.02 1 normal
 
 # Лечение Дракона на 8 HP каждую секунду (20 тиков)
 scoreboard players add @s ste_cos.timer 1
-execute if score @s ste_cos.timer matches 20.. as @e[type=ender_dragon,tag=stellarity.ender_dragon,distance=..32] run function ste_cos:mechanics/crystal_heal
+execute if score @s ste_cos.timer matches 20.. as @e[type=ender_dragon,tag=stellarity.ender_dragon,distance=..48] run function ste_cos:mechanics/crystal_heal
 execute if score @s ste_cos.timer matches 20.. run scoreboard players set @s ste_cos.timer 0
 
 # =====================================================================
