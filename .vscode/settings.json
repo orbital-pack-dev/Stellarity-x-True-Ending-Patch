@@ -8,7 +8,8 @@
   },
   "files.watcherExclude": {
     "**/.git/**": true,
-    "**/Stellarity_TrueEnding_Patch_old/**": true
+    "**/Stellarity_TrueEnding_Patch_old/**": true,
+    "**/recovered_deleted_files/**": true
   },
   "search.exclude": {
     "**/.git/**": true,
@@ -29,5 +30,18 @@
     "editor.insertSpaces": true,
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true
-  }
+  },
+  "mc-dp-icons.crownedFunctionsNames": [
+    "phantom/guard_tick",
+    "portal/chorus_cleaner",
+    "mechanics/tick",
+    "egg/egg_tick",
+    "dragon/invulnerability_guard",
+    "mechanics/vortex_tick",
+    "crystal/cleanup_trigger",
+    "boss/a_main"
+  ],
+  "mc-dp-icons.crownedTickFunctionsNames": [
+    "function/main_tick"
+  ]
 }

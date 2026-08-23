@@ -22,6 +22,10 @@ scoreboard objectives add ste_cos.id dummy '{"text":"STE-COS IDs"}'
 # Здоровье для неуязвимости дракона
 scoreboard objectives add ste_cos.health dummy '{"text":"STE-COS Health"}'
 scoreboard objectives add ste_cos.max_health dummy '{"text":"STE-COS Max Health"}'
+scoreboard objectives add ste_cos.health_old dummy '{"text":"STE-COS Health Old"}'
+scoreboard objectives add ste_cos.health_diff dummy '{"text":"STE-COS Health Diff"}'
+scoreboard objectives add ste_cos.heal_cd dummy '{"text":"STE-COS Heal Cooldown"}'
+scoreboard objectives add ste_cos.fall dummy '{"text":"STE-COS Fall Distance"}'
 
 # Стадия поиска яйца-дракона (0=tier1, 1=tier2 scheduled)
 scoreboard objectives add ste_cos.search_stage dummy '{"text":"STE-COS Search Stage"}'
