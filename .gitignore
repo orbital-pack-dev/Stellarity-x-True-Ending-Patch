@@ -24,3 +24,7 @@
 # Ignore IDE / Tool config files inside whitelisted folders
 **/.spyglassrc.json
 **/.vscode/
+
+!Release_Builds/
+!Release_Builds/**
+!build.py

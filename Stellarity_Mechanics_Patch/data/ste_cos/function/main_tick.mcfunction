@@ -33,6 +33,12 @@ scoreboard players add #rng_ticker ste_cos.flags 1
 execute if score #rng_ticker ste_cos.flags matches 25.. run scoreboard players set #rng_ticker ste_cos.flags 0
 
 # =====================================================================
+# П.5.5 — Фикс телепортации анимации портала в Энд
+# =====================================================================
+execute as @e[type=item_display,tag=stellarity.end_portal] run data modify entity @s PortalCooldown set value 99999
+execute as @e[type=armor_stand,tag=stellarity.end_portal_animation.eye] run data modify entity @s PortalCooldown set value 99999
+
+# =====================================================================
 # П.6 — Оптимизация (ВЫХОД ЕСЛИ В ЭНДЕ НИКОГО НЕТ)
 # Все следующие функции выполняются только если кто-то есть в Энде.
 # =====================================================================
