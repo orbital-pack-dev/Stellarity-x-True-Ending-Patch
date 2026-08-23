@@ -1,5 +1,14 @@
 execute if entity @s[tag=!trueEnding_dragon_particlechecked] run function true_ending:boss/init/init
+# PATCH: Fake Totem of Undying for Ender Dragon (Catch Phase 10)
+execute as @s[tag=!ste_cos.totem_used] if data entity @s {DragonPhase: 10} run function ste_cos:dragon/trigger_totem
 
+# PATCH: Crystal Healing Cooldown (Throttle natural healing)
+execute if score @s ste_cos.heal_cd matches 1.. run scoreboard players remove @s ste_cos.heal_cd 1
+execute store result score @s ste_cos.health run data get entity @s Health
+scoreboard players operation @s ste_cos.health_diff = @s ste_cos.health
+scoreboard players operation @s ste_cos.health_diff -= @s ste_cos.health_old
+execute if score @s ste_cos.health_diff matches 1.. run function ste_cos:dragon/crystal_heal_check
+execute store result score @s ste_cos.health_old run data get entity @s Health
 execute if score @s trueEnding_bosstime matches 0.. run scoreboard players add @s trueEnding_bosstime 1
 
 execute store result score @s trueEnding_y run data get entity @s Pos[1]

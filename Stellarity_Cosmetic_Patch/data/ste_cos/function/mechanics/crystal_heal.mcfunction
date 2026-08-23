@@ -4,9 +4,9 @@
 # =====================================================================
 
 execute store result score @s ste_cos.health run data get entity @s Health
-scoreboard players add @s ste_cos.health 8
+scoreboard players add @s ste_cos.health 4
 
-# Ограничиваем лечение до 300 (чтобы не превышало max_health)
+# Ограничиваем лечение до 300хп (хардкап)
 execute if score @s ste_cos.health matches 300.. run scoreboard players set @s ste_cos.health 300
 
 # Применяем здоровье

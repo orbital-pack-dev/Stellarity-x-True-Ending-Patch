@@ -17,8 +17,8 @@ execute if entity @e[type=area_effect_cloud,tag=ste_cos_vortex,limit=1] as @e[ty
 # Мех.2 — Отключение Элитры во время боя
 execute if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] run function ste_cos:mechanics/elytra_disable
 
-# Мех.3 — Баланс Булавы
-execute if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] run function ste_cos:mechanics/mace_balance
+# Мех.3 — Баланс Булавы (Простая выдача слабости во время боя)
+execute if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] run effect give @a[distance=..400] weakness 2 0 true
 
 # Мех.4 — Опасная зона портала (спавн драконьего дыхания у портала пока дракон далеко)
 execute if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] run function ste_cos:mechanics/portal_danger
