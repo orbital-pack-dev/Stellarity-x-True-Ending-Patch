@@ -59,3 +59,9 @@
 
 * **Singleplayer / Fabric / Quilt** (1.21.11+)
 * **Paper / Purpur** (1.21.11+)
+
+---
+
+## Поддержка и Баги
+
+Если вы столкнулись с какими-либо багами, ошибками или у вас есть предложения по улучшению патча, пожалуйста, пишите в [Issues](https://github.com/orbital-pack-dev/Stellarity-x-True-Ending-Patch/issues) или предлагайте свои исправления через [Pull Requests](https://github.com/orbital-pack-dev/Stellarity-x-True-Ending-Patch/pulls) на GitHub!
