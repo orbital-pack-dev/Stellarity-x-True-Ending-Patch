@@ -28,3 +28,4 @@
 !Release_Builds/
 !Release_Builds/**
 !build.py
+!LICENSE
