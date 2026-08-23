@@ -42,7 +42,6 @@ def generate_mod_jsons(patch_name):
         "icon": "pack.png",
         "environment": "*",
         "depends": {
-            "fabric-resource-loader-v0": "*",
             "stellarity": "*",
             "mr_true_ending": "*"
         },
@@ -78,11 +77,6 @@ def generate_mod_jsons(patch_name):
             "intermediate_mappings": "net.fabricmc:intermediary",
             "depends": [
                 {
-                    "id": "quilt_resource_loader",
-                    "versions": "*",
-                    "unless": "fabric-resource-loader-v0"
-                },
-                {
                     "id": "stellarity",
                     "versions": "*"
                 },
@@ -115,14 +109,12 @@ credits = 'Stellarity by kohara, True Ending by limesplatus'
 [[dependencies.{mod_id}]]
 modId = "stellarity"
 mandatory = true
-versionRange = "[5.5.5,)"
 ordering = "AFTER"
 side = "BOTH"
 
 [[dependencies.{mod_id}]]
 modId = "mr_limesplatus_ending"
 mandatory = true
-versionRange = "[1.1.4,)"
 ordering = "AFTER"
 side = "BOTH"
 """
