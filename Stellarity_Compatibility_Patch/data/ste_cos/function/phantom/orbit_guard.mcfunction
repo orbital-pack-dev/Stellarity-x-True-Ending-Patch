@@ -1,0 +1,52 @@
+# =====================================================================
+# ste_cos:phantom/orbit_guard
+# AS marker AT маркера. Вращает стража на орбите вокруг маркера.
+# =====================================================================
+
+# Запоминаем ID маркера
+scoreboard players operation #current_id ste_cos.flags = @s ste_cos.id
+
+# Поворачиваем маркер (~2°/тик - медленно)
+tp @s ~ ~ ~ ~2 ~
+
+# Размещаем фантома на орбите:
+# "execute at @s rotated as @s positioned ~ ~H ~ as @e[phantom,distance=..R+2] ... run tp @s ^ ^ ^R"
+# Высота (~H) берётся из ste_cos.orbit_y маркера (/ 10 не доступно, используем matches)
+# Радиус берётся из ste_cos.radius маркера
+
+# --- Радиус 4 ---
+execute if score @s ste_cos.radius matches 4 if score @s ste_cos.orbit_y matches 5 at @s rotated as @s positioned ~ ~0.5 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^4
+execute if score @s ste_cos.radius matches 4 if score @s ste_cos.orbit_y matches 10 at @s rotated as @s positioned ~ ~1.0 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^4
+execute if score @s ste_cos.radius matches 4 if score @s ste_cos.orbit_y matches 15 at @s rotated as @s positioned ~ ~1.5 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^4
+execute if score @s ste_cos.radius matches 4 if score @s ste_cos.orbit_y matches 25 at @s rotated as @s positioned ~ ~2.5 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^4
+execute if score @s ste_cos.radius matches 4 if score @s ste_cos.orbit_y matches 35 at @s rotated as @s positioned ~ ~3.5 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^4
+# --- Радиус 5 ---
+execute if score @s ste_cos.radius matches 5 if score @s ste_cos.orbit_y matches 5 at @s rotated as @s positioned ~ ~0.5 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^5
+execute if score @s ste_cos.radius matches 5 if score @s ste_cos.orbit_y matches 10 at @s rotated as @s positioned ~ ~1.0 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^5
+execute if score @s ste_cos.radius matches 5 if score @s ste_cos.orbit_y matches 15 at @s rotated as @s positioned ~ ~1.5 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^5
+execute if score @s ste_cos.radius matches 5 if score @s ste_cos.orbit_y matches 25 at @s rotated as @s positioned ~ ~2.5 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^5
+execute if score @s ste_cos.radius matches 5 if score @s ste_cos.orbit_y matches 35 at @s rotated as @s positioned ~ ~3.5 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^5
+# --- Радиус 6 ---
+execute if score @s ste_cos.radius matches 6 if score @s ste_cos.orbit_y matches 5 at @s rotated as @s positioned ~ ~0.5 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^6
+execute if score @s ste_cos.radius matches 6 if score @s ste_cos.orbit_y matches 10 at @s rotated as @s positioned ~ ~1.0 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^6
+execute if score @s ste_cos.radius matches 6 if score @s ste_cos.orbit_y matches 15 at @s rotated as @s positioned ~ ~1.5 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^6
+execute if score @s ste_cos.radius matches 6 if score @s ste_cos.orbit_y matches 25 at @s rotated as @s positioned ~ ~2.5 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^6
+execute if score @s ste_cos.radius matches 6 if score @s ste_cos.orbit_y matches 35 at @s rotated as @s positioned ~ ~3.5 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^6
+# --- Радиус 7 ---
+execute if score @s ste_cos.radius matches 7 if score @s ste_cos.orbit_y matches 5 at @s rotated as @s positioned ~ ~0.5 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^7
+execute if score @s ste_cos.radius matches 7 if score @s ste_cos.orbit_y matches 10 at @s rotated as @s positioned ~ ~1.0 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^7
+execute if score @s ste_cos.radius matches 7 if score @s ste_cos.orbit_y matches 15 at @s rotated as @s positioned ~ ~1.5 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^7
+execute if score @s ste_cos.radius matches 7 if score @s ste_cos.orbit_y matches 25 at @s rotated as @s positioned ~ ~2.5 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^7
+execute if score @s ste_cos.radius matches 7 if score @s ste_cos.orbit_y matches 35 at @s rotated as @s positioned ~ ~3.5 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^7
+# --- Радиус 8 ---
+execute if score @s ste_cos.radius matches 8 if score @s ste_cos.orbit_y matches 5 at @s rotated as @s positioned ~ ~0.5 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^8
+execute if score @s ste_cos.radius matches 8 if score @s ste_cos.orbit_y matches 10 at @s rotated as @s positioned ~ ~1.0 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^8
+execute if score @s ste_cos.radius matches 8 if score @s ste_cos.orbit_y matches 15 at @s rotated as @s positioned ~ ~1.5 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^8
+execute if score @s ste_cos.radius matches 8 if score @s ste_cos.orbit_y matches 25 at @s rotated as @s positioned ~ ~2.5 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^8
+execute if score @s ste_cos.radius matches 8 if score @s ste_cos.orbit_y matches 35 at @s rotated as @s positioned ~ ~3.5 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^8
+
+# Если orbit_y не задан (фантом из fix7 без рандомайзера) — default: высота 1.5, радиус 7
+execute if score @s ste_cos.orbit_y matches 0 at @s rotated as @s positioned ~ ~1.5 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run tp @s ^ ^ ^7
+
+# Поворачиваем фантома к направлению полёта
+execute at @s positioned ~ ~1.5 ~ as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags at @s run tp @s ~ ~ ~ facing ^ ^ ^-1
