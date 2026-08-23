@@ -1,4 +1,4 @@
-﻿# Ignore everything in root by default
+# Ignore everything in root by default
 /*
 
 # Whitelist .gitignore and README
@@ -15,20 +15,11 @@
 !Stellarity_Load_Fix/
 !Stellarity_Load_Fix/**
 
-!Stellarity-5.5.5/
-!Stellarity-5.5.5/**
-
-!tru.e-ending-1.1.4d/
-!tru.e-ending-1.1.4d/**
-
 !Stellarity_Compatibility_Patch/
 !Stellarity_Compatibility_Patch/**
 
 !Stellarity_Mechanics_Patch/
 !Stellarity_Mechanics_Patch/**
-
-!Release_Builds/
-!Release_Builds/**
 
 # Ignore IDE / Tool config files inside whitelisted folders
 **/.spyglassrc.json
