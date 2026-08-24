@@ -2,8 +2,9 @@
 
 # Stellarity x True Ending Patch
 
-[![Minecraft](https://img.shields.io/badge/Minecraft-1.21.11%20--%2026.1.2-D47A1E?style=for-the-badge&logo=minecraft&logoColor=D47A1E&labelColor=141419)](https://modrinth.com)
-[![Modrinth](https://img.shields.io/badge/Modrinth-Available-00AF5C?style=for-the-badge&logo=modrinth&logoColor=white&labelColor=141419)](https://modrinth.com/datapack/stellarity-x-true-ending-patch)
+
+[![Minecraft](https://img.shields.io/badge/Minecraft-1.21.11%20--%2026.1.2-D47A1E?style=for-the-badge&logo=minecraft&logoColor=D47A1E&labelColor=141419)](https://minecraft.wiki/)
+[![Modrinth](https://img.shields.io/badge/Modrinth-Available-00AF5C?style=for-the-badge&logo=modrinth&logoColor=white&labelColor=141419)](https://modrinth.com/datapack/stellarity_x_true_ending_patch)
 [![GitHub Stars](https://img.shields.io/github/stars/orbital-pack-dev/Stellarity-x-True-Ending-Patch?style=for-the-badge&logo=github&color=F59E0B&labelColor=141419)](https://github.com/orbital-pack-dev/Stellarity-x-True-Ending-Patch/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-33333E?style=for-the-badge&labelColor=141419)](https://github.com/orbital-pack-dev/Stellarity-x-True-Ending-Patch/blob/main/LICENSE)
 
@@ -20,7 +21,7 @@
 > **VERSION SUPPORT:**
 > * **Below 1.21.11:** **Unsupported.** Commands and datapack schema will fail to parse.
 > * **Supported versions:** `1.21.11`, `26.1`, `26.1.1`, `26.1.2`.
-> * **Above 26.1.2:** Functionally compatible, though minor snapshot quirks may occur.
+> * **Above 1.21.11:** Functionally compatible, though minor snapshot quirks may occur.
 
 ---
 
@@ -58,9 +59,11 @@ This project synchronizes both mods into a single deterministic state machine, f
 To ensure functions override properly, maintain this exact hierarchy:
 
 ### Datapack Priority (`/datapack list`)
-1. `true-ending-1.1.4d`
-2. `Stellarity-5.5.5`
-3. `Stellarity_Compatibility_Patch` **OR** `Stellarity_Mechanics_Patch` *(Highest Priority / Loads Last)*
+<img width="404" height="332" alt="image" src="https://github.com/user-attachments/assets/b24c379d-881d-434a-9ca5-0190554ed665" />
+
+1. Stellarity_Compatibility_Patch or Stellarity_Mechanics_Patch — loads last
+2. true-ending-1.1.4d
+3. Stellarity-5.5.5
 
 ### Resource Packs
 > [!NOTE]
