@@ -1,4 +1,0 @@
-{
-  "activation_condition": "g.skyType()==1 && g.rain() < 0.49 && c.y() > 45",
-  "post_chain": "polytone_shaders:sunglare"
-}

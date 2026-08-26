@@ -1,8 +1,0 @@
-{
-  "default_value": "§aON",
-
-  "allowed_values": [
-    "§aON",
-    "§cOFF"
-  ]
-}
