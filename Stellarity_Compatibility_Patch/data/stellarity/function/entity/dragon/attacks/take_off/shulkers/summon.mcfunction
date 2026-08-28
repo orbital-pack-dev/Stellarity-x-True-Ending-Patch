@@ -4,7 +4,7 @@ particle flash{color:-4517715} ~ ~ ~ 0 0 0 0 1 force @a
 particle minecraft:dragon_breath ~ ~1.25 ~ 0.5 0.5 0.5 0.03 10
 particle minecraft:end_rod ~ ~1.25 ~ 0.5 0.5 0.5 0.03 17
 
-# [PATCHED] playsound block.trial_spawner.spawn_mob removed to prevent spam
+# Механика боя
 
 team join stellarity.dragon.pacify_others @n[type=shulker]
 

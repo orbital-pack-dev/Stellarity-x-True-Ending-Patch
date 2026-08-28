@@ -54,7 +54,7 @@ execute if score @s trueEnding_bosstime matches 2321..2380 at @s run tp @s ~ ~ ~
 execute if score @s trueEnding_bosstime matches 2381..2480 at @s run tp @s ~ ~ ~ ~ ~-.25
 
 
-# PATCH (п.1): снятие неуязвимости во время лазера только если кристаллов нет.
+# Фикс щита
 scoreboard players reset #ste_cos_crystals ste_cos.flags
 execute in minecraft:the_end positioned 0 65 0 as @e[type=end_crystal,distance=..400,nbt={ShowBottom:1b}] run scoreboard players add #ste_cos_crystals ste_cos.flags 1
 

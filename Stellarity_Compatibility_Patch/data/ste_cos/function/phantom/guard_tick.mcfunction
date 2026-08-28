@@ -1,8 +1,6 @@
-# =====================================================================
 # ste_cos:phantom/guard_tick
 # Phantom guards around crystals (only during dragon battle).
 # Called every tick.
-# =====================================================================
 
 
 

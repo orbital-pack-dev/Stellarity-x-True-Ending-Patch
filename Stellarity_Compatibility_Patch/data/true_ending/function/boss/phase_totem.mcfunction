@@ -1,7 +1,4 @@
-# =====================================================================
-# OVERRIDE: true_ending:boss/phase_totem (Косметический Патч)
-# Фаза Тотема Дракона: призыв волн на портале, рык, затем воскрешение
-# =====================================================================
+# Фаза тотема
 
 tag @s add trueEnding_inattack
 
@@ -46,5 +43,5 @@ execute at @s run tp @s 0 ~ 0
 
 
 
-# Защита от зацикливания, если тики пропущены
+# Механика боя
 execute if score @s trueEnding_bosstime matches 3095.. run scoreboard players set @s trueEnding_bosstime 3090

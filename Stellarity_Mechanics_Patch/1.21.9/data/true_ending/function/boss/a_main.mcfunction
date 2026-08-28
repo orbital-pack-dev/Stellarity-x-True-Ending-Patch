@@ -1,8 +1,8 @@
 execute if entity @s[tag=!trueEnding_dragon_particlechecked] run function true_ending:boss/init/init
-# PATCH: Fake Totem of Undying for Ender Dragon (Catch Phase 10)
+# Механика боя
 execute as @s[tag=!ste_cos.totem_used,tag=!ste_cos.totem_animating] if data entity @s {DragonPhase: 10} run function ste_cos:dragon/trigger_totem
 
-# PATCH: Crystal Healing Cooldown (Throttle natural healing)
+# Фикс кристаллов
 execute if score @s ste_cos.heal_cd matches 1.. run scoreboard players remove @s ste_cos.heal_cd 1
 execute store result score @s ste_cos.health run data get entity @s Health
 scoreboard players operation @s ste_cos.health_diff = @s ste_cos.health
@@ -21,8 +21,8 @@ execute if score dragontrail trueEnding_settings matches 1 as @s run particle dr
 
 #if configured health is >1024, add additional health
 #only if dragon still has extra health
-# PATCH (v8): отключено — extra_health ставит Health=1024 и ломает фазы.
-# Игрок использует Health:300, поэтому 1024-хил не нужен и вреден.
+# Фикс фейкового здоровья
+# Механика боя
 # execute if score dragonhealth trueEnding_settings matches 1025.. if score @s trueEnding_health_extra matches 1.. run function true_ending:boss/extra_health
 execute if score @s trueEnding_health_extra matches ..0 run bossbar set true_ending:extra_health players
 execute if score 20tick trueEnding_clock matches 1 if score @s trueEnding_health_extra matches 1.. positioned 0 80 0 run bossbar set true_ending:extra_health players @a[distance=..180]
@@ -43,7 +43,6 @@ execute if score 20tick trueEnding_clock matches 1 if score @s trueEnding_health
 
 execute if score music_boss trueEnding_settings matches 1 positioned 0 80 0 as @a[distance=..128] unless score @s trueEnding_music matches 0.. run scoreboard players set @s trueEnding_music 0
 
-#=================================================
 
 
 #triple dive chance
@@ -60,12 +59,11 @@ execute if score @s[tag=!trueEnding_quarterhealth] trueEnding_health_percent mat
 execute if score @s[tag=!trueEnding_quarterhealth] trueEnding_health_percent matches ..333 run tag @s add trueEnding_quarterhealth
 
 
-#=================================================
 
 #invulnerabity
 execute unless score @s trueEnding_bosstime matches 3000.. if score @s trueEnding_health_percent matches ..100 run function true_ending:boss/a_main_final
 
-# PATCH: считать живые кристаллы башен. Пока кристаллы есть — НЕ снимать неуязвимость.
+# Фикс щита
 scoreboard players reset #ste_cos_crystals ste_cos.flags
 execute in minecraft:the_end positioned 0 65 0 as @e[type=end_crystal,distance=..400,nbt={ShowBottom:1b}] run scoreboard players add #ste_cos_crystals ste_cos.flags 1
 execute unless score @s[tag=!trueEnding_inattack] trueEnding_bosstime matches 3000.. unless score @s trueEnding_health_percent matches ..100 if score #ste_cos_crystals ste_cos.flags matches 0 run data modify entity @s Invulnerable set value 0b

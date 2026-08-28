@@ -8,5 +8,5 @@
 execute if score @s ste_cos.heal_cd matches 1.. run scoreboard players operation @s ste_cos.health = @s ste_cos.health_old
 execute if score @s ste_cos.heal_cd matches 1.. store result entity @s Health float 1 run scoreboard players get @s ste_cos.health_old
 
-# If no cooldown, allow healing and start 10 tick cooldown (0.5 сек). 
+# Механика боя
 execute if score @s ste_cos.heal_cd matches ..0 run scoreboard players set @s ste_cos.heal_cd 10

@@ -1,7 +1,7 @@
 # ste_cos:egg/egg_ambient
-# Два мота вращаются по орбите вокруг яйца (радиус 0.75, лёгкое покачивание по Y).
-# Индекс шага — ste_cos.flags (0..39, один полный оборот = 40 тиков = 2 сек).
-# Вызывается из egg_glow ПОСЛЕ execute positioned ~0.5 ~0.5 ~0.5, поэтому здесь просто ~dx ~dy ~dz.
+# Яйцо дракона
+# Механика боя
+# Яйцо дракона
 
 execute if score @s ste_cos.flags matches 0 run particle minecraft:dust_color_transition{from_color:[0.3,0.0,0.5],scale:0.55,to_color:[0.6,0.1,0.7]} ~0.75 ~0.5 ~0.0 0 0 0 0 1 force
 execute if score @s ste_cos.flags matches 0 run particle minecraft:dust_color_transition{from_color:[0.3,0.0,0.5],scale:0.55,to_color:[0.6,0.1,0.7]} ~-0.75 ~0.5 ~-0.0 0 0 0 0 1 force

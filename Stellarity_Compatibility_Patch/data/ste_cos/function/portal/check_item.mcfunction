@@ -1,10 +1,10 @@
 # ste_cos:portal/check_item
-# Оптимизированная проверка предметов для фикса портала. Запускается только один раз для каждого предмета.
+# Фикс портала
 
 tag @s add ste_cos_item_checked
 
-# Яйцо Дракона
+# Яйцо дракона
 execute if data entity @s Item{id:"minecraft:dragon_egg"} run kill @s
 
-# Факел
+# Механика боя
 execute if data entity @s Item{id:"minecraft:torch"} run kill @s

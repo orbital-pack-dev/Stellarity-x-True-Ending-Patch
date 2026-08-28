@@ -1,8 +1,5 @@
-# =====================================================================
 # ste_cos:mechanics/tick
-# Главный тикер всех боевых механик. Вызывается из main_tick
-# ТОЛЬКО внутри измерения the_end (execute in minecraft:the_end run ...).
-# =====================================================================
+# Механика боя
 
 # Mech.1 — Vortex (only in the End, during battle, 400 block radius)
 execute if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] as @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] at @s as @a[distance=..400,gamemode=survival] run function ste_cos:mechanics/still_check

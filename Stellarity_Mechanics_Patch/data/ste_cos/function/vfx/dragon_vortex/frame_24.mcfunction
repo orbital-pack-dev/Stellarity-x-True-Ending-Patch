@@ -1,4 +1,4 @@
-# кадр t=24  radius=1.6  height=4.0  envelope=1.0
+# Механика боя
 particle minecraft:dragon_breath ~1.4617 ~0.0 ~-0.6508 0 0 0 0 1 normal
 particle minecraft:dragon_breath ~-0.1672 ~0.0 ~1.5912 0 0 0 0 1 normal
 particle minecraft:dragon_breath ~-1.2944 ~0.0 ~-0.9405 0 0 0 0 1 normal

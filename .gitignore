@@ -25,7 +25,21 @@
 **/.spyglassrc.json
 **/.vscode/
 
+# Ignored external assets and original mods
+Stellarity-5.5.5/
+tru.e-ending-1.1.4d/
+Stellarity-5.5.5-RP/
+Stellarity_Cosmetic_RP/
+STE-Mod/
+Stellarity_Load_Fix/
+Stellarity_Cosmetic_Patch/
+Stellarity_TrueEnding_Patch_old/
+
 !Release_Builds/
 !Release_Builds/**
+Release_Builds/*.zip
+!Release_Builds/Stellarity_Compatibility_Patch.zip
+!Release_Builds/Stellarity_Mechanics_Patch.zip
+
 !build.py
 !LICENSE

@@ -1,7 +1,4 @@
-# =====================================================================
-# OVERRIDE: true_ending:boss/phase_totem (Косметический Патч)
-# Фаза Тотема Дракона: призыв волн на портале, рык, затем воскрешение
-# =====================================================================
+# Фаза тотема
 
 tag @s add trueEnding_inattack
 
@@ -33,9 +30,7 @@ execute if score @s trueEnding_bosstime matches 3081 run playsound entity.warden
 
 execute at @s run tp @s 0 ~ 0
 
-# =====================================================================
-# Воскрешение Тотемом на 3090 тике
-# =====================================================================
+# Фаза тотема
 execute if score @s trueEnding_bosstime matches 3090 run data modify entity @s Health set value 36.0f
 execute if score @s trueEnding_bosstime matches 3090 run data modify entity @s DragonPhase set value 0
 execute if score @s trueEnding_bosstime matches 3090 run data modify entity @s Invulnerable set value 0b
@@ -47,5 +42,5 @@ execute if score @s trueEnding_bosstime matches 3090 run particle totem_of_undyi
 execute if score @s trueEnding_bosstime matches 3090 run playsound item.totem.use master @a ~ ~ ~ 1.0 1.0
 execute if score @s trueEnding_bosstime matches 3090 run scoreboard players set @s trueEnding_bosstime 0
 
-# Защита от зацикливания, если тики пропущены
+# Механика боя
 execute if score @s trueEnding_bosstime matches 3095.. run scoreboard players set @s trueEnding_bosstime 3090

@@ -145,12 +145,8 @@ def main():
     
     # List of directories to zip
     directories_to_zip = [
-        "Stellarity-5.5.5",
-        "tru.e-ending-1.1.4d",
         "Stellarity_Compatibility_Patch",
-        "Stellarity_Mechanics_Patch",
-        "Stellarity-5.5.5-RP",
-        "Stellarity_Cosmetic_RP"
+        "Stellarity_Mechanics_Patch"
     ]
     
     output_dir = os.path.join(root_dir, "Release_Builds")

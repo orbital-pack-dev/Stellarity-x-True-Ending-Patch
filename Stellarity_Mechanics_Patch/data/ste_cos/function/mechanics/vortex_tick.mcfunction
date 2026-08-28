@@ -1,11 +1,7 @@
-# =====================================================================
 # ste_cos:mechanics/vortex_tick
-# AS vortex marker AT его позиции. Активный вихрь (80 тиков = 4 сек).
-# Засасывает игроков, наносит wither + 1.5 сердца урона.
-# Использует кастомные кадры анимации вихря.
-# =====================================================================
+# Вихрь
+# Механика боя
 
-# Вызываем кадры анимации вихря (раз в 4 тика)
 execute if score @s ste_cos.timer matches 0 run function ste_cos:vfx/dragon_vortex/frame_0
 execute if score @s ste_cos.timer matches 4 run function ste_cos:vfx/dragon_vortex/frame_4
 execute if score @s ste_cos.timer matches 8 run function ste_cos:vfx/dragon_vortex/frame_8
@@ -27,26 +23,24 @@ execute if score @s ste_cos.timer matches 68 run function ste_cos:vfx/dragon_vor
 execute if score @s ste_cos.timer matches 72 run function ste_cos:vfx/dragon_vortex/frame_72
 execute if score @s ste_cos.timer matches 76 run function ste_cos:vfx/dragon_vortex/frame_76
 
-# Инкремент таймера
+# Механика боя
 scoreboard players add @s ste_cos.timer 1
 
-# Уничтожаем маркер когда таймер достиг 80
+# Механика боя
 execute if score @s ste_cos.timer matches 80.. run kill @s
 
-# =====================================================================
-# Засасываем игроков (Адаптировано под маркер ste_cos_vortex)
-# =====================================================================
+# Вихрь
 
-# 1. Разворачиваем камеру игрока спиной назад для дезориентации
+# Механика боя
 execute as @a[distance=..8,gamemode=!spectator,gamemode=!creative] at @s facing ^ ^ ^-1 run tp @s ~ ~ ~ ~ ~
 
-# 2. Притягиваем игрока к маркеру вихря
+# Механика боя
 execute as @a[distance=..8,gamemode=!spectator,gamemode=!creative] at @s facing entity @e[type=area_effect_cloud,tag=ste_cos_vortex,limit=1,sort=nearest] eyes run tp @s ^ ^ ^0.6
 
-# 3. Дополнительные частицы
+# Механика боя
 particle minecraft:portal ~ ~1 ~ 3 0 3 1 10 normal
 particle minecraft:reverse_portal ~ ~1 ~ 1 0 1 0.1 5 normal
 
-# Урон и эффекты для игроков в радиусе 5 блоков
+# Механика боя
 execute as @a[distance=..5,gamemode=!spectator,gamemode=!creative] run damage @s 3 minecraft:magic
 execute as @a[distance=..5,gamemode=!spectator,gamemode=!creative] run effect give @s minecraft:wither 2 1 true
