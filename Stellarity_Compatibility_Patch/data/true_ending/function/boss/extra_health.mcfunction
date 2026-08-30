@@ -1,14 +1,7 @@
 # Фикс фейкового здоровья
-#
-# Механика боя
-# Фикс кристаллов
-#
-# Механика боя
 
 #get current health
 execute store result score temp_health trueEnding_health_extra run data get entity @s Health
-
-# Механика боя
 
 #reset damage dealt // reset health
 scoreboard players set temp_damageDealt trueEnding_health_extra 0

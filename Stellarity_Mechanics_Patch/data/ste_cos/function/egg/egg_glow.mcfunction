@@ -1,14 +1,13 @@
 # ste_cos:egg/egg_glow
 # Яйцо дракона
-# Механика боя
 
-# Яйцо дракона
 # Механика боя
 scoreboard players set @s ste_cos.search_stage 0
 
 # Механика боя
 scoreboard players add @s ste_cos.flags 1
 
+# Механика боя
 execute align xyz positioned ~0.5 ~0.05 ~0.5 run function ste_cos:egg/egg_ambient
 
 # Механика боя

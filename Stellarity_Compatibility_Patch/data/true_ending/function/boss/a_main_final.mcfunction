@@ -8,7 +8,7 @@ execute if score @s trueEnding_bosstime2 matches 1..599 if predicate true_ending
 execute if score @s[predicate=!true_ending:condition/dragonphase_perched] trueEnding_bosstime2 matches 601 run data modify entity @s DragonPhase set value 3
 execute if score @s trueEnding_bosstime2 matches 621.. run scoreboard players set @s trueEnding_bosstime2 600
 
-# Фикс щита
+# Механика боя
 # Фикс кристаллов
 scoreboard players reset #ste_cos_crystals ste_cos.flags
 execute in minecraft:the_end positioned 0 65 0 as @e[type=end_crystal,distance=..400,nbt={ShowBottom:1b}] run scoreboard players add #ste_cos_crystals ste_cos.flags 1

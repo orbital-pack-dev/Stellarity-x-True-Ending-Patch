@@ -1,11 +1,10 @@
 # ste_cos:phantom/guard_act
-# Фикс кристаллов
 # Фантомы-стражи
-# Механика боя
 
+# Механика боя
 scoreboard players operation #current_id ste_cos.flags = @s ste_cos.id
 
-# Фантомы-стражи
+# Механика боя
 execute if entity @a[distance=..20,gamemode=!spectator,gamemode=!creative] as @e[type=phantom,tag=ste_cos_guard,distance=..64] if score @s ste_cos.id = #current_id ste_cos.flags run data modify entity @s NoAI set value 0b
 
 # Механика боя

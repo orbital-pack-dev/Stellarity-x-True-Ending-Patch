@@ -14,5 +14,5 @@ playsound item.totem.use master @a ~ ~ ~ 1.0 1.0
 # Механика боя
 item replace entity @s weapon.mainhand with air
 
-# Механика боя
+# Фаза тотема
 scoreboard players set @s trueEnding_bosstime 3000

@@ -1,5 +1,4 @@
 # ste_cos:mechanics/vortex_tick
-# Вихрь
 # Механика боя
 
 execute if score @s ste_cos.timer matches 0 run function ste_cos:vfx/dragon_vortex/frame_0
@@ -29,9 +28,8 @@ scoreboard players add @s ste_cos.timer 1
 # Механика боя
 execute if score @s ste_cos.timer matches 80.. run kill @s
 
-# Вихрь
-
 # Механика боя
+
 execute as @a[distance=..8,gamemode=!spectator,gamemode=!creative] at @s facing ^ ^ ^-1 run tp @s ~ ~ ~ ~ ~
 
 # Механика боя

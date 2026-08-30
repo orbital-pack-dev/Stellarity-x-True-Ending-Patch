@@ -1,6 +1,7 @@
+
 # ste_cos:mechanics/vortex_trigger
-# Вихрь
 # Механика боя
+
 
 scoreboard players set @s ste_cos.still_timer 100
 

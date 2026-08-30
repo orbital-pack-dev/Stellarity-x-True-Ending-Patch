@@ -3,7 +3,7 @@ execute if score @s trueEnding_bosstime matches 1 run playsound minecraft:block.
 execute if score @s trueEnding_bosstime matches 1 run playsound minecraft:entity.ender_dragon.hurt hostile @a[distance=..128] ~ ~ ~ 6 .7
 execute if score @s trueEnding_bosstime matches 1 run data merge entity @s {Invulnerable:1b,Silent:1b,NoAI:1b}
 
-# Фикс щита
+# Механика боя
 scoreboard players reset #ste_cos_crystals ste_cos.flags
 execute in minecraft:the_end positioned 0 65 0 as @e[type=end_crystal,distance=..400,nbt={ShowBottom:1b}] run scoreboard players add #ste_cos_crystals ste_cos.flags 1
 

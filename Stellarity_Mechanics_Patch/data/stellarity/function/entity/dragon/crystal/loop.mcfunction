@@ -1,6 +1,4 @@
 # Фикс кристаллов
-# Task: count crystals, init, particles.
-# Фикс кристаллов
 scoreboard players add #crystal_count stellarity.misc 1
 
 execute unless entity @s[tag=stellarity.end_crystal.init] run function stellarity:entity/dragon/crystal/init

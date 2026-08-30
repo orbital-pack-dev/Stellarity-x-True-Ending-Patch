@@ -1,6 +1,5 @@
+
 # ste_cos:mechanics/still_check
-# Механика боя
-# Вихрь
 # Механика боя
 
 scoreboard players operation @s ste_cos.walk += @s ste_cos.sprint
@@ -20,5 +19,5 @@ scoreboard players set @s ste_cos.crouch 0
 scoreboard players set @s ste_cos.swim 0
 scoreboard players set @s ste_cos.fall 0
 
-# Вихрь
+# Механика боя
 execute if score @s ste_cos.still_timer matches 260.. at @s run function ste_cos:mechanics/vortex_trigger

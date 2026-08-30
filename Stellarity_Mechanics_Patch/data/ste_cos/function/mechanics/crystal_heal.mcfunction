@@ -1,7 +1,6 @@
+
 # ste_cos:mechanics/crystal_heal
-# Called once per second by living crystals.
-
-
+# Фикс кристаллов
 
 execute store result score @s ste_cos.health run data get entity @s Health
 scoreboard players add @s ste_cos.health 4

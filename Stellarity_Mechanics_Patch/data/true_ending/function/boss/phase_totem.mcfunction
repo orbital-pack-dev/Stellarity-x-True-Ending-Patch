@@ -1,4 +1,5 @@
 # Фаза тотема
+# Механика боя
 
 tag @s add trueEnding_inattack
 
@@ -30,7 +31,7 @@ execute if score @s trueEnding_bosstime matches 3081 run playsound entity.warden
 
 execute at @s run tp @s 0 ~ 0
 
-# Фаза тотема
+# Механика боя
 execute if score @s trueEnding_bosstime matches 3090 run data modify entity @s Health set value 36.0f
 execute if score @s trueEnding_bosstime matches 3090 run data modify entity @s DragonPhase set value 0
 execute if score @s trueEnding_bosstime matches 3090 run data modify entity @s Invulnerable set value 0b

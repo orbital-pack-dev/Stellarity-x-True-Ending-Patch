@@ -1,8 +1,4 @@
 # Механика боя
-#
-# Механика боя
-# Фикс кристаллов
-# Механика боя
 
 # End Crystal stuff
 execute if entity @s[tag=trueEnding_mirrordragon] run return 0
@@ -58,7 +54,6 @@ execute store result score @s stellarity.misc run data get entity @s DragonPhase
 execute unless score @s[tag=!stellarity.at_portal] stellarity.misc matches 5..7 run function stellarity:entity/dragon/trail
 
 # Механика боя
-# Фикс кристаллов
 # execute unless score @s trueEnding_bosstime matches 1.. if score @s[tag=stellarity.dragon.invulnerable] stellarity.misc matches 2..7 run data modify entity @s DragonPhase set value 0
 
 execute if score @s stellarity.misc matches 5 run function stellarity:entity/dragon/attacks/roar_breath/main

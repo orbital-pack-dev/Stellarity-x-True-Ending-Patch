@@ -8,3 +8,6 @@ execute if data entity @s Item{id:"minecraft:dragon_egg"} run kill @s
 
 # Механика боя
 execute if data entity @s Item{id:"minecraft:torch"} run kill @s
+execute if data entity @s Item{id:"minecraft:torch"} run kill @s
+execute if data entity @s Item{id:"minecraft:torch"} run kill @s
+execute if data entity @s Item{id:"minecraft:torch"} run kill @s

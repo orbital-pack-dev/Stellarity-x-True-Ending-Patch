@@ -1,8 +1,7 @@
 # ste_cos:load
 # Compatibility & Cosmetic Patch — initialization.
 
-# TODO: Implement settings system (ste_settings) and safe island regeneration before release!
-# function ste_settings:init
+# TODO: ste_settings:init
 
 # Механика боя
 gamerule max_block_modifications 1999999999
@@ -20,21 +19,21 @@ execute unless score #portal_fix ste_cos.timer matches 1.. run scoreboard player
 # Фантомы-стражи
 scoreboard objectives add ste_cos.id dummy '{"text":"STE-COS IDs"}'
 
+# Механика боя
 scoreboard objectives add ste_cos.timer dummy '{"text":"STE-COS Timer"}'
-
 
 # Яйцо дракона
 scoreboard objectives add ste_cos.search_stage dummy '{"text":"STE-COS Search Stage"}'
 
-# Фантомы-стражи
+# Механика боя
 scoreboard objectives add ste_cos.radius dummy '{"text":"STE-COS Orbit Radius"}'
 
-# Фантомы-стражи
+# Механика боя
 scoreboard objectives add ste_cos.orbit_y dummy '{"text":"STE-COS Orbit Y"}'
 
 # Механика боя
 scoreboard players set #rng_ticker ste_cos.flags 0 
 
-# Фикс кристаллов
+# Механика боя
 execute unless score #forceloaded ste_cos.flags matches 1.. run execute in minecraft:the_end run forceload add -112 -112 112 112
 execute unless score #forceloaded ste_cos.flags matches 1.. run scoreboard players set #forceloaded ste_cos.flags 1

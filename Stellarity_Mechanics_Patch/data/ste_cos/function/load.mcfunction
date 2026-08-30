@@ -9,6 +9,9 @@ gamerule max_block_modifications 1999999999
 
 # Механика боя
 scoreboard objectives add ste_cos.flags dummy '{"text":"STE-COS Flags"}'
+scoreboard objectives add ste_cos.crystals dummy
+scoreboard objectives add ste_cos.flying dummy
+scoreboard objectives add ste_cos.was_flying dummy
 
 # Фикс портала
 scoreboard players set $pull_timer ste_cos.flags 0
@@ -31,10 +34,10 @@ scoreboard objectives add ste_cos.fall dummy '{"text":"STE-COS Fall Distance"}'
 # Яйцо дракона
 scoreboard objectives add ste_cos.search_stage dummy '{"text":"STE-COS Search Stage"}'
 
-# Фантомы-стражи
+# Механика боя
 scoreboard objectives add ste_cos.radius dummy '{"text":"STE-COS Orbit Radius"}'
 
-# Фантомы-стражи
+# Механика боя
 scoreboard objectives add ste_cos.orbit_y dummy '{"text":"STE-COS Orbit Y"}'
 
 # Механика боя
@@ -45,6 +48,6 @@ scoreboard objectives add ste_cos.walk custom:walk_one_cm
 scoreboard objectives add ste_cos.sprint custom:sprint_one_cm
 scoreboard objectives add ste_cos.crouch custom:crouch_one_cm
 scoreboard objectives add ste_cos.swim custom:swim_one_cm
-# Фикс кристаллов
+# Механика боя
 execute unless score #forceloaded ste_cos.flags matches 1.. run execute in minecraft:the_end run forceload add -112 -112 112 112
 execute unless score #forceloaded ste_cos.flags matches 1.. run scoreboard players set #forceloaded ste_cos.flags 1

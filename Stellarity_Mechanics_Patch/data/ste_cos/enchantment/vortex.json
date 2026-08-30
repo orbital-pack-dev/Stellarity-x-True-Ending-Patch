@@ -1,0 +1,23 @@
+{
+  "description": {
+    "translate": "enchantment.ste_cos.vortex",
+    "fallback": "Vortex"
+  },
+  "exclusive_set": "#minecraft:exclusive_set/armor",
+  "supported_items": "#ste_cos:enchantable/vortex",
+  "primary_items": "#ste_cos:enchantable/vortex",
+  "weight": 1,
+  "max_level": 2,
+  "min_cost": {
+    "base": 12,
+    "per_level_above_first": 12
+  },
+  "max_cost": {
+    "base": 60,
+    "per_level_above_first": 12
+  },
+  "anvil_cost": 12,
+  "slots": [
+    "chest"
+  ]
+}

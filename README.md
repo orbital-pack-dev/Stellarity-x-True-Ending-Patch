@@ -2,7 +2,6 @@
 
 # Stellarity x True Ending Patch
 
-
 [![Minecraft](https://img.shields.io/badge/Minecraft-1.21.11%20--%2026.1.2-D47A1E?style=for-the-badge&logo=minecraft&logoColor=D47A1E&labelColor=141419)](https://minecraft.wiki/)
 [![Modrinth](https://img.shields.io/badge/Modrinth-Available-00AF5C?style=for-the-badge&logo=modrinth&logoColor=white&labelColor=141419)](https://modrinth.com/datapack/stellarity_x_true_ending_patch)
 [![GitHub Stars](https://img.shields.io/github/stars/orbital-pack-dev/Stellarity-x-True-Ending-Patch?style=for-the-badge&logo=github&color=F59E0B&labelColor=141419)](https://github.com/orbital-pack-dev/Stellarity-x-True-Ending-Patch/stargazers)
@@ -19,6 +18,7 @@
 
 > [!IMPORTANT]
 > **VERSION SUPPORT:**
+>
 > * **Below 1.21.11:** **Unsupported.** Commands and datapack schema will fail to parse.
 > * **Supported versions:** `1.21.11`, `26.1`, `26.1.1`, `26.1.2`.
 > * **Above 1.21.11:** Functionally compatible, though minor snapshot quirks may occur.
@@ -54,11 +54,32 @@ This project synchronizes both mods into a single deterministic state machine, f
 
 ---
 
+## Installation
+
+The patch is provided in two convenient formats: **as a datapack (.zip)** and **as a global mod (.jar)** for Mod Loaders.
+
+### 1. Required Dependencies (Install these first)
+
+* **True Ending** (Version 1.1.4d) — *Datapack/Mod and Resource Pack*
+* **Stellarity** (Version 5.5.5) — *Datapack/Mod and Resource Pack*
+
+### 2. Installation Methods
+
+**Method A: Dedicated Servers & Mod Loaders (Fabric / Quilt / Forge / NeoForge / Paper / Purpur)**
+Download the patch in **.jar** format and place it into your server's (or client's) `mods/` folder.
+*Mod loaders and modern server engines will automatically recognize and load it as a global datapack!*
+
+**Method B: Classic Datapack (Vanilla)**
+Download the patch in **.zip** format and place it into your world's `datapacks/` folder.
+
+---
+
 ## Load Order Guide
 
 To ensure functions override properly, maintain this exact hierarchy:
 
 ### Datapack Priority (`/datapack list`)
+
 <img width="404" height="332" alt="image" src="https://github.com/user-attachments/assets/b24c379d-881d-434a-9ca5-0190554ed665" />
 
 1. Stellarity_Compatibility_Patch or Stellarity_Mechanics_Patch — loads last
@@ -66,6 +87,7 @@ To ensure functions override properly, maintain this exact hierarchy:
 3. Stellarity-5.5.5
 
 ### Resource Packs
+>
 > [!NOTE]
 > Enable **ONLY ONE** music resource pack (`True Ending: Ender Dragon Music` **OR** `Stellarity Music Pack`) to prevent audio tracks from overlapping.
 
@@ -82,13 +104,15 @@ To ensure functions override properly, maintain this exact hierarchy:
 
 ## Contributing & Bug Reports
 
-Found an issue or want to contribute? 
+Found an issue or want to contribute?
+
 * Open a bug report in [GitHub Issues](https://github.com/orbital-pack-dev/Stellarity-x-True-Ending-Patch/issues).
 * Submit improvements through a [Pull Request](https://github.com/orbital-pack-dev/Stellarity-x-True-Ending-Patch/pulls).
 
 ---
 
 ## Credits
+
 * **Stellarity** — Created by [Kohara](https://modrinth.com/user/kohara).
 * **True Ending** — Created by [limesplatus](https://modrinth.com/user/limesplatus).
 * **Void7676_** — Patch architecture, synchronization logic, and maintenance.
