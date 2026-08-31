@@ -24,6 +24,7 @@ scoreboard objectives add ste_cos.timer dummy '{"text":"STE-COS Timer"}'
 
 # Яйцо дракона
 scoreboard objectives add ste_cos.search_stage dummy '{"text":"STE-COS Search Stage"}'
+scoreboard players set #egg_tracker_spawned ste_cos.flags 0
 
 # Механика боя
 scoreboard objectives add ste_cos.radius dummy '{"text":"STE-COS Orbit Radius"}'
