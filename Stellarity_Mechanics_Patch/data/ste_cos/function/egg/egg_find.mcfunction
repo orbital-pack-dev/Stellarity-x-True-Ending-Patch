@@ -1,4 +1,5 @@
 # ste_cos:egg/egg_find
+scoreboard players set @s ste_cos.egg_timer 0
 
 execute if block ~-15 ~-7 ~-15 minecraft:dragon_egg run return run tp @s ~-15 ~-7 ~-15
 execute if block ~-15 ~-7 ~-14 minecraft:dragon_egg run return run tp @s ~-15 ~-7 ~-14

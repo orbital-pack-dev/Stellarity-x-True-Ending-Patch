@@ -46,6 +46,7 @@ scoreboard objectives add ste_cos.orbit_y dummy '{"text":"STE-COS Orbit Y"}'
 # Механика боя
 scoreboard players set #rng_ticker ste_cos.flags 0 
 scoreboard objectives add ste_cos.timer dummy '{"text":"STE-COS Timer"}'
+scoreboard objectives add ste_cos.egg_timer dummy
 scoreboard objectives add ste_cos.still_timer dummy '{"text":"STE-COS Still Timer"}'
 scoreboard objectives add ste_cos.walk custom:walk_one_cm
 scoreboard objectives add ste_cos.sprint custom:sprint_one_cm

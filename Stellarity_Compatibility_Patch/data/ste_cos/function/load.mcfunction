@@ -21,6 +21,7 @@ scoreboard objectives add ste_cos.id dummy '{"text":"STE-COS IDs"}'
 
 # Механика боя
 scoreboard objectives add ste_cos.timer dummy '{"text":"STE-COS Timer"}'
+scoreboard objectives add ste_cos.egg_timer dummy '{"text":"STE-COS Egg Timer"}'
 
 # Яйцо дракона
 scoreboard objectives add ste_cos.search_stage dummy '{"text":"STE-COS Search Stage"}'
