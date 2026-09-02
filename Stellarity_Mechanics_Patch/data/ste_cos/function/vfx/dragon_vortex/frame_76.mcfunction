@@ -1,4 +1,6 @@
-# Механика боя
+# ste_cos:vfx/dragon_vortex/frame_76
+# частицы вихря
+
 particle minecraft:dragon_breath ~1.0189 ~0.0 ~-0.2922 0 0 0 0 1 normal
 particle minecraft:dragon_breath ~-0.2564 ~0.0 ~1.0285 0 0 0 0 1 normal
 particle minecraft:dragon_breath ~-0.7625 ~0.0 ~-0.7363 0 0 0 0 1 normal

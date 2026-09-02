@@ -1,90 +1,53 @@
-# Механика боя
-#
-# Механика боя
-# Фикс кристаллов
-# Механика боя
-
-# End Crystal stuff
-execute if entity @s[tag=trueEnding_mirrordragon] run return 0
-
+# логика поведения дракона
 scoreboard players reset #crystal_count stellarity.misc
-# Count Crystals (only the ones with the bottom part count)
-execute as @e[type=end_crystal,nbt={ShowBottom:1b},distance=..400] at @s run function stellarity:entity/dragon/crystal/loop
-# Make Dragon invulnerable if there is more than 1 Crystal
-execute if score #crystal_count stellarity.misc matches 1.. run function stellarity:entity/dragon/crystal/update_bossbar
-execute unless score #crystal_count stellarity.misc matches 1.. run function stellarity:entity/dragon/crystal/hide_bossbar
+execute as @e[type=end_crystal] at @s run function stellarity:entity/dragon/crystal/loop
 
-# A special helper Marker is spawned right with the Dragon and is used
-# for things like death animations, dropping loot at correct time, etc.
-execute at @s run tp @e[type=marker,tag=stellarity.dragon_marker] ~ ~ ~
+# считаем только кристаллы с постаментом
+execute store result score #crystals_left stellarity.misc if entity @e[type=end_crystal,nbt={ShowBottom:1b}]
 
-# Get health
-execute store result score @s stellarity.dragon.health run data get entity @s Health 1
-# Convert to percentage
-execute store result score #max stellarity.misc run attribute @s max_health get
-scoreboard players set #100 stellarity.misc 100
-scoreboard players operation @s stellarity.dragon.health_percent = @s stellarity.dragon.health
-scoreboard players operation @s stellarity.dragon.health_percent *= #100 stellarity.misc
-scoreboard players operation @s stellarity.dragon.health_percent /= #max stellarity.misc
-# Prevent Crystals from healing the Dragon
-execute if score @s stellarity.dragon.health_old < @s stellarity.dragon.health run function stellarity:entity/dragon/prevent_heal
+# неуязвимость дракона при наличии кристаллов
+execute if score #crystals_left stellarity.misc matches 1.. run tag @s add stellarity.dragon.invulnerable
+execute if score #crystals_left stellarity.misc matches 0 run tag @s remove stellarity.dragon.invulnerable
+
+# перемещение маркера дракона
+execute at @s run tp @e[type=marker,tag=stellarity.dragon_marker,limit=1] ~ ~ ~
+
+# получение здоровья и перевод в проценты
+execute store result score @s stellarity.dragon.health run data get entity @s Health 100
+scoreboard players operation @s stellarity.misc = @s stellarity.dragon.health
+scoreboard players operation @s stellarity.misc /= #three stellarity.constants
+
+# запрет лечения от кристаллов
+execute if score @s stellarity.dragon.health > @s stellarity.dragon.health_old store result entity @s Health float 1 run scoreboard players get @s stellarity.dragon.health_old
 scoreboard players operation @s stellarity.dragon.health_old = @s stellarity.dragon.health
-# Update bossbar
-execute store result bossbar stellarity:ender_dragon value run scoreboard players get @s stellarity.dragon.health
 
-execute if predicate kohara:chance/6percent run function stellarity:entity/dragon/beam_thingy/spawn
+# обновление полосы здоровья
+scoreboard players operation #dragon stellarity.misc = @s stellarity.misc
+scoreboard players operation #dragon stellarity.misc /= #one_hundred stellarity.constants
+execute store result bossbar stellarity:ender_dragon value run scoreboard players get #dragon stellarity.misc
 
-# Bossbar Visbility
-bossbar set stellarity:ender_dragon players
-bossbar set stellarity:ender_dragon players @a[predicate=stellarity:location/dragons_den/in_main_area]
-bossbar set stellarity:crystal_count players
-bossbar set stellarity:crystal_count players @a[predicate=stellarity:location/dragons_den/in_main_area]
+# видимость полосы босса
+execute as @a[tag=stellarity.has_dragon,distance=400..] run function stellarity:entity/dragon/bossbar/remove
+execute as @a[tag=!stellarity.has_dragon,distance=..400] run function stellarity:entity/dragon/bossbar/add
+execute store result score #total_crystals stellarity.misc if entity @e[type=end_crystal]
+execute store result bossbar stellarity:crystal_count max run scoreboard players get #total_crystals stellarity.misc
+execute store result bossbar stellarity:crystal_count value run scoreboard players get #crystals_left stellarity.misc
 
-# Music
-execute if entity @s[tag=!stellarity.to_portal,tag=!stellarity.at_portal] run function stellarity:entity/dragon/music/tick
+# музыка битвы
+execute as @a[tag=stellarity.has_dragon] run function stellarity:entity/dragon/music
 
-# Phase monitor
-# 0 = circling
-# 1 = strafing (preparing to shoot a fireball)
-# 2 = flying to the portal to land (part of transition to landed state)
-# 3 = landing on the portal (part of transition to landed state)
-# 4 = taking off from the portal (part of transition out of landed state)
-# 5 = landed (performing breath attack)
-# 6 = landed (looking for a player for breath attack)
-# 7 = landed (roar before beginning breath attack
-# 8 = charging player
-# 9 = flying to portal to die
+# фазы поведения дракона
 execute store result score @s stellarity.misc run data get entity @s DragonPhase
-execute unless score @s[tag=!stellarity.at_portal] stellarity.misc matches 5..7 run function stellarity:entity/dragon/trail
+execute unless score @s trueEnding_bosstime matches 1.. if score @s stellarity.misc matches 2..7 run data modify entity @s DragonPhase set value 0
 
-# Механика боя
-# Фикс кристаллов
-# execute unless score @s trueEnding_bosstime matches 1.. if score @s[tag=stellarity.dragon.invulnerable] stellarity.misc matches 2..7 run data modify entity @s DragonPhase set value 0
+scoreboard players remove @s[tag=!stellarity.dragon.invulnerable] stellarity.dragon.attack_cooldown 1
+execute if score @s stellarity.dragon.attack_cooldown matches ..0 run function stellarity:entity/dragon/attacks/trigger
 
-execute if score @s stellarity.misc matches 5 run function stellarity:entity/dragon/attacks/roar_breath/main
-execute unless score @s stellarity.dragon.shulker_hell matches 4 as @e[type=dragon_fireball] at @s run function stellarity:entity/dragon/attacks/fireball/summon
-execute if score @s stellarity.dragon.shulker_hell matches 4 as @e[type=dragon_fireball] at @s run function stellarity:entity/dragon/attacks/shulker_hell/trigger
-execute if score @s[tag=!stellarity.at_portal,scores={stellarity.dragon.health_percent=..99}] stellarity.misc matches 4 run function stellarity:entity/dragon/attacks/take_off/main
-execute if score @s[scores={stellarity.dragon.perch_cooldown=1..}] stellarity.misc matches 2..3 run data modify entity @s DragonPhase set value 0
-execute if score @s stellarity.dragon.time_chainfiring matches 1.. run function stellarity:entity/dragon/attacks/chainfire/tickdown
-execute unless score @s[scores={stellarity.dragon.health_percent=..50,stellarity.misc=0..1}] stellarity.dragon.ball_of_blight_cooldown matches 1.. run function stellarity:entity/dragon/attacks/ball_of_blight/cast
+# возрождение пяти кристаллов при низком здоровье
+execute if score @s stellarity.misc matches ..25 unless score @s stellarity.revived_crystals matches 1.. run function stellarity:entity/dragon/attacks/revive_crystals/initiate
 
-# Tick down attack cooldown
-scoreboard players remove @s[scores={stellarity.dragon.perch_cooldown=1..}] stellarity.dragon.perch_cooldown 1
-scoreboard players remove @s[scores={stellarity.dragon.ball_of_blight_cooldown=1..}] stellarity.dragon.ball_of_blight_cooldown 1
+# стук сердца при низком здоровье
+execute if score @s stellarity.misc matches ..25 at @s run function stellarity:entity/dragon/heartbeat
 
-# Revive 5 random End Crystals once below 25%% health
-execute if score @s[tag=!stellarity.dragon.respawned_crystals] stellarity.dragon.health_percent matches ..25 run function stellarity:entity/dragon/attacks/revive_crystals/initiate
-
-# Heartbeat while below 25%% health
-execute if score @s stellarity.dragon.health_percent matches ..25 run function stellarity:entity/dragon/heartbeat/main
-
-# Fly to portal to die
-execute if score @s[tag=!stellarity.at_portal] stellarity.dragon.health matches 0..1 run function stellarity:entity/dragon/death/fly_to_portal
-execute if score @s stellarity.dragon.health matches 0..1 if score @s[tag=stellarity.to_portal] stellarity.misc matches 5..7 run tag @s add stellarity.at_portal
-execute if entity @s[tag=stellarity.at_portal] run function stellarity:entity/dragon/death/at_portal_loop
-
-execute as @e[type=shulker,tag=stellarity.dragon_shulker] at @s run particle witch ~ ~0.2 ~ 0.4 0.4 0.4 0.04 1 normal
-execute as @e[type=shulker_bullet,tag=stellarity.dragon_bullet] at @s run function stellarity:entity/dragon/attacks/shulker_hell/loop_as_bullet
-
-team join stellarity.dragon.pacify_others @e[type=enderman,predicate=stellarity:location/dragons_den/in_main_area]
+# полет к порталу при гибели
+execute if score @s stellarity.dragon.health matches ..0 run function stellarity:entity/dragon/death

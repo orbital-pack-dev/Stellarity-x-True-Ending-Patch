@@ -1,11 +1,12 @@
-# Блокировка элитр
-item modify entity @s armor.chest ste_cos:break_elytra
+# ste_cos:mechanics/elytra_stop
+# принудительное отключение полета
 
-# Механика боя
-playsound minecraft:item.shield.break player @a ~ ~ ~ 1 0.8
+# сброс падения
+execute store result score @s ste_cos.fall run data get entity @s FallDistance 1
 
-# Механика боя
-effect give @s minecraft:slow_falling 3 0 true
+# отключение полета
+execute if data entity @s {FallFlying:1b} run data modify entity @s FallFlying set value 0b
 
-# Механика боя
-effect give @s minecraft:weakness 3 1 true
+# предупреждение звуком и частицами
+execute if data entity @s {FallFlying:1b} run playsound minecraft:item.elytra.flying player @s ~ ~ ~ 1 0.5
+execute if data entity @s {FallFlying:1b} run particle minecraft:smoke ~ ~ ~ 0.5 0.5 0.5 0.05 10 force

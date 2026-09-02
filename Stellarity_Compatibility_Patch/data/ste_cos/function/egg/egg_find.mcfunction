@@ -1,8 +1,5 @@
 # ste_cos:egg/egg_find
-# Диспетчер пейджингового поиска яйца дракона.
-# Вызывается из egg_tick каждые 20-40 тиков. Ищет максимум 800 блоков за вызов.
-# Когда яйцо найдено — маркер телепортируется к нему и поиск останавливается.
-# Следующий поиск начнётся только через 3 секунды после того, как яйцо пропало снова.
+# поиск яйца дракона
 
 execute if score @s ste_cos.search_stage matches 0 run function ste_cos:egg/egg_find_page_0
 execute if score @s ste_cos.search_stage matches 1 run function ste_cos:egg/egg_find_page_1
@@ -24,6 +21,5 @@ execute if score @s ste_cos.search_stage matches 16 run function ste_cos:egg/egg
 execute if score @s ste_cos.search_stage matches 17 run function ste_cos:egg/egg_find_page_17
 execute if score @s ste_cos.search_stage matches 18 run function ste_cos:egg/egg_find_page_18
 
-# Перейти к следующей странице, зациклить после последней
 scoreboard players add @s ste_cos.search_stage 1
 execute if score @s ste_cos.search_stage matches 19.. run scoreboard players set @s ste_cos.search_stage 0

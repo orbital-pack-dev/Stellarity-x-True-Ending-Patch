@@ -53,7 +53,7 @@
       scoreboard objectives add stellarity.config.enable_shulking dummy
 
     # Initialize config scoreboards
-      # Freshly created scoreboards have no value (not even set to 0)
+# новые задачи изначально не имеют значений
         function stellarity:config/init
 
       ## Items

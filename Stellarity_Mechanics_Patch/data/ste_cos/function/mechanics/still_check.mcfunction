@@ -1,23 +1,18 @@
-
 # ste_cos:mechanics/still_check
-# Механика боя
+# проверка неподвижности игрока
 
-scoreboard players operation @s ste_cos.walk += @s ste_cos.sprint
-scoreboard players operation @s ste_cos.walk += @s ste_cos.crouch
-scoreboard players operation @s ste_cos.walk += @s ste_cos.swim
-scoreboard players operation @s ste_cos.walk += @s ste_cos.fall
+# проверка перемещения
+scoreboard players add @s ste_cos.still_timer 1
+execute if score @s ste_cos.walk matches 1.. run scoreboard players set @s ste_cos.still_timer 0
+execute if score @s ste_cos.sprint matches 1.. run scoreboard players set @s ste_cos.still_timer 0
+execute if score @s ste_cos.crouch matches 1.. run scoreboard players set @s ste_cos.still_timer 0
+execute if score @s ste_cos.swim matches 1.. run scoreboard players set @s ste_cos.still_timer 0
 
-# Механика боя
-execute if score @s ste_cos.walk matches 0 if data entity @s {OnGround:1b} run scoreboard players add @s ste_cos.still_timer 1
-execute unless score @s ste_cos.walk matches 0 run scoreboard players set @s ste_cos.still_timer 0
-execute unless data entity @s {OnGround:1b} run scoreboard players set @s ste_cos.still_timer 0
+# сброс счетчиков движения
+scoreboard players reset @s ste_cos.walk
+scoreboard players reset @s ste_cos.sprint
+scoreboard players reset @s ste_cos.crouch
+scoreboard players reset @s ste_cos.swim
 
-# Механика боя
-scoreboard players set @s ste_cos.walk 0
-scoreboard players set @s ste_cos.sprint 0
-scoreboard players set @s ste_cos.crouch 0
-scoreboard players set @s ste_cos.swim 0
-scoreboard players set @s ste_cos.fall 0
-
-# Механика боя
-execute if score @s ste_cos.still_timer matches 260.. at @s run function ste_cos:mechanics/vortex_trigger
+# призыв вихря если игрок стоит слишком долго
+execute if score @s ste_cos.still_timer matches 160.. run function ste_cos:mechanics/vortex_trigger

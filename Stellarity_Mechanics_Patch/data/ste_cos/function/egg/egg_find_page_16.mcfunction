@@ -1,5 +1,5 @@
 # ste_cos:egg/egg_find_page_16
-# Страница 17 из 19: позиции 12801..13600
+# позиция 12801..13600
 
 execute if block ~-6 ~6 ~13 minecraft:dragon_egg run return run tp @s ~-6 ~6 ~13
 execute if block ~-6 ~6 ~14 minecraft:dragon_egg run return run tp @s ~-6 ~6 ~14

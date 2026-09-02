@@ -1,14 +1,14 @@
 # ste_cos:mechanics/vortex_tick/main
-# Вихрь
+# диспетчер чар вихря на игроке
 
-# Читаем: летит ли игрок прямо сейчас (FallFlying = 1 когда элитры активны)
+# проверка состояния полета
 execute store result score @s ste_cos.flying run data get entity @s FallFlying
 
-# Ветка полёта
+# полет
 execute if score @s ste_cos.flying matches 1 run function ste_cos:mechanics/vortex_tick/flight
 
-# Ветка земли
+# на земле
 execute if score @s ste_cos.flying matches 0 run function ste_cos:mechanics/vortex_tick/ground
 
-# Сохраняем состояние для определения момента взлёта
+# сохранение предыдущего состояния
 scoreboard players operation @s ste_cos.was_flying = @s ste_cos.flying
