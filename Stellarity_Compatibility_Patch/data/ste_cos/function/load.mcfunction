@@ -12,10 +12,14 @@ scoreboard objectives add ste_cos.id dummy '{"text":"STE-COS IDs"}'
 scoreboard objectives add ste_cos.radius dummy '{"text":"STE-COS Orbit Radius"}'
 scoreboard objectives add ste_cos.orbit_y dummy '{"text":"STE-COS Orbit Y"}'
 
+scoreboard objectives add stellarity.constants dummy
+
 # стартовые значения
 scoreboard players set $pull_timer ste_cos.flags 0
 scoreboard players set #rng_ticker ste_cos.flags 0
 scoreboard players set #egg_tracker_spawned ste_cos.flags 0
+scoreboard players set #hundred stellarity.constants 100
+scoreboard players set #three stellarity.constants 3
 execute unless score #portal_fix_done ste_cos.flags matches 1 run scoreboard players set #portal_fix_done ste_cos.flags 0
 execute unless score #portal_fix ste_cos.timer matches 1.. run scoreboard players set #portal_fix ste_cos.timer 0
 

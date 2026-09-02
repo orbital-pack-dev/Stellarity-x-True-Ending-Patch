@@ -74,11 +74,11 @@ def sync_compat_to_mech(compat_files: dict, mech_files: dict, apply: bool) -> li
             # Special merge for load.mcfunction and main_tick.mcfunction
             if rel == "load.mcfunction":
                 # preserve mechanics objectives
-                mech_objs = [l for l in mech_content.splitlines() if any(k in l for k in ["health_diff", "heal_cd", "fall", "still_timer", "walk_one_cm", "sprint_one_cm", "crouch_one_cm", "swim_one_cm"])]
+                mech_objs = [l for l in mech_content.splitlines() if any(k in l for k in ["health_diff", "heal_cd", "fall", "still_timer", "flying", "was_flying", "walk_one_cm", "sprint_one_cm", "crouch_one_cm", "swim_one_cm"])]
                 if mech_objs and not any("health_diff" in l for l in content.splitlines()):
                     lines = content.splitlines()
-                    # insert before '# стартовые значения'
-                    idx = next((i for i, l in enumerate(lines) if "стартовые значения" in l), len(lines))
+                    # insert before stellarity.constants or # стартовые значения
+                    idx = next((i for i, l in enumerate(lines) if "stellarity.constants" in l or "стартовые значения" in l), len(lines))
                     merged = lines[:idx] + mech_objs + [""] + lines[idx:]
                     content = "\n".join(merged).strip() + "\n"
             elif rel == "main_tick.mcfunction":

@@ -16,15 +16,21 @@ scoreboard objectives add ste_cos.health_diff dummy '{"text":"STE-COS Health Dif
 scoreboard objectives add ste_cos.heal_cd dummy '{"text":"STE-COS Heal Cooldown"}'
 scoreboard objectives add ste_cos.fall dummy '{"text":"STE-COS Fall Distance"}'
 scoreboard objectives add ste_cos.still_timer dummy '{"text":"STE-COS Still Timer"}'
+scoreboard objectives add ste_cos.flying dummy '{"text":"STE-COS Flying"}'
+scoreboard objectives add ste_cos.was_flying dummy '{"text":"STE-COS Was Flying"}'
 scoreboard objectives add ste_cos.walk custom:walk_one_cm
 scoreboard objectives add ste_cos.sprint custom:sprint_one_cm
 scoreboard objectives add ste_cos.crouch custom:crouch_one_cm
 scoreboard objectives add ste_cos.swim custom:swim_one_cm
 
+scoreboard objectives add stellarity.constants dummy
+
 # стартовые значения
 scoreboard players set $pull_timer ste_cos.flags 0
 scoreboard players set #rng_ticker ste_cos.flags 0
 scoreboard players set #egg_tracker_spawned ste_cos.flags 0
+scoreboard players set #hundred stellarity.constants 100
+scoreboard players set #three stellarity.constants 3
 execute unless score #portal_fix_done ste_cos.flags matches 1 run scoreboard players set #portal_fix_done ste_cos.flags 0
 execute unless score #portal_fix ste_cos.timer matches 1.. run scoreboard players set #portal_fix ste_cos.timer 0
 

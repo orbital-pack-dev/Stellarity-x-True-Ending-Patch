@@ -2,7 +2,7 @@
 # принудительное отключение полета
 
 # сброс падения
-execute store result score @s ste_cos.fall run data get entity @s FallDistance 1
+execute store result score @s ste_cos.fall run data get entity @s fall_distance 1
 
 # отключение полета
 execute if data entity @s {FallFlying:1b} run data modify entity @s FallFlying set value 0b
