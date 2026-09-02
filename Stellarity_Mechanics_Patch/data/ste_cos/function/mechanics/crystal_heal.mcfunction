@@ -1,15 +1,11 @@
 # ste_cos:mechanics/crystal_heal
-# проверка регенерации кристаллов
+# лечение дракона от кристаллов
 
-# запись текущего здоровья
-execute store result score @s ste_cos.health run data get entity @s Health 1
+execute store result score @s ste_cos.health run data get entity @s Health
+scoreboard players add @s ste_cos.health 4
 
-# расчет разницы здоровья
-scoreboard players operation @s ste_cos.health_diff = @s ste_cos.health
-scoreboard players operation @s ste_cos.health_diff -= @s ste_cos.health_old
+execute if score @s ste_cos.health matches 300.. run scoreboard players set @s ste_cos.health 300
+execute store result entity @s Health float 1 run scoreboard players get @s ste_cos.health
 
-# проверка восстановления здоровья
-execute if score @s ste_cos.health_diff matches 1.. run function ste_cos:dragon/crystal_heal_check
-
-# обновление предыдущего здоровья
-scoreboard players operation @s ste_cos.health_old = @s ste_cos.health
+execute store result score @s stellarity.dragon.health run data get entity @s Health
+execute store result score @s stellarity.dragon.health_old run data get entity @s Health

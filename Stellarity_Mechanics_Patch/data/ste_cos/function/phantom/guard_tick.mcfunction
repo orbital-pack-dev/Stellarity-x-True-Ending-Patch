@@ -1,12 +1,12 @@
 # ste_cos:phantom/guard_tick
-# общий цикл стражей кристаллов
+# тикер фантомов-стражей
 
-# удаление стражей если дракон повержен
-execute in minecraft:the_end unless entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] run kill @e[type=phantom,tag=ste_cos_guard]
-execute in minecraft:the_end unless entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] run kill @e[type=area_effect_cloud,tag=ste_cos_guard_marker]
+# удаление стражей только если дракона вообще нет
+execute in minecraft:the_end unless entity @e[type=ender_dragon,limit=1] run kill @e[type=phantom,tag=ste_cos_guard]
+execute in minecraft:the_end unless entity @e[type=ender_dragon,limit=1] run kill @e[type=area_effect_cloud,tag=ste_cos_guard_marker]
 
-# призыв стража на кристалл без охраны
-execute in minecraft:the_end if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] as @e[type=end_crystal,nbt=!{ShowBottom:0b},limit=1,sort=random] at @s unless entity @e[type=area_effect_cloud,tag=ste_cos_guard_marker,distance=..6,limit=1] run function ste_cos:phantom/spawn_guard
+# призыв стража на кристалле
+execute in minecraft:the_end if entity @e[type=ender_dragon,limit=1] as @e[type=end_crystal,nbt=!{ShowBottom:0b},limit=1,sort=random] at @s unless entity @e[type=area_effect_cloud,tag=ste_cos_guard_marker,distance=..6,limit=1] run function ste_cos:phantom/spawn_guard
 
-# обновление позиции каждого стража
-execute in minecraft:the_end if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] as @e[type=area_effect_cloud,tag=ste_cos_guard_marker] at @s run function ste_cos:phantom/guard_move
+# движение стражей
+execute in minecraft:the_end if entity @e[type=ender_dragon,limit=1] as @e[type=area_effect_cloud,tag=ste_cos_guard_marker] at @s run function ste_cos:phantom/guard_move

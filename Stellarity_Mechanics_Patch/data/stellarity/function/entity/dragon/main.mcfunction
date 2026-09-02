@@ -1,6 +1,7 @@
 # логика поведения дракона
+execute if entity @s[tag=trueEnding_mirrordragon] run return 0
 scoreboard players reset #crystal_count stellarity.misc
-execute as @e[type=end_crystal,nbt={ShowBottom:1b},distance=..200] at @s run function stellarity:entity/dragon/crystal/loop
+execute as @e[type=end_crystal,nbt={ShowBottom:1b},distance=..400] at @s run function stellarity:entity/dragon/crystal/loop
 execute if score #crystal_count stellarity.misc matches 1.. run function stellarity:entity/dragon/crystal/update_bossbar
 execute unless score #crystal_count stellarity.misc matches 1.. run function stellarity:entity/dragon/crystal/hide_bossbar
 execute at @s run tp @e[type=marker,tag=stellarity.dragon_marker] ~ ~ ~

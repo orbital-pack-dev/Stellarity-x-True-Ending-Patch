@@ -1,12 +1,7 @@
 # ste_cos:mechanics/elytra_stop
-# принудительное отключение полета
+# поломка элитр и замедление игрока
 
-# сброс падения
-execute store result score @s ste_cos.fall run data get entity @s fall_distance 1
-
-# отключение полета
-execute if data entity @s {FallFlying:1b} run data modify entity @s FallFlying set value 0b
-
-# предупреждение звуком и частицами
-execute if data entity @s {FallFlying:1b} run playsound minecraft:item.elytra.flying player @s ~ ~ ~ 1 0.5
-execute if data entity @s {FallFlying:1b} run particle minecraft:smoke ~ ~ ~ 0.5 0.5 0.5 0.05 10 force
+item modify entity @s armor.chest ste_cos:break_elytra
+playsound minecraft:item.shield.break player @a ~ ~ ~ 1 0.8
+effect give @s minecraft:slow_falling 3 0 true
+effect give @s minecraft:weakness 3 1 true
