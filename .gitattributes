@@ -1,0 +1,17 @@
+# Нормализуем окончания строк в LF для всего текстового контента
+* text=auto eol=lf
+
+# Явно для файлов датапака
+*.mcfunction text eol=lf
+*.json text eol=lf
+*.mcmeta text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.py text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+
+# Бинарные файлы — без нормализации
+*.png binary
+*.zip binary
+*.jar binary
