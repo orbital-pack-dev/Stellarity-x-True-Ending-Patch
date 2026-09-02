@@ -27,6 +27,9 @@ execute if score #rng_ticker ste_cos.flags matches 25.. run scoreboard players s
 # нет игроков
 execute in minecraft:the_end unless entity @a run return 0
 
+# лучи кристаллов на 0 67 0 и поочередное исчезновение без дракона
+execute in minecraft:the_end run function ste_cos:crystal/beam_cleaner
+
 # щит
 execute in minecraft:the_end run function ste_cos:dragon/invulnerability_guard
 

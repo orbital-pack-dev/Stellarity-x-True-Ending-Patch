@@ -15,7 +15,7 @@ scoreboard players operation #percent stellarity.misc /= #three stellarity.const
 scoreboard players operation #percent stellarity.misc /= #hundred stellarity.constants
 execute store result bossbar stellarity:ender_dragon value run scoreboard players get #percent stellarity.misc
 execute store result score #int_health stellarity.misc run data get entity @s Health
-execute if score #int_health stellarity.misc > @s stellarity.dragon.health_old store result entity @s Health float 1 run scoreboard players get @s stellarity.dragon.health_old
+execute unless score @s stellarity.dragon.health_old matches 1.. run scoreboard players operation @s stellarity.dragon.health_old = #int_health stellarity.misc
 scoreboard players operation @s stellarity.dragon.health_old = #int_health stellarity.misc
 
 # видимость полосы босса
