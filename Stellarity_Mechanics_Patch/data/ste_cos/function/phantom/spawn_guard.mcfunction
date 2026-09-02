@@ -1,10 +1,7 @@
-
 # ste_cos:phantom/spawn_guard
 # Фикс кристаллов
 
 # Механика боя
-
-
 scoreboard players add #rng_ticker ste_cos.flags 1
 execute if score #rng_ticker ste_cos.flags matches 25.. run scoreboard players set #rng_ticker ste_cos.flags 0
 

@@ -1,19 +1,15 @@
 # Ignore everything in root by default
 /*
 
-# Whitelist .gitignore and README
+# Whitelist .gitignore, README, project files
 !.gitignore
 !README.md
+!TODO.md
+!.gitattributes
+!compare_datapacks.py
+!sync_patches.py
 
-# Whitelist Data Packs & Resource Packs
-!Stellarity_Cosmetic_Patch/
-!Stellarity_Cosmetic_Patch/**
-
-!Stellarity_Cosmetic_RP/
-!Stellarity_Cosmetic_RP/**
-
-!Stellarity_Load_Fix/
-!Stellarity_Load_Fix/**
+# Whitelist Data Packs
 
 !Stellarity_Compatibility_Patch/
 !Stellarity_Compatibility_Patch/**
@@ -21,11 +17,11 @@
 !Stellarity_Mechanics_Patch/
 !Stellarity_Mechanics_Patch/**
 
-# Ignore IDE / Tool config files inside whitelisted folders
+# Ignore Tool
 **/.spyglassrc.json
 **/.vscode/
 
-# Ignored external assets and original mods
+# Ignored
 Stellarity-5.5.5/
 tru.e-ending-1.1.4d/
 Stellarity-5.5.5-RP/
@@ -43,3 +39,6 @@ Release_Builds/*.zip
 
 !build.py
 !LICENSE
+
+!nullscape_compat/
+!nullscape_compat/**

@@ -1,6 +1,5 @@
-
 # ste_cos:phantom/guard_act
-# Фикс кристаллов
+# Фантомы-стражи
 
 # Механика боя
 scoreboard players operation #current_id ste_cos.flags = @s ste_cos.id

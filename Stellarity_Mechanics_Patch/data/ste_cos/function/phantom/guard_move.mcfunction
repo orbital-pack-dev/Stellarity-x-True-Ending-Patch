@@ -1,4 +1,3 @@
-
 # ste_cos:phantom/guard_move
 # Фантомы-стражи
 

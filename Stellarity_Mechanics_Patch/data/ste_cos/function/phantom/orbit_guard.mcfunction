@@ -1,4 +1,3 @@
-
 # ste_cos:phantom/orbit_guard
 # Фантомы-стражи
 

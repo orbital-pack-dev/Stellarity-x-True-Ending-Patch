@@ -39,5 +39,4 @@ particle minecraft:dust_color_transition{from_color:[0.35,0.0,0.55],scale:1.1,to
 particle minecraft:dust_color_transition{from_color:[0.35,0.0,0.55],scale:1.1,to_color:[1.0,0.1,0.9]} ~0.64 ~0.5 ~-0.64 0 0 0 0 1 force
 particle minecraft:dust_color_transition{from_color:[0.35,0.0,0.55],scale:1.1,to_color:[1.0,0.1,0.9]} ~0.83 ~0.5 ~-0.34 0 0 0 0 1 force
 
-# Фикс портала
 particle minecraft:dragon_breath ~0.0 ~0.5 ~0.0 0.5 0.5 0.5 0.03 4 force
