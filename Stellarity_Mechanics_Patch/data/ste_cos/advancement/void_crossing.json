@@ -8,6 +8,6 @@
     }
   },
   "rewards": {
-    "function": "ste_cos:portal/chorus_cleaner"
+    "function": "ste_cos:crystal/cleanup_trigger"
   }
 }
