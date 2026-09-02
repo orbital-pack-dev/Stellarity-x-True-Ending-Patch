@@ -1,5 +1,4 @@
 # ste_cos:egg/egg_pulse_dark
-# темный вихревой импульс
 
 particle minecraft:dust_color_transition{from_color:[0.8,0.0,0.7],scale:0.9,to_color:[0.08,0.0,0.18]} ~0.05 ~0.95 ~-0.09 0 0 0 0 1 force
 particle minecraft:dust_color_transition{from_color:[0.8,0.0,0.7],scale:0.75,to_color:[0.08,0.0,0.18]} ~-0.26 ~0.65 ~0.00 0 0 0 0 1 force

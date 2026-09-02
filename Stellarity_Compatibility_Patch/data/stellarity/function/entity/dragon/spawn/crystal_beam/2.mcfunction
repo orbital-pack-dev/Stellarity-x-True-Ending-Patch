@@ -1,1 +1,1 @@
-data merge entity @s {beam_target:[I;50,120,36]}
+data merge entity @s {beam_target:[I;50,104,36]}

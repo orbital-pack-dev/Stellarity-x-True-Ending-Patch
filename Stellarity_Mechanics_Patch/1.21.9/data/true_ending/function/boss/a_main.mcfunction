@@ -5,7 +5,7 @@ execute if entity @s[tag=!trueEnding_dragon_particlechecked] run function true_e
 execute as @s[tag=!ste_cos.totem_used,tag=!ste_cos.totem_animating] if data entity @s {DragonPhase: 10} run function ste_cos:dragon/trigger_totem
 execute if score @s ste_cos.heal_cd matches 1.. run scoreboard players remove @s ste_cos.heal_cd 1
 
-# перевод здоровья в проценты
+# перевод здоровья
 execute store result score @s ste_cos.health run data get entity @s Health
 scoreboard players operation @s ste_cos.health_diff = @s ste_cos.health
 scoreboard players operation @s ste_cos.health_diff -= @s ste_cos.health_old

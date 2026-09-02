@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 sync_patches.py
 
@@ -71,10 +71,29 @@ def sync_compat_to_mech(compat_files: dict, mech_files: dict, apply: bool) -> li
                 dst.parent.mkdir(parents=True, exist_ok=True)
                 dst.write_text(content, encoding="utf-8")
         elif mech_content != content:
-            actions.append(("UPDATE", rel, "Compat is newer"))
-            if apply:
-                dst = MECH / rel.replace("/", os.sep)
-                dst.write_text(content, encoding="utf-8")
+            # Special merge for load.mcfunction and main_tick.mcfunction
+            if rel == "load.mcfunction":
+                # preserve mechanics objectives
+                mech_objs = [l for l in mech_content.splitlines() if any(k in l for k in ["health_diff", "heal_cd", "fall", "still_timer", "walk_one_cm", "sprint_one_cm", "crouch_one_cm", "swim_one_cm"])]
+                if mech_objs and not any("health_diff" in l for l in content.splitlines()):
+                    lines = content.splitlines()
+                    # insert before '# стартовые значения'
+                    idx = next((i for i, l in enumerate(lines) if "стартовые значения" in l), len(lines))
+                    merged = lines[:idx] + mech_objs + [""] + lines[idx:]
+                    content = "\n".join(merged).strip() + "\n"
+            elif rel == "main_tick.mcfunction":
+                # preserve mechanics ticks
+                mech_ticks = [l for l in mech_content.splitlines() if "ste_cos:mechanics" in l]
+                if mech_ticks and not any("ste_cos:mechanics" in l for l in content.splitlines()):
+                    content = content.strip() + "\n\n# механики усложненного боя\n" + "\n".join(mech_ticks) + "\n"
+
+            if mech_content != content:
+                actions.append(("UPDATE", rel, "Compat is newer"))
+                if apply:
+                    dst = MECH / rel.replace("/", os.sep)
+                    dst.write_text(content, encoding="utf-8")
+            else:
+                actions.append(("OK", rel, "identical after merge"))
         else:
             actions.append(("OK", rel, "identical"))
     return actions

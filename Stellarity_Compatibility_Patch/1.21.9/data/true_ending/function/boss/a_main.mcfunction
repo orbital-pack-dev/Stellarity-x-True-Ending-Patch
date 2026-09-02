@@ -5,7 +5,7 @@ execute if entity @s[tag=!trueEnding_dragon_particlechecked] run function true_e
 execute if score @s trueEnding_bosstime matches 0.. run scoreboard players add @s trueEnding_bosstime 1
 execute store result score @s trueEnding_y run data get entity @s Pos[1]
 
-# перевод здоровья в проценты
+# перевод здоровья
 execute store result score @s trueEnding_dragonphase run data get entity @s DragonPhase
 execute if score dragontrail trueEnding_settings matches 1 as @s run particle dust_color_transition{from_color:[1.000,0.000,0.973],scale:3,to_color:[0.000,0.102,1.000]} ~ ~2.5 ~ .6 .6 .6 1 2 force @a[distance=..256]
 execute if score dragontrail trueEnding_settings matches 1 as @s run particle dragon_breath ~ ~2.5 ~ .3 .3 .3 .02 2 normal
