@@ -1,6 +1,29 @@
 # ste_cos:mechanics/vortex_tick
 # логика воронки под неподвижным игроком
 
+# анимация вихря
+execute if score @s ste_cos.timer matches 0 run function ste_cos:vfx/dragon_vortex/frame_0
+execute if score @s ste_cos.timer matches 4 run function ste_cos:vfx/dragon_vortex/frame_4
+execute if score @s ste_cos.timer matches 8 run function ste_cos:vfx/dragon_vortex/frame_8
+execute if score @s ste_cos.timer matches 12 run function ste_cos:vfx/dragon_vortex/frame_12
+execute if score @s ste_cos.timer matches 16 run function ste_cos:vfx/dragon_vortex/frame_16
+execute if score @s ste_cos.timer matches 20 run function ste_cos:vfx/dragon_vortex/frame_20
+execute if score @s ste_cos.timer matches 24 run function ste_cos:vfx/dragon_vortex/frame_24
+execute if score @s ste_cos.timer matches 28 run function ste_cos:vfx/dragon_vortex/frame_28
+execute if score @s ste_cos.timer matches 32 run function ste_cos:vfx/dragon_vortex/frame_32
+execute if score @s ste_cos.timer matches 36 run function ste_cos:vfx/dragon_vortex/frame_36
+execute if score @s ste_cos.timer matches 40 run function ste_cos:vfx/dragon_vortex/frame_40
+execute if score @s ste_cos.timer matches 44 run function ste_cos:vfx/dragon_vortex/frame_44
+execute if score @s ste_cos.timer matches 48 run function ste_cos:vfx/dragon_vortex/frame_48
+execute if score @s ste_cos.timer matches 52 run function ste_cos:vfx/dragon_vortex/frame_52
+execute if score @s ste_cos.timer matches 56 run function ste_cos:vfx/dragon_vortex/frame_56
+execute if score @s ste_cos.timer matches 60 run function ste_cos:vfx/dragon_vortex/frame_60
+execute if score @s ste_cos.timer matches 64 run function ste_cos:vfx/dragon_vortex/frame_64
+execute if score @s ste_cos.timer matches 68 run function ste_cos:vfx/dragon_vortex/frame_68
+execute if score @s ste_cos.timer matches 72 run function ste_cos:vfx/dragon_vortex/frame_72
+execute if score @s ste_cos.timer matches 76 run function ste_cos:vfx/dragon_vortex/frame_76
+
+# таймер
 scoreboard players add @s ste_cos.timer 1
 
 # удаление через четыре секунды

@@ -30,9 +30,6 @@ execute in minecraft:the_end unless entity @a run return 0
 # щит
 execute in minecraft:the_end run function ste_cos:dragon/invulnerability_guard
 
-# стражи кристаллов
-execute in minecraft:the_end run function ste_cos:phantom/guard_tick
-
 # яйцо
 execute in minecraft:the_end run function ste_cos:egg/egg_tick
 

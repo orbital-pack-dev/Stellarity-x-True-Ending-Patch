@@ -29,7 +29,7 @@ COMPAT = Path("Stellarity_Compatibility_Patch/data/ste_cos/function")
 MECH   = Path("Stellarity_Mechanics_Patch/data/ste_cos/function")
 
 # Folders that are MECHANICS-EXCLUSIVE — never copy to Compat
-MECH_ONLY_DIRS = {"mechanics", "vfx"}
+MECH_ONLY_DIRS = {"mechanics", "vfx", "phantom"}
 
 # Files that are MECHANICS-EXCLUSIVE — never copy to Compat  
 MECH_ONLY_FILES = {
@@ -82,7 +82,14 @@ def sync_compat_to_mech(compat_files: dict, mech_files: dict, apply: bool) -> li
                     merged = lines[:idx] + mech_objs + [""] + lines[idx:]
                     content = "\n".join(merged).strip() + "\n"
             elif rel == "main_tick.mcfunction":
-                # preserve mechanics ticks
+                # preserve mechanics ticks and phantom tick in Mechanics
+                lines = content.splitlines()
+                # if Mechanics has phantom/guard_tick and Compat doesn't, keep it in Mechanics
+                if "ste_cos:phantom/guard_tick" in mech_content and not any("ste_cos:phantom/guard_tick" in l for l in lines):
+                    egg_idx = next((i for i, l in enumerate(lines) if "egg_tick" in l), -1)
+                    if egg_idx != -1:
+                        lines.insert(egg_idx, "# стражи кристаллов\nexecute in minecraft:the_end run function ste_cos:phantom/guard_tick\n")
+                    content = "\n".join(lines).strip() + "\n"
                 mech_ticks = [l for l in mech_content.splitlines() if "ste_cos:mechanics" in l]
                 if mech_ticks and not any("ste_cos:mechanics" in l for l in content.splitlines()):
                     content = content.strip() + "\n\n# механики усложненного боя\n" + "\n".join(mech_ticks) + "\n"

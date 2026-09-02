@@ -8,18 +8,24 @@ execute if score @s stellarity.dragon.respawn_animation_progress matches 1 as @a
 execute if score @s stellarity.dragon.respawn_animation_progress matches 1 as @a[distance=..32] at @s run playsound minecraft:entity.blaze.shoot block @s ~ ~ ~ 0.33 0.7
 execute if score #stellarity.config stellarity.config.enable_dragon_screenshake matches 1 as @a[distance=..64] run tag @s add stellarity.dragon.screenshake
 
+execute if score @s stellarity.dragon.respawn_animation_progress matches 100 run function stellarity:entity/dragon/spawn/proper_start
+
 # частицы чар вокруг центра
-execute if score @s stellarity.dragon.respawn_animation_progress matches 1..100 run particle enchant ~ ~ ~ 2 0 2 1 10 force
-execute if score @s stellarity.dragon.respawn_animation_progress matches 101.. run particle enchant ~ ~ ~ 2 0 2 3 50 force
-execute if score @s stellarity.dragon.respawn_animation_progress matches 1..100 run function stellarity:entity/dragon/spawn/spiral with storage stellarity:main {radius:2.5f}
-execute if score @s stellarity.dragon.respawn_animation_progress matches 101.. run function stellarity:entity/dragon/spawn/spiral with storage stellarity:main {radius:3.5f}
-execute if score @s stellarity.dragon.respawn_animation_progress matches 1..590 run function stellarity:entity/dragon/spawn/conditions
+execute if score @s stellarity.dragon.respawn_animation_progress matches ..600 run particle enchant 0 63 0 0 0 0 10 5 normal
+execute if score @s stellarity.dragon.respawn_animation_progress matches ..600 run particle portal 0 63 0 0 0 0 10 5 normal
 
 # лучи кристаллов
-execute if score @s stellarity.dragon.respawn_animation_progress matches 100 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run function stellarity:entity/dragon/spawn/crystal_beam/4
-execute if score @s stellarity.dragon.respawn_animation_progress matches 200 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run function stellarity:entity/dragon/spawn/crystal_beam/3
-execute if score @s stellarity.dragon.respawn_animation_progress matches 300 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run function stellarity:entity/dragon/spawn/crystal_beam/2
-execute if score @s stellarity.dragon.respawn_animation_progress matches 400 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run function stellarity:entity/dragon/spawn/crystal_beam/1
+execute if score @s stellarity.dragon.respawn_animation_progress matches 130 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run function stellarity:entity/dragon/spawn/crystal_beam/0
+execute if score @s stellarity.dragon.respawn_animation_progress matches 200 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run function stellarity:entity/dragon/spawn/crystal_beam/1
+execute if score @s stellarity.dragon.respawn_animation_progress matches 230 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run function stellarity:entity/dragon/spawn/crystal_beam/2
+execute if score @s stellarity.dragon.respawn_animation_progress matches 260 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run function stellarity:entity/dragon/spawn/crystal_beam/3
+execute if score @s stellarity.dragon.respawn_animation_progress matches 290 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run function stellarity:entity/dragon/spawn/crystal_beam/4
+execute if score @s stellarity.dragon.respawn_animation_progress matches 320 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run function stellarity:entity/dragon/spawn/crystal_beam/5
+execute if score @s stellarity.dragon.respawn_animation_progress matches 350 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run function stellarity:entity/dragon/spawn/crystal_beam/6
+execute if score @s stellarity.dragon.respawn_animation_progress matches 380 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run function stellarity:entity/dragon/spawn/crystal_beam/7
+execute if score @s stellarity.dragon.respawn_animation_progress matches 410 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run function stellarity:entity/dragon/spawn/crystal_beam/8
+execute if score @s stellarity.dragon.respawn_animation_progress matches 440 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run function stellarity:entity/dragon/spawn/crystal_beam/9
+execute if score @s stellarity.dragon.respawn_animation_progress matches 470 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run function stellarity:entity/dragon/spawn/crystal_beam/10
 execute if score @s stellarity.dragon.respawn_animation_progress matches 500 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run function stellarity:entity/dragon/spawn/crystal_beam/0
 
 # расстановка кристаллов

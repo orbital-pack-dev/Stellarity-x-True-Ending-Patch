@@ -1,31 +1,36 @@
-# TODO
+# Patch Roadmap & Notes
 
-## В процессе / требует решения
+This document keeps track of where we are with the Stellarity x True Ending compatibility and mechanics patches, what has already been fixed, and what we want to tackle next.
 
-- [ ] **Vortex + кастомные крылья** — ждём Stellarity devs (custom item ID для Dragon Wings нужен для фикса vortex_tick на крыльях)
-- [ ] **guard_act — кулдаун урона** — при переписывании гвардов-фантомов
-- [ ] **orbit_guard — macro refactor** — при переписывании гвардов (текущая версия без макросов не оптимальна)
-- [ ] **ste_settings** — система настроек + безопасная регенерация острова (см. TODO в load.mcfunction)
-- [ ] Проверить PortalCooldown в Mechanics — работает ли он вообще на `item_display` и `armor_stand` в 1.21.x
+## What's Done and Working
 
-## Аудит-фиксы — сделано
+- Fixed the chorus fruit cleanup around the main exit portal so it runs smoothly just once when a player enters the End, without spamming destructive fills or tearing down the bedrock structure.
+- Replaced the huge 14,000-line dragon egg search with a clean 19-page dispatcher that checks blocks in small 800-block slices with cooldowns, saving server tick time.
+- Brought pack metadata up to date with modern 1.21 standards (pack format 118, overlay support for 1.21.9+, and clean MCMeta files).
+- Slimmed down forceloaded chunks from a massive 196-chunk square to 11 targeted points covering the 10 obsidian towers and the central fountain.
+- Upgraded entity tags and NBT keys to 1.21 snake_case rules, such as switching FallDistance to fall_distance and using custom_particle components.
+- Integrated True Ending's native guarding phantoms directly into the Compatibility patch. Markers now target Stellarity's exact 10 pillar coordinates at height 115, and cage height checks accommodate Stellarity's taller 4-block iron cages so phantoms orbit caged towers and dive-bomb the bars when hit.
+- Overhauled the dragon vortex visual effects in the Mechanics patch. Instead of a rigid, rectangular wireframe cylinder, it now swirls as a dynamic, cone-shaped tornado with dragon breath, witch sparkles, portal suction streaks, and ascending spiral end rods.
+- Restored missing vortex frame triggers in vortex_tick so the full 4-second animation plays as intended.
+- Audited all files against Stellarity 6.0.0-beta and True Ending 1.1.4d. We restored full animation sequences (all 11 crystal beams and screenshake) while preserving custom pillar heights, and removed 100% identical files to prevent accidental upstream overrides.
+- Wrote sync_patches.py to effortlessly synchronize shared ste_cos logic between Compatibility and Mechanics while respecting Mechanics-exclusive features.
 
-- [x] Фикс №1 — `chorus_cleaner`: убран `destroy`, оба патча синхронизированы
-- [x] Фикс №2 — 13 идентичных оверрайдов stellarity удалены, `init.mcfunction` обновлён до 6.0.0-beta
-- [x] Фикс №3 — `egg_find`: 14k-строчный бруте-форс → 19 страниц по 800 блоков
-- [x] Фикс №5 — `pack.mcmeta`: pack_format 118, min_inclusive 94, убраны дублирующие поля
-- [x] Фикс №7 — форслоад: 196 чанков → 11 точечных точек (10 башен + центр)
-- [x] Фикс №8 — `main_tick`: choreс убран из периодики, добавлен ранний return, комментарии
-- [x] Перенос всех фиксов в `Stellarity_Mechanics_Patch`
-- [x] Скрипт `sync_patches.py` для синхронизации общих файлов
+## What We're Working On Next
 
-## Инструменты
+- Dragon Wings custom item ID: waiting on the Stellarity team for the custom item component ID so we can properly stop vortex flight on custom wings rather than standard elytra alone.
+- Settings system (ste_settings): building an in-game configuration menu alongside safe island regeneration when a new fight begins.
+- Checking portal cooldown mechanics: verifying whether PortalCooldown still functions reliably on item displays and armor stands in Minecraft 1.21.x.
+- Looking into damage cooldowns on phantom attacks and evaluating macro support for cleaner orbital math.
 
-- `compare_datapacks.py` — сравнить два датапака (zip или папка): `python compare_datapacks.py old.zip new.zip --diff`
-- `sync_patches.py` — синхронизировать общие файлы Compat → Mechanics: `python sync_patches.py --apply`
-- `build.py` — сборка релизных zip-архивов (если есть)
+## Future Ideas
 
-## Будущие идеи
+- Gather feedback and bug reports from Modrinth users playing both mods together.
+- Add a lightweight GitHub Actions workflow to verify that Compatibility and Mechanics packs remain in sync on every push.
 
-- [ ] Исследовать Modrinth feedback для дополнительных фиксов
-- [ ] GitHub Actions: авто-проверка что Mechanics и Compat в sync при push
+## Helpful Scripts
+
+- Check differences between two patch versions or archives:
+  python compare_datapacks.py old_pack.zip new_pack.zip --diff
+
+- Synchronize shared code from Compatibility to Mechanics:
+  python sync_patches.py --apply
