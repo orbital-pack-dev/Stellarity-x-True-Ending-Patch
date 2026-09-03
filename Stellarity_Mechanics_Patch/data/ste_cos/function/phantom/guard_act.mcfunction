@@ -4,7 +4,7 @@
 scoreboard players operation #current_id ste_cos.flags = @s ste_cos.id
 
 # полет по круговой орбите
-run function ste_cos:phantom/orbit_guard
+function ste_cos:phantom/orbit_guard
 
 # частицы кристаллов Stellarity на страже
 execute as @e[type=phantom,tag=ste_cos_guard,distance=..32] if score @s ste_cos.id = #current_id ste_cos.flags at @s run particle soul_fire_flame ~ ~0.2 ~ 0.3 0.2 0.3 0.02 3 normal

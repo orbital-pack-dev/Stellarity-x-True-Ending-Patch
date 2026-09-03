@@ -40,6 +40,10 @@
     {
       "id": "minecraft:barrier",
       "required": false
+    },
+    {
+      "id": "minecraft:end_stone",
+      "required": false
     }
   ]
 }
