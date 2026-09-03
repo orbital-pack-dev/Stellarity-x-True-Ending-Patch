@@ -1,9 +1,13 @@
 # ste_cos:crystal/despawn_one
-# исчезновение одного кристалла с эффектом
+# магическое втягивание кристалла в портал
 
-particle minecraft:explosion_emitter ~ ~ ~ 0 0 0 0 1 force
-particle minecraft:dragon_breath ~ ~ ~ 0 0 0 0.5 30 force
-playsound minecraft:block.glass.break block @a ~ ~ ~ 3 0.8
-playsound minecraft:entity.generic.explode block @a ~ ~ ~ 2 0.7
+particle reverse_portal ~ ~1 ~ 0.5 0.5 0.5 0.1 60 force
+particle dragon_breath ~ ~1 ~ 0.4 0.4 0.4 -0.05 30 force
+particle soul_fire_flame ~ ~1 ~ 0.4 0.4 0.4 -0.03 20 force
+particle end_rod ~ ~1 ~ 0.3 0.3 0.3 -0.02 15 force
+
+playsound minecraft:block.amethyst_block.resonate block @a ~ ~ ~ 2.0 0.8
+playsound minecraft:entity.illusioner.mirror_move block @a ~ ~ ~ 1.5 1.2
+playsound minecraft:block.respawn_anchor.deplete block @a ~ ~ ~ 1.5 1.4
 
 kill @s

@@ -1,7 +1,9 @@
 # след частиц
 execute if entity @s[tag=!trueEnding_dragon_particlechecked] run function true_ending:boss/init/init
 
-# дополнительное здоровье босса
+# дополнительное здоровье босса и тотем
+execute as @s[tag=!ste_cos.totem_used,tag=!ste_cos.totem_animating] if data entity @s {DragonPhase: 10} run function ste_cos:dragon/trigger_totem
+execute as @s[tag=!ste_cos.totem_used,tag=!ste_cos.totem_animating] if score @s trueEnding_health matches ..15 run function ste_cos:dragon/trigger_totem
 execute if score @s trueEnding_bosstime matches 0.. run scoreboard players add @s trueEnding_bosstime 1
 execute store result score @s trueEnding_y run data get entity @s Pos[1]
 

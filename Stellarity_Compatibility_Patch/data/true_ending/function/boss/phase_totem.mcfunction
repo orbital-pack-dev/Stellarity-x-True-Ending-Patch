@@ -32,7 +32,11 @@ execute if score @s trueEnding_bosstime matches 3081 run playsound entity.warden
 execute at @s run tp @s 0 ~ 0
 
 # завершение фазы и использование тотема
-execute if score @s trueEnding_bosstime matches 3090 run data modify entity @s Health set value 36.0f
+execute if score @s trueEnding_bosstime matches 3090 run data modify entity @s Health set value 100.0f
+execute if score @s trueEnding_bosstime matches 3090 run scoreboard players set @s stellarity.dragon.health 100
+execute if score @s trueEnding_bosstime matches 3090 run scoreboard players set @s stellarity.dragon.health_old 100
+execute if score @s trueEnding_bosstime matches 3090 run scoreboard players set @s ste_cos.health 100
+execute if score @s trueEnding_bosstime matches 3090 run scoreboard players set @s ste_cos.health_old 100
 execute if score @s trueEnding_bosstime matches 3090 run data modify entity @s DragonPhase set value 0
 execute if score @s trueEnding_bosstime matches 3090 run data modify entity @s Invulnerable set value 0b
 execute if score @s trueEnding_bosstime matches 3090 run tag @s remove trueEnding_inattack
