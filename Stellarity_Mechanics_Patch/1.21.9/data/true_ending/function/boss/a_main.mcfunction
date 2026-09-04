@@ -8,6 +8,7 @@ execute if score @s ste_cos.heal_cd matches 1.. run scoreboard players remove @s
 
 # перевод здоровья
 execute store result score @s ste_cos.health run data get entity @s Health
+execute unless score @s ste_cos.health_old matches 1.. run scoreboard players operation @s ste_cos.health_old = @s ste_cos.health
 scoreboard players operation @s ste_cos.health_diff = @s ste_cos.health
 scoreboard players operation @s ste_cos.health_diff -= @s ste_cos.health_old
 execute if score @s ste_cos.health_diff matches 1.. run function ste_cos:dragon/crystal_heal_check

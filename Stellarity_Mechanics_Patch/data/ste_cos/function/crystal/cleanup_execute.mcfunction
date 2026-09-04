@@ -5,7 +5,7 @@
 execute if score #crystal_cleaned ste_cos.flags matches 1.. run return 0
 
 # прерывание если дракон уже жив
-execute in minecraft:the_end if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] run return 0
+execute in minecraft:the_end if entity @e[type=ender_dragon,tag=!trueEnding_mirrordragon,limit=1] run return 0
 
 # прерывание если идет призыв дракона
 execute in minecraft:the_end if entity @e[type=marker,tag=stellarity.respawn_dragon] run return 0

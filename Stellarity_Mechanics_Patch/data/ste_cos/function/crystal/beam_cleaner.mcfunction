@@ -2,9 +2,9 @@
 # уборка лишних кристаллов с башен если дракона нет
 
 # прерывание если дракон жив
-execute if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] run scoreboard players set #crystal_despawn_timer ste_cos.timer 0
-execute if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] as @e[type=end_crystal,nbt={beam_target:[I;0,67,0]}] run data remove entity @s beam_target
-execute if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] run return 0
+execute in minecraft:the_end if entity @e[type=ender_dragon,tag=!trueEnding_mirrordragon,limit=1] run scoreboard players set #crystal_despawn_timer ste_cos.timer 0
+execute in minecraft:the_end if entity @e[type=ender_dragon,tag=!trueEnding_mirrordragon,limit=1] as @e[type=end_crystal,nbt={beam_target:[I;0,67,0]}] run data remove entity @s beam_target
+execute in minecraft:the_end if entity @e[type=ender_dragon,tag=!trueEnding_mirrordragon,limit=1] run return 0
 
 # прерывание если идет призыв дракона
 execute if entity @e[type=marker,tag=stellarity.respawn_dragon] run return 0
