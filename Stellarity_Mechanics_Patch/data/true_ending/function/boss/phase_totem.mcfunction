@@ -23,7 +23,7 @@ execute if score @s trueEnding_bosstime matches 3060.. run particle dragon_breat
 
 execute if score @s trueEnding_bosstime matches 3080 positioned 0 100 0 run function true_ending:boss/shockwave/summon_pad
 
-execute if score @s trueEnding_bosstime matches 3081 run particle flash{color:[0.6, 0.0, 1.0, 1.0]} ~ ~ ~ 0 0 0 0 5 force @a[distance=..128]
+execute if score @s trueEnding_bosstime matches 3081 run particle flash{color:-4980481} ~ ~ ~ 0 0 0 0 5 force @a[distance=..128]
 execute if score @s trueEnding_bosstime matches 3081 run playsound entity.warden.heartbeat hostile @a[distance=..128] ~ ~ ~ 6 2
 execute if score @s trueEnding_bosstime matches 3081 run playsound entity.warden.heartbeat hostile @a[distance=..128] ~ ~ ~ 6 2
 execute if score @s trueEnding_bosstime matches 3081 run playsound entity.warden.heartbeat hostile @a[distance=..64] ~ ~ ~ 6 1.2
@@ -38,7 +38,7 @@ execute if score @s trueEnding_bosstime matches 3090 run scoreboard players set 
 execute if score @s trueEnding_bosstime matches 3090 run scoreboard players set @s ste_cos.health 100
 execute if score @s trueEnding_bosstime matches 3090 run scoreboard players set @s ste_cos.health_old 100
 execute if score @s trueEnding_bosstime matches 3090 run data modify entity @s DragonPhase set value 0
-execute if score @s trueEnding_bosstime matches 3090 run data modify entity @s Invulnerable set value 0b
+execute if score @s trueEnding_bosstime matches 3090 if score #ste_cos_crystals ste_cos.flags matches 0 run data modify entity @s Invulnerable set value 0b
 execute if score @s trueEnding_bosstime matches 3090 run tag @s remove trueEnding_inattack
 execute if score @s trueEnding_bosstime matches 3090 run tag @s remove ste_cos.totem_animating
 execute if score @s trueEnding_bosstime matches 3090 run tag @s add ste_cos.totem_used

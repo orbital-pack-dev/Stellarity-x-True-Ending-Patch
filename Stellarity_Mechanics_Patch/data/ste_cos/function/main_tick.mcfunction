@@ -44,6 +44,13 @@ execute in minecraft:the_end if score #portal_fix_done ste_cos.flags matches 0 r
 execute in minecraft:the_end if score #portal_fix ste_cos.timer matches 1..360 run function ste_cos:portal/fix_tick
 execute in minecraft:the_end if score #portal_fix ste_cos.timer matches 361.. run scoreboard players set #portal_fix_done ste_cos.flags 1
 
+# визуальные эффекты возрождения дракона
+execute in minecraft:the_end as @e[type=marker,tag=ste_cos.shockwave] at @s run function ste_cos:fresh_visual/shockwave_step
+execute in minecraft:the_end as @e[type=marker,tag=ste_cos.tether_head] at @s run function ste_cos:fresh_visual/tether_head_step
+execute in minecraft:the_end if entity @e[type=marker,tag=ste_cos.heart_absorbing,limit=1] run scoreboard players add #absorb_time ste_cos.timer 1
+execute in minecraft:the_end as @e[type=marker,tag=ste_cos.heart_absorbing] at @s run function ste_cos:fresh_visual/heart_absorb_step
+execute in minecraft:the_end as @e[type=marker,tag=ste_cos.absorb_tendril] at @s run function ste_cos:fresh_visual/heart_absorb_step
+
 # механики усложненного боя
 execute in minecraft:the_end run function ste_cos:mechanics/tick
 execute as @a[predicate=ste_cos:enchantment/has_vortex] at @s run function ste_cos:mechanics/vortex_tick/main
