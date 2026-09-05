@@ -7,7 +7,7 @@ execute unless score #crystal_count stellarity.misc matches 1.. run function ste
 execute at @s run tp @e[type=marker,tag=stellarity.dragon_marker] ~ ~ ~
 execute store result score @s stellarity.dragon.health run data get entity @s Health 1
 execute store result score #max stellarity.misc run attribute @s max_health get
-execute unless score #max stellarity.misc matches 1.. store result score #max stellarity.misc run attribute @s minecraft:generic.max_health get
+execute unless score #max stellarity.misc matches 1.. store result score #max stellarity.misc run attribute @s minecraft:max_health get
 execute unless score #max stellarity.misc matches 1.. run scoreboard players set #max stellarity.misc 300
 scoreboard players operation @s stellarity.dragon.health_percent = @s stellarity.dragon.health
 scoreboard players operation @s stellarity.dragon.health_percent *= #hundred stellarity.constants
