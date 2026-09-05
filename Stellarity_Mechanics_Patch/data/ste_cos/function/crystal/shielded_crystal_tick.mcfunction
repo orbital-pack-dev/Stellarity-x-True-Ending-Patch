@@ -8,7 +8,9 @@ function ste_cos:crystal/shielded_crystal_deflect
 scoreboard players add @s ste_cos.laser_timer 1
 
 # звук и частицы зарядки за 1.5 секунды до выстрела
-execute if score @s ste_cos.laser_timer matches 70 80 90 run playsound block.respawn_anchor.charge hostile @a ~ ~1.8 ~ 16.0 0.9
+execute if score @s ste_cos.laser_timer matches 70 run playsound block.respawn_anchor.charge hostile @a ~ ~1.8 ~ 16.0 0.9
+execute if score @s ste_cos.laser_timer matches 80 run playsound block.respawn_anchor.charge hostile @a ~ ~1.8 ~ 16.0 1.0
+execute if score @s ste_cos.laser_timer matches 90 run playsound block.respawn_anchor.charge hostile @a ~ ~1.8 ~ 16.0 1.1
 execute if score @s ste_cos.laser_timer matches 70..99 run particle dust_color_transition{from_color:[0.3,0.9,1.0],scale:1.4,to_color:[0.85,0.1,1.0]} ~ ~1.8 ~ 0.2 0.2 0.2 0.05 2 force
 
 # выстрел при готовности заряда (если рядом в 48 блоках есть игрок)

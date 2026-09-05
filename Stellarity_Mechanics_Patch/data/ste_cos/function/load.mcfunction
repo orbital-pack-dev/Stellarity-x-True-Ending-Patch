@@ -19,6 +19,10 @@ scoreboard objectives add ste_cos.health_old dummy '{"text":"STE-COS Health Old"
 scoreboard objectives add ste_cos.health_diff dummy '{"text":"STE-COS Health Diff"}'
 scoreboard objectives add ste_cos.heal_cd dummy '{"text":"STE-COS Heal Cooldown"}'
 scoreboard objectives add ste_cos.aura_tick dummy '{"text":"STE-COS Aura Tick"}'
+scoreboard objectives add ste_cos.laser_timer dummy '{"text":"STE-COS Laser Timer"}'
+scoreboard objectives add ste_cos.aura_init dummy '{"text":"STE-COS Aura Init"}'
+scoreboard objectives add ste_cos.dive_timer dummy '{"text":"STE-COS Dive Timer"}'
+scoreboard objectives add ste_cos.age dummy '{"text":"STE-COS Age"}'
 scoreboard objectives add ste_cos.fall dummy '{"text":"STE-COS Fall Distance"}'
 scoreboard objectives add ste_cos.still_timer dummy '{"text":"STE-COS Still Timer"}'
 scoreboard objectives add ste_cos.flying dummy '{"text":"STE-COS Flying"}'
@@ -46,6 +50,32 @@ scoreboard players set 1000 trueEnding_constants 1000
 scoreboard players set 10000 trueEnding_constants 10000
 scoreboard objectives add trueEnding_settings dummy
 scoreboard players set dragonhealth trueEnding_settings 300
+scoreboard objectives add gm_cam_client dummy
+scoreboard objectives add stellarity.config.enable_dragon_screenshake dummy
+scoreboard objectives add stellarity.config.boss_status_messages dummy
+scoreboard objectives add stellarity.dragon.ball_of_blight_cooldown dummy
+scoreboard objectives add stellarity.dragon.health dummy
+scoreboard objectives add stellarity.dragon.health_old dummy
+scoreboard objectives add stellarity.dragon.health_percent dummy
+scoreboard objectives add stellarity.dragon.perch_cooldown dummy
+scoreboard objectives add stellarity.dragon.respawn_animation_progress dummy
+scoreboard objectives add stellarity.dragon.shulker_hell dummy
+scoreboard objectives add stellarity.dragon.time_chainfiring dummy
+scoreboard objectives add stellarity.dragon.times_killed dummy
+scoreboard objectives add stellarity.misc dummy
+scoreboard objectives add stellarity.misc2 dummy
+scoreboard objectives add trueEnding_bosstime dummy
+scoreboard objectives add trueEnding_bosstime2 dummy
+scoreboard objectives add trueEnding_clock dummy
+scoreboard objectives add trueEnding_count dummy
+scoreboard objectives add trueEnding_health_extra dummy
+scoreboard objectives add trueEnding_health_extra_max dummy
+scoreboard objectives add trueEnding_health_max dummy
+scoreboard objectives add trueEnding_health_percent dummy
+scoreboard objectives add trueEnding_music dummy
+scoreboard objectives add trueEnding_storage dummy
+scoreboard objectives add trueEnding_y dummy
+scoreboard objectives add trueEnding_dragonphase dummy
 execute unless score #ste_cos_totem_used ste_cos.flags matches 1 run scoreboard players set #ste_cos_totem_used ste_cos.flags 0
 bossbar set stellarity:ender_dragon max 300
 execute unless score #portal_fix_done ste_cos.flags matches 1 run scoreboard players set #portal_fix_done ste_cos.flags 0

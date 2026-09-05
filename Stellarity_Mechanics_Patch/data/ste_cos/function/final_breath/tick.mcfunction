@@ -14,19 +14,37 @@ execute as @e[type=ender_dragon,tag=ste_cos.final_breath_active,limit=1] at @s r
 
 # звуки нарастающего сердцебиения Вардена и аметистового резонанса (без warden roar!)
 # 0..40 тиков (каждые 20 тиков, питч 0.50)
-execute if score #final_breath_timer ste_cos.timer matches 1 20 40 run playsound entity.warden.heartbeat hostile @a 0 90 0 64.0 0.50
-execute if score #final_breath_timer ste_cos.timer matches 1 20 40 run playsound block.amethyst_block.resonate hostile @a 0 90 0 64.0 0.50
+execute if score #final_breath_timer ste_cos.timer matches 1 run playsound entity.warden.heartbeat hostile @a 0 90 0 64.0 0.50
+execute if score #final_breath_timer ste_cos.timer matches 1 run playsound block.amethyst_block.resonate hostile @a 0 90 0 64.0 0.50
+execute if score #final_breath_timer ste_cos.timer matches 20 run playsound entity.warden.heartbeat hostile @a 0 90 0 64.0 0.50
+execute if score #final_breath_timer ste_cos.timer matches 20 run playsound block.amethyst_block.resonate hostile @a 0 90 0 64.0 0.50
+execute if score #final_breath_timer ste_cos.timer matches 40 run playsound entity.warden.heartbeat hostile @a 0 90 0 64.0 0.50
+execute if score #final_breath_timer ste_cos.timer matches 40 run playsound block.amethyst_block.resonate hostile @a 0 90 0 64.0 0.50
 
 # 41..80 тиков (каждые 14 тиков, питч 0.62)
-execute if score #final_breath_timer ste_cos.timer matches 54 68 80 run playsound entity.warden.heartbeat hostile @a 0 90 0 64.0 0.62
-execute if score #final_breath_timer ste_cos.timer matches 54 68 80 run playsound block.amethyst_block.resonate hostile @a 0 90 0 64.0 0.60
+execute if score #final_breath_timer ste_cos.timer matches 54 run playsound entity.warden.heartbeat hostile @a 0 90 0 64.0 0.62
+execute if score #final_breath_timer ste_cos.timer matches 54 run playsound block.amethyst_block.resonate hostile @a 0 90 0 64.0 0.60
+execute if score #final_breath_timer ste_cos.timer matches 68 run playsound entity.warden.heartbeat hostile @a 0 90 0 64.0 0.62
+execute if score #final_breath_timer ste_cos.timer matches 68 run playsound block.amethyst_block.resonate hostile @a 0 90 0 64.0 0.60
+execute if score #final_breath_timer ste_cos.timer matches 80 run playsound entity.warden.heartbeat hostile @a 0 90 0 64.0 0.62
+execute if score #final_breath_timer ste_cos.timer matches 80 run playsound block.amethyst_block.resonate hostile @a 0 90 0 64.0 0.60
 
 # 81..110 тиков (каждые 8 тиков, питч 0.75)
-execute if score #final_breath_timer ste_cos.timer matches 88 96 104 run playsound entity.warden.heartbeat hostile @a 0 90 0 64.0 0.75
-execute if score #final_breath_timer ste_cos.timer matches 88 96 104 run playsound block.amethyst_block.resonate hostile @a 0 90 0 64.0 0.75
+execute if score #final_breath_timer ste_cos.timer matches 88 run playsound entity.warden.heartbeat hostile @a 0 90 0 64.0 0.75
+execute if score #final_breath_timer ste_cos.timer matches 88 run playsound block.amethyst_block.resonate hostile @a 0 90 0 64.0 0.75
+execute if score #final_breath_timer ste_cos.timer matches 96 run playsound entity.warden.heartbeat hostile @a 0 90 0 64.0 0.75
+execute if score #final_breath_timer ste_cos.timer matches 96 run playsound block.amethyst_block.resonate hostile @a 0 90 0 64.0 0.75
+execute if score #final_breath_timer ste_cos.timer matches 104 run playsound entity.warden.heartbeat hostile @a 0 90 0 64.0 0.75
+execute if score #final_breath_timer ste_cos.timer matches 104 run playsound block.amethyst_block.resonate hostile @a 0 90 0 64.0 0.75
 
 # 111..139 тиков (каждые 4 тика, питч 0.95 — бешеный пульс перед взрывом)
-execute if score #final_breath_timer ste_cos.timer matches 112 116 120 124 128 132 136 run playsound entity.warden.heartbeat hostile @a 0 90 0 64.0 0.95
+execute if score #final_breath_timer ste_cos.timer matches 112 run playsound entity.warden.heartbeat hostile @a 0 90 0 64.0 0.95
+execute if score #final_breath_timer ste_cos.timer matches 116 run playsound entity.warden.heartbeat hostile @a 0 90 0 64.0 0.95
+execute if score #final_breath_timer ste_cos.timer matches 120 run playsound entity.warden.heartbeat hostile @a 0 90 0 64.0 0.95
+execute if score #final_breath_timer ste_cos.timer matches 124 run playsound entity.warden.heartbeat hostile @a 0 90 0 64.0 0.95
+execute if score #final_breath_timer ste_cos.timer matches 128 run playsound entity.warden.heartbeat hostile @a 0 90 0 64.0 0.95
+execute if score #final_breath_timer ste_cos.timer matches 132 run playsound entity.warden.heartbeat hostile @a 0 90 0 64.0 0.95
+execute if score #final_breath_timer ste_cos.timer matches 136 run playsound entity.warden.heartbeat hostile @a 0 90 0 64.0 0.95
 
 # 140 тиков (7.0 сек): ЗАЛП ФИНАЛЬНОГО ВЗДОХА!
 execute if score #final_breath_timer ste_cos.timer matches 140.. as @e[type=ender_dragon,tag=ste_cos.final_breath_active,limit=1] at @s run function ste_cos:final_breath/blast

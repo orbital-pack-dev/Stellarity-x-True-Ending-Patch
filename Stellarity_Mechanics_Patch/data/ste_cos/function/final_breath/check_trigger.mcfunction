@@ -9,3 +9,4 @@ execute if entity @s[tag=ste_cos.minigame_active] run return 0
 
 # если дракон подлетает к порталу (или уже в радиусе 24 блоков)
 execute positioned 0 65 0 if entity @s[distance=..24] run function ste_cos:final_breath/start
+execute positioned 0 65 0 unless entity @s[distance=..24] run tag @s add stellarity.to_portal

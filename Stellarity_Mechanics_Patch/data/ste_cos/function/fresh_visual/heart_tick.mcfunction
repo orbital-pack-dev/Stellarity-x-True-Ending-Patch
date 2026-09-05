@@ -9,7 +9,11 @@ function ste_cos:fresh_visual/shards/tick
 execute if score #heart_cd ste_cos.timer matches 1.. run scoreboard players remove #heart_cd ste_cos.timer 1
 
 scoreboard players add #heart_tick ste_cos.timer 1
-execute if score #heart_tick ste_cos.timer matches 1 20 40 60 80 run execute as @e[tag=project] run data merge entity @s {Glowing:1b}
+execute if score #heart_tick ste_cos.timer matches 1 as @e[tag=project] run data merge entity @s {Glowing:1b}
+execute if score #heart_tick ste_cos.timer matches 20 as @e[tag=project] run data merge entity @s {Glowing:1b}
+execute if score #heart_tick ste_cos.timer matches 40 as @e[tag=project] run data merge entity @s {Glowing:1b}
+execute if score #heart_tick ste_cos.timer matches 60 as @e[tag=project] run data merge entity @s {Glowing:1b}
+execute if score #heart_tick ste_cos.timer matches 80 as @e[tag=project] run data merge entity @s {Glowing:1b}
 
 # непрерывное объемное ядро Сердца Дракона между ударами (видно снизу каждый тик)
 particle reverse_portal 0 128.2 0 0.4 0.4 0.4 0.05 4 force @a
