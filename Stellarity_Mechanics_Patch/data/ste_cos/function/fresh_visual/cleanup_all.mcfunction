@@ -1,8 +1,11 @@
 # ste_cos:fresh_visual/cleanup_all
-# очистка всех визуальных маркеров и возврат камеры
+# очистка всех визуальных маркеров, возврат камеры и удаление модели Сердца
 
 # сброс дистанции камеры у всех игроков
 execute as @a run attribute @s minecraft:camera_distance base reset
+
+# удаление 3D-модели Сердца
+function project:_/delete
 
 # удаление всех вспомогательных маркеров визуала
 kill @e[type=marker,tag=ste_cos.respawn_heart]

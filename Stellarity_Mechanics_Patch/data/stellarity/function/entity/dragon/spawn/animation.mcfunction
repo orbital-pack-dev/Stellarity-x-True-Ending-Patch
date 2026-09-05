@@ -17,7 +17,7 @@ execute if score @s stellarity.dragon.respawn_animation_progress matches ..600 r
 # лучи кристаллов
 execute if score @s stellarity.dragon.respawn_animation_progress matches 130 run function ste_cos:fresh_visual/heart_spawn
 execute if score @s stellarity.dragon.respawn_animation_progress matches 130 run function ste_cos:fresh_visual/shockwave_init
-execute if score @s stellarity.dragon.respawn_animation_progress matches 130..579 run function ste_cos:fresh_visual/heart_tick
+execute if score @s stellarity.dragon.respawn_animation_progress matches 130..619 run function ste_cos:fresh_visual/heart_tick
 execute if score @s stellarity.dragon.respawn_animation_progress matches 140..580 run function ste_cos:fresh_visual/tornado_tick
 execute if score @s stellarity.dragon.respawn_animation_progress matches 230..579 run function ste_cos:fresh_visual/tether_ray_draw
 
