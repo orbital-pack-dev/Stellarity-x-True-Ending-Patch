@@ -23,8 +23,8 @@ execute if score @s trueEnding_bosstime matches 3060.. run particle dragon_breat
 
 execute if score @s trueEnding_bosstime matches 3080 positioned 0 100 0 run function true_ending:boss/shockwave/summon_pad
 
-execute if score @s trueEnding_bosstime matches 3081 run particle flash ~ ~2 ~ 0 0 0 0 3 force @a
-execute if score @s trueEnding_bosstime matches 3081 run particle flash ~ ~2 ~ 0 0 0 0 2 force @a
+execute if score @s trueEnding_bosstime matches 3081 run particle flash{color:[1.0,0.85,0.15,1.0]} ~ ~2 ~ 0 0 0 0 3 force @a
+execute if score @s trueEnding_bosstime matches 3081 run particle flash{color:[1.0,0.55,0.05,1.0]} ~ ~2 ~ 0 0 0 0 2 force @a
 execute if score @s trueEnding_bosstime matches 3081 run particle reverse_portal ~ ~2 ~ 3 3 3 0.2 60 force @a
 execute if score @s trueEnding_bosstime matches 3081 run playsound entity.warden.heartbeat hostile @a ~ ~ ~ 64.0 0.55
 execute if score @s trueEnding_bosstime matches 3081 run playsound block.amethyst_block.resonate hostile @a ~ ~ ~ 64.0 0.5
@@ -59,9 +59,9 @@ execute if score @s trueEnding_bosstime matches 3090 run playsound block.amethys
 execute if score @s trueEnding_bosstime matches 3090 run playsound entity.ender_dragon.growl master @a ~ ~ ~ 64.0 0.75
 execute if score @s trueEnding_bosstime matches 3090 run playsound entity.ender_dragon.flap master @a ~ ~ ~ 64.0 0.8
 
-# вспышка и частицы взлета дракона
-particle flash ~ ~2 ~ 0 0 0 0 2 force @a
-particle flash ~ ~2 ~ 0 0 0 0 2 force @a
+# вспышка и частицы взлета дракона (жёлто-оранжевые цвета тотема)
+execute if score @s trueEnding_bosstime matches 3090 run particle flash{color:[1.0,0.85,0.15,1.0]} ~ ~2 ~ 0 0 0 0 2 force @a
+execute if score @s trueEnding_bosstime matches 3090 run particle flash{color:[1.0,0.55,0.05,1.0]} ~ ~2 ~ 0 0 0 0 2 force @a
 execute if score @s trueEnding_bosstime matches 3090 run particle sonic_boom ~ ~2 ~ 0 0 0 0 3 force @a
 execute if score @s trueEnding_bosstime matches 3090 run particle dragon_breath ~ ~2 ~ 3 2 3 0.2 120 force @a
 execute if score @s trueEnding_bosstime matches 3090 run particle dust_color_transition{from_color:[1.0,0.85,0.2],scale:3.5,to_color:[0.55,0.0,0.85]} ~ ~2 ~ 4 3 4 0.25 180 force @a

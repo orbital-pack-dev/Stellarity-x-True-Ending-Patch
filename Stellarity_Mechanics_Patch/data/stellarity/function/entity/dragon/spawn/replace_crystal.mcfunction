@@ -4,7 +4,7 @@
 kill @e[type=end_crystal,tag=!stellarity.new_crystal,sort=nearest,distance=..7]
 
 particle minecraft:explosion_emitter ~ ~ ~ 0 0 0 0 1 force
-particle flash ~ ~ ~ 0 0 0 0 1 force @a
+particle flash{color:[0.75,0.20,1.0,1.0]} ~ ~ ~ 0 0 0 0 1 force @a
 particle dust_color_transition{from_color:[0.8,0.1,1.0],scale:2.0,to_color:[0.2,0.0,0.5]} ~ ~ ~ 0.5 0.5 0.5 0.1 25 force @a
 
 playsound minecraft:entity.generic.explode block @a ~ ~ ~ 32.0 0.70

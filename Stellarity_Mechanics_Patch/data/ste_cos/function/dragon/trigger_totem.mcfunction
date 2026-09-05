@@ -37,9 +37,9 @@ playsound block.amethyst_block.resonate master @a ~ ~ ~ 64.0 0.5
 playsound entity.ender_dragon.growl master @a ~ ~ ~ 64.0 0.75
 playsound entity.illusioner.cast_spell master @a ~ ~ ~ 48.0 0.65
 
-# объемная космическая вспышка и ударная волна тотема
-particle flash ~ ~2 ~ 0 0 0 0 2 force @a
-particle flash ~ ~2 ~ 0 0 0 0 2 force @a
+# объемная космическая вспышка и ударная волна тотема (жёлто-оранжевые цвета)
+particle flash{color:[1.0,0.82,0.15,1.0]} ~ ~2 ~ 0 0 0 0 2 force @a
+particle flash{color:[1.0,0.55,0.05,1.0]} ~ ~2 ~ 0 0 0 0 2 force @a
 particle sonic_boom ~ ~2 ~ 0 0 0 0 3 force @a
 
 # многослойные объемные частицы тотема во все стороны

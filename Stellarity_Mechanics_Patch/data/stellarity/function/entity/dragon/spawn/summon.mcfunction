@@ -17,8 +17,8 @@ execute if score #stellarity.config stellarity.config.boss_status_messages match
 # космический взрыв с фиолетовыми вспышками
 particle minecraft:explosion_emitter ~ ~ ~ 3 3 3 1 10 force
 particle sonic_boom ~ ~ ~ 0 0 0 0 2 force @a
-particle flash ~ ~ ~ 0 0 0 0 2 force @a
-particle flash ~ ~ ~ 0 0 0 0 1 force @a
+particle flash{color:[0.90,0.25,1.0,1.0]} ~ ~ ~ 0 0 0 0 2 force @a
+particle flash{color:[0.55,0.05,0.85,1.0]} ~ ~ ~ 0 0 0 0 1 force @a
 particle dust_color_transition{from_color:[1.0,0.3,1.0],scale:4.0,to_color:[0.15,0.0,0.4]} ~ ~ ~ 3 3 3 0.4 200 force @a
 particle minecraft:cloud ~ ~ ~ 0 0 0 1 200 force
 particle minecraft:dragon_breath ~ ~ ~ 0 0 0 1 100 force

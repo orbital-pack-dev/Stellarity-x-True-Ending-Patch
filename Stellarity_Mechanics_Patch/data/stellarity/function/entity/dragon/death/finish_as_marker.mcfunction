@@ -2,8 +2,8 @@
 # финальный взрыв при гибели дракона
 
 # двойная фиолетовая вспышка
-particle flash ~ ~ ~ 0 0 0 0 2 force @a
-particle flash ~ ~ ~ 0 0 0 0 1 force @a
+particle flash{color:[0.90,0.20,1.0,1.0]} ~ ~ ~ 0 0 0 0 2 force @a
+particle flash{color:[0.60,0.05,0.90,1.0]} ~ ~ ~ 0 0 0 0 1 force @a
 
 # ударная волна и эмиттер взрыва
 particle sonic_boom ~ ~ ~ 0 0 0 0 2 force @a

@@ -14,8 +14,15 @@ execute if score #heart_stage ste_cos.flags matches 0 run particle dragon_breath
 execute if score #heart_stage ste_cos.flags matches 0 run particle reverse_portal ~ ~ ~ 1.0 1.0 1.0 0.05 18 force @a
 execute if score #heart_stage ste_cos.flags matches 0 run return 1
 
-# стадия 1+: фиолетовая вспышка
-particle flash ~ ~ ~ 0 0 0 0 1 force @a
+# стадия 1+: чередование двух разных фиолетовых вспышек (эффект живого пульсирующего и меняющего цвета сердца)
+scoreboard players add #heart_flash_toggle ste_cos.flags 1
+execute if score #heart_flash_toggle ste_cos.flags matches 2.. run scoreboard players set #heart_flash_toggle ste_cos.flags 0
+# цвет 1: яркий неоновый пурпурно-розовый
+execute if score #heart_flash_toggle ste_cos.flags matches 0 run particle flash{color:[0.95,0.25,1.0,1.0]} ~ ~ ~ 0 0 0 0 1 force @a
+# цвет 2: глубокий насыщенный аметистово-фиолетовый
+execute if score #heart_flash_toggle ste_cos.flags matches 1 run particle flash{color:[0.50,0.05,0.90,1.0]} ~ ~ ~ 0 0 0 0 1 force @a
+# на финальной стадии (10 кристаллов) дополнительная мощная вспышка
+execute if score #heart_stage ste_cos.flags matches 10.. run particle flash{color:[1.0,0.40,1.0,1.0]} ~ ~ ~ 0 0 0 0 2 force @a
 
 # начальная стадия (1..3 кристаллов)
 execute if score #heart_stage ste_cos.flags matches 1..3 run particle dust_color_transition{from_color:[0.8,0.1,1.0],scale:1.8,to_color:[0.15,0.0,0.4]} ~ ~ ~ 0.6 0.6 0.6 0.05 20 force @a

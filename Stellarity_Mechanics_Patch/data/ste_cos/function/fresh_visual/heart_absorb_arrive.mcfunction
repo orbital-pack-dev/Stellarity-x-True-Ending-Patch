@@ -13,7 +13,7 @@ playsound entity.illusioner.cast_spell master @a ~ ~ ~ 64.0 0.75
 playsound entity.ender_dragon.growl master @a ~ ~ ~ 64.0 1.05
 
 # космический взрыв частиц контакта
-particle flash ~ ~ ~ 0 0 0 0 2 force @a
+particle flash{color:[0.80,0.10,0.95,1.0]} ~ ~ ~ 0 0 0 0 2 force @a
 particle sonic_boom ~ ~ ~ 0 0 0 0 2 force @a
 particle dust_color_transition{from_color:[1.0,0.3,1.0],scale:3.5,to_color:[0.1,0.0,0.4]} ~ ~ ~ 1.5 1.5 1.5 0.3 120 force @a
 particle reverse_portal ~ ~ ~ 1.5 1.5 1.5 0.2 80 force @a
