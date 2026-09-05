@@ -7,6 +7,8 @@ execute unless score #crystal_count stellarity.misc matches 1.. run function ste
 execute at @s run tp @e[type=marker,tag=stellarity.dragon_marker] ~ ~ ~
 execute store result score @s stellarity.dragon.health run data get entity @s Health 1
 execute store result score #max stellarity.misc run attribute @s max_health get
+execute unless score #max stellarity.misc matches 1.. store result score #max stellarity.misc run attribute @s minecraft:generic.max_health get
+execute unless score #max stellarity.misc matches 1.. run scoreboard players set #max stellarity.misc 300
 scoreboard players operation @s stellarity.dragon.health_percent = @s stellarity.dragon.health
 scoreboard players operation @s stellarity.dragon.health_percent *= #hundred stellarity.constants
 scoreboard players operation @s stellarity.dragon.health_percent /= #max stellarity.misc
@@ -14,7 +16,7 @@ execute store result score #percent stellarity.misc run data get entity @s Healt
 scoreboard players operation #percent stellarity.misc /= #three stellarity.constants
 scoreboard players operation #percent stellarity.misc /= #hundred stellarity.constants
 execute store result bossbar stellarity:ender_dragon value run scoreboard players get #percent stellarity.misc
-execute store result score #int_health stellarity.misc run data get entity @s Health
+execute store result score #int_health stellarity.misc run data get entity @s Health 1
 execute unless score @s stellarity.dragon.health_old matches 1.. run scoreboard players operation @s stellarity.dragon.health_old = #int_health stellarity.misc
 scoreboard players operation @s stellarity.dragon.health_old = #int_health stellarity.misc
 
@@ -51,10 +53,13 @@ execute if score @s[tag=!stellarity.dragon.respawned_crystals] stellarity.dragon
 # стук сердца при низком здоровье
 execute if score @s stellarity.dragon.health_percent matches ..25 run function stellarity:entity/dragon/heartbeat/main
 
-# полет к порталу при гибели
-execute if score @s[tag=!stellarity.at_portal] stellarity.dragon.health matches 0..1 run function stellarity:entity/dragon/death/fly_to_portal
-execute if score @s stellarity.dragon.health matches 0..1 if score @s[tag=stellarity.to_portal] stellarity.misc matches 5..7 run tag @s add stellarity.at_portal
-execute if entity @s[tag=stellarity.at_portal] run function stellarity:entity/dragon/death/at_portal_loop
+# полет к порталу при гибели (только после уничтожения всех кристаллов)
+execute if score #crystal_count stellarity.misc matches 1.. if score @s stellarity.dragon.health matches ..1 run scoreboard players set @s stellarity.dragon.health 1024
+execute if score #ste_cos_crystals ste_cos.flags matches 1.. if score @s stellarity.dragon.health matches ..1 run scoreboard players set @s stellarity.dragon.health 1024
+
+execute unless score #crystal_count stellarity.misc matches 1.. unless score #ste_cos_crystals ste_cos.flags matches 1.. if score @s[tag=!stellarity.at_portal] stellarity.dragon.health matches 0..1 run function stellarity:entity/dragon/death/fly_to_portal
+execute unless score #crystal_count stellarity.misc matches 1.. unless score #ste_cos_crystals ste_cos.flags matches 1.. if score @s stellarity.dragon.health matches 0..1 if score @s[tag=stellarity.to_portal] stellarity.misc matches 5..7 run tag @s add stellarity.at_portal
+execute unless score #crystal_count stellarity.misc matches 1.. unless score #ste_cos_crystals ste_cos.flags matches 1.. if entity @s[tag=stellarity.at_portal] run function stellarity:entity/dragon/death/at_portal_loop
 
 execute as @e[type=shulker,tag=stellarity.dragon_shulker] at @s run particle witch ~ ~0.2 ~ 0.4 0.4 0.4 0.04 1 normal
 execute as @e[type=shulker_bullet,tag=stellarity.dragon_bullet] at @s run function stellarity:entity/dragon/attacks/shulker_hell/loop_as_bullet
