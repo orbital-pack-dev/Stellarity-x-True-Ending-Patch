@@ -45,7 +45,7 @@ execute if score @s trueEnding_bosstime matches 2311..2320 at @s run tp @s ~ ~ ~
 execute if score @s trueEnding_bosstime matches 2321..2380 at @s run tp @s ~ ~ ~ ~ ~-.43
 execute if score @s trueEnding_bosstime matches 2381..2480 at @s run tp @s ~ ~ ~ ~ ~-.25
 scoreboard players reset #ste_cos_crystals ste_cos.flags
-execute in minecraft:the_end positioned 0 65 0 as @e[type=end_crystal,distance=..400,nbt={ShowBottom:1b}] run scoreboard players add #ste_cos_crystals ste_cos.flags 1
+execute in minecraft:the_end positioned 0 65 0 as @e[type=end_crystal,distance=15..400,tag=!stellarity.respawn_crystal,tag=!ste_cos_portal_fix] run scoreboard players add #ste_cos_crystals ste_cos.flags 1
 execute if score @s trueEnding_bosstime matches 2251..2271 unless score #ste_cos_crystals ste_cos.flags matches 1.. at @s run data merge entity @s {DragonPhase:7,Invulnerable:0b}
 execute if score @s trueEnding_bosstime matches 2271 unless score #ste_cos_crystals ste_cos.flags matches 1.. at @s run data merge entity @s {DragonPhase:7,Invulnerable:0b}
 execute if score @s trueEnding_bosstime matches 2471 unless score #ste_cos_crystals ste_cos.flags matches 1.. at @s run data merge entity @s {DragonPhase:7,Invulnerable:0b}

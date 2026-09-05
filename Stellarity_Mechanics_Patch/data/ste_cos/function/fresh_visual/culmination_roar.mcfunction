@@ -14,8 +14,8 @@ playsound entity.illusioner.prepare_blindness master @a 0 129 0 1000 0.7
 # космический взрыв сверхновой в точке 0 129 0
 particle explosion_emitter 0 129 0 0 0 0 0 6 force @a
 particle sonic_boom 0 129 0 0 0 0 0 3 force @a
-particle flash{color:-4980481} 0 129 0 0 0 0 0 2 force @a
-particle flash{color:-2673921} 0 129 0 0 0 0 0 1 force @a
+particle flash 0 129 0 0 0 0 0 2 force @a
+particle flash 0 129 0 0 0 0 0 1 force @a
 particle dust_color_transition{from_color:[1.0,0.3,1.0],scale:4.0,to_color:[0.1,0.0,0.4]} 0 129 0 4 4 4 0.5 250 force @a
 particle end_rod 0 129 0 3 3 3 0.4 150 force @a
 particle electric_spark 0 129 0 3 3 3 0.3 100 force @a

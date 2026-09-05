@@ -36,8 +36,15 @@ scoreboard players set #hundred stellarity.constants 100
 scoreboard players set #three stellarity.constants 3
 scoreboard objectives add stellarity.config.dragon_health dummy
 execute unless score #stellarity.config stellarity.config.dragon_health matches 1.. run scoreboard players set #stellarity.config stellarity.config.dragon_health 300
+scoreboard objectives add trueEnding_constants dummy
+scoreboard players set 2 trueEnding_constants 2
+scoreboard players set 10 trueEnding_constants 10
+scoreboard players set 100 trueEnding_constants 100
+scoreboard players set 1000 trueEnding_constants 1000
+scoreboard players set 10000 trueEnding_constants 10000
 scoreboard objectives add trueEnding_settings dummy
-execute unless score dragonhealth trueEnding_settings matches 1.. run scoreboard players set dragonhealth trueEnding_settings 300
+scoreboard players set dragonhealth trueEnding_settings 300
+execute unless score #ste_cos_totem_used ste_cos.flags matches 1 run scoreboard players set #ste_cos_totem_used ste_cos.flags 0
 bossbar set stellarity:ender_dragon max 300
 execute unless score #portal_fix_done ste_cos.flags matches 1 run scoreboard players set #portal_fix_done ste_cos.flags 0
 execute unless score #portal_fix ste_cos.timer matches 1.. run scoreboard players set #portal_fix ste_cos.timer 0

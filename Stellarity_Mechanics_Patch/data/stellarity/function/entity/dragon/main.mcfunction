@@ -1,13 +1,14 @@
 # логика поведения дракона
 execute if entity @s[tag=trueEnding_mirrordragon] run return 0
 scoreboard players reset #crystal_count stellarity.misc
-execute as @e[type=end_crystal,nbt={ShowBottom:1b},distance=..400] at @s run function stellarity:entity/dragon/crystal/loop
+execute in minecraft:the_end positioned 0 65 0 as @e[type=end_crystal,distance=15..400,tag=!stellarity.respawn_crystal,tag=!ste_cos_portal_fix] at @s run function stellarity:entity/dragon/crystal/loop
 execute if score #crystal_count stellarity.misc matches 1.. run function stellarity:entity/dragon/crystal/update_bossbar
 execute unless score #crystal_count stellarity.misc matches 1.. run function stellarity:entity/dragon/crystal/hide_bossbar
 execute at @s run tp @e[type=marker,tag=stellarity.dragon_marker] ~ ~ ~
 execute store result score @s stellarity.dragon.health run data get entity @s Health 1
 execute store result score #max stellarity.misc run attribute @s minecraft:max_health get
 execute unless score #max stellarity.misc matches 1.. run scoreboard players set #max stellarity.misc 300
+execute if score #max stellarity.misc matches 301.. run scoreboard players set #max stellarity.misc 300
 scoreboard players operation @s stellarity.dragon.health_percent = @s stellarity.dragon.health
 scoreboard players operation @s stellarity.dragon.health_percent *= #hundred stellarity.constants
 scoreboard players operation @s stellarity.dragon.health_percent /= #max stellarity.misc
@@ -16,12 +17,6 @@ execute store result bossbar stellarity:ender_dragon value run scoreboard player
 execute store result score #int_health stellarity.misc run data get entity @s Health 1
 execute unless score @s stellarity.dragon.health_old matches 1.. run scoreboard players operation @s stellarity.dragon.health_old = #int_health stellarity.misc
 scoreboard players operation @s stellarity.dragon.health_old = #int_health stellarity.misc
-
-# видимость полосы босса
-bossbar set stellarity:ender_dragon players
-bossbar set stellarity:ender_dragon players @a[predicate=stellarity:location/dragons_den/in_main_area]
-bossbar set stellarity:crystal_count players
-bossbar set stellarity:crystal_count players @a[predicate=stellarity:location/dragons_den/in_main_area]
 
 # музыка битвы
 execute if entity @s[tag=!stellarity.to_portal,tag=!stellarity.at_portal] run function stellarity:entity/dragon/music/tick
@@ -51,9 +46,6 @@ execute if score @s[tag=!stellarity.dragon.respawned_crystals] stellarity.dragon
 execute if score @s stellarity.dragon.health_percent matches ..25 run function stellarity:entity/dragon/heartbeat/main
 
 # полет к порталу при гибели (только после уничтожения всех кристаллов)
-execute if score #crystal_count stellarity.misc matches 1.. if score @s stellarity.dragon.health matches ..1 run scoreboard players set @s stellarity.dragon.health 1024
-execute if score #ste_cos_crystals ste_cos.flags matches 1.. if score @s stellarity.dragon.health matches ..1 run scoreboard players set @s stellarity.dragon.health 1024
-
 execute unless score #crystal_count stellarity.misc matches 1.. unless score #ste_cos_crystals ste_cos.flags matches 1.. if score @s[tag=!stellarity.at_portal] stellarity.dragon.health matches 0..1 run function stellarity:entity/dragon/death/fly_to_portal
 execute unless score #crystal_count stellarity.misc matches 1.. unless score #ste_cos_crystals ste_cos.flags matches 1.. if score @s stellarity.dragon.health matches 0..1 if score @s[tag=stellarity.to_portal] stellarity.misc matches 5..7 run tag @s add stellarity.at_portal
 execute unless score #crystal_count stellarity.misc matches 1.. unless score #ste_cos_crystals ste_cos.flags matches 1.. if entity @s[tag=stellarity.at_portal] run function stellarity:entity/dragon/death/at_portal_loop

@@ -4,7 +4,7 @@ execute if score @s trueEnding_bosstime matches 1 run playsound minecraft:block.
 execute if score @s trueEnding_bosstime matches 1 run playsound minecraft:entity.ender_dragon.hurt hostile @a[distance=..128] ~ ~ ~ 6 .7
 execute if score @s trueEnding_bosstime matches 1 run data merge entity @s {Invulnerable:1b,Silent:1b,NoAI:1b}
 scoreboard players reset #ste_cos_crystals ste_cos.flags
-execute in minecraft:the_end positioned 0 65 0 as @e[type=end_crystal,distance=..400,nbt={ShowBottom:1b}] run scoreboard players add #ste_cos_crystals ste_cos.flags 1
+execute in minecraft:the_end positioned 0 65 0 as @e[type=end_crystal,distance=15..400,tag=!stellarity.respawn_crystal,tag=!ste_cos_portal_fix] run scoreboard players add #ste_cos_crystals ste_cos.flags 1
 execute if score @s trueEnding_bosstime matches 20 unless score #ste_cos_crystals ste_cos.flags matches 1.. run data merge entity @s {Silent:0b,NoAI:0b,DragonPhase:0,Invulnerable:0b}
 execute if score @s trueEnding_bosstime matches 20 run particle dragon_breath ~ ~1.5 ~ 0 0 0 0.2 100 force @a[distance=..128]
 execute if score @s trueEnding_bosstime matches 20 run particle dragon_breath ~ ~1.5 ~ 0 0 0 0.4 100 force @a[distance=..128]

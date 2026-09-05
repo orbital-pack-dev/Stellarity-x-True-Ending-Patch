@@ -1,10 +1,19 @@
 # ste_cos:dragon/trigger_totem
 # срабатывание тотема бессмертия у дракона
 
+# проверка: тотем может сработать строго 1 раз за всю битву
+execute if score #ste_cos_totem_used ste_cos.flags matches 1 run return 0
+execute if entity @s[tag=ste_cos.totem_used] run return 0
+
+scoreboard players set #ste_cos_totem_used ste_cos.flags 1
 tag @s add ste_cos.totem_animating
 tag @s add ste_cos.totem_used
 tag @s add trueEnding_quarterhealth
 tag @s add trueEnding_halfhealth
+
+# немедленно удаляем любые тотемы из инвентаря дракона
+item replace entity @s weapon.mainhand with air
+item replace entity @s weapon.offhand with air
 
 # восстановление здоровья и предотвращение гибели
 attribute @s minecraft:max_health base set 300
@@ -29,8 +38,8 @@ playsound entity.ender_dragon.growl master @a ~ ~ ~ 64.0 0.75
 playsound entity.illusioner.cast_spell master @a ~ ~ ~ 48.0 0.65
 
 # объемная космическая вспышка и ударная волна тотема
-particle flash{color:-2673921} ~ ~2 ~ 0 0 0 0 2 force @a
-particle flash{color:-4980481} ~ ~2 ~ 0 0 0 0 2 force @a
+particle flash ~ ~2 ~ 0 0 0 0 2 force @a
+particle flash ~ ~2 ~ 0 0 0 0 2 force @a
 particle sonic_boom ~ ~2 ~ 0 0 0 0 3 force @a
 
 # многослойные объемные частицы тотема во все стороны
@@ -42,9 +51,6 @@ particle dragon_breath ~ ~2 ~ 3 2 3 0.2 120 force @a
 particle dust_color_transition{from_color:[1.0,0.85,0.2],scale:3.5,to_color:[0.55,0.0,0.85]} ~ ~2 ~ 4 3 4 0.25 180 force @a
 particle end_rod ~ ~2 ~ 3 3 3 0.3 80 force @a
 particle electric_spark ~ ~2 ~ 4 3 4 0.35 90 force @a
-
-# забираем потраченный тотем из руки
-item replace entity @s weapon.mainhand with air
 
 # сдвиг таймера босса на фазу тотема
 scoreboard players set @s trueEnding_bosstime 3001

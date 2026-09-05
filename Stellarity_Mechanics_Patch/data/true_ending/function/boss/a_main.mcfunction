@@ -8,7 +8,7 @@ scoreboard objectives add ste_cos.health_diff dummy
 scoreboard objectives add ste_cos.heal_cd dummy
 
 # дополнительное здоровье босса и тотем (срабатывает только после уничтожения кристаллов при 1..15 ХП)
-execute unless score #ste_cos_crystals ste_cos.flags matches 1.. as @s[tag=!ste_cos.totem_used,tag=!ste_cos.totem_animating] if score @s ste_cos.health matches 1..15 run function ste_cos:dragon/trigger_totem
+execute unless score #ste_cos_crystals ste_cos.flags matches 1.. unless score #ste_cos_totem_used ste_cos.flags matches 1 as @s[tag=!ste_cos.totem_used,tag=!ste_cos.totem_animating] if score @s ste_cos.health matches 1..15 run function ste_cos:dragon/trigger_totem
 execute if score @s ste_cos.heal_cd matches 1.. run scoreboard players remove @s ste_cos.heal_cd 1
 
 # перевод здоровья
@@ -30,7 +30,9 @@ execute if score 20tick trueEnding_clock matches 1 if score @s trueEnding_health
 # фазы по уровню здоровья
     execute if score @s trueEnding_health_extra matches 1.. run scoreboard players operation @s trueEnding_health_percent += @s trueEnding_health_extra
     execute store result score @s trueEnding_health run scoreboard players get @s trueEnding_health_percent
+    scoreboard players set 1000 trueEnding_constants 1000
     scoreboard players operation @s trueEnding_health_percent *= 1000 trueEnding_constants
+    scoreboard players set dragonhealth trueEnding_settings 300
     scoreboard players operation @s trueEnding_health_percent /= dragonhealth trueEnding_settings
 execute if score music_boss trueEnding_settings matches 1 positioned 0 80 0 as @a[distance=..128] unless score @s trueEnding_music matches 0.. run scoreboard players set @s trueEnding_music 0
 
@@ -44,7 +46,7 @@ execute if score @s[tag=!trueEnding_quarterhealth] trueEnding_health_percent mat
 # атаки и переходы
 execute unless score @s trueEnding_bosstime matches 3000.. if score @s trueEnding_health_percent matches ..100 run function true_ending:boss/a_main_final
 scoreboard players reset #ste_cos_crystals ste_cos.flags
-execute in minecraft:the_end positioned 0 65 0 as @e[type=end_crystal,distance=..400,nbt={ShowBottom:1b}] run scoreboard players add #ste_cos_crystals ste_cos.flags 1
+execute in minecraft:the_end positioned 0 65 0 as @e[type=end_crystal,distance=15..400,tag=!stellarity.respawn_crystal,tag=!ste_cos_portal_fix] run scoreboard players add #ste_cos_crystals ste_cos.flags 1
 execute unless score @s[tag=!trueEnding_inattack] trueEnding_bosstime matches 3000.. unless score @s trueEnding_health_percent matches ..100 if score #ste_cos_crystals ste_cos.flags matches 0 run data modify entity @s Invulnerable set value 0b
 execute positioned 0 65 0 if loaded ~ ~ ~ if score 5tick trueEnding_clock matches 1 run function true_ending:boss/crystal_count
 execute if score 20tick trueEnding_clock matches 1 as @s[tag=!trueEnding_inattack] if predicate true_ending:chance/6_percent run scoreboard players set @s trueEnding_bosstime 1001

@@ -1,16 +1,15 @@
 # ste_cos:fresh_visual/tether_head_arrive
 # прибытие снаряда луча к Сердцу Дракона в точку 0 129 0
 
-# приятный магический звук связывания кристалла с сердцем (громко, медленный резонанс)
-playsound block.amethyst_block.chime hostile @a 0 129 0 48.0 0.70
-playsound block.amethyst_block.resonate hostile @a 0 129 0 48.0 0.65
-playsound entity.illusioner.cast_spell hostile @a 0 129 0 48.0 0.75
+# приятный магический звук связывания кристалла с сердцем (громко, без спама)
+playsound block.amethyst_block.chime hostile @a 0 129 0 32.0 0.70
+playsound entity.illusioner.mirror_move hostile @a 0 129 0 32.0 0.80
 
 # усиление уровня Сердца Дракона
 function ste_cos:fresh_visual/heart_level_up
 
 # объемная космическая вспышка контакта и втягивание материи
-particle flash{color:-4980481} 0 129 0 0 0 0 0 1 force @a
+particle flash 0 129 0 0 0 0 0 1 force @a
 particle dust_color_transition{from_color:[0.85,0.1,1.0],scale:2.4,to_color:[0.2,0.0,0.5]} 0 129 0 0.6 0.6 0.6 0.1 35 force @a
 particle electric_spark 0 129 0 0.6 0.6 0.6 0.1 30 force @a
 particle reverse_portal 0 129 0 1.2 1.2 1.2 0.1 40 force @a

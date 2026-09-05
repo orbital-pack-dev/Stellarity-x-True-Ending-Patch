@@ -1,9 +1,8 @@
 # ste_cos:fresh_visual/crystal_aura
 # аура вокруг кристалла края (пульсирует строго 1 раз в секунду)
 
-# двойная фиолетовая вспышка кристалла
-particle flash{color:-4980481} ~ ~1 ~ 0 0 0 0 1 force @a[distance=..128]
-particle flash{color:-2673921} ~ ~1 ~ 0 0 0 0 1 force @a[distance=..128]
+# яркая вспышка кристалла края
+particle flash ~ ~1 ~ 0 0 0 0 1 force @a[distance=..128]
 
 # глубокий космический резонанс аметиста и магии (громкость 32+)
 playsound block.amethyst_block.resonate block @a ~ ~ ~ 32.0 0.60

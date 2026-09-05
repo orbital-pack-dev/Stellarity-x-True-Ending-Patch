@@ -12,3 +12,5 @@ execute as @e[tag=project_root,type=block_display,distance=..1,limit=1,sort=near
 
 ride @e[tag=project_p0,limit=1,sort=nearest] mount @e[tag=project_root,type=block_display,limit=1,sort=nearest]
 
+execute as @e[tag=project] run data merge entity @s {Glowing:1b}
+
