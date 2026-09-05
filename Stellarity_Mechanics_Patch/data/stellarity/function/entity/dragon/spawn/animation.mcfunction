@@ -56,7 +56,7 @@ execute if score @s stellarity.dragon.respawn_animation_progress matches 500 pos
 execute as @e[type=minecraft:end_crystal,tag=stellarity.new_crystal] at @s run function stellarity:entity/dragon/spawn/replace_crystal
 
 # луч в конце
-execute if score @s stellarity.dragon.respawn_animation_progress matches 531 run playsound minecraft:entity.warden.sonic_charge block @a[distance=0..] ~ ~ ~ 2 0.5
+execute if score @s stellarity.dragon.respawn_animation_progress matches 531 run playsound minecraft:entity.warden.sonic_charge block @a ~ ~ ~ 64.0 0.50
 execute if score @s stellarity.dragon.respawn_animation_progress matches 590 run setblock 0 63 0 end_gateway
 execute if score @s stellarity.dragon.respawn_animation_progress matches 590 positioned 0 66 0 run function stellarity:entity/dragon/spawn/beam/shoot
 execute as @e[type=marker,tag=stellarity.dragon_respawn.beam] at @s run function stellarity:entity/dragon/spawn/beam/loop

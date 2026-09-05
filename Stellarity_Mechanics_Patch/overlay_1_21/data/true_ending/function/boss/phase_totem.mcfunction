@@ -23,11 +23,11 @@ execute if score @s trueEnding_bosstime matches 3060.. run particle dragon_breat
 
 execute if score @s trueEnding_bosstime matches 3080 positioned 0 100 0 run function true_ending:boss/shockwave/summon_pad
 
-execute if score @s trueEnding_bosstime matches 3081 run particle flash{color:-4980481} ~ ~ ~ 0 0 0 0 5 force @a[distance=..128]
-execute if score @s trueEnding_bosstime matches 3081 run playsound entity.warden.heartbeat hostile @a[distance=..128] ~ ~ ~ 6 2
-execute if score @s trueEnding_bosstime matches 3081 run playsound entity.warden.heartbeat hostile @a[distance=..128] ~ ~ ~ 6 2
-execute if score @s trueEnding_bosstime matches 3081 run playsound entity.warden.heartbeat hostile @a[distance=..64] ~ ~ ~ 6 1.2
-execute if score @s trueEnding_bosstime matches 3081 run playsound entity.warden.heartbeat hostile @a[distance=..128] ~ ~ ~ 6 .8
+execute if score @s trueEnding_bosstime matches 3081 run particle flash{color:-4980481} ~ ~2 ~ 0 0 0 0 3 force @a
+execute if score @s trueEnding_bosstime matches 3081 run particle flash{color:-2673921} ~ ~2 ~ 0 0 0 0 2 force @a
+execute if score @s trueEnding_bosstime matches 3081 run particle reverse_portal ~ ~2 ~ 3 3 3 0.2 60 force @a
+execute if score @s trueEnding_bosstime matches 3081 run playsound entity.warden.heartbeat hostile @a ~ ~ ~ 64.0 0.55
+execute if score @s trueEnding_bosstime matches 3081 run playsound block.amethyst_block.resonate hostile @a ~ ~ ~ 64.0 0.5
 
 execute at @s run tp @s 0 ~ 0
 
@@ -46,8 +46,28 @@ execute if score @s trueEnding_bosstime matches 3090 run tag @s remove stellarit
 execute if score @s trueEnding_bosstime matches 3090 run tag @s remove stellarity.portal_activated
 execute if score @s trueEnding_bosstime matches 3090 run tag @s add ste_cos.totem_used
 execute if score @s trueEnding_bosstime matches 3090 run item replace entity @s weapon.mainhand with air
-execute if score @s trueEnding_bosstime matches 3090 run particle totem_of_undying ~ ~2 ~ 1 1 1 0.5 150
-execute if score @s trueEnding_bosstime matches 3090 run playsound item.totem.use master @a ~ ~ ~ 1.0 1.0
+
+# экранная тряска
+execute if score @s trueEnding_bosstime matches 3090 run tag @a add stellarity.dragon.screenshake
+
+# звуки взрыва тотема на весь остров (громкость 64+, медленный эпический питч)
+execute if score @s trueEnding_bosstime matches 3090 run playsound item.totem.use master @a ~ ~ ~ 64.0 0.8
+execute if score @s trueEnding_bosstime matches 3090 run playsound entity.warden.heartbeat master @a ~ ~ ~ 64.0 0.6
+execute if score @s trueEnding_bosstime matches 3090 run playsound entity.warden.sonic_boom master @a ~ ~ ~ 64.0 0.7
+execute if score @s trueEnding_bosstime matches 3090 run playsound block.amethyst_block.resonate master @a ~ ~ ~ 64.0 0.5
+execute if score @s trueEnding_bosstime matches 3090 run playsound entity.ender_dragon.growl master @a ~ ~ ~ 64.0 0.75
+execute if score @s trueEnding_bosstime matches 3090 run playsound entity.illusioner.cast_spell master @a ~ ~ ~ 48.0 0.65
+
+# многослойная объемная вспышка и частицы тотема
+execute if score @s trueEnding_bosstime matches 3090 run particle flash{color:-2673921} ~ ~2 ~ 0 0 0 0 2 force @a
+execute if score @s trueEnding_bosstime matches 3090 run particle flash{color:-4980481} ~ ~2 ~ 0 0 0 0 2 force @a
+execute if score @s trueEnding_bosstime matches 3090 run particle sonic_boom ~ ~2 ~ 0 0 0 0 3 force @a
+execute if score @s trueEnding_bosstime matches 3090 run particle totem_of_undying ~ ~2 ~ 3 2 3 0.6 300 force @a
+execute if score @s trueEnding_bosstime matches 3090 run particle totem_of_undying ~ ~2 ~ 6 4 6 0.35 250 force @a
+execute if score @s trueEnding_bosstime matches 3090 run particle dragon_breath ~ ~2 ~ 3 2 3 0.2 120 force @a
+execute if score @s trueEnding_bosstime matches 3090 run particle dust_color_transition{from_color:[1.0,0.85,0.2],scale:3.5,to_color:[0.55,0.0,0.85]} ~ ~2 ~ 4 3 4 0.25 180 force @a
+execute if score @s trueEnding_bosstime matches 3090 run particle end_rod ~ ~2 ~ 3 3 3 0.3 80 force @a
+execute if score @s trueEnding_bosstime matches 3090 run particle electric_spark ~ ~2 ~ 4 3 4 0.35 90 force @a
 execute if score @s trueEnding_bosstime matches 3090 run scoreboard players set @s trueEnding_bosstime 0
 
 # зацикливание до выполнения
