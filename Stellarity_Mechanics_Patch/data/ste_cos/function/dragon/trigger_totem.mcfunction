@@ -7,6 +7,9 @@ tag @s add trueEnding_quarterhealth
 tag @s add trueEnding_halfhealth
 
 # восстановление здоровья и предотвращение гибели
+attribute @s generic.max_health base set 300
+attribute @s minecraft:generic.max_health base set 300
+attribute @s max_health base set 300
 attribute @s minecraft:max_health base set 300
 data modify entity @s Health set value 100.0f
 scoreboard players set @s stellarity.dragon.health 100

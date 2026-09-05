@@ -8,14 +8,14 @@ execute at @s run tp @e[type=marker,tag=stellarity.dragon_marker] ~ ~ ~
 execute store result score @s stellarity.dragon.health run data get entity @s Health 1
 execute store result score #max stellarity.misc run attribute @s max_health get
 execute unless score #max stellarity.misc matches 1.. store result score #max stellarity.misc run attribute @s minecraft:max_health get
+execute unless score #max stellarity.misc matches 1.. store result score #max stellarity.misc run attribute @s generic.max_health get
+execute unless score #max stellarity.misc matches 1.. store result score #max stellarity.misc run attribute @s minecraft:generic.max_health get
 execute unless score #max stellarity.misc matches 1.. run scoreboard players set #max stellarity.misc 300
 scoreboard players operation @s stellarity.dragon.health_percent = @s stellarity.dragon.health
 scoreboard players operation @s stellarity.dragon.health_percent *= #hundred stellarity.constants
 scoreboard players operation @s stellarity.dragon.health_percent /= #max stellarity.misc
-execute store result score #percent stellarity.misc run data get entity @s Health 100
-scoreboard players operation #percent stellarity.misc /= #three stellarity.constants
-scoreboard players operation #percent stellarity.misc /= #hundred stellarity.constants
-execute store result bossbar stellarity:ender_dragon value run scoreboard players get #percent stellarity.misc
+execute store result bossbar stellarity:ender_dragon max run scoreboard players get #max stellarity.misc
+execute store result bossbar stellarity:ender_dragon value run scoreboard players get @s stellarity.dragon.health
 execute store result score #int_health stellarity.misc run data get entity @s Health 1
 execute unless score @s stellarity.dragon.health_old matches 1.. run scoreboard players operation @s stellarity.dragon.health_old = #int_health stellarity.misc
 scoreboard players operation @s stellarity.dragon.health_old = #int_health stellarity.misc

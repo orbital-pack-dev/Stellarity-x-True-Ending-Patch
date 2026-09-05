@@ -1,7 +1,9 @@
 # stellarity:entity/dragon/spawn/summon
 # появление дракона с фиолетовым космическим взрывом
 
-summon ender_dragon ~ ~ ~ {DragonPhase:4,Tags:["stellarity.ender_dragon","smithed.entity","smithed.strict"],Health:300,attributes:[{id:"max_health",base:300.0},{id:"armor",base:8d},{id:"armor_toughness",base:4d},{id:"knockback_resistance",base:1d},{id:"follow_range",base:80d}]}
+execute unless score #stellarity.config stellarity.config.dragon_health matches 1.. run scoreboard players set #stellarity.config stellarity.config.dragon_health 300
+
+summon ender_dragon ~ ~ ~ {DragonPhase:4,Tags:["stellarity.ender_dragon","smithed.entity","smithed.strict"],Health:300f,attributes:[{id:"generic.max_health",base:300.0},{id:"max_health",base:300.0},{id:"armor",base:8d},{id:"armor_toughness",base:4d},{id:"knockback_resistance",base:1d},{id:"follow_range",base:80d}]}
 summon marker ~ ~ ~ {Tags:["stellarity.dragon_marker","stellarity.marker","smithed.entity","smithed.strict"]}
 item replace entity @e[type=ender_dragon,tag=stellarity.ender_dragon] weapon.mainhand with totem_of_undying
 
@@ -27,9 +29,24 @@ playsound minecraft:block.amethyst_block.resonate hostile @a[distance=0..] ~ ~ ~
 playsound minecraft:entity.generic.explode hostile @a[distance=0..] ~ ~ ~ 10 0.6
 playsound minecraft:entity.illusioner.cast_spell hostile @a[distance=0..] ~ ~ ~ 10 0.8
 
+execute as @e[type=ender_dragon,tag=stellarity.ender_dragon] run attribute @s generic.max_health base set 300
+execute as @e[type=ender_dragon,tag=stellarity.ender_dragon] run attribute @s minecraft:generic.max_health base set 300
+execute as @e[type=ender_dragon,tag=stellarity.ender_dragon] run attribute @s max_health base set 300
+execute as @e[type=ender_dragon,tag=stellarity.ender_dragon] run attribute @s minecraft:max_health base set 300
 execute store result entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] attributes[{id:"minecraft:max_health"}].base float 1 run scoreboard players get #stellarity.config stellarity.config.dragon_health
+execute store result entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] attributes[{id:"minecraft:generic.max_health"}].base float 1 run scoreboard players get #stellarity.config stellarity.config.dragon_health
 execute store result entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] Health float 1 run scoreboard players get #stellarity.config stellarity.config.dragon_health
+data modify entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] Health set value 300f
+
+scoreboard players set @e[type=ender_dragon,tag=stellarity.ender_dragon] stellarity.dragon.health 300
+scoreboard players set @e[type=ender_dragon,tag=stellarity.ender_dragon] stellarity.dragon.health_old 300
+scoreboard players set @e[type=ender_dragon,tag=stellarity.ender_dragon] ste_cos.health 300
+scoreboard players set @e[type=ender_dragon,tag=stellarity.ender_dragon] ste_cos.health_old 300
+
+bossbar set stellarity:ender_dragon max 300
+bossbar set stellarity:ender_dragon value 300
 execute store result bossbar stellarity:ender_dragon max run scoreboard players get #stellarity.config stellarity.config.dragon_health
+execute store result bossbar stellarity:ender_dragon value run scoreboard players get #stellarity.config stellarity.config.dragon_health
 
 team join stellarity.dragon.pacify_others @e[type=minecraft:ender_dragon,tag=stellarity.ender_dragon]
 
