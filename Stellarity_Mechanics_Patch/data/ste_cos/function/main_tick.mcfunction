@@ -67,7 +67,15 @@ execute in minecraft:the_end as @e[type=marker,tag=ste_cos.tether_head] at @s ru
 execute in minecraft:the_end if entity @e[type=marker,tag=ste_cos.heart_absorbing,limit=1] run scoreboard players add #absorb_time ste_cos.timer 1
 execute in minecraft:the_end as @e[type=marker,tag=ste_cos.heart_absorbing] at @s run function ste_cos:fresh_visual/heart_absorb_step
 execute in minecraft:the_end as @e[type=marker,tag=ste_cos.absorb_tendril] at @s run function ste_cos:fresh_visual/heart_absorb_step
-execute in minecraft:the_end as @e[type=marker,tag=ste_cos.crystal_laser_projectile] at @s run function ste_cos:crystal/laser_projectile_tick
+execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.crystal_laser_projectile] at @s run function ste_cos:crystal/laser_projectile_tick
+
+# общий таймер заряда кристаллов Фазы-3 (цикл 110 тиков = 5.5 секунд)
+execute in minecraft:the_end if entity @e[type=end_crystal,tag=ste_cos.shielded_crystal,limit=1] run scoreboard players add #crystal_charge_timer ste_cos.timer 1
+execute in minecraft:the_end if score #crystal_charge_timer ste_cos.timer matches 85 as @e[type=end_crystal,tag=ste_cos.shielded_crystal] at @s if entity @p[distance=..48,gamemode=!creative,gamemode=!spectator] run playsound block.respawn_anchor.charge hostile @a[distance=..48] ~ ~1.8 ~ 1.0 0.9
+execute in minecraft:the_end if score #crystal_charge_timer ste_cos.timer matches 95 as @e[type=end_crystal,tag=ste_cos.shielded_crystal] at @s if entity @p[distance=..48,gamemode=!creative,gamemode=!spectator] run playsound block.respawn_anchor.charge hostile @a[distance=..48] ~ ~1.8 ~ 1.0 1.1
+execute in minecraft:the_end if score #crystal_charge_timer ste_cos.timer matches 85..109 as @e[type=end_crystal,tag=ste_cos.shielded_crystal] at @s if entity @p[distance=..48,gamemode=!creative,gamemode=!spectator] run particle dust_color_transition{from_color:[0.3,0.9,1.0],scale:1.4,to_color:[0.85,0.1,1.0]} ~ ~1.8 ~ 0.2 0.2 0.2 0.05 2 force
+execute in minecraft:the_end if score #crystal_charge_timer ste_cos.timer matches 110.. as @e[type=end_crystal,tag=ste_cos.shielded_crystal] at @s if entity @p[distance=..48,gamemode=!creative,gamemode=!spectator] run function ste_cos:crystal/shielded_crystal_fire
+execute in minecraft:the_end if score #crystal_charge_timer ste_cos.timer matches 110.. run scoreboard players set #crystal_charge_timer ste_cos.timer 0
 
 # мини-игра иллюзорных драконов
 execute in minecraft:the_end if score #minigame_state ste_cos.flags matches 1.. run function ste_cos:minigame_clones/tick
@@ -75,7 +83,13 @@ execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.clones_diving] 
 
 # ультимативная атака Финальный Вздох
 execute in minecraft:the_end if score #final_breath_state ste_cos.flags matches 1.. run function ste_cos:final_breath/tick
-execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.portal_lock_final] at @s positioned 0 65 0 unless entity @s[distance=..35] run tag @s add stellarity.to_portal
+
+# удержание дракона на портале после финального вздоха (финальная стойка до смерти)
+execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] run tag @s add trueEnding_inattack
+execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] run scoreboard players set @s trueEnding_bosstime 0
+execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] at @s positioned 0 65 0 unless entity @s[distance=..20] run tag @s add stellarity.to_portal
+execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] at @s positioned 0 65 0 unless entity @s[distance=..20] run data modify entity @s DragonPhase set value 2
+execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] at @s positioned 0 65 0 if entity @s[distance=..20] run data modify entity @s DragonPhase set value 4
 
 # механики усложненного боя
 execute in minecraft:the_end run function ste_cos:mechanics/tick

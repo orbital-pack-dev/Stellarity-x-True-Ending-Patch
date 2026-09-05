@@ -15,14 +15,14 @@ execute as @e[type=phantom,tag=ste_cos_guard,distance=..32] if score @s ste_cos.
 # поддержание активного AI и звуков у фантомов-стражей
 execute as @e[type=phantom,tag=ste_cos_guard] run data merge entity @s {Silent:0b,NoAI:0b}
 
-# зловещие звуки фантома и кристалла
-execute as @e[type=phantom,tag=ste_cos_guard,distance=..32] if score @s ste_cos.id = #current_id ste_cos.flags at @s if predicate true_ending:chance/6_percent run playsound entity.phantom.ambient hostile @a ~ ~ ~ 32.0 0.8
-execute as @e[type=phantom,tag=ste_cos_guard,distance=..32] if score @s ste_cos.id = #current_id ste_cos.flags at @s if predicate true_ending:chance/6_percent run playsound entity.phantom.flap hostile @a ~ ~ ~ 32.0 0.65
-execute as @e[type=phantom,tag=ste_cos_guard,distance=..32] if score @s ste_cos.id = #current_id ste_cos.flags at @s if predicate true_ending:chance/6_percent run playsound block.amethyst_block.chime hostile @a ~ ~ ~ 32.0 0.6
+# зловещие звуки фантома и кристалла (строго до 16 блоков)
+execute as @e[type=phantom,tag=ste_cos_guard,distance=..32] if score @s ste_cos.id = #current_id ste_cos.flags at @s if predicate true_ending:chance/6_percent run playsound entity.phantom.ambient hostile @a[distance=..16] ~ ~ ~ 1.0 0.8
+execute as @e[type=phantom,tag=ste_cos_guard,distance=..32] if score @s ste_cos.id = #current_id ste_cos.flags at @s if predicate true_ending:chance/6_percent run playsound entity.phantom.flap hostile @a[distance=..16] ~ ~ ~ 1.0 0.65
+execute as @e[type=phantom,tag=ste_cos_guard,distance=..32] if score @s ste_cos.id = #current_id ste_cos.flags at @s if predicate true_ending:chance/6_percent run playsound block.amethyst_block.chime hostile @a[distance=..16] ~ ~ ~ 1.0 0.6
 
 # наложение Иссушения II, Тьмы и Замедления при приближении игрока
 execute as @e[type=phantom,tag=ste_cos_guard,distance=..32] if score @s ste_cos.id = #current_id ste_cos.flags at @s as @a[distance=..4,gamemode=!spectator,gamemode=!creative] run effect give @s wither 5 1 true
 execute as @e[type=phantom,tag=ste_cos_guard,distance=..32] if score @s ste_cos.id = #current_id ste_cos.flags at @s as @a[distance=..4,gamemode=!spectator,gamemode=!creative] run effect give @s darkness 4 0 true
 execute as @e[type=phantom,tag=ste_cos_guard,distance=..32] if score @s ste_cos.id = #current_id ste_cos.flags at @s as @a[distance=..4,gamemode=!spectator,gamemode=!creative] run effect give @s slowness 4 1 true
 execute as @e[type=phantom,tag=ste_cos_guard,distance=..32] if score @s ste_cos.id = #current_id ste_cos.flags at @s as @a[distance=..3,gamemode=!spectator,gamemode=!creative] run damage @s 4 minecraft:mob_attack
-execute as @e[type=phantom,tag=ste_cos_guard,distance=..32] if score @s ste_cos.id = #current_id ste_cos.flags at @s if entity @a[distance=..4,gamemode=!spectator,gamemode=!creative] run playsound entity.phantom.bite hostile @a ~ ~ ~ 32.0 0.85
+execute as @e[type=phantom,tag=ste_cos_guard,distance=..32] if score @s ste_cos.id = #current_id ste_cos.flags at @s if entity @a[distance=..4,gamemode=!spectator,gamemode=!creative] run playsound entity.phantom.bite hostile @a[distance=..16] ~ ~ ~ 1.0 0.85

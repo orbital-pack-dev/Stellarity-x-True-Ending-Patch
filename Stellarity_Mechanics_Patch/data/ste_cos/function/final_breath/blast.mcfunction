@@ -28,9 +28,11 @@ attribute @s minecraft:armor_toughness base set 4
 data modify entity @s Invulnerable set value 0b
 
 # сброс фаз атаки
-tag @s remove trueEnding_inattack
 tag @s remove ste_cos.final_breath_active
-data modify entity @s DragonPhase set value 4
+tag @s add ste_cos.final_stand
+tag @s add trueEnding_inattack
+scoreboard players set @s trueEnding_bosstime 0
+data modify entity @s DragonPhase set value 2
 
 # удержание дракона у портала до победного конца
 tag @s add stellarity.to_portal

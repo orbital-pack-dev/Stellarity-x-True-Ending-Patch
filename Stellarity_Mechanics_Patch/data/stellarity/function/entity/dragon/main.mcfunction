@@ -28,13 +28,14 @@ execute unless score @s[tag=!stellarity.at_portal] stellarity.misc matches 5..7 
 
 # отключена принудительная смена фазы чтобы не ломать фазы True Ending
 
-execute if score @s stellarity.misc matches 5 run function stellarity:entity/dragon/attacks/roar_breath/main
+# отключение обычных атак во время мини-игры, финального вздоха, финальной стойки и при смерти
+execute unless entity @s[tag=ste_cos.minigame_active] unless entity @s[tag=ste_cos.final_breath_active] unless entity @s[tag=ste_cos.final_stand] unless entity @s[tag=stellarity.at_portal] unless score @s stellarity.dragon.health matches ..1 if score @s stellarity.misc matches 5 run function stellarity:entity/dragon/attacks/roar_breath/main
 execute unless score @s stellarity.dragon.shulker_hell matches 4 as @e[type=dragon_fireball] at @s run function stellarity:entity/dragon/attacks/fireball/summon
 execute if score @s stellarity.dragon.shulker_hell matches 4 as @e[type=dragon_fireball] at @s run function stellarity:entity/dragon/attacks/shulker_hell/trigger
-execute if score @s[tag=!stellarity.at_portal,scores={stellarity.dragon.health_percent=..99}] stellarity.misc matches 4 run function stellarity:entity/dragon/attacks/take_off/main
-execute if score @s[scores={stellarity.dragon.perch_cooldown=1..}] stellarity.misc matches 2..3 run data modify entity @s DragonPhase set value 0
+execute unless entity @s[tag=ste_cos.minigame_active] unless entity @s[tag=ste_cos.final_breath_active] unless entity @s[tag=ste_cos.final_stand] unless entity @s[tag=stellarity.at_portal] unless score @s stellarity.dragon.health matches ..1 if score @s[tag=!stellarity.at_portal,scores={stellarity.dragon.health_percent=..99}] stellarity.misc matches 4 run function stellarity:entity/dragon/attacks/take_off/main
+execute unless entity @s[tag=ste_cos.minigame_active] unless entity @s[tag=ste_cos.final_breath_active] unless entity @s[tag=ste_cos.final_stand] unless entity @s[tag=stellarity.at_portal] unless score @s stellarity.dragon.health matches ..1 if score @s[scores={stellarity.dragon.perch_cooldown=1..}] stellarity.misc matches 2..3 run data modify entity @s DragonPhase set value 0
 execute if score @s stellarity.dragon.time_chainfiring matches 1.. run function stellarity:entity/dragon/attacks/chainfire/tickdown
-execute unless score @s[scores={stellarity.dragon.health_percent=..50,stellarity.misc=0..1}] stellarity.dragon.ball_of_blight_cooldown matches 1.. run function stellarity:entity/dragon/attacks/ball_of_blight/cast
+execute unless entity @s[tag=ste_cos.minigame_active] unless entity @s[tag=ste_cos.final_breath_active] unless entity @s[tag=ste_cos.final_stand] unless entity @s[tag=stellarity.at_portal] unless score @s stellarity.dragon.health matches ..1 unless score @s[scores={stellarity.dragon.health_percent=..50,stellarity.misc=0..1}] stellarity.dragon.ball_of_blight_cooldown matches 1.. run function stellarity:entity/dragon/attacks/ball_of_blight/cast
 
 # откат атак
 scoreboard players remove @s[scores={stellarity.dragon.perch_cooldown=1..}] stellarity.dragon.perch_cooldown 1

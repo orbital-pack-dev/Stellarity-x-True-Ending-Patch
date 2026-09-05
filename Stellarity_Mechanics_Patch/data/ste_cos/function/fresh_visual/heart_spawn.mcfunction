@@ -35,6 +35,6 @@ particle dragon_breath 0 128.2 0 0.5 0.5 0.5 0.02 18 force @a
 particle reverse_portal 0 128.2 0 1.2 1.2 1.2 0.08 30 force @a
 particle end_rod 0 128.2 0 0.6 0.6 0.6 0.03 10 force @a
 
-# глубокий первый резонирующий стук сердца на весь остров
-playsound entity.warden.heartbeat hostile @a 0 128.2 0 64.0 0.55
-playsound block.amethyst_block.resonate hostile @a 0 128.2 0 64.0 0.50
+# глубокий первый резонирующий стук сердца
+playsound entity.warden.heartbeat hostile @a[distance=..96] 0 128.2 0 4.0 0.55
+playsound block.amethyst_block.resonate hostile @a[distance=..96] 0 128.2 0 4.0 0.50

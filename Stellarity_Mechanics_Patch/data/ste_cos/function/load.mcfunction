@@ -81,6 +81,9 @@ execute unless score #clone_minigame_used ste_cos.flags matches 1 run scoreboard
 execute unless score #final_breath_used ste_cos.flags matches 1 run scoreboard players set #final_breath_used ste_cos.flags 0
 scoreboard players set #minigame_state ste_cos.flags 0
 scoreboard players set #final_breath_state ste_cos.flags 0
+scoreboard players set #minigame_resolve_timer ste_cos.timer 0
+scoreboard players set #minigame_outcome ste_cos.flags 0
+scoreboard players set #crystal_charge_timer ste_cos.timer 0
 bossbar set stellarity:ender_dragon max 300
 execute unless score #portal_fix_done ste_cos.flags matches 1 run scoreboard players set #portal_fix_done ste_cos.flags 0
 execute unless score #portal_fix ste_cos.timer matches 1.. run scoreboard players set #portal_fix ste_cos.timer 0

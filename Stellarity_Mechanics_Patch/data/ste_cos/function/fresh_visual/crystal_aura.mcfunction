@@ -4,9 +4,9 @@
 # яркая аметистово-фиолетовая вспышка кристалла края
 particle flash{color:[0.75,0.20,1.0,1.0]} ~ ~1 ~ 0 0 0 0 1 force @a[distance=..128]
 
-# глубокий космический резонанс аметиста и магии (громкость 32+)
-playsound block.amethyst_block.resonate block @a ~ ~ ~ 32.0 0.60
-playsound entity.illusioner.cast_spell block @a ~ ~ ~ 32.0 0.65
+# глубокий космический резонанс аметиста и магии (строго в радиусе 16 блоков)
+playsound block.amethyst_block.resonate block @a[distance=..16] ~ ~ ~ 1.0 0.60
+playsound entity.illusioner.cast_spell block @a[distance=..16] ~ ~ ~ 1.0 0.65
 
 # объемное извержение частиц: вертикальный столб драконьего дыхания и звезд
 particle dragon_breath ~ ~1.2 ~ 0.35 0.8 0.35 0.06 18 force @a[distance=..128]

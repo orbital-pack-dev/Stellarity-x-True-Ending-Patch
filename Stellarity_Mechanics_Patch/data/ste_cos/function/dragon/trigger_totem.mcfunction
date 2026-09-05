@@ -24,7 +24,8 @@ scoreboard players set @s ste_cos.health 36
 scoreboard players set @s ste_cos.health_old 36
 
 data modify entity @s Invulnerable set value 1b
-data modify entity @s DragonPhase set value 5
+data modify entity @s DragonPhase set value 3
+data modify entity @s Motion set value [-0.038d, 1.508d, -0.041d]
 
 # экранная тряска
 tag @a add stellarity.dragon.screenshake

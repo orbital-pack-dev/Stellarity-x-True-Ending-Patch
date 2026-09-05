@@ -6,6 +6,8 @@ execute if score #ste_cos_crystals ste_cos.flags matches 1.. run return 0
 execute if entity @s[tag=trueEnding_inattack] run return 0
 execute if entity @s[tag=ste_cos.minigame_active] run return 0
 execute if entity @s[tag=ste_cos.final_breath_active] run return 0
+execute if score @s stellarity.dragon.health_percent matches 71.. run return 0
+execute if score @s ste_cos.health matches 211.. run return 0
 
 # запуск мини-игры: направление к порталу для последующего взлета
 scoreboard players set #clone_minigame_used ste_cos.flags 1

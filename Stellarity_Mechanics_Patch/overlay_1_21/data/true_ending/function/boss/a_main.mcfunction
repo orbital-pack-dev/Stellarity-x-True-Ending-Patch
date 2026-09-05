@@ -25,6 +25,21 @@ scoreboard players operation @s ste_cos.health_diff = @s ste_cos.health
 scoreboard players operation @s ste_cos.health_diff -= @s ste_cos.health_old
 execute if score @s ste_cos.health_diff matches 1.. run function ste_cos:dragon/crystal_heal_check
 execute store result score @s ste_cos.health_old run data get entity @s Health 1
+
+# Блокировка атак True Ending при смерти, на портале, в фазе финального вздоха или мини-игры
+execute if entity @s[tag=ste_cos.final_stand] run scoreboard players set @s trueEnding_bosstime 0
+execute if entity @s[tag=ste_cos.final_stand] run return 0
+execute if entity @s[tag=stellarity.at_portal] run scoreboard players set @s trueEnding_bosstime 0
+execute if entity @s[tag=stellarity.at_portal] run return 0
+execute if score @s ste_cos.health matches ..1 run scoreboard players set @s trueEnding_bosstime 0
+execute if score @s ste_cos.health matches ..1 run return 0
+execute if score @s stellarity.dragon.health matches ..1 run scoreboard players set @s trueEnding_bosstime 0
+execute if score @s stellarity.dragon.health matches ..1 run return 0
+execute if entity @s[tag=ste_cos.final_breath_active] run return 0
+execute if entity @s[tag=ste_cos.final_breath_ascending] run return 0
+execute if entity @s[tag=ste_cos.final_breath_guided] run return 0
+execute if entity @s[tag=ste_cos.minigame_active] run return 0
+
 execute if score @s trueEnding_bosstime matches 0.. run scoreboard players add @s trueEnding_bosstime 1
 execute store result score @s trueEnding_y run data get entity @s Pos[1]
 execute store result score @s trueEnding_dragonphase run data get entity @s DragonPhase

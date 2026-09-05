@@ -18,8 +18,7 @@ execute if score #tornado ste_cos.age matches 8.. as @e[tag=ste_cos.tor_inner] a
 execute if score #tornado ste_cos.age matches 18.. as @e[tag=ste_cos.tor_mid] at @s run function ste_cos:fresh_visual/tor_wave_mid
 execute if score #tornado ste_cos.age matches 32.. as @e[tag=ste_cos.tor_outer] at @s run function ste_cos:fresh_visual/tor_wave_outer
 
-# звук нарастает вместе с раскрутом, а не играет ровно с 1 тика
-execute if score #tornado ste_cos.age matches 0..12 if predicate true_ending:chance/6_percent run playsound block.respawn_anchor.deplete ambient @a 0 129 0 24.0 0.4
-execute if score #tornado ste_cos.age matches 13..30 if predicate true_ending:chance/8_percent run playsound block.respawn_anchor.deplete ambient @a 0 129 0 30.0 0.5
-execute if score #tornado ste_cos.age matches 31.. if predicate true_ending:chance/8_percent run playsound block.respawn_anchor.deplete ambient @a 0 129 0 32.0 0.55
-execute if score #tornado ste_cos.age matches 20.. if predicate true_ending:chance/10_percent run playsound block.amethyst_block.resonate ambient @a 0 129 0 32.0 0.5
+# атмосферные акценты при раскрутке торнадо (только в ключевые моменты, без спама каждый тик)
+execute if score #tornado ste_cos.age matches 1 run playsound block.respawn_anchor.deplete ambient @a[distance=..64] 0 128 0 1.5 0.45
+execute if score #tornado ste_cos.age matches 18 run playsound block.amethyst_block.resonate ambient @a[distance=..64] 0 128 0 1.5 0.50
+execute if score #tornado ste_cos.age matches 35 run playsound block.respawn_anchor.deplete ambient @a[distance=..64] 0 128 0 1.8 0.55

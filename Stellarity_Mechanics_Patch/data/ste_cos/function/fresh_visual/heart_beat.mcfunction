@@ -1,12 +1,12 @@
 # ste_cos:fresh_visual/heart_beat
 # удар Сердца Дракона с нарастанием силы от стадий кристаллов
 
-# звук стука сердца (глубокий и медленный стук Вардена с громкостью 32 на весь остров)
-execute if score #heart_stage ste_cos.flags matches 0 run playsound entity.warden.heartbeat hostile @a ~ ~ ~ 32.0 0.55
-execute if score #heart_stage ste_cos.flags matches 1..3 run playsound entity.warden.heartbeat hostile @a ~ ~ ~ 32.0 0.60
-execute if score #heart_stage ste_cos.flags matches 4..6 run playsound entity.warden.heartbeat hostile @a ~ ~ ~ 32.0 0.65
-execute if score #heart_stage ste_cos.flags matches 7..9 run playsound entity.warden.heartbeat hostile @a ~ ~ ~ 32.0 0.70
-execute if score #heart_stage ste_cos.flags matches 10.. run playsound entity.warden.heartbeat hostile @a ~ ~ ~ 32.0 0.75
+# звук стука сердца (глубокий и медленный стук Вардена для игроков в радиусе 96 блоков)
+execute if score #heart_stage ste_cos.flags matches 0 run playsound entity.warden.heartbeat hostile @a[distance=..96] ~ ~ ~ 3.0 0.55
+execute if score #heart_stage ste_cos.flags matches 1..3 run playsound entity.warden.heartbeat hostile @a[distance=..96] ~ ~ ~ 3.0 0.60
+execute if score #heart_stage ste_cos.flags matches 4..6 run playsound entity.warden.heartbeat hostile @a[distance=..96] ~ ~ ~ 3.0 0.65
+execute if score #heart_stage ste_cos.flags matches 7..9 run playsound entity.warden.heartbeat hostile @a[distance=..96] ~ ~ ~ 3.0 0.70
+execute if score #heart_stage ste_cos.flags matches 10.. run playsound entity.warden.heartbeat hostile @a[distance=..96] ~ ~ ~ 3.0 0.75
 
 # стадия 0: видимая с земли космическая пульсация (без резкой вспышки flash)
 execute if score #heart_stage ste_cos.flags matches 0 run particle dust_color_transition{from_color:[0.7,0.1,0.9],scale:2.2,to_color:[0.15,0.0,0.35]} ~ ~ ~ 0.8 0.8 0.8 0.05 24 force @a
@@ -41,4 +41,4 @@ execute if score #heart_stage ste_cos.flags matches 7.. run particle electric_sp
 # максимальная стадия (10 кристаллов): сжатие пространственного вихря
 execute if score #heart_stage ste_cos.flags matches 10.. run particle dust_color_transition{from_color:[1.0,0.3,1.0],scale:4.0,to_color:[0.25,0.0,0.6]} ~ ~ ~ 1.8 1.8 1.8 0.15 45 force @a
 execute if score #heart_stage ste_cos.flags matches 10.. run particle reverse_portal ~ ~ ~ 2.5 2.5 2.5 0.1 50 force @a
-execute if score #heart_stage ste_cos.flags matches 10.. run playsound entity.warden.sonic_boom hostile @a ~ ~ ~ 32.0 0.65
+execute if score #heart_stage ste_cos.flags matches 10.. run playsound entity.warden.sonic_boom hostile @a[distance=..96] ~ ~ ~ 3.0 0.65

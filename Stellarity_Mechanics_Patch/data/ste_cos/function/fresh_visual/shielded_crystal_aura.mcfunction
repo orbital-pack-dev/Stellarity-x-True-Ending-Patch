@@ -4,10 +4,10 @@
 # яркая бирюзово-аметистовая вспышка силового поля
 particle flash{color:[0.40,0.85,1.0,1.0]} ~ ~1.2 ~ 0 0 0 0 1 force @a[distance=..128]
 
-# звуки силового барьера и аметистового резонанса
-playsound block.beacon.ambient block @a ~ ~ ~ 32.0 1.4
-playsound block.amethyst_block.resonate block @a ~ ~ ~ 32.0 1.2
-playsound entity.illusioner.cast_spell block @a ~ ~ ~ 32.0 1.1
+# звуки силового барьера и аметистового резонанса (только для находящихся рядом игроков)
+playsound block.beacon.ambient block @a[distance=..16] ~ ~ ~ 1.0 1.4
+playsound block.amethyst_block.resonate block @a[distance=..16] ~ ~ ~ 1.0 1.2
+playsound entity.illusioner.cast_spell block @a[distance=..16] ~ ~ ~ 1.0 1.1
 
 # мерцающий сферический купол щита
 particle electric_spark ~ ~1.2 ~ 1.2 1.2 1.2 0.08 24 force @a[distance=..128]
