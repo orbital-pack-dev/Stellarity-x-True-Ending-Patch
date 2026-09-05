@@ -15,13 +15,13 @@ tag @s add trueEnding_halfhealth
 item replace entity @s weapon.mainhand with air
 item replace entity @s weapon.offhand with air
 
-# восстановление здоровья и предотвращение гибели
+# восстановление здоровья и предотвращение гибели (36 HP)
 attribute @s minecraft:max_health base set 300
-data modify entity @s Health set value 100.0f
-scoreboard players set @s stellarity.dragon.health 100
-scoreboard players set @s stellarity.dragon.health_old 100
-scoreboard players set @s ste_cos.health 100
-scoreboard players set @s ste_cos.health_old 100
+data modify entity @s Health set value 36.0f
+scoreboard players set @s stellarity.dragon.health 36
+scoreboard players set @s stellarity.dragon.health_old 36
+scoreboard players set @s ste_cos.health 36
+scoreboard players set @s ste_cos.health_old 36
 
 data modify entity @s Invulnerable set value 1b
 data modify entity @s DragonPhase set value 5
@@ -53,4 +53,4 @@ particle end_rod ~ ~2 ~ 3 3 3 0.3 80 force @a
 particle electric_spark ~ ~2 ~ 4 3 4 0.35 90 force @a
 
 # сдвиг таймера босса на фазу тотема
-scoreboard players set @s trueEnding_bosstime 3001
+# scoreboard players set @s trueEnding_bosstime 3001

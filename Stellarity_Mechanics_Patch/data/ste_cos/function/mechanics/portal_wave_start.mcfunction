@@ -1,9 +1,15 @@
 # ste_cos:mechanics/portal_wave_start
-# радиальный запуск волны опасности от портала
+# радиальный запуск интерактивной волны опасности от портала
+
+# звук и частицы зарождения волны в центре портала
+execute if score temp2 ste_cos.flags matches 0 run playsound block.amethyst_block.chime ambient @a 0 65 0 16.0 1.4
+execute if score temp2 ste_cos.flags matches 0 run playsound block.amethyst_block.resonate ambient @a 0 65 0 16.0 0.8
+execute if score temp2 ste_cos.flags matches 0 run particle flash{color:[0.75,0.20,1.0,1.0]} 0 65 0 0 0 0 0 1 force
 
 scoreboard players add temp2 ste_cos.flags 1
-execute rotated ~10 0 positioned ~ ~.2 ~ run summon area_effect_cloud ~ ~ ~ {Duration:42,Radius:0.0f,WaitTime:0,Tags:["ste_cos_portal_wave","ste_cos_wave_temp"]}
-execute rotated ~10 0 positioned ~ ~.2 ~ run tp @e[sort=nearest,limit=1,type=area_effect_cloud,tag=ste_cos_portal_wave,tag=ste_cos_wave_temp] ~ ~ ~ ~ ~
-execute rotated ~10 0 positioned ~ ~.2 ~ run tag @e[sort=nearest,limit=1,type=area_effect_cloud,tag=ste_cos_portal_wave,tag=ste_cos_wave_temp] remove ste_cos_wave_temp
+execute rotated ~10 0 positioned ^ ^ ^2.5 run summon area_effect_cloud ~ ~ ~ {Duration:50,Radius:0.0f,WaitTime:0,Tags:["ste_cos_portal_wave","ste_cos_wave_temp"]}
+execute rotated ~10 0 positioned ^ ^ ^2.5 run tp @e[sort=nearest,limit=1,type=area_effect_cloud,tag=ste_cos_portal_wave,tag=ste_cos_wave_temp] ~ ~ ~ ~ ~
+execute rotated ~10 0 positioned ^ ^ ^2.5 run tag @e[sort=nearest,limit=1,type=area_effect_cloud,tag=ste_cos_portal_wave,tag=ste_cos_wave_temp] remove ste_cos_wave_temp
+
 execute unless score temp2 ste_cos.flags matches 36.. rotated ~10 ~ run function ste_cos:mechanics/portal_wave_start
 execute if score temp2 ste_cos.flags matches 36.. run scoreboard players reset temp2 ste_cos.flags

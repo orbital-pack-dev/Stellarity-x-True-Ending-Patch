@@ -13,7 +13,11 @@ execute unless score @s ste_cos.aura_init matches 1 run scoreboard players set @
 # рассинхронизированная объемная аура кристалла (цикл ~28 тиков)
 scoreboard players add @s ste_cos.aura_tick 1
 execute if score @s ste_cos.aura_tick matches 28.. run scoreboard players set @s ste_cos.aura_tick 0
-execute if score @s ste_cos.aura_tick matches 0 run function ste_cos:fresh_visual/crystal_aura
+execute unless entity @s[tag=ste_cos.shielded_crystal] if score @s ste_cos.aura_tick matches 0 run function ste_cos:fresh_visual/crystal_aura
+execute if entity @s[tag=ste_cos.shielded_crystal] if score @s ste_cos.aura_tick matches 0 run function ste_cos:fresh_visual/shielded_crystal_aura
+
+# тиковый цикл защищенного кристалла (щит от стрел, отскок трезубца, зарядка лазера)
+execute if entity @s[tag=ste_cos.shielded_crystal] run function ste_cos:crystal/shielded_crystal_tick
 
 # тонкие фоновые космические частицы возле кристалла между пульсациями (каждый 4-й тик)
 execute if score @s ste_cos.aura_tick matches 4 8 12 16 20 24 run particle portal ~ ~1.2 ~ 0.3 0.3 0.3 0.05 2 force @a[distance=..96]

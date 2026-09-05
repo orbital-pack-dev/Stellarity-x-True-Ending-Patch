@@ -67,6 +67,15 @@ execute in minecraft:the_end as @e[type=marker,tag=ste_cos.tether_head] at @s ru
 execute in minecraft:the_end if entity @e[type=marker,tag=ste_cos.heart_absorbing,limit=1] run scoreboard players add #absorb_time ste_cos.timer 1
 execute in minecraft:the_end as @e[type=marker,tag=ste_cos.heart_absorbing] at @s run function ste_cos:fresh_visual/heart_absorb_step
 execute in minecraft:the_end as @e[type=marker,tag=ste_cos.absorb_tendril] at @s run function ste_cos:fresh_visual/heart_absorb_step
+execute in minecraft:the_end as @e[type=marker,tag=ste_cos.crystal_laser_projectile] at @s run function ste_cos:crystal/laser_projectile_tick
+
+# мини-игра иллюзорных драконов
+execute in minecraft:the_end if score #minigame_state ste_cos.flags matches 1.. run function ste_cos:minigame_clones/tick
+execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.clones_diving] at @s run function ste_cos:minigame_clones/clone_dive_tick
+
+# ультимативная атака Финальный Вздох
+execute in minecraft:the_end if entity @e[type=ender_dragon,tag=ste_cos.final_breath_active,limit=1] run function ste_cos:final_breath/tick
+execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.portal_lock_final] at @s positioned 0 65 0 unless entity @s[distance=..35] run tag @s add stellarity.to_portal
 
 # механики усложненного боя
 execute in minecraft:the_end run function ste_cos:mechanics/tick

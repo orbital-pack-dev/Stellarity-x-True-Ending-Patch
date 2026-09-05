@@ -32,11 +32,11 @@ execute if score @s trueEnding_bosstime matches 3081 run playsound block.amethys
 execute at @s run tp @s 0 ~ 0
 
 # завершение взлета дракона с портала (без дублирования тотема)
-execute if score @s trueEnding_bosstime matches 3090 if score @s ste_cos.health matches ..99 run data modify entity @s Health set value 100.0f
-execute if score @s trueEnding_bosstime matches 3090 if score @s ste_cos.health matches ..99 run scoreboard players set @s stellarity.dragon.health 100
-execute if score @s trueEnding_bosstime matches 3090 if score @s ste_cos.health matches ..99 run scoreboard players set @s stellarity.dragon.health_old 100
-execute if score @s trueEnding_bosstime matches 3090 if score @s ste_cos.health matches ..99 run scoreboard players set @s ste_cos.health 100
-execute if score @s trueEnding_bosstime matches 3090 if score @s ste_cos.health matches ..99 run scoreboard players set @s ste_cos.health_old 100
+execute if score @s trueEnding_bosstime matches 3090 if score @s ste_cos.health matches ..35 run data modify entity @s Health set value 36.0f
+execute if score @s trueEnding_bosstime matches 3090 if score @s ste_cos.health matches ..35 run scoreboard players set @s stellarity.dragon.health 36
+execute if score @s trueEnding_bosstime matches 3090 if score @s ste_cos.health matches ..35 run scoreboard players set @s stellarity.dragon.health_old 36
+execute if score @s trueEnding_bosstime matches 3090 if score @s ste_cos.health matches ..35 run scoreboard players set @s ste_cos.health 36
+execute if score @s trueEnding_bosstime matches 3090 if score @s ste_cos.health matches ..35 run scoreboard players set @s ste_cos.health_old 36
 execute if score @s trueEnding_bosstime matches 3090 run data modify entity @s DragonPhase set value 0
 execute if score @s trueEnding_bosstime matches 3090 if score #ste_cos_crystals ste_cos.flags matches 0 run data modify entity @s Invulnerable set value 0b
 execute if score @s trueEnding_bosstime matches 3090 run tag @s remove trueEnding_inattack

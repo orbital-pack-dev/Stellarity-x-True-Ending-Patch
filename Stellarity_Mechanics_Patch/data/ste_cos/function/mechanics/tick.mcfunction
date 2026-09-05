@@ -21,6 +21,9 @@ execute as @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] at @s run e
 execute if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] run function ste_cos:mechanics/portal_danger
 execute as @e[type=area_effect_cloud,tag=ste_cos_portal_wave] at @s run function ste_cos:mechanics/portal_wave_tick
 
+# подсветка стрел в бою
+execute if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] run function ste_cos:mechanics/arrow_highlight
+
 # очистка волн после гибели дракона
 execute unless entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] run scoreboard players set #wave_timer ste_cos.flags 0
 execute unless entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] run kill @e[type=area_effect_cloud,tag=ste_cos_portal_wave]

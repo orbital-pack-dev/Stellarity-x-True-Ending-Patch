@@ -11,6 +11,12 @@ scoreboard objectives add ste_cos.heal_cd dummy
 execute unless score #ste_cos_crystals ste_cos.flags matches 1.. unless score #ste_cos_totem_used ste_cos.flags matches 1 as @s[tag=!ste_cos.totem_used,tag=!ste_cos.totem_animating] if score @s ste_cos.health matches 1..15 run function ste_cos:dragon/trigger_totem
 execute if score @s ste_cos.heal_cd matches 1.. run scoreboard players remove @s ste_cos.heal_cd 1
 
+# ультимативная атака Финальный Вздох (срабатывает после тотема при здоровье 1..8 ХП)
+execute if score #ste_cos_totem_used ste_cos.flags matches 1 as @s[tag=!trueEnding_inattack,tag=!ste_cos.final_breath_active] if score @s ste_cos.health matches 1..8 run function ste_cos:final_breath/check_trigger
+
+# мини-игра иллюзорных клонов (срабатывает 1 раз за бой когда нет кристаллов)
+execute unless score #ste_cos_crystals ste_cos.flags matches 1.. unless score #clone_minigame_used ste_cos.flags matches 1 as @s[tag=!trueEnding_inattack,tag=!ste_cos.minigame_active,tag=!ste_cos.final_breath_active] if score @s ste_cos.health matches 15..280 run function ste_cos:minigame_clones/check_trigger
+
 # перевод здоровья
 execute store result score @s ste_cos.health run data get entity @s Health 1
 execute unless score @s ste_cos.health_old matches 1.. run scoreboard players operation @s ste_cos.health_old = @s ste_cos.health

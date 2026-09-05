@@ -1,0 +1,16 @@
+# ste_cos:minigame_clones/check_trigger
+# проверка условий старта мини-игры
+
+execute if score #clone_minigame_used ste_cos.flags matches 1 run return 0
+execute if score #ste_cos_crystals ste_cos.flags matches 1.. run return 0
+execute if entity @s[tag=trueEnding_inattack] run return 0
+execute if entity @s[tag=ste_cos.minigame_active] run return 0
+execute if entity @s[tag=ste_cos.final_breath_active] run return 0
+
+# запуск мини-игры: направление к порталу для последующего взлета
+scoreboard players set #clone_minigame_used ste_cos.flags 1
+scoreboard players set #minigame_state ste_cos.flags 1
+tag @s add ste_cos.minigame_active
+tag @s add ste_cos.minigame_real
+tag @s add stellarity.to_portal
+playsound entity.ender_dragon.growl master @a ~ ~ ~ 32.0 0.85

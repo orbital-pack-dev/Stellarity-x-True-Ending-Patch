@@ -1,5 +1,7 @@
-# подготовка лазера
 tag @s add trueEnding_inattack
+execute if score @s trueEnding_bosstime matches 2001 run attribute @s minecraft:armor base set 1000
+execute if score @s trueEnding_bosstime matches 2001 run attribute @s minecraft:armor_toughness base set 1000
+execute if score @s trueEnding_bosstime matches 2001..2574 run data modify entity @s Invulnerable set value 1b
 execute if score @s trueEnding_bosstime matches 2001..2040 run data merge entity @s {DragonPhase:3}
 execute if score @s trueEnding_y matches ..84 if score @s trueEnding_bosstime matches 2040..2059 run tp @s ~ ~.5 ~
 execute if score @s trueEnding_y matches ..84 if score @s trueEnding_bosstime matches 2060..2999 run tp @s ~ ~1 ~
@@ -46,9 +48,12 @@ execute if score @s trueEnding_bosstime matches 2321..2380 at @s run tp @s ~ ~ ~
 execute if score @s trueEnding_bosstime matches 2381..2480 at @s run tp @s ~ ~ ~ ~ ~-.25
 scoreboard players reset #ste_cos_crystals ste_cos.flags
 execute in minecraft:the_end positioned 0 65 0 as @e[type=end_crystal,distance=15..400,tag=!stellarity.respawn_crystal,tag=!ste_cos_portal_fix] run scoreboard players add #ste_cos_crystals ste_cos.flags 1
-execute if score @s trueEnding_bosstime matches 2251..2271 unless score #ste_cos_crystals ste_cos.flags matches 1.. at @s run data merge entity @s {DragonPhase:7,Invulnerable:0b}
-execute if score @s trueEnding_bosstime matches 2271 unless score #ste_cos_crystals ste_cos.flags matches 1.. at @s run data merge entity @s {DragonPhase:7,Invulnerable:0b}
-execute if score @s trueEnding_bosstime matches 2471 unless score #ste_cos_crystals ste_cos.flags matches 1.. at @s run data merge entity @s {DragonPhase:7,Invulnerable:0b}
-execute if score @s trueEnding_bosstime matches 2575 unless score #ste_cos_crystals ste_cos.flags matches 1.. at @s run data merge entity @s {DragonPhase:0,Invulnerable:0b}
+execute if score @s trueEnding_bosstime matches 2251..2271 at @s run data merge entity @s {DragonPhase:7}
+execute if score @s trueEnding_bosstime matches 2271 at @s run data merge entity @s {DragonPhase:7}
+execute if score @s trueEnding_bosstime matches 2471 at @s run data merge entity @s {DragonPhase:7}
+execute if score @s trueEnding_bosstime matches 2575 run data merge entity @s {DragonPhase:0}
+execute if score @s trueEnding_bosstime matches 2575 run attribute @s minecraft:armor base set 8
+execute if score @s trueEnding_bosstime matches 2575 run attribute @s minecraft:armor_toughness base set 4
+execute if score @s trueEnding_bosstime matches 2575 unless score #ste_cos_crystals ste_cos.flags matches 1.. run data modify entity @s Invulnerable set value 0b
 execute if score @s trueEnding_bosstime matches 2575 run tag @s remove trueEnding_inattack
 execute if score @s trueEnding_bosstime matches 2575 run scoreboard players set @s trueEnding_bosstime 219
