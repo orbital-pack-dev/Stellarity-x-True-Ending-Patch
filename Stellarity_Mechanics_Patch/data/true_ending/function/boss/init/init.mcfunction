@@ -6,12 +6,8 @@ tag @s remove trueEnding_inattack
 scoreboard players reset @s trueEnding_health_extra
 scoreboard players reset @s trueEnding_health_extra_max
 execute unless score dragonhealth trueEnding_settings matches 1.. run scoreboard players set dragonhealth trueEnding_settings 300
-attribute @s generic.max_health base set 300
-attribute @s minecraft:generic.max_health base set 300
-attribute @s max_health base set 300
 attribute @s minecraft:max_health base set 300
 execute store result entity @s attributes[{id:"minecraft:max_health"}].base double 1 run scoreboard players get dragonhealth trueEnding_settings
-execute store result entity @s attributes[{id:"minecraft:generic.max_health"}].base double 1 run scoreboard players get dragonhealth trueEnding_settings
 
 # шкала при среднем здоровье
 execute store result entity @s Health float 1 run scoreboard players get dragonhealth trueEnding_settings
@@ -22,10 +18,7 @@ execute if score dragonhealth trueEnding_settings matches 1025..2048 run functio
 
 # сохранение максимального здоровья
 execute if score dragonhealth trueEnding_settings matches 2049.. run function true_ending:boss/init/2048_above
-execute store result score @s trueEnding_health_max run attribute @s max_health get
-execute unless score @s trueEnding_health_max matches 1.. store result score @s trueEnding_health_max run attribute @s minecraft:max_health get
-execute unless score @s trueEnding_health_max matches 1.. store result score @s trueEnding_health_max run attribute @s generic.max_health get
-execute unless score @s trueEnding_health_max matches 1.. store result score @s trueEnding_health_max run attribute @s minecraft:generic.max_health get
+execute store result score @s trueEnding_health_max run attribute @s minecraft:max_health get
 execute unless score @s trueEnding_health_max matches 1.. run scoreboard players set @s trueEnding_health_max 300
 
 # совместимость со сбросом
