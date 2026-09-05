@@ -17,6 +17,6 @@ particle flash{color:[0.85,0.25,1.0,1.0]} 0 128 0 0 0 0 0 2 force
 particle explosion_emitter 0 128 0 2 2 2 0.1 5 force
 particle dust_color_transition{from_color:[0.9,0.2,1.0],scale:3.0,to_color:[0.1,0.0,0.3]} 0 128 0 3 3 3 0.2 120 force
 
-# призыв двух копий с полным набором тегов и нормальным здоровьем
-summon ender_dragon 0 128 28 {Tags:["trueEnding_mirrordragon","trueEnding_dragon_particlechecked","stellarity.ender_dragon","stellarity.dragon.invulnerable","smithed.strict","refresh_entity_exists","smithed.entity","ste_cos.clone_dragon","ste_cos.clone_1"],Health:300f,DragonPhase:3}
-summon ender_dragon 0 128 -28 {Tags:["trueEnding_mirrordragon","trueEnding_dragon_particlechecked","stellarity.ender_dragon","stellarity.dragon.invulnerable","smithed.strict","refresh_entity_exists","smithed.entity","ste_cos.clone_dragon","ste_cos.clone_2"],Health:300f,DragonPhase:3}
+# призыв двух копий с полным набором тегов и нормальным здоровьем (без trueEnding_mirrordragon, чтобы не пикировали вниз во время карусели!)
+summon ender_dragon 0 128 28 {Tags:["trueEnding_dragon_noAI","trueEnding_dragon_particlechecked","stellarity.ender_dragon","stellarity.dragon.invulnerable","smithed.strict","refresh_entity_exists","smithed.entity","ste_cos.clone_dragon","ste_cos.clone_1"],Health:300f,DragonPhase:3}
+summon ender_dragon 0 128 -28 {Tags:["trueEnding_dragon_noAI","trueEnding_dragon_particlechecked","stellarity.ender_dragon","stellarity.dragon.invulnerable","smithed.strict","refresh_entity_exists","smithed.entity","ste_cos.clone_dragon","ste_cos.clone_2"],Health:300f,DragonPhase:3}

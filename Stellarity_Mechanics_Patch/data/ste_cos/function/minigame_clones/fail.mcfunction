@@ -13,7 +13,7 @@ particle flash{color:[0.50,0.05,0.90,1.0]} ~ ~2 ~ 0 0 0 0 2 force @a
 
 # звуки телепортации и насмешки
 playsound entity.enderman.teleport master @a ~ ~ ~ 64.0 0.8
-playsound entity.witch.ambient master @a ~ ~ ~ 64.0 0.9
+playsound entity.vex.ambient master @a ~ ~ ~ 64.0 0.9
 playsound entity.ender_dragon.growl master @a ~ ~ ~ 64.0 0.75
 
 # копии уходят в пике вниз

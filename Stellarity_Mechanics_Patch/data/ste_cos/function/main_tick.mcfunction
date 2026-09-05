@@ -74,7 +74,7 @@ execute in minecraft:the_end if score #minigame_state ste_cos.flags matches 1.. 
 execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.clones_diving] at @s run function ste_cos:minigame_clones/clone_dive_tick
 
 # ультимативная атака Финальный Вздох
-execute in minecraft:the_end if entity @e[type=ender_dragon,tag=ste_cos.final_breath_active,limit=1] run function ste_cos:final_breath/tick
+execute in minecraft:the_end if score #final_breath_state ste_cos.flags matches 1.. run function ste_cos:final_breath/tick
 execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.portal_lock_final] at @s positioned 0 65 0 unless entity @s[distance=..35] run tag @s add stellarity.to_portal
 
 # механики усложненного боя

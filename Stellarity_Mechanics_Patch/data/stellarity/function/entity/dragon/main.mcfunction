@@ -1,5 +1,6 @@
 # логика поведения дракона
 execute if entity @s[tag=trueEnding_mirrordragon] run return 0
+execute if entity @s[tag=ste_cos.clone_dragon] run return 0
 scoreboard players reset #crystal_count stellarity.misc
 execute in minecraft:the_end positioned 0 65 0 as @e[type=end_crystal,distance=15..400,tag=!stellarity.respawn_crystal,tag=!ste_cos_portal_fix] at @s run function stellarity:entity/dragon/crystal/loop
 execute if score #crystal_count stellarity.misc matches 1.. run function stellarity:entity/dragon/crystal/update_bossbar

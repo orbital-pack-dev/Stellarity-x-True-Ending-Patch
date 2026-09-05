@@ -1,20 +1,21 @@
 # ste_cos:final_breath/start
-# старт ультимативной атаки: взлет над порталом в 0 90 0 и включение абсолютной защиты
+# начало плавного взлета дракона к высоте 90 над порталом (БЕЗ мгновенного ТП)
 
-scoreboard players set #final_breath_used ste_cos.flags 1
-scoreboard players set #final_breath_timer ste_cos.timer 0
-tag @s add ste_cos.final_breath_active
-tag @s add trueEnding_inattack
+scoreboard players set #final_breath_state ste_cos.flags 2
+scoreboard players set #fb_ascend_tick ste_cos.timer 0
+
 tag @s remove stellarity.to_portal
-
-# взлет над порталом
-data modify entity @s DragonPhase set value 3
-tp @s 0 90 0
+tag @s remove ste_cos.final_breath_guided
+tag @s add ste_cos.final_breath_ascending
+tag @s add trueEnding_inattack
 
 # абсолютная неуязвимость на время зарядки (НЕЛЬЗЯ УДАРИТЬ!)
 attribute @s minecraft:armor base set 1000
 attribute @s minecraft:armor_toughness base set 1000
 data modify entity @s Invulnerable set value 1b
+
+# фаза 5 — дракон смотрит вверх и машет крыльями ввысь (НЕ вниз!)
+data modify entity @s DragonPhase set value 5
 
 # начальный глубокий звук
 playsound entity.ender_dragon.growl master @a ~ ~ ~ 64.0 0.8

@@ -77,6 +77,10 @@ scoreboard objectives add trueEnding_storage dummy
 scoreboard objectives add trueEnding_y dummy
 scoreboard objectives add trueEnding_dragonphase dummy
 execute unless score #ste_cos_totem_used ste_cos.flags matches 1 run scoreboard players set #ste_cos_totem_used ste_cos.flags 0
+execute unless score #clone_minigame_used ste_cos.flags matches 1 run scoreboard players set #clone_minigame_used ste_cos.flags 0
+execute unless score #final_breath_used ste_cos.flags matches 1 run scoreboard players set #final_breath_used ste_cos.flags 0
+scoreboard players set #minigame_state ste_cos.flags 0
+scoreboard players set #final_breath_state ste_cos.flags 0
 bossbar set stellarity:ender_dragon max 300
 execute unless score #portal_fix_done ste_cos.flags matches 1 run scoreboard players set #portal_fix_done ste_cos.flags 0
 execute unless score #portal_fix ste_cos.timer matches 1.. run scoreboard players set #portal_fix ste_cos.timer 0

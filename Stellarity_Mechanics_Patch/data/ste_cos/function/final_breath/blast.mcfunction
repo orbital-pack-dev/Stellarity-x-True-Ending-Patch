@@ -36,3 +36,4 @@ data modify entity @s DragonPhase set value 4
 tag @s add stellarity.to_portal
 tag @s add ste_cos.portal_lock_final
 scoreboard players set #final_breath_timer ste_cos.timer 0
+scoreboard players set #final_breath_state ste_cos.flags 0
