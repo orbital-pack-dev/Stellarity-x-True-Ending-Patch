@@ -14,9 +14,9 @@ attribute @s minecraft:armor base set 1000
 attribute @s minecraft:armor_toughness base set 1000
 data modify entity @s Invulnerable set value 1b
 
-# фаза 3 — взлет дракона ввысь на крыльях
-data modify entity @s DragonPhase set value 3
-data modify entity @s Motion set value [-0.038d, 1.508d, -0.041d]
+# фаза 8 — взлет дракона ввысь на крыльях (Takeoff)
+data modify entity @s DragonPhase set value 8
+data modify entity @s Motion set value [0.0d, 0.85d, 0.0d]
 
 # начальный глубокий звук
 playsound entity.ender_dragon.growl master @a ~ ~ ~ 64.0 0.8

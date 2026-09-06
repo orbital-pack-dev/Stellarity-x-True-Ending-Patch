@@ -54,4 +54,4 @@ particle end_rod ~ ~2 ~ 3 3 3 0.3 80 force @a
 particle electric_spark ~ ~2 ~ 4 3 4 0.35 90 force @a
 
 # сдвиг таймера босса на фазу тотема
-# scoreboard players set @s trueEnding_bosstime 3001
+scoreboard players set @s trueEnding_bosstime 3001

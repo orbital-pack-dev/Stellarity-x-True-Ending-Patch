@@ -14,6 +14,8 @@ scoreboard players set #clone_minigame_used ste_cos.flags 1
 scoreboard players set #minigame_state ste_cos.flags 1
 tag @s add ste_cos.minigame_active
 tag @s add ste_cos.minigame_real
+tag @s add trueEnding_inattack
+tag @s remove stellarity.at_portal
 tag @s add stellarity.to_portal
-data modify entity @s DragonPhase set value 3
+data modify entity @s DragonPhase set value 2
 playsound entity.ender_dragon.growl master @a ~ ~ ~ 32.0 0.85

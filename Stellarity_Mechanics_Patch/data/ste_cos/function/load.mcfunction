@@ -4,6 +4,8 @@
 gamerule max_block_modifications 1999999999
 team add ste_cos.purple_glow
 team modify ste_cos.purple_glow color dark_purple
+team add ste_cos.cyan_glow
+team modify ste_cos.cyan_glow color dark_aqua
 
 # задачи счета
 scoreboard objectives add ste_cos.flags dummy '{"text":"STE-COS Flags"}'

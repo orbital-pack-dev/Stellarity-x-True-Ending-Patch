@@ -6,14 +6,14 @@ scoreboard players add #carousel_timer ste_cos.timer 1
 # вращение центрального маркера карусели
 execute as @e[type=marker,tag=ste_cos.carousel_center] at @s run tp @s ~ ~ ~ ~2.5 0
 
-# синхронная расстановка драконов с интервалом 120 градусов (дистанция между драконами ~48 блоков)
+# синхронная расстановка драконов лицом вперед (~90 0)
 execute as @e[type=marker,tag=ste_cos.carousel_center] at @s rotated ~ 0 run tp @e[type=ender_dragon,tag=ste_cos.minigame_real,limit=1] ^ ^ ^28 ~90 0
 execute as @e[type=marker,tag=ste_cos.carousel_center] at @s rotated ~120 0 run tp @e[type=ender_dragon,tag=ste_cos.clone_1,limit=1] ^ ^ ^28 ~90 0
 execute as @e[type=marker,tag=ste_cos.carousel_center] at @s rotated ~240 0 run tp @e[type=ender_dragon,tag=ste_cos.clone_2,limit=1] ^ ^ ^28 ~90 0
 
-# звуки взмахов крыльев (каждые 15 тиков, звук до 16 блоков)
+# звуки взмахов крыльев (каждые 15 тиков, звук до 32 блоков)
 scoreboard players add #carousel_flap ste_cos.timer 1
-execute if score #carousel_flap ste_cos.timer matches 15.. run playsound entity.ender_dragon.flap hostile @a[distance=..16] 0 65 0 1.0 1.0
+execute if score #carousel_flap ste_cos.timer matches 15.. run playsound entity.ender_dragon.flap hostile @a[distance=..32] 0 85 0 1.5 1.0
 execute if score #carousel_flap ste_cos.timer matches 15.. run scoreboard players set #carousel_flap ste_cos.timer 0
 
 # шлейфы частиц (оригинал: светлый пепел ash, копии: темная пыль dust)

@@ -68,6 +68,7 @@ execute in minecraft:the_end if entity @e[type=marker,tag=ste_cos.heart_absorbin
 execute in minecraft:the_end as @e[type=marker,tag=ste_cos.heart_absorbing] at @s run function ste_cos:fresh_visual/heart_absorb_step
 execute in minecraft:the_end as @e[type=marker,tag=ste_cos.absorb_tendril] at @s run function ste_cos:fresh_visual/heart_absorb_step
 execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.crystal_laser_projectile] at @s run function ste_cos:crystal/laser_projectile_tick
+execute in minecraft:the_end as @e[type=end_crystal] if data entity @s beam_target unless data entity @s beam_target[2] run data remove entity @s beam_target
 
 # общий таймер заряда кристаллов Фазы-3 (цикл 110 тиков = 5.5 секунд)
 execute in minecraft:the_end if entity @e[type=end_crystal,tag=ste_cos.shielded_crystal,limit=1] run scoreboard players add #crystal_charge_timer ste_cos.timer 1
@@ -80,6 +81,7 @@ execute in minecraft:the_end if score #crystal_charge_timer ste_cos.timer matche
 # мини-игра иллюзорных драконов
 execute in minecraft:the_end if score #minigame_state ste_cos.flags matches 1.. run function ste_cos:minigame_clones/tick
 execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.clones_diving] at @s run function ste_cos:minigame_clones/clone_dive_tick
+execute in minecraft:the_end as @e[type=marker,tag=ste_cos.feedback_projectile] at @s run function ste_cos:minigame_clones/feedback_projectile_step
 
 # ультимативная атака Финальный Вздох
 execute in minecraft:the_end if score #final_breath_state ste_cos.flags matches 1.. run function ste_cos:final_breath/tick

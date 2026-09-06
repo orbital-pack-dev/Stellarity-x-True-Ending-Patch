@@ -2,6 +2,7 @@
 # запуск направленного луча по ближайшему игроку
 
 # спавним маленькую невидимую стойку для брони на высоте 2.0 блока от кристалла
+data modify entity @s beam_target set value [I;0,0,0]
 summon armor_stand ~ ~2 ~ {Small:1b,Invisible:1b,Invulnerable:1b,Marker:1b,NoGravity:1b,Tags:["ste_cos.crystal_laser_projectile","ste_cos.new_laser_temp"]}
 
 # поворачиваем стойку строго в сторону глаз ближайшего игрока

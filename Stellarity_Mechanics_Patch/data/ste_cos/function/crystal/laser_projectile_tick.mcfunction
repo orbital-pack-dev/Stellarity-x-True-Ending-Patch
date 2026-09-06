@@ -12,6 +12,7 @@ particle dust_color_transition{from_color:[0.3,0.85,1.0],scale:1.4,to_color:[0.7
 execute store result score #beam_x ste_cos.flags run data get entity @s Pos[0]
 execute store result score #beam_y ste_cos.flags run data get entity @s Pos[1]
 execute store result score #beam_z ste_cos.flags run data get entity @s Pos[2]
+execute as @e[type=end_crystal,tag=ste_cos.shielded_crystal,distance=..80,limit=1,sort=nearest] unless data entity @s beam_target[2] run data modify entity @s beam_target set value [I;0,0,0]
 execute as @e[type=end_crystal,tag=ste_cos.shielded_crystal,distance=..80,limit=1,sort=nearest] store result entity @s beam_target[0] int 1 run scoreboard players get #beam_x ste_cos.flags
 execute as @e[type=end_crystal,tag=ste_cos.shielded_crystal,distance=..80,limit=1,sort=nearest] store result entity @s beam_target[1] int 1 run scoreboard players get #beam_y ste_cos.flags
 execute as @e[type=end_crystal,tag=ste_cos.shielded_crystal,distance=..80,limit=1,sort=nearest] store result entity @s beam_target[2] int 1 run scoreboard players get #beam_z ste_cos.flags

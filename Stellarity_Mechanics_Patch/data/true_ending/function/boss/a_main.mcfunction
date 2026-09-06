@@ -7,12 +7,14 @@ scoreboard objectives add ste_cos.health_old dummy
 scoreboard objectives add ste_cos.health_diff dummy
 scoreboard objectives add ste_cos.heal_cd dummy
 
-# дополнительное здоровье босса и тотем (срабатывает только после уничтожения кристаллов при 1..15 ХП)
-execute unless score #ste_cos_crystals ste_cos.flags matches 1.. unless score #ste_cos_totem_used ste_cos.flags matches 1 as @s[tag=!ste_cos.totem_used,tag=!ste_cos.totem_animating] if score @s ste_cos.health matches 1..15 run function ste_cos:dragon/trigger_totem
+# дополнительное здоровье босса и тотем (срабатывает только после уничтожения кристаллов при 1..2 ХП)
+execute unless score #ste_cos_crystals ste_cos.flags matches 1.. unless score #ste_cos_totem_used ste_cos.flags matches 1 as @s[tag=!ste_cos.totem_used,tag=!ste_cos.totem_animating] if score @s ste_cos.health matches 1..2 run function ste_cos:dragon/trigger_totem
+execute unless score #ste_cos_crystals ste_cos.flags matches 1.. unless score #ste_cos_totem_used ste_cos.flags matches 1 as @s[tag=!ste_cos.totem_used,tag=!ste_cos.totem_animating] if score @s stellarity.dragon.health matches 1..2 run function ste_cos:dragon/trigger_totem
 execute if score @s ste_cos.heal_cd matches 1.. run scoreboard players remove @s ste_cos.heal_cd 1
 
-# ультимативная атака Финальный Вздох (срабатывает после тотема при здоровье 1..8 ХП)
-execute if score #ste_cos_totem_used ste_cos.flags matches 1 as @s[tag=!trueEnding_inattack,tag=!ste_cos.final_breath_active] if score @s ste_cos.health matches 1..8 run function ste_cos:final_breath/check_trigger
+# ультимативная атака Финальный Вздох (100% срабатывание после тотема при здоровье 1..8 ХП)
+execute if score #ste_cos_totem_used ste_cos.flags matches 1 unless score #final_breath_used ste_cos.flags matches 1 as @s[tag=!ste_cos.final_breath_active,tag=!ste_cos.final_breath_ascending,tag=!ste_cos.final_breath_guided] if score @s ste_cos.health matches 1..8 run function ste_cos:final_breath/check_trigger
+execute if score #ste_cos_totem_used ste_cos.flags matches 1 unless score #final_breath_used ste_cos.flags matches 1 as @s[tag=!ste_cos.final_breath_active,tag=!ste_cos.final_breath_ascending,tag=!ste_cos.final_breath_guided] if score @s stellarity.dragon.health matches 1..8 run function ste_cos:final_breath/check_trigger
 
 # мини-игра иллюзорных клонов (выпадает как атака раз в 20 тиков с шансом 30% когда нет кристаллов)
 execute if score 20tick trueEnding_clock matches 1 unless score #ste_cos_crystals ste_cos.flags matches 1.. unless score #clone_minigame_used ste_cos.flags matches 1 as @s[tag=!trueEnding_inattack,tag=!ste_cos.minigame_active,tag=!ste_cos.final_breath_active] if score @s ste_cos.health matches 15..280 if predicate true_ending:chance/30_percent run function ste_cos:minigame_clones/check_trigger
@@ -26,15 +28,13 @@ scoreboard players operation @s ste_cos.health_diff -= @s ste_cos.health_old
 execute if score @s ste_cos.health_diff matches 1.. run function ste_cos:dragon/crystal_heal_check
 execute store result score @s ste_cos.health_old run data get entity @s Health 1
 
-# Блокировка атак True Ending при смерти, на портале, в фазе финального вздоха или мини-игры
+# Блокировка атак True Ending только при финальной стойке или при смерти после завершения всех фаз
 execute if entity @s[tag=ste_cos.final_stand] run scoreboard players set @s trueEnding_bosstime 0
 execute if entity @s[tag=ste_cos.final_stand] run return 0
-execute if entity @s[tag=stellarity.at_portal] run scoreboard players set @s trueEnding_bosstime 0
-execute if entity @s[tag=stellarity.at_portal] run return 0
-execute if score @s ste_cos.health matches ..1 run scoreboard players set @s trueEnding_bosstime 0
-execute if score @s ste_cos.health matches ..1 run return 0
-execute if score @s stellarity.dragon.health matches ..1 run scoreboard players set @s trueEnding_bosstime 0
-execute if score @s stellarity.dragon.health matches ..1 run return 0
+execute if score #final_breath_used ste_cos.flags matches 1 if score @s ste_cos.health matches ..1 run scoreboard players set @s trueEnding_bosstime 0
+execute if score #final_breath_used ste_cos.flags matches 1 if score @s ste_cos.health matches ..1 run return 0
+execute if score #final_breath_used ste_cos.flags matches 1 if score @s stellarity.dragon.health matches ..1 run scoreboard players set @s trueEnding_bosstime 0
+execute if score #final_breath_used ste_cos.flags matches 1 if score @s stellarity.dragon.health matches ..1 run return 0
 execute if entity @s[tag=ste_cos.final_breath_active] run return 0
 execute if entity @s[tag=ste_cos.final_breath_ascending] run return 0
 execute if entity @s[tag=ste_cos.final_breath_guided] run return 0

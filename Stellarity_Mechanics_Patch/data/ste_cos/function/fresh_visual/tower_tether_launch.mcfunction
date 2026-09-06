@@ -6,8 +6,8 @@ tag @s add ste_cos.tether_crystal
 # создание маркера снаряда луча на высоте 1.8 блока (центр модели кристалла)
 summon marker ~ ~1.8 ~ {Tags:["ste_cos.tether_head","ste_cos.visual_marker","ste_cos.temp_head"]}
 
-# поворот маркера снаряда строго на Сердце Дракона 0 129 0
-execute as @e[type=marker,tag=ste_cos.temp_head,limit=1] facing 0 129 0 run tp @s ~ ~ ~ ~ ~
+# поворот маркера снаряда строго на Сердце Дракона 0 98 0
+execute as @e[type=marker,tag=ste_cos.temp_head,limit=1] facing 0 98 0 run tp @s ~ ~ ~ ~ ~
 tag @e[type=marker,tag=ste_cos.temp_head] remove ste_cos.temp_head
 
 # объемный энергетический импульс запуска луча

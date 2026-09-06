@@ -3,6 +3,9 @@
 
 scoreboard players add #fb_ascend_tick ste_cos.timer 1
 
+execute as @e[type=ender_dragon,tag=ste_cos.final_breath_ascending,limit=1] run data modify entity @s Motion set value [0.0d, 0.8d, 0.0d]
+execute as @e[type=ender_dragon,tag=ste_cos.final_breath_ascending,limit=1] run data modify entity @s DragonPhase set value 8
+
 execute as @e[type=ender_dragon,tag=ste_cos.final_breath_ascending,limit=1] at @s run particle dragon_breath ~ ~ ~ 0.5 0.5 0.5 0.05 8 force
 execute as @e[type=ender_dragon,tag=ste_cos.final_breath_ascending,limit=1] at @s run particle reverse_portal ~ ~ ~ 1.0 0.5 1.0 0.05 15 force
 
@@ -15,5 +18,7 @@ execute if score #fb_ascend_tick ste_cos.timer matches 30 as @e[type=ender_drago
 # достижение высоты ~90 (32 тика * 0.8 = 25.6 блоков: 65 + 25.6 = ~90)
 execute if score #fb_ascend_tick ste_cos.timer matches 32.. run scoreboard players set #final_breath_state ste_cos.flags 3
 execute if score #fb_ascend_tick ste_cos.timer matches 32.. run scoreboard players set #final_breath_timer ste_cos.timer 0
+execute if score #fb_ascend_tick ste_cos.timer matches 32.. as @e[type=ender_dragon,tag=ste_cos.final_breath_ascending] run data modify entity @s DragonPhase set value 10
+execute if score #fb_ascend_tick ste_cos.timer matches 32.. as @e[type=ender_dragon,tag=ste_cos.final_breath_ascending] run data modify entity @s Motion set value [0.0d, 0.0d, 0.0d]
 execute if score #fb_ascend_tick ste_cos.timer matches 32.. as @e[type=ender_dragon,tag=ste_cos.final_breath_ascending] run tag @s add ste_cos.final_breath_active
 execute if score #fb_ascend_tick ste_cos.timer matches 32.. as @e[type=ender_dragon,tag=ste_cos.final_breath_ascending] run tag @s remove ste_cos.final_breath_ascending

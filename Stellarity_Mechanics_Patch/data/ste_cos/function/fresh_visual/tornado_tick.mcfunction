@@ -19,6 +19,6 @@ execute if score #tornado ste_cos.age matches 18.. as @e[tag=ste_cos.tor_mid] at
 execute if score #tornado ste_cos.age matches 32.. as @e[tag=ste_cos.tor_outer] at @s run function ste_cos:fresh_visual/tor_wave_outer
 
 # атмосферные акценты при раскрутке торнадо (только в ключевые моменты, без спама каждый тик)
-execute if score #tornado ste_cos.age matches 1 run playsound block.respawn_anchor.deplete ambient @a[distance=..64] 0 128 0 1.5 0.45
-execute if score #tornado ste_cos.age matches 18 run playsound block.amethyst_block.resonate ambient @a[distance=..64] 0 128 0 1.5 0.50
-execute if score #tornado ste_cos.age matches 35 run playsound block.respawn_anchor.deplete ambient @a[distance=..64] 0 128 0 1.8 0.55
+execute if score #tornado ste_cos.age matches 1 run playsound block.respawn_anchor.deplete ambient @a[distance=..64] 0 98 0 1.5 0.45
+execute if score #tornado ste_cos.age matches 18 run playsound block.amethyst_block.resonate ambient @a[distance=..64] 0 98 0 1.5 0.50
+execute if score #tornado ste_cos.age matches 35 run playsound block.respawn_anchor.deplete ambient @a[distance=..64] 0 98 0 1.8 0.55
