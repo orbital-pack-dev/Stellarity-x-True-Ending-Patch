@@ -9,7 +9,7 @@ def generate_mod_jsons(patch_name):
     mod_name = "Stellarity x True Ending (Cosmetic)"
     desc = "Complete compatibility, visual overhaul, and mechanics patch for Stellarity and True Ending. Features cinematic dragon resurrection ritual, shielded crystal towers with laser defense, clone carousel trial, and epic Final Breath climax."
 
-    version = "1.0.0"
+    version = "1.1.0"
     author = "Void7676_"
     github_url = "https://github.com/orbital-pack-dev/Stellarity-x-True-Ending-Patch"
     

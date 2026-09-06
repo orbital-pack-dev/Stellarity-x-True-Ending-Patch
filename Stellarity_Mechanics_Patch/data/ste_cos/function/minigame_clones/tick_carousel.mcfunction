@@ -28,21 +28,24 @@ execute as @e[type=ender_dragon,tag=ste_cos.clone_dragon] at @s run particle dra
 execute as @e[type=ender_dragon,tag=ste_cos.clone_dragon] at @s run particle dust_color_transition{from_color:[0.5,0.05,0.7],scale:1.6,to_color:[0.15,0.0,0.3]} ~ ~1 ~ 0.8 0.4 0.8 0.02 6 force
 
 # детекция урона через HurtTime
-execute if score #minigame_resolved ste_cos.flags matches 0 as @e[type=ender_dragon,tag=ste_cos.minigame_real] if data entity @s {HurtTime:10s} run function ste_cos:minigame_clones/success
-execute if score #minigame_resolved ste_cos.flags matches 0 as @e[type=ender_dragon,tag=ste_cos.minigame_real] if data entity @s {HurtTime:9s} run function ste_cos:minigame_clones/success
+# сначала проверяем копии (ошибочный выбор или AoE по копиям имеет приоритет провала)
 execute if score #minigame_resolved ste_cos.flags matches 0 as @e[type=ender_dragon,tag=ste_cos.clone_dragon] if data entity @s {HurtTime:10s} run function ste_cos:minigame_clones/fail
 execute if score #minigame_resolved ste_cos.flags matches 0 as @e[type=ender_dragon,tag=ste_cos.clone_dragon] if data entity @s {HurtTime:9s} run function ste_cos:minigame_clones/fail
 
-# дополнительная проверка попадания снарядов в радиусе 5.5 блоков (стрелы, трезубцы, снежки)
-execute if score #minigame_resolved ste_cos.flags matches 0 as @e[type=ender_dragon,tag=ste_cos.minigame_real] at @s if entity @e[type=arrow,distance=..5.5] run function ste_cos:minigame_clones/success
-execute if score #minigame_resolved ste_cos.flags matches 0 as @e[type=ender_dragon,tag=ste_cos.minigame_real] at @s if entity @e[type=spectral_arrow,distance=..5.5] run function ste_cos:minigame_clones/success
-execute if score #minigame_resolved ste_cos.flags matches 0 as @e[type=ender_dragon,tag=ste_cos.minigame_real] at @s if entity @e[type=trident,distance=..5.5] run function ste_cos:minigame_clones/success
-execute if score #minigame_resolved ste_cos.flags matches 0 as @e[type=ender_dragon,tag=ste_cos.minigame_real] at @s if entity @e[type=snowball,distance=..5.5] run function ste_cos:minigame_clones/success
+# затем проверяем оригинал (успех)
+execute if score #minigame_resolved ste_cos.flags matches 0 as @e[type=ender_dragon,tag=ste_cos.minigame_real] if data entity @s {HurtTime:10s} run function ste_cos:minigame_clones/success
+execute if score #minigame_resolved ste_cos.flags matches 0 as @e[type=ender_dragon,tag=ste_cos.minigame_real] if data entity @s {HurtTime:9s} run function ste_cos:minigame_clones/success
 
-execute if score #minigame_resolved ste_cos.flags matches 0 as @e[type=ender_dragon,tag=ste_cos.clone_dragon] at @s if entity @e[type=arrow,distance=..5.5] run function ste_cos:minigame_clones/fail
-execute if score #minigame_resolved ste_cos.flags matches 0 as @e[type=ender_dragon,tag=ste_cos.clone_dragon] at @s if entity @e[type=spectral_arrow,distance=..5.5] run function ste_cos:minigame_clones/fail
-execute if score #minigame_resolved ste_cos.flags matches 0 as @e[type=ender_dragon,tag=ste_cos.clone_dragon] at @s if entity @e[type=trident,distance=..5.5] run function ste_cos:minigame_clones/fail
-execute if score #minigame_resolved ste_cos.flags matches 0 as @e[type=ender_dragon,tag=ste_cos.clone_dragon] at @s if entity @e[type=snowball,distance=..5.5] run function ste_cos:minigame_clones/fail
+# дополнительная проверка попадания снарядов в плотном радиусе 4.0 блоков (стрелы, трезубцы, снежки)
+execute if score #minigame_resolved ste_cos.flags matches 0 as @e[type=ender_dragon,tag=ste_cos.clone_dragon] at @s if entity @e[type=arrow,distance=..4.0] run function ste_cos:minigame_clones/fail
+execute if score #minigame_resolved ste_cos.flags matches 0 as @e[type=ender_dragon,tag=ste_cos.clone_dragon] at @s if entity @e[type=spectral_arrow,distance=..4.0] run function ste_cos:minigame_clones/fail
+execute if score #minigame_resolved ste_cos.flags matches 0 as @e[type=ender_dragon,tag=ste_cos.clone_dragon] at @s if entity @e[type=trident,distance=..4.0] run function ste_cos:minigame_clones/fail
+execute if score #minigame_resolved ste_cos.flags matches 0 as @e[type=ender_dragon,tag=ste_cos.clone_dragon] at @s if entity @e[type=snowball,distance=..4.0] run function ste_cos:minigame_clones/fail
+
+execute if score #minigame_resolved ste_cos.flags matches 0 as @e[type=ender_dragon,tag=ste_cos.minigame_real] at @s if entity @e[type=arrow,distance=..4.0] run function ste_cos:minigame_clones/success
+execute if score #minigame_resolved ste_cos.flags matches 0 as @e[type=ender_dragon,tag=ste_cos.minigame_real] at @s if entity @e[type=spectral_arrow,distance=..4.0] run function ste_cos:minigame_clones/success
+execute if score #minigame_resolved ste_cos.flags matches 0 as @e[type=ender_dragon,tag=ste_cos.minigame_real] at @s if entity @e[type=trident,distance=..4.0] run function ste_cos:minigame_clones/success
+execute if score #minigame_resolved ste_cos.flags matches 0 as @e[type=ender_dragon,tag=ste_cos.minigame_real] at @s if entity @e[type=snowball,distance=..4.0] run function ste_cos:minigame_clones/success
 
 # таймаут: 1 минута 20 секунд (1600 тиков)
 execute if score #carousel_timer ste_cos.timer matches 1600.. run function ste_cos:minigame_clones/fail

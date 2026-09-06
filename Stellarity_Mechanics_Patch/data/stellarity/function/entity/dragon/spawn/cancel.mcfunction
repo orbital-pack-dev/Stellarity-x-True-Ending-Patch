@@ -16,5 +16,6 @@ setblock 0 63 0 bedrock replace
 
 # гарантированная очистка всех визуальных эффектов патча и сброс камеры
 execute as @e[type=minecraft:end_crystal] run team leave @s
-execute as @e[type=minecraft:end_crystal] run data merge entity @s {Glowing:0b}
+execute as @e[type=minecraft:end_crystal] run data merge entity @s {Glowing:0b,Invulnerable:0b}
+scoreboard players set #tower_retry_count ste_cos.flags 0
 function ste_cos:fresh_visual/cleanup_all

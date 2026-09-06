@@ -5,6 +5,7 @@ kill @e[type=end_crystal,tag=!stellarity.new_crystal,sort=nearest,distance=..7]
 
 team join ste_cos.anim_crystal @s
 data modify entity @s Glowing set value 1b
+data modify entity @s Invulnerable set value 1b
 
 particle minecraft:explosion_emitter ~ ~ ~ 0 0 0 0 1 force
 particle flash{color:[0.75,0.20,1.0,1.0]} ~ ~ ~ 0 0 0 0 1 force @a

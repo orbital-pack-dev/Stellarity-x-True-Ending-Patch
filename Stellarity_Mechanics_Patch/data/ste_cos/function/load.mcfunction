@@ -84,6 +84,7 @@ scoreboard objectives add trueEnding_dragonphase dummy
 execute unless score #ste_cos_totem_used ste_cos.flags matches 1 run scoreboard players set #ste_cos_totem_used ste_cos.flags 0
 execute unless score #clone_minigame_used ste_cos.flags matches 1 run scoreboard players set #clone_minigame_used ste_cos.flags 0
 execute unless score #final_breath_used ste_cos.flags matches 1 run scoreboard players set #final_breath_used ste_cos.flags 0
+scoreboard players set #tower_retry_count ste_cos.flags 0
 scoreboard players set #minigame_state ste_cos.flags 0
 scoreboard players set #final_breath_state ste_cos.flags 0
 scoreboard players set #minigame_resolve_timer ste_cos.timer 0

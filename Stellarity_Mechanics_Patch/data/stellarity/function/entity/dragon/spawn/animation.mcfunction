@@ -58,17 +58,22 @@ execute if score @s stellarity.dragon.respawn_animation_progress matches 500 pos
 execute as @e[type=minecraft:end_crystal,tag=stellarity.new_crystal] at @s run function stellarity:entity/dragon/spawn/replace_crystal
 
 # циклическая проверка и починка кристаллов на башнях перед кульминацией
+execute if score @s stellarity.dragon.respawn_animation_progress matches 510 run execute as @e[type=minecraft:end_crystal] run data merge entity @s {Invulnerable:1b}
+
 execute if score @s stellarity.dragon.respawn_animation_progress matches 515 run function stellarity:entity/dragon/spawn/check_towers
-execute if score @s stellarity.dragon.respawn_animation_progress matches 515 if score #tower_broken ste_cos.flags matches 1 run playsound minecraft:block.amethyst_block.resonate block @a 0 98 0 64.0 0.6
-execute if score @s stellarity.dragon.respawn_animation_progress matches 515 if score #tower_broken ste_cos.flags matches 1 run scoreboard players set @s stellarity.dragon.respawn_animation_progress 490
+execute if score @s stellarity.dragon.respawn_animation_progress matches 515 if score #tower_broken ste_cos.flags matches 1 run scoreboard players add #tower_retry_count ste_cos.flags 1
+execute if score @s stellarity.dragon.respawn_animation_progress matches 515 if score #tower_broken ste_cos.flags matches 1 if score #tower_retry_count ste_cos.flags matches ..3 run playsound minecraft:block.amethyst_block.resonate block @a 0 98 0 64.0 0.6
+execute if score @s stellarity.dragon.respawn_animation_progress matches 515 if score #tower_broken ste_cos.flags matches 1 if score #tower_retry_count ste_cos.flags matches ..3 run scoreboard players set @s stellarity.dragon.respawn_animation_progress 490
 
 execute if score @s stellarity.dragon.respawn_animation_progress matches 550 run function stellarity:entity/dragon/spawn/check_towers
-execute if score @s stellarity.dragon.respawn_animation_progress matches 550 if score #tower_broken ste_cos.flags matches 1 run playsound minecraft:block.amethyst_block.resonate block @a 0 98 0 64.0 0.6
-execute if score @s stellarity.dragon.respawn_animation_progress matches 550 if score #tower_broken ste_cos.flags matches 1 run scoreboard players set @s stellarity.dragon.respawn_animation_progress 490
+execute if score @s stellarity.dragon.respawn_animation_progress matches 550 if score #tower_broken ste_cos.flags matches 1 run scoreboard players add #tower_retry_count ste_cos.flags 1
+execute if score @s stellarity.dragon.respawn_animation_progress matches 550 if score #tower_broken ste_cos.flags matches 1 if score #tower_retry_count ste_cos.flags matches ..3 run playsound minecraft:block.amethyst_block.resonate block @a 0 98 0 64.0 0.6
+execute if score @s stellarity.dragon.respawn_animation_progress matches 550 if score #tower_broken ste_cos.flags matches 1 if score #tower_retry_count ste_cos.flags matches ..3 run scoreboard players set @s stellarity.dragon.respawn_animation_progress 490
 
 execute if score @s stellarity.dragon.respawn_animation_progress matches 585 run function stellarity:entity/dragon/spawn/check_towers
-execute if score @s stellarity.dragon.respawn_animation_progress matches 585 if score #tower_broken ste_cos.flags matches 1 run playsound minecraft:block.amethyst_block.resonate block @a 0 98 0 64.0 0.6
-execute if score @s stellarity.dragon.respawn_animation_progress matches 585 if score #tower_broken ste_cos.flags matches 1 run scoreboard players set @s stellarity.dragon.respawn_animation_progress 490
+execute if score @s stellarity.dragon.respawn_animation_progress matches 585 if score #tower_broken ste_cos.flags matches 1 run scoreboard players add #tower_retry_count ste_cos.flags 1
+execute if score @s stellarity.dragon.respawn_animation_progress matches 585 if score #tower_broken ste_cos.flags matches 1 if score #tower_retry_count ste_cos.flags matches ..3 run playsound minecraft:block.amethyst_block.resonate block @a 0 98 0 64.0 0.6
+execute if score @s stellarity.dragon.respawn_animation_progress matches 585 if score #tower_broken ste_cos.flags matches 1 if score #tower_retry_count ste_cos.flags matches ..3 run scoreboard players set @s stellarity.dragon.respawn_animation_progress 490
 
 # луч в конце
 execute if score @s stellarity.dragon.respawn_animation_progress matches 531 run playsound minecraft:entity.warden.sonic_charge block @a ~ ~ ~ 64.0 0.50
