@@ -11,4 +11,4 @@ execute as @e[type=ender_dragon,tag=ste_cos.clone_2,limit=1] at @s run summon ar
 execute as @e[type=ender_dragon,tag=ste_cos.clone_2,limit=1] at @s run ride @s mount @e[type=armor_stand,tag=ste_cos.exit_2,limit=1,sort=nearest]
 execute as @e[type=armor_stand,tag=ste_cos.exit_2] facing -100 90 -100 run tp @s ~ ~ ~ ~ ~
 
-playsound entity.ender_dragon.growl master @a 0 85 0 3.0 1.2
+playsound entity.ender_dragon.growl master @a 0 85 0 64.0 1.2

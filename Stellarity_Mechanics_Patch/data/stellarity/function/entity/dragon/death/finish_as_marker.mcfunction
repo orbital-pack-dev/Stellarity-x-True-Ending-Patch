@@ -28,4 +28,10 @@ execute as @e[type=item,distance=..1] run team join stellarity.purple_glow @s
 execute as @n[type=item,distance=..1] run tag @s add stellarity.boss_drop
 execute as @n[type=item,distance=..1] run tag @s add stellarity.item
 
+scoreboard players set #clone_minigame_used ste_cos.flags 0
+scoreboard players set #ste_cos_totem_used ste_cos.flags 0
+scoreboard players set #final_breath_state ste_cos.flags 0
+scoreboard players set #final_breath_used ste_cos.flags 0
+scoreboard players set #minigame_state ste_cos.flags 0
+
 kill @s

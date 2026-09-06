@@ -87,12 +87,15 @@ execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.clones_diving] 
 execute in minecraft:the_end as @e[type=marker,tag=ste_cos.feedback_projectile] at @s run function ste_cos:minigame_clones/feedback_projectile_step
 
 # разлет копий по противоположным C-дугам за остров при успехе
-execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.exit_1] at @s run tp @s ^0.25 ^0.05 ^3.6 ~1.2 ~
-execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.exit_2] at @s run tp @s ^-0.25 ^0.05 ^3.6 ~-1.2 ~
+execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.exit_1] at @s run tp @s ^0.15 ^0.03 ^1.6 ~0.8 ~
+execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.exit_2] at @s run tp @s ^-0.15 ^0.03 ^1.6 ~-0.8 ~
 execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.clone_exit_carrier] at @s positioned 0 0 0 unless entity @s[distance=..250] run kill @s
 execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.clone_dragon] at @s positioned 0 0 0 unless entity @s[distance=..250] run function ste_cos:minigame_clones/clone_void_kill
 execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.clone_exit_carrier] at @s run particle dust_color_transition{from_color:[0.6,0.1,0.8],scale:2.0,to_color:[0.1,0.0,0.3]} ~ ~ ~ 1 1 1 0.05 6 force
 execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.clone_exit_carrier] at @s run particle dragon_breath ~ ~ ~ 0.5 0.5 0.5 0.03 4 force
+
+# детекция расхода системного тотема (перо death_protection) -> переход в Финальный Вздох
+execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.has_death_feather] unless items entity @s weapon.* minecraft:feather run function ste_cos:final_breath/totem_feather_consumed
 
 # ультимативная атака Финальный Вздох
 execute in minecraft:the_end if score #final_breath_state ste_cos.flags matches 1.. run function ste_cos:final_breath/tick
@@ -100,9 +103,10 @@ execute in minecraft:the_end if score #final_breath_state ste_cos.flags matches 
 # удержание дракона на портале после финального вздоха (финальная стойка до смерти)
 execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] run tag @s add trueEnding_inattack
 execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] run scoreboard players set @s trueEnding_bosstime 0
-execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] at @s positioned 0 65 0 unless entity @s[distance=..20] run tag @s add stellarity.to_portal
-execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] at @s positioned 0 65 0 unless entity @s[distance=..20] run data modify entity @s DragonPhase set value 2
-execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] at @s positioned 0 65 0 if entity @s[distance=..20] run data modify entity @s DragonPhase set value 10
+execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] at @s positioned 0 67 0 unless entity @s[distance=..20] run tag @s add stellarity.to_portal
+execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] at @s positioned 0 67 0 unless entity @s[distance=..20] run data modify entity @s DragonPhase set value 2
+execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] at @s positioned 0 67 0 if entity @s[distance=..20] run data modify entity @s DragonPhase set value 10
+execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] run data modify entity @s Motion set value [0.0d, 0.0d, 0.0d]
 
 # анимация оригинального вихря True Ending и площадки парения
 execute in minecraft:the_end as @e[type=marker,tag=trueEnding_shockwave] at @s run function true_ending:boss/shockwave/root

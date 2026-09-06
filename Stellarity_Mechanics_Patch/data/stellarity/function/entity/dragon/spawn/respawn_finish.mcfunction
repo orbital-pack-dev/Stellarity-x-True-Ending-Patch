@@ -23,3 +23,4 @@ execute as @e[type=minecraft:end_crystal] run data merge entity @s {Glowing:0b}
 
 scoreboard players reset @s stellarity.dragon.respawn_animation_progress
 scoreboard players reset #respawn_crystal_count stellarity.misc
+scoreboard players set #clone_minigame_used ste_cos.flags 0

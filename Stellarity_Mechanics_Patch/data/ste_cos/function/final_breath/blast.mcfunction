@@ -33,18 +33,24 @@ tag @s remove stellarity.portal_activated
 kill @e[type=marker,tag=ste_cos.portal_wave]
 scoreboard players set #portal_danger_active ste_cos.flags 0
 
-# позиционирование дракона над порталом на высоте ~ ~12 ~ (0 77 0) в режиме парения (DragonPhase: 10)
-tp @s 0 77 0
+# позиционирование дракона над порталом на высоте ~ ~12 ~ (0 79 0) в режиме парения (DragonPhase: 10)
+tp @s 0 79 0
 data modify entity @s Motion set value [0.0d, 0.0d, 0.0d]
 data modify entity @s DragonPhase set value 10
 
 # призыв левитационной площадки True Ending на портал для финальных ударов игроков
-execute in minecraft:the_end positioned 0 65 0 run function true_ending:boss/shockwave/summon_pad
+execute in minecraft:the_end positioned 0 67 0 run function true_ending:boss/shockwave/summon_pad
 
-# снятие неуязвимости и возврат брони (дракона теперь можно добить!)
-attribute @s minecraft:armor base set 8
-attribute @s minecraft:armor_toughness base set 4
+# снятие неуязвимости (дракон остается строго с 1 ХП от системного пера без брони, добивается с 1 удара!)
+attribute @s minecraft:armor base set 0
+attribute @s minecraft:armor_toughness base set 0
 data modify entity @s Invulnerable set value 0b
+data modify entity @s Health set value 1.0f
+scoreboard players set @s ste_cos.health 1
+scoreboard players set @s ste_cos.health_old 1
+scoreboard players set @s stellarity.dragon.health 1
+scoreboard players set @s stellarity.dragon.health_old 1
+bossbar set stellarity:ender_dragon value 1
 
 # финальная стойка до смерти
 tag @s remove ste_cos.final_breath_active

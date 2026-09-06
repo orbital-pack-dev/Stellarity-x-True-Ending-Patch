@@ -13,7 +13,7 @@ execute as @e[type=marker,tag=ste_cos.carousel_center] at @s rotated ~240 0 run 
 
 # звуки взмахов крыльев (каждые 15 тиков, звук до 32 блоков)
 scoreboard players add #carousel_flap ste_cos.timer 1
-execute if score #carousel_flap ste_cos.timer matches 15.. run playsound entity.ender_dragon.flap hostile @a[distance=..32] 0 85 0 1.5 1.0
+execute if score #carousel_flap ste_cos.timer matches 15.. run playsound entity.ender_dragon.flap hostile @a 0 85 0 16.0 1.0
 execute if score #carousel_flap ste_cos.timer matches 15.. run scoreboard players set #carousel_flap ste_cos.timer 0
 
 # шлейфы и ауры драконов (четкие визуальные различия):

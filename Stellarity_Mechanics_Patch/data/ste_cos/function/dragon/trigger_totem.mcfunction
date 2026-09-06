@@ -11,9 +11,10 @@ tag @s add ste_cos.totem_used
 tag @s add trueEnding_quarterhealth
 tag @s add trueEnding_halfhealth
 
-# немедленно удаляем любые тотемы из инвентаря дракона
+# очистка основного оружия и экипировка системного тотема (перо death_protection в левую руку)
 item replace entity @s weapon.mainhand with air
-item replace entity @s weapon.offhand with air
+item replace entity @s weapon.offhand with minecraft:feather[minecraft:death_protection={death_effects:[]}] 1
+tag @s add ste_cos.has_death_feather
 
 # восстановление здоровья и предотвращение гибели (36 HP)
 attribute @s minecraft:max_health base set 300
@@ -52,6 +53,9 @@ particle dragon_breath ~ ~2 ~ 3 2 3 0.2 120 force @a
 particle dust_color_transition{from_color:[1.0,0.85,0.2],scale:3.5,to_color:[0.55,0.0,0.85]} ~ ~2 ~ 4 3 4 0.25 180 force @a
 particle end_rod ~ ~2 ~ 3 3 3 0.3 80 force @a
 particle electric_spark ~ ~2 ~ 4 3 4 0.35 90 force @a
+
+# оригинальный вихрь True Ending на земле
+function true_ending:boss/shockwave/summon
 
 # сдвиг таймера босса на фазу тотема
 scoreboard players set @s trueEnding_bosstime 3001

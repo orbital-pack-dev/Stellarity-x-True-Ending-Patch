@@ -43,7 +43,6 @@ execute if score @s trueEnding_bosstime matches 3090 run tag @s remove stellarit
 execute if score @s trueEnding_bosstime matches 3090 run tag @s add ste_cos.totem_used
 execute if score @s trueEnding_bosstime matches 3090 run scoreboard players set #ste_cos_totem_used ste_cos.flags 1
 execute if score @s trueEnding_bosstime matches 3090 run item replace entity @s weapon.mainhand with air
-execute if score @s trueEnding_bosstime matches 3090 run item replace entity @s weapon.offhand with air
 
 # экранная тряска
 execute if score @s trueEnding_bosstime matches 3090 run tag @a add stellarity.dragon.screenshake

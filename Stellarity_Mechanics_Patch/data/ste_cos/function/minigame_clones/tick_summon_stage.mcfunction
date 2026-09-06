@@ -16,4 +16,4 @@ execute if score #summon_stage_timer ste_cos.timer matches 50 run function ste_c
 
 # 70 тиков (еще 1 сек): запуск синхронной карусели!
 execute if score #summon_stage_timer ste_cos.timer matches 70 run scoreboard players set #carousel_active ste_cos.flags 1
-execute if score #summon_stage_timer ste_cos.timer matches 70 run playsound entity.ender_dragon.growl master @a 0 85 0 3.0 1.0
+execute if score #summon_stage_timer ste_cos.timer matches 70 run playsound entity.ender_dragon.growl master @a 0 85 0 64.0 1.0

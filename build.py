@@ -4,17 +4,10 @@ import json
 import shutil
 
 def generate_mod_jsons(patch_name):
-    # Determine mod id and name based on patch
-    if patch_name == "Stellarity_Compatibility_Patch":
-        mod_id = "stellarity_x_true_ending_compatibility_patch"
-        mod_name = "Stellarity x True Ending (Compatibility)"
-        desc = "Hardcore compatibility patch linking Stellarity and True Ending mechanics. This patch seamlessly integrates features from both mods, ensuring balanced gameplay and cohesive interactions."
-    elif patch_name == "Stellarity_Mechanics_Patch":
-        mod_id = "stellarity_x_true_ending_mechanics_patch"
-        mod_name = "Stellarity x True Ending (Mechanics)"
-        desc = "Advanced mechanics patch for Stellarity and True Ending. Enhances combat, logic, and interactions between the End overhaul and the new dragon fight."
-    else:
-        return None, None, None
+    # Unified Cosmetic Patch combining visual overhauls and boss combat mechanics
+    mod_id = "stellarity_x_true_ending_cosmetic_patch"
+    mod_name = "Stellarity x True Ending (Cosmetic)"
+    desc = "Complete compatibility, visual overhaul, and mechanics patch for Stellarity and True Ending. Features cinematic dragon resurrection ritual, shielded crystal towers with laser defense, clone carousel trial, and epic Final Breath climax."
 
     version = "1.0.0"
     author = "Void7676_"
@@ -143,9 +136,8 @@ def zip_directory(folder_path, zip_path, add_mod_jsons=False, patch_name=""):
 def main():
     root_dir = os.path.dirname(os.path.abspath(__file__))
     
-    # List of directories to zip
+    # Build only the unified patch (renamed to Cosmetic Patch)
     directories_to_zip = [
-        "Stellarity_Compatibility_Patch",
         "Stellarity_Mechanics_Patch"
     ]
     
@@ -156,20 +148,23 @@ def main():
     for dirname in directories_to_zip:
         dir_path = os.path.join(root_dir, dirname)
         if os.path.exists(dir_path):
-            zip_name = dirname
-            if dirname == "tru.e-ending-1.1.4d":
-                zip_name = "True_Ending-1.1.4d"
+            # Rename Mechanics directory output to the unified Cosmetic Patch
+            zip_name = "Stellarity_Cosmetic_Patch" if dirname == "Stellarity_Mechanics_Patch" else dirname
                 
             # Create .zip (for Datapack users)
             zip_path = os.path.join(output_dir, f"{zip_name}.zip")
             print(f"Zipping {dirname} -> {zip_path}")
             zip_directory(dir_path, zip_path, add_mod_jsons=False)
 
-            # Create .jar (for Fabric/Quilt users) for the patches
-            if dirname in ["Stellarity_Compatibility_Patch", "Stellarity_Mechanics_Patch"]:
-                jar_path = os.path.join(output_dir, f"{zip_name}.jar")
-                print(f"Packaging Mod {dirname} -> {jar_path}")
-                zip_directory(dir_path, jar_path, add_mod_jsons=True, patch_name=dirname)
+            # Create .jar (for Fabric/Quilt/NeoForge users)
+            jar_path = os.path.join(output_dir, f"{zip_name}.jar")
+            print(f"Packaging Mod {dirname} -> {jar_path}")
+            zip_directory(dir_path, jar_path, add_mod_jsons=True, patch_name="Stellarity_Cosmetic_Patch")
+
+            # Copy zip to root directory as well
+            root_zip = os.path.join(root_dir, f"{zip_name}.zip")
+            shutil.copyfile(zip_path, root_zip)
+            print(f"Copied {zip_path} -> {root_zip}")
         else:
             print(f"Warning: Directory {dirname} not found at {dir_path}")
 

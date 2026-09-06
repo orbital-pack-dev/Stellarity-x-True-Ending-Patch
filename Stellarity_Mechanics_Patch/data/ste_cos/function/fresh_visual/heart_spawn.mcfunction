@@ -23,6 +23,7 @@ scoreboard players set #heart_stage ste_cos.flags 0
 scoreboard players set #heart_tick ste_cos.timer 0
 scoreboard players set #heart_cd ste_cos.timer 0
 scoreboard players set #heart_absorbed ste_cos.flags 0
+scoreboard players set #heart_shrunk ste_cos.flags 0
 scoreboard players set #absorb_time ste_cos.timer 0
 
 # начальный интервал удара сердца (3.5 - 5.0 секунд, 70-100 тиков)

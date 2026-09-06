@@ -37,16 +37,16 @@ execute if score @s stellarity.dragon.respawn_animation_progress matches 470 as 
 execute if score @s stellarity.dragon.respawn_animation_progress matches 500 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run function stellarity:entity/dragon/spawn/crystal_beam/0
 
 # расстановка кристаллов
-execute if score @s stellarity.dragon.respawn_animation_progress matches 230 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run summon minecraft:end_crystal 63 101 0 {ShowBottom:1b,Tags:["stellarity.new_crystal"],beam_target:[I;0,98,0]}
-execute if score @s stellarity.dragon.respawn_animation_progress matches 260 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run summon minecraft:end_crystal 50 122 36 {ShowBottom:1b,Tags:["stellarity.new_crystal"],beam_target:[I;0,98,0]}
-execute if score @s stellarity.dragon.respawn_animation_progress matches 290 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run summon minecraft:end_crystal 18 95 59 {ShowBottom:1b,Tags:["stellarity.new_crystal"],beam_target:[I;0,98,0]}
-execute if score @s stellarity.dragon.respawn_animation_progress matches 320 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run summon minecraft:end_crystal -19 107 59 {ShowBottom:1b,Tags:["stellarity.new_crystal"],beam_target:[I;0,98,0]}
-execute if score @s stellarity.dragon.respawn_animation_progress matches 350 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run summon minecraft:end_crystal -51 106 36 {ShowBottom:1b,Tags:["stellarity.new_crystal"],beam_target:[I;0,98,0]}
-execute if score @s stellarity.dragon.respawn_animation_progress matches 380 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run summon minecraft:end_crystal -63 94 0 {ShowBottom:1b,Tags:["stellarity.new_crystal"],beam_target:[I;0,98,0]}
-execute if score @s stellarity.dragon.respawn_animation_progress matches 410 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run summon minecraft:end_crystal -51 101 -39 {ShowBottom:1b,Tags:["stellarity.new_crystal"],beam_target:[I;0,98,0]}
-execute if score @s stellarity.dragon.respawn_animation_progress matches 440 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run summon minecraft:end_crystal -19 97 -60 {ShowBottom:1b,Tags:["stellarity.new_crystal"],beam_target:[I;0,98,0]}
-execute if score @s stellarity.dragon.respawn_animation_progress matches 470 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run summon minecraft:end_crystal 18 88 -60 {ShowBottom:1b,Tags:["stellarity.new_crystal"],beam_target:[I;0,98,0]}
-execute if score @s stellarity.dragon.respawn_animation_progress matches 500 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run summon minecraft:end_crystal 50 96 -39 {ShowBottom:1b,Tags:["stellarity.new_crystal"],beam_target:[I;0,98,0]}
+execute if score @s stellarity.dragon.respawn_animation_progress matches 230 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run summon minecraft:end_crystal 63 101 0 {ShowBottom:1b,Glowing:1b,Tags:["stellarity.new_crystal"],beam_target:[I;0,98,0]}
+execute if score @s stellarity.dragon.respawn_animation_progress matches 260 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run summon minecraft:end_crystal 50 122 36 {ShowBottom:1b,Glowing:1b,Tags:["stellarity.new_crystal"],beam_target:[I;0,98,0]}
+execute if score @s stellarity.dragon.respawn_animation_progress matches 290 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run summon minecraft:end_crystal 18 95 59 {ShowBottom:1b,Glowing:1b,Tags:["stellarity.new_crystal"],beam_target:[I;0,98,0]}
+execute if score @s stellarity.dragon.respawn_animation_progress matches 320 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run summon minecraft:end_crystal -19 107 59 {ShowBottom:1b,Glowing:1b,Tags:["stellarity.new_crystal"],beam_target:[I;0,98,0]}
+execute if score @s stellarity.dragon.respawn_animation_progress matches 350 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run summon minecraft:end_crystal -51 106 36 {ShowBottom:1b,Glowing:1b,Tags:["stellarity.new_crystal"],beam_target:[I;0,98,0]}
+execute if score @s stellarity.dragon.respawn_animation_progress matches 380 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run summon minecraft:end_crystal -63 94 0 {ShowBottom:1b,Glowing:1b,Tags:["stellarity.new_crystal"],beam_target:[I;0,98,0]}
+execute if score @s stellarity.dragon.respawn_animation_progress matches 410 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run summon minecraft:end_crystal -51 101 -39 {ShowBottom:1b,Glowing:1b,Tags:["stellarity.new_crystal"],beam_target:[I;0,98,0]}
+execute if score @s stellarity.dragon.respawn_animation_progress matches 440 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run summon minecraft:end_crystal -19 97 -60 {ShowBottom:1b,Glowing:1b,Tags:["stellarity.new_crystal"],beam_target:[I;0,98,0]}
+execute if score @s stellarity.dragon.respawn_animation_progress matches 470 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run summon minecraft:end_crystal 18 88 -60 {ShowBottom:1b,Glowing:1b,Tags:["stellarity.new_crystal"],beam_target:[I;0,98,0]}
+execute if score @s stellarity.dragon.respawn_animation_progress matches 500 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run summon minecraft:end_crystal 50 96 -39 {ShowBottom:1b,Glowing:1b,Tags:["stellarity.new_crystal"],beam_target:[I;0,98,0]}
 
 # клетки кристаллов
 execute if score @s stellarity.dragon.respawn_animation_progress matches 290 positioned 18 94 59 run function stellarity:entity/dragon/spawn/repair_cage
@@ -56,6 +56,19 @@ execute if score @s stellarity.dragon.respawn_animation_progress matches 500 pos
 
 # замена кристаллов
 execute as @e[type=minecraft:end_crystal,tag=stellarity.new_crystal] at @s run function stellarity:entity/dragon/spawn/replace_crystal
+
+# циклическая проверка и починка кристаллов на башнях перед кульминацией
+execute if score @s stellarity.dragon.respawn_animation_progress matches 515 run function stellarity:entity/dragon/spawn/check_towers
+execute if score @s stellarity.dragon.respawn_animation_progress matches 515 if score #tower_broken ste_cos.flags matches 1 run playsound minecraft:block.amethyst_block.resonate block @a 0 98 0 64.0 0.6
+execute if score @s stellarity.dragon.respawn_animation_progress matches 515 if score #tower_broken ste_cos.flags matches 1 run scoreboard players set @s stellarity.dragon.respawn_animation_progress 490
+
+execute if score @s stellarity.dragon.respawn_animation_progress matches 550 run function stellarity:entity/dragon/spawn/check_towers
+execute if score @s stellarity.dragon.respawn_animation_progress matches 550 if score #tower_broken ste_cos.flags matches 1 run playsound minecraft:block.amethyst_block.resonate block @a 0 98 0 64.0 0.6
+execute if score @s stellarity.dragon.respawn_animation_progress matches 550 if score #tower_broken ste_cos.flags matches 1 run scoreboard players set @s stellarity.dragon.respawn_animation_progress 490
+
+execute if score @s stellarity.dragon.respawn_animation_progress matches 585 run function stellarity:entity/dragon/spawn/check_towers
+execute if score @s stellarity.dragon.respawn_animation_progress matches 585 if score #tower_broken ste_cos.flags matches 1 run playsound minecraft:block.amethyst_block.resonate block @a 0 98 0 64.0 0.6
+execute if score @s stellarity.dragon.respawn_animation_progress matches 585 if score #tower_broken ste_cos.flags matches 1 run scoreboard players set @s stellarity.dragon.respawn_animation_progress 490
 
 # луч в конце
 execute if score @s stellarity.dragon.respawn_animation_progress matches 531 run playsound minecraft:entity.warden.sonic_charge block @a ~ ~ ~ 64.0 0.50

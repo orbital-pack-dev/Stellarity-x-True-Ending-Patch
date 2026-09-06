@@ -7,14 +7,9 @@ scoreboard objectives add ste_cos.health_old dummy
 scoreboard objectives add ste_cos.health_diff dummy
 scoreboard objectives add ste_cos.heal_cd dummy
 
-# дополнительное здоровье босса и тотем (срабатывает только после уничтожения кристаллов при 1..2 ХП)
-execute unless score #ste_cos_crystals ste_cos.flags matches 1.. unless score #ste_cos_totem_used ste_cos.flags matches 1 as @s[tag=!ste_cos.totem_used,tag=!ste_cos.totem_animating] if score @s ste_cos.health matches 1..2 run function ste_cos:dragon/trigger_totem
-execute unless score #ste_cos_crystals ste_cos.flags matches 1.. unless score #ste_cos_totem_used ste_cos.flags matches 1 as @s[tag=!ste_cos.totem_used,tag=!ste_cos.totem_animating] if score @s stellarity.dragon.health matches 1..2 run function ste_cos:dragon/trigger_totem
+# срабатывание тотема бессмертия при получении смертельного урона (потребление тотема из руки)
+execute unless score #ste_cos_totem_used ste_cos.flags matches 1 as @s[tag=!ste_cos.totem_used,tag=!ste_cos.totem_animating] unless items entity @s weapon.mainhand minecraft:totem_of_undying run function ste_cos:dragon/trigger_totem
 execute if score @s ste_cos.heal_cd matches 1.. run scoreboard players remove @s ste_cos.heal_cd 1
-
-# ультимативная атака Финальный Вздох (100% срабатывание после тотема при здоровье 1..8 ХП)
-execute if score #ste_cos_totem_used ste_cos.flags matches 1 unless score #final_breath_used ste_cos.flags matches 1 as @s[tag=!ste_cos.final_breath_active,tag=!ste_cos.final_breath_ascending,tag=!ste_cos.final_breath_guided] if score @s ste_cos.health matches 1..8 run function ste_cos:final_breath/check_trigger
-execute if score #ste_cos_totem_used ste_cos.flags matches 1 unless score #final_breath_used ste_cos.flags matches 1 as @s[tag=!ste_cos.final_breath_active,tag=!ste_cos.final_breath_ascending,tag=!ste_cos.final_breath_guided] if score @s stellarity.dragon.health matches 1..8 run function ste_cos:final_breath/check_trigger
 
 # мини-игра иллюзорных клонов (выпадает как атака раз в 20 тиков с шансом 30% когда нет кристаллов)
 execute if score 20tick trueEnding_clock matches 1 unless score #ste_cos_crystals ste_cos.flags matches 1.. unless score #clone_minigame_used ste_cos.flags matches 1 as @s[tag=!trueEnding_inattack,tag=!ste_cos.minigame_active,tag=!ste_cos.final_breath_active] if score @s ste_cos.health matches 15..280 if predicate true_ending:chance/30_percent run function ste_cos:minigame_clones/check_trigger

@@ -8,9 +8,13 @@ scoreboard players set dragonhealth trueEnding_settings 300
 
 summon ender_dragon ~ ~ ~ {DragonPhase:0,Tags:["stellarity.ender_dragon","smithed.entity","smithed.strict","ste_cos_initialized"],Health:300f,attributes:[{id:"minecraft:max_health",base:300.0},{id:"armor",base:8d},{id:"armor_toughness",base:4d},{id:"knockback_resistance",base:1d},{id:"follow_range",base:80d}]}
 summon marker ~ ~ ~ {Tags:["stellarity.dragon_marker","stellarity.marker","smithed.entity","smithed.strict"]}
-execute unless score #ste_cos_totem_used ste_cos.flags matches 1 run item replace entity @e[type=ender_dragon,tag=stellarity.ender_dragon] weapon.mainhand with totem_of_undying
-execute if score #ste_cos_totem_used ste_cos.flags matches 1 run item replace entity @e[type=ender_dragon,tag=stellarity.ender_dragon] weapon.mainhand with air
-execute if score #ste_cos_totem_used ste_cos.flags matches 1 run item replace entity @e[type=ender_dragon,tag=stellarity.ender_dragon] weapon.offhand with air
+scoreboard players set #clone_minigame_used ste_cos.flags 0
+scoreboard players set #ste_cos_totem_used ste_cos.flags 0
+scoreboard players set #final_breath_used ste_cos.flags 0
+scoreboard players set #final_breath_state ste_cos.flags 0
+scoreboard players set #minigame_state ste_cos.flags 0
+item replace entity @e[type=ender_dragon,tag=stellarity.ender_dragon] weapon.mainhand with totem_of_undying
+item replace entity @e[type=ender_dragon,tag=stellarity.ender_dragon] weapon.offhand with air
 
 execute if score #stellarity.config stellarity.config.boss_status_messages matches 1 run tellraw @a ["\n",{"translate":"entity.stellarity.dragon.spawn","with":[{"translate":"entity.minecraft.ender_dragon"}],"color":"#AF4BFF"},"\n"]
 

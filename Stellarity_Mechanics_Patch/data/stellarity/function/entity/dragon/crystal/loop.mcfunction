@@ -19,6 +19,8 @@ execute if entity @s[tag=ste_cos.shielded_crystal] if score @s ste_cos.aura_tick
 # тиковый цикл защищенного кристалла (щит от стрел, отскок трезубца, зарядка лазера, бирюзовое свечение)
 execute if entity @s[tag=ste_cos.shielded_crystal] run team join ste_cos.cyan_glow @s
 execute if entity @s[tag=ste_cos.shielded_crystal] run data modify entity @s Glowing set value 1b
+execute if entity @s[tag=ste_cos.shielded_crystal] run data modify entity @s Invulnerable set value 1b
+execute unless entity @s[tag=ste_cos.shielded_crystal] run data modify entity @s Invulnerable set value 0b
 execute if entity @s[tag=ste_cos.shielded_crystal] run function ste_cos:crystal/shielded_crystal_tick
 
 # тонкие фоновые космические частицы возле кристалла между пульсациями (каждый 4-й тик)
@@ -38,5 +40,5 @@ execute if score @s ste_cos.aura_tick matches 24 run particle dust_color_transit
 
 # периодическое лечение дракона от кристаллов
 scoreboard players add @s ste_cos.timer 1
-execute if score @s ste_cos.timer matches 20.. as @e[type=ender_dragon,tag=stellarity.ender_dragon,distance=..48] run function ste_cos:mechanics/crystal_heal
+execute if score @s ste_cos.timer matches 20.. as @e[type=ender_dragon,tag=stellarity.ender_dragon,distance=..24] run function ste_cos:mechanics/crystal_heal
 execute if score @s ste_cos.timer matches 20.. run scoreboard players set @s ste_cos.timer 0

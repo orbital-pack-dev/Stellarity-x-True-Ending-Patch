@@ -1,4 +1,4 @@
-execute positioned 0 129 0 run function stellarity:entity/dragon/spawn/summon
+execute positioned 0 100 0 run function stellarity:entity/dragon/spawn/summon
 
 function stellarity:structure/exit_portal/deactivated/generate
 

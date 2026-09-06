@@ -1,11 +1,15 @@
 # ste_cos:fresh_visual/heart_absorb_step
 # шаг плавного полета Сердца и рукавов частиц в тело Дракона (с 31 по 35 секунду)
 
-# плавное движение маркера к дракону
-execute if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] facing entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] eyes run tp @s ^ ^ ^0.95
+# плавное движение маркера к дракону с повышенной скоростью
+execute if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] facing entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] eyes run tp @s ^ ^ ^2.4
 
 # перемещение модели Сердца строго вместе с главным маркером
 execute if entity @s[tag=ste_cos.heart_absorbing] run tp @e[type=block_display,tag=project_root] @s
+
+# плавное уменьшение модели сердца при приближении к груди дракона
+execute if entity @s[tag=ste_cos.heart_absorbing] if entity @e[type=ender_dragon,tag=stellarity.ender_dragon,distance=..12.0,limit=1] run function ste_cos:fresh_visual/heart_shrink
+execute if entity @s[tag=ste_cos.heart_absorbing] if score #absorb_time ste_cos.timer matches 15.. run function ste_cos:fresh_visual/heart_shrink
 
 # продолжение вращения и пульсации осколков во время полета
 execute if entity @s[tag=ste_cos.heart_absorbing] run function ste_cos:fresh_visual/shards/tick
