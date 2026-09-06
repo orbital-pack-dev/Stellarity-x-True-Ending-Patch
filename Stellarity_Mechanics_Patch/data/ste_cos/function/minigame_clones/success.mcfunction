@@ -7,6 +7,9 @@ scoreboard players set #minigame_state ste_cos.flags 4
 scoreboard players set #minigame_outcome ste_cos.flags 1
 scoreboard players set #minigame_resolve_timer ste_cos.timer 0
 
+# запуск разлета копий по противоположным C-дугам за пределы острова
+function ste_cos:minigame_clones/start_clone_exit
+
 # запуск обратного снаряда частиц в глаза игрока (золото, изумруд, аметист)
 execute at @s run summon marker ~ ~ ~ {Tags:["ste_cos.feedback_projectile","ste_cos.fb_real"]}
 execute as @e[type=marker,tag=ste_cos.feedback_projectile,limit=1,sort=nearest] facing entity @p[gamemode=!creative,gamemode=!spectator] eyes run tp @s ~ ~ ~ ~ ~

@@ -15,4 +15,6 @@ kill @e[type=marker,tag=stellarity.dragon_respawn.beam]
 setblock 0 63 0 bedrock replace
 
 # гарантированная очистка всех визуальных эффектов патча и сброс камеры
+execute as @e[type=minecraft:end_crystal] run team leave @s
+execute as @e[type=minecraft:end_crystal] run data merge entity @s {Glowing:0b}
 function ste_cos:fresh_visual/cleanup_all

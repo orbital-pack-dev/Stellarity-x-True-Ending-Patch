@@ -5,7 +5,8 @@ particle dust_color_transition{from_color:[0.9,0.2,1.0],scale:2.5,to_color:[0.2,
 playsound entity.generic.explode hostile @a[distance=..16] ~ ~ ~ 1.0 1.2
 playsound block.amethyst_block.resonate hostile @a[distance=..16] ~ ~ ~ 1.0 1.5
 
-# снятие beam_target у кристалла
-execute as @e[type=end_crystal,tag=ste_cos.shielded_crystal,distance=..80,limit=1,sort=nearest] run data remove entity @s beam_target
+# снятие beam_target у кристалла по ID
+scoreboard players operation #current_laser_id ste_cos.flags = @s ste_cos.id
+execute as @e[type=end_crystal,tag=ste_cos.shielded_crystal] if score @s ste_cos.id = #current_laser_id ste_cos.flags run data remove entity @s beam_target
 
 kill @s

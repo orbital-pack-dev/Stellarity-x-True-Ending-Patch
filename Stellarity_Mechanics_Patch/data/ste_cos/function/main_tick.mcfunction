@@ -72,16 +72,27 @@ execute in minecraft:the_end as @e[type=end_crystal] if data entity @s beam_targ
 
 # общий таймер заряда кристаллов Фазы-3 (цикл 110 тиков = 5.5 секунд)
 execute in minecraft:the_end if entity @e[type=end_crystal,tag=ste_cos.shielded_crystal,limit=1] run scoreboard players add #crystal_charge_timer ste_cos.timer 1
-execute in minecraft:the_end if score #crystal_charge_timer ste_cos.timer matches 85 as @e[type=end_crystal,tag=ste_cos.shielded_crystal] at @s if entity @p[distance=..48,gamemode=!creative,gamemode=!spectator] run playsound block.respawn_anchor.charge hostile @a[distance=..48] ~ ~1.8 ~ 1.0 0.9
-execute in minecraft:the_end if score #crystal_charge_timer ste_cos.timer matches 95 as @e[type=end_crystal,tag=ste_cos.shielded_crystal] at @s if entity @p[distance=..48,gamemode=!creative,gamemode=!spectator] run playsound block.respawn_anchor.charge hostile @a[distance=..48] ~ ~1.8 ~ 1.0 1.1
-execute in minecraft:the_end if score #crystal_charge_timer ste_cos.timer matches 85..109 as @e[type=end_crystal,tag=ste_cos.shielded_crystal] at @s if entity @p[distance=..48,gamemode=!creative,gamemode=!spectator] run particle dust_color_transition{from_color:[0.3,0.9,1.0],scale:1.4,to_color:[0.85,0.1,1.0]} ~ ~1.8 ~ 0.2 0.2 0.2 0.05 2 force
-execute in minecraft:the_end if score #crystal_charge_timer ste_cos.timer matches 110.. as @e[type=end_crystal,tag=ste_cos.shielded_crystal] at @s if entity @p[distance=..48,gamemode=!creative,gamemode=!spectator] run function ste_cos:crystal/shielded_crystal_fire
+execute in minecraft:the_end if score #crystal_charge_timer ste_cos.timer matches 80 run tag @e[type=end_crystal,tag=ste_cos.charging_crystal] remove ste_cos.charging_crystal
+execute in minecraft:the_end if score #crystal_charge_timer ste_cos.timer matches 80 as @e[type=end_crystal,tag=ste_cos.shielded_crystal,limit=1,sort=random] run tag @s add ste_cos.charging_crystal
+execute in minecraft:the_end if score #crystal_charge_timer ste_cos.timer matches 85 as @e[type=end_crystal,tag=ste_cos.charging_crystal] at @s if entity @p[distance=..48,gamemode=!creative,gamemode=!spectator] run playsound block.amethyst_block.resonate hostile @a[distance=..48] ~ ~1.8 ~ 1.0 0.9
+execute in minecraft:the_end if score #crystal_charge_timer ste_cos.timer matches 95 as @e[type=end_crystal,tag=ste_cos.charging_crystal] at @s if entity @p[distance=..48,gamemode=!creative,gamemode=!spectator] run playsound entity.illusioner.prepare_blindness hostile @a[distance=..48] ~ ~1.8 ~ 1.0 1.2
+execute in minecraft:the_end if score #crystal_charge_timer ste_cos.timer matches 85..109 as @e[type=end_crystal,tag=ste_cos.charging_crystal] at @s if entity @p[distance=..48,gamemode=!creative,gamemode=!spectator] run particle dust_color_transition{from_color:[0.3,0.9,1.0],scale:1.4,to_color:[0.85,0.1,1.0]} ~ ~1.8 ~ 0.2 0.2 0.2 0.05 2 force
+execute in minecraft:the_end if score #crystal_charge_timer ste_cos.timer matches 110.. as @e[type=end_crystal,tag=ste_cos.charging_crystal] at @s if entity @p[distance=..48,gamemode=!creative,gamemode=!spectator] run function ste_cos:crystal/shielded_crystal_fire
+execute in minecraft:the_end if score #crystal_charge_timer ste_cos.timer matches 110.. run tag @e[type=end_crystal,tag=ste_cos.charging_crystal] remove ste_cos.charging_crystal
 execute in minecraft:the_end if score #crystal_charge_timer ste_cos.timer matches 110.. run scoreboard players set #crystal_charge_timer ste_cos.timer 0
 
 # мини-игра иллюзорных драконов
 execute in minecraft:the_end if score #minigame_state ste_cos.flags matches 1.. run function ste_cos:minigame_clones/tick
 execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.clones_diving] at @s run function ste_cos:minigame_clones/clone_dive_tick
 execute in minecraft:the_end as @e[type=marker,tag=ste_cos.feedback_projectile] at @s run function ste_cos:minigame_clones/feedback_projectile_step
+
+# разлет копий по противоположным C-дугам за остров при успехе
+execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.exit_1] at @s run tp @s ^0.25 ^0.05 ^3.6 ~1.2 ~
+execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.exit_2] at @s run tp @s ^-0.25 ^0.05 ^3.6 ~-1.2 ~
+execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.clone_exit_carrier] at @s positioned 0 0 0 unless entity @s[distance=..250] run kill @s
+execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.clone_dragon] at @s positioned 0 0 0 unless entity @s[distance=..250] run function ste_cos:minigame_clones/clone_void_kill
+execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.clone_exit_carrier] at @s run particle dust_color_transition{from_color:[0.6,0.1,0.8],scale:2.0,to_color:[0.1,0.0,0.3]} ~ ~ ~ 1 1 1 0.05 6 force
+execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.clone_exit_carrier] at @s run particle dragon_breath ~ ~ ~ 0.5 0.5 0.5 0.03 4 force
 
 # ультимативная атака Финальный Вздох
 execute in minecraft:the_end if score #final_breath_state ste_cos.flags matches 1.. run function ste_cos:final_breath/tick
@@ -91,7 +102,15 @@ execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] ru
 execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] run scoreboard players set @s trueEnding_bosstime 0
 execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] at @s positioned 0 65 0 unless entity @s[distance=..20] run tag @s add stellarity.to_portal
 execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] at @s positioned 0 65 0 unless entity @s[distance=..20] run data modify entity @s DragonPhase set value 2
-execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] at @s positioned 0 65 0 if entity @s[distance=..20] run data modify entity @s DragonPhase set value 4
+execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] at @s positioned 0 65 0 if entity @s[distance=..20] run data modify entity @s DragonPhase set value 10
+
+# анимация оригинального вихря True Ending и площадки парения
+execute in minecraft:the_end as @e[type=marker,tag=trueEnding_shockwave] at @s run function true_ending:boss/shockwave/root
+execute in minecraft:the_end as @e[type=marker,tag=trueEnding_shockwave2] at @s run function true_ending:boss/shockwave/root2
+execute in minecraft:the_end as @e[type=marker,tag=trueEnding_pad] at @s run function true_ending:boss/shockwave/pad
+
+# очистка тега отраженного трезубца после падения на землю
+execute as @e[type=trident,tag=ste_cos.deflected,nbt={inGround:1b}] run tag @s remove ste_cos.deflected
 
 # механики усложненного боя
 execute in minecraft:the_end run function ste_cos:mechanics/tick

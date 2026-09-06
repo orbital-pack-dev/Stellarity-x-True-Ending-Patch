@@ -1,9 +1,8 @@
 # ste_cos:crystal/shielded_crystal_deflect
 # отражение и уничтожение снарядов силовым щитом кристалла
 
-# 1. Трезубец — НЕ удаляется, а отскакивает вниз
-execute as @e[type=trident,distance=..3.5] at @s run function ste_cos:crystal/trident_deflect
-execute as @e[type=trident,distance=..3.5] at @s run function ste_cos:crystal/trident_deflect
+# 1. Трезубец — НЕ удаляется, а отскакивает от силового поля
+execute as @e[type=trident,distance=..3.5,tag=!ste_cos.deflected] at @s run function ste_cos:crystal/trident_deflect
 
 # 2. Обычные и спектральные стрелы
 execute at @e[type=arrow,distance=..3.5] run particle electric_spark ~ ~ ~ 0.2 0.2 0.2 0.1 8 force

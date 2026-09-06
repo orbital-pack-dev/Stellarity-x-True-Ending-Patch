@@ -21,6 +21,7 @@ execute if score @s stellarity.dragon.respawn_animation_progress matches 130 run
 execute if score @s stellarity.dragon.respawn_animation_progress matches 130..619 run function ste_cos:fresh_visual/heart_tick
 execute if score @s stellarity.dragon.respawn_animation_progress matches 140..580 run function ste_cos:fresh_visual/tornado_tick
 execute if score @s stellarity.dragon.respawn_animation_progress matches 230..579 run function ste_cos:fresh_visual/tether_ray_draw
+execute if score @s stellarity.dragon.respawn_animation_progress matches 1..619 as @e[type=minecraft:end_crystal] at @s run function ste_cos:fresh_visual/crystal_anim_aura
 
 execute if score @s stellarity.dragon.respawn_animation_progress matches 130 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run function stellarity:entity/dragon/spawn/crystal_beam/0
 execute if score @s stellarity.dragon.respawn_animation_progress matches 200 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run function stellarity:entity/dragon/spawn/crystal_beam/1

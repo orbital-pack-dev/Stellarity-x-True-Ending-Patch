@@ -18,5 +18,8 @@ execute as @e[type=minecraft:end_crystal,predicate=stellarity:location/in_the_en
 
 execute in minecraft:the_end run setblock 0 63 0 bedrock
 
+execute as @e[type=minecraft:end_crystal] run team leave @s
+execute as @e[type=minecraft:end_crystal] run data merge entity @s {Glowing:0b}
+
 scoreboard players reset @s stellarity.dragon.respawn_animation_progress
 scoreboard players reset #respawn_crystal_count stellarity.misc
