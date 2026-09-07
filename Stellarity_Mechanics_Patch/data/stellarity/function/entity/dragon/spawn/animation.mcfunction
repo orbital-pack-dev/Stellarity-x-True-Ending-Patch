@@ -4,15 +4,16 @@ scoreboard players add @s stellarity.dragon.respawn_animation_progress 1
 # отмена
 execute unless score #respawn_crystal_count stellarity.misc matches 4 run function stellarity:entity/dragon/spawn/cancel
 execute if score @s stellarity.dragon.respawn_animation_progress matches 1 run scoreboard players set #ste_cos_totem_used ste_cos.flags 0
+execute if score @s stellarity.dragon.respawn_animation_progress matches 1 run scoreboard players set #stellarity.config stellarity.config.enable_dragon_screenshake 1
 execute if score @s stellarity.dragon.respawn_animation_progress matches 1 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run function stellarity:entity/dragon/spawn/respawn_crystal/prepare_for_anim
 execute if score @s stellarity.dragon.respawn_animation_progress matches 1 as @a[distance=..32] at @s run playsound minecraft:entity.blaze.shoot block @s ~ ~ ~ 0.33 0.9
 execute if score @s stellarity.dragon.respawn_animation_progress matches 1 as @a[distance=..32] at @s run playsound minecraft:entity.blaze.shoot block @s ~ ~ ~ 0.33 0.7
-execute as @a[distance=..128] run tag @s add stellarity.dragon.screenshake
+execute in minecraft:the_end positioned 0 65 0 as @a[distance=..250] run tag @s add stellarity.dragon.screenshake
 
 execute if score @s stellarity.dragon.respawn_animation_progress matches 100 run function stellarity:entity/dragon/spawn/proper_start
 
 # землетрясение
-execute if score @s stellarity.dragon.respawn_animation_progress matches 100..619 run function ste_cos:fresh_visual/earthquake_tick
+execute if score @s stellarity.dragon.respawn_animation_progress matches 100..619 in minecraft:the_end positioned 0 65 0 run function ste_cos:fresh_visual/earthquake_tick
 
 # частицы
 execute if score @s stellarity.dragon.respawn_animation_progress matches ..600 run particle enchant 0 63 0 0 0 0 10 5 normal
@@ -82,7 +83,7 @@ execute if score @s stellarity.dragon.respawn_animation_progress matches 585 if 
 execute if score @s stellarity.dragon.respawn_animation_progress matches 531 run playsound minecraft:entity.warden.sonic_charge block @a ~ ~ ~ 64.0 0.50
 execute if score @s stellarity.dragon.respawn_animation_progress matches 590 run setblock 0 63 0 end_gateway
 execute if score @s stellarity.dragon.respawn_animation_progress matches 590 positioned 0 66 0 run function stellarity:entity/dragon/spawn/beam/shoot
-execute if score @s stellarity.dragon.respawn_animation_progress matches 590 run function ste_cos:fresh_visual/portal_crystals_pulse_start
+execute if score @s stellarity.dragon.respawn_animation_progress matches 590 in minecraft:the_end positioned 0 65 0 run function ste_cos:fresh_visual/portal_crystals_pulse_start
 execute as @e[type=marker,tag=stellarity.dragon_respawn.beam] at @s run function stellarity:entity/dragon/spawn/beam/loop
 
 # световые импульсы

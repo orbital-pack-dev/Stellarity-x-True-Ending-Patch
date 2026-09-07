@@ -8,8 +8,9 @@ This document keeps track of the unified Stellarity x True Ending compatibility 
 
 - **Unified Patch Release**: Consolidated compatibility and mechanics into a single maintained build (`Stellarity_Cosmetic_Patch.zip` and `.jar` supporting Datapacks, Fabric, Quilt, NeoForge, Forge, Paper, and Purpur on 1.21+).
 - **Shielded End Crystals & Guardian Phantoms**:
-  - Bound tower phantoms to shielded crystals via `ste_cos:phantom/guard_killed`.
-  - Killing a guardian phantom immediately clears `{Invulnerable:0b, Glowing:0b}` from the tower crystal with break sounds and particles.
+  - Bound tower phantoms strictly to their revived crystals via unique `ste_cos.id`.
+  - Crystals in Phase 1 start completely normal and destructible. Phantoms only guard revived crystals in Phase 3 (`revive_crystals`) without infinite respawn loops.
+  - Killing a guardian phantom immediately clears `{Invulnerable:0b, Glowing:0b}` from the tower crystal with break sounds and particles; once killed, phantoms never respawn.
   - Added safety guard in `crystal/loop.mcfunction` preventing unbreakable crystals if a phantom despawns or is killed from distance.
 - **Totem of Undying & Final Breath Phase Separation**:
   - Resolved dragon offhand slot limitation (`ender_dragon` only supports `weapon.mainhand`).
@@ -38,10 +39,10 @@ This document keeps track of the unified Stellarity x True Ending compatibility 
   - Swirling multi-layered particle tornado connecting the portal to the sky.
   - End Crystals gain vibrant purple glow aura and flash bursts during the entire revival sequence.
 - **Earthquake & Island Shudder**:
-  - Stellarity screenshake triggers unconditionally for all players within 128 blocks during the ritual.
-  - Physical earthquake jitter ($\pm 0.04$ vertical shudder) affects all non-system entities on the island (players, endermen, animals, dropped items) during progress 100..619.
-- **Culmination Shockwave Pulse**:
-  - At tick 590, an expanding 16-radial shockwave radiates up to 200 blocks across the island from the 4 portal crystals, dealing 3.5 generic damage to living entities.
+  - Stellarity camera screenshake explicitly triggered for all players within 250 blocks during the ritual.
+  - Island-wide seismic vibration ($\pm 0.08$ rapid horizontal jitter + end dust) shakes all island mobs and items (Endermen, Shulkers, Animals, dropped items) during progress 100..619.
+- **Culmination 360° Shockwave Pulse**:
+  - At tick 590, an expanding 72-radial (every 5°) circular shockwave radiates outward up to 210 blocks across the entire island, dealing 3.5 magic damage to players and living entities.
 
 ### Technical & Compatibility
 

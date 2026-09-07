@@ -17,7 +17,7 @@ execute unless entity @s[tag=ste_cos.shielded_crystal] if score @s ste_cos.aura_
 execute if entity @s[tag=ste_cos.shielded_crystal] if score @s ste_cos.aura_tick matches 0 run function ste_cos:fresh_visual/shielded_crystal_aura
 
 # защищенный кристалл
-execute if entity @s[tag=ste_cos.shielded_crystal] unless entity @e[type=phantom,tag=ste_cos_guard,distance=..40] run tag @s remove ste_cos.shielded_crystal
+execute if entity @s[tag=ste_cos.shielded_crystal] unless entity @e[type=area_effect_cloud,tag=ste_cos_guard_marker,distance=..6] run tag @s remove ste_cos.shielded_crystal
 execute if entity @s[tag=ste_cos.shielded_crystal] run team join ste_cos.cyan_glow @s
 execute if entity @s[tag=ste_cos.shielded_crystal] run data modify entity @s Glowing set value 1b
 execute if entity @s[tag=ste_cos.shielded_crystal] run data modify entity @s Invulnerable set value 1b

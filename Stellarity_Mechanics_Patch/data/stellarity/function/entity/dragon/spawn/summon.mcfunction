@@ -14,6 +14,11 @@ scoreboard players set #ste_cos_totem_used ste_cos.flags 0
 scoreboard players set #final_breath_used ste_cos.flags 0
 scoreboard players set #final_breath_state ste_cos.flags 0
 scoreboard players set #minigame_state ste_cos.flags 0
+kill @e[type=phantom,tag=ste_cos_guard]
+kill @e[type=area_effect_cloud,tag=ste_cos_guard_marker]
+execute in minecraft:the_end as @e[type=end_crystal] run tag @s remove ste_cos.shielded_crystal
+execute in minecraft:the_end as @e[type=end_crystal] run data merge entity @s {Invulnerable:0b,Glowing:0b}
+execute in minecraft:the_end as @e[type=end_crystal] run team leave @s
 item replace entity @e[type=ender_dragon,tag=stellarity.ender_dragon] weapon.mainhand with totem_of_undying
 item replace entity @e[type=ender_dragon,tag=stellarity.ender_dragon] weapon.offhand with air
 

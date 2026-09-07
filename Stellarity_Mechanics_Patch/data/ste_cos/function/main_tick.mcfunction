@@ -111,6 +111,7 @@ execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] ru
 
 # импульс кристаллов
 execute in minecraft:the_end as @e[type=marker,tag=ste_cos.pulse_wave_marker] at @s run function ste_cos:fresh_visual/portal_crystals_pulse_step
+execute in minecraft:the_end if entity @e[tag=ste_cos.pulse_hit,limit=1] unless entity @e[type=marker,tag=ste_cos.pulse_wave_marker,limit=1] run tag @e[tag=ste_cos.pulse_hit] remove ste_cos.pulse_hit
 
 # вихрь и площадка
 execute in minecraft:the_end as @e[type=marker,tag=trueEnding_shockwave] at @s run function true_ending:boss/shockwave/root
