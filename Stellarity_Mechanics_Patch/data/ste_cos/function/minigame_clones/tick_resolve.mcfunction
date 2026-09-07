@@ -18,7 +18,6 @@ execute if score #minigame_outcome ste_cos.flags matches 1 if score #minigame_re
 execute if score #minigame_outcome ste_cos.flags matches 1 if score #minigame_resolve_timer ste_cos.timer matches 80.. run execute as @e[type=ender_dragon] run tag @s remove trueEnding_inattack
 execute if score #minigame_outcome ste_cos.flags matches 1 if score #minigame_resolve_timer ste_cos.timer matches 80.. run execute as @e[type=ender_dragon] run tag @s remove stellarity.to_portal
 execute if score #minigame_outcome ste_cos.flags matches 1 if score #minigame_resolve_timer ste_cos.timer matches 80.. run kill @e[type=marker,tag=ste_cos.carousel_center]
-execute if score #minigame_outcome ste_cos.flags matches 1 if score #minigame_resolve_timer ste_cos.timer matches 80.. run kill @e[type=marker,tag=ste_cos.feedback_projectile]
 execute if score #minigame_outcome ste_cos.flags matches 1 if score #minigame_resolve_timer ste_cos.timer matches 80.. run scoreboard players set #minigame_state ste_cos.flags 0
 
 # провал
@@ -34,5 +33,4 @@ execute if score #minigame_outcome ste_cos.flags matches 2 if score #minigame_re
 execute if score #minigame_outcome ste_cos.flags matches 2 if score #minigame_resolve_timer ste_cos.timer matches 50 run execute as @e[type=ender_dragon] run tag @s remove ste_cos.minigame_real
 execute if score #minigame_outcome ste_cos.flags matches 2 if score #minigame_resolve_timer ste_cos.timer matches 50 run execute as @e[type=ender_dragon] run tag @s remove trueEnding_inattack
 execute if score #minigame_outcome ste_cos.flags matches 2 if score #minigame_resolve_timer ste_cos.timer matches 50 run kill @e[type=marker,tag=ste_cos.carousel_center]
-execute if score #minigame_outcome ste_cos.flags matches 2 if score #minigame_resolve_timer ste_cos.timer matches 50 run kill @e[type=marker,tag=ste_cos.feedback_projectile]
 execute if score #minigame_outcome ste_cos.flags matches 2 if score #minigame_resolve_timer ste_cos.timer matches 50 run scoreboard players set #minigame_state ste_cos.flags 0

@@ -7,9 +7,14 @@ scoreboard players add #carousel_timer ste_cos.timer 1
 execute as @e[type=marker,tag=ste_cos.carousel_center] at @s run tp @s ~ ~ ~ ~2.5 0
 
 # расстановка драконов
-execute as @e[type=marker,tag=ste_cos.carousel_center] at @s rotated ~ 0 run tp @e[type=ender_dragon,tag=ste_cos.minigame_real,limit=1] ^ ^ ^28 ~90 0
-execute as @e[type=marker,tag=ste_cos.carousel_center] at @s rotated ~120 0 run tp @e[type=ender_dragon,tag=ste_cos.clone_1,limit=1] ^ ^ ^28 ~90 0
-execute as @e[type=marker,tag=ste_cos.carousel_center] at @s rotated ~240 0 run tp @e[type=ender_dragon,tag=ste_cos.clone_2,limit=1] ^ ^ ^28 ~90 0
+execute as @e[type=marker,tag=ste_cos.carousel_center] at @s rotated ~ 0 run tp @e[type=ender_dragon,tag=ste_cos.minigame_real,limit=1] ^ ^ ^28
+execute as @e[type=marker,tag=ste_cos.carousel_center] at @s rotated ~120 0 run tp @e[type=ender_dragon,tag=ste_cos.clone_1,limit=1] ^ ^ ^28
+execute as @e[type=marker,tag=ste_cos.carousel_center] at @s rotated ~240 0 run tp @e[type=ender_dragon,tag=ste_cos.clone_2,limit=1] ^ ^ ^28
+
+# ориентация голов по касательной
+execute as @e[type=ender_dragon,tag=ste_cos.minigame_real,limit=1] at @s facing 0 85 0 run tp @s ~ ~ ~ ~-90 0
+execute as @e[type=ender_dragon,tag=ste_cos.clone_1,limit=1] at @s facing 0 85 0 run tp @s ~ ~ ~ ~-90 0
+execute as @e[type=ender_dragon,tag=ste_cos.clone_2,limit=1] at @s facing 0 85 0 run tp @s ~ ~ ~ ~-90 0
 
 # звуки крыльев
 scoreboard players add #carousel_flap ste_cos.timer 1

@@ -13,12 +13,38 @@ scoreboard players set #tower_retry_count ste_cos.flags 0
 scoreboard players set #ste_cos_totem_used ste_cos.flags 0
 scoreboard players set #final_breath_used ste_cos.flags 0
 scoreboard players set #final_breath_state ste_cos.flags 0
+scoreboard players set #final_breath_timer ste_cos.timer 0
 scoreboard players set #minigame_state ste_cos.flags 0
+scoreboard players set #minigame_resolved ste_cos.flags 0
+scoreboard players set #minigame_outcome ste_cos.flags 0
+scoreboard players set #minigame_timer ste_cos.timer 0
+scoreboard players set #minigame_resolve_timer ste_cos.timer 0
+scoreboard players set #carousel_active ste_cos.flags 0
+scoreboard players set #carousel_timer ste_cos.timer 0
+scoreboard players set #carousel_flap ste_cos.timer 0
+scoreboard players set #carrier_tick ste_cos.timer 0
+scoreboard players set #crystal_charge_timer ste_cos.timer 0
+scoreboard players set #shockwave_count ste_cos.timer 0
+
+# очистка временных сущностей
+kill @e[type=marker,tag=ste_cos.pulse_wave_marker]
+kill @e[type=marker,tag=ste_cos.carousel_center]
+kill @e[type=marker,tag=ste_cos.feedback_projectile]
+kill @e[type=armor_stand,tag=ste_cos.clone_exit_carrier]
+kill @e[type=armor_stand,tag=ste_cos.minigame_carrier]
+kill @e[type=armor_stand,tag=ste_cos.crystal_laser_projectile]
+kill @e[type=ender_dragon,tag=ste_cos.clone_dragon]
 kill @e[type=phantom,tag=ste_cos_guard]
 kill @e[type=area_effect_cloud,tag=ste_cos_guard_marker]
+
+# сброс кристаллов первой фазы
 execute in minecraft:the_end as @e[type=end_crystal] run tag @s remove ste_cos.shielded_crystal
 execute in minecraft:the_end as @e[type=end_crystal] run data merge entity @s {Invulnerable:0b,Glowing:0b}
 execute in minecraft:the_end as @e[type=end_crystal] run team leave @s
+
+# декоративные фантомы на 10 кристаллах
+execute in minecraft:the_end positioned 0 65 0 as @e[type=end_crystal,distance=15..400,tag=!stellarity.respawn_crystal,tag=!ste_cos_portal_fix] at @s unless entity @e[type=area_effect_cloud,tag=ste_cos_guard_marker,distance=..6,limit=1] run function ste_cos:phantom/spawn_decorative_guard
+
 item replace entity @e[type=ender_dragon,tag=stellarity.ender_dragon] weapon.mainhand with totem_of_undying
 item replace entity @e[type=ender_dragon,tag=stellarity.ender_dragon] weapon.offhand with air
 

@@ -24,15 +24,27 @@ tag @s add refresh_entity_exists
 attribute @s knockback_resistance base set 300
 kill @e[type=marker,tag=trueEnding_endspike]
 kill @e[type=phantom,tag=trueEnding_guardphantom]
-execute positioned 42 110 0 run function true_ending:boss/phantom/summon_marker
-execute positioned 33 110 -25 run function true_ending:boss/phantom/summon_marker
-execute positioned 12 110 -40 run function true_ending:boss/phantom/summon_marker
-execute positioned -13 110 -40 run function true_ending:boss/phantom/summon_marker
-execute positioned -34 110 -25 run function true_ending:boss/phantom/summon_marker
-execute positioned -42 110 -1 run function true_ending:boss/phantom/summon_marker
-execute positioned -34 110 24 run function true_ending:boss/phantom/summon_marker
-execute positioned -13 110 39 run function true_ending:boss/phantom/summon_marker
-execute positioned 12 110 39 run function true_ending:boss/phantom/summon_marker
-execute positioned 33 110 24 run function true_ending:boss/phantom/summon_marker
+kill @e[type=marker,tag=ste_cos.pulse_wave_marker]
+kill @e[type=marker,tag=ste_cos.carousel_center]
+kill @e[type=marker,tag=ste_cos.feedback_projectile]
+kill @e[type=armor_stand,tag=ste_cos.clone_exit_carrier]
+kill @e[type=armor_stand,tag=ste_cos.minigame_carrier]
+kill @e[type=armor_stand,tag=ste_cos.crystal_laser_projectile]
+kill @e[type=ender_dragon,tag=ste_cos.clone_dragon]
+scoreboard players set #clone_minigame_used ste_cos.flags 0
+scoreboard players set #ste_cos_totem_used ste_cos.flags 0
+scoreboard players set #final_breath_used ste_cos.flags 0
+scoreboard players set #final_breath_state ste_cos.flags 0
+scoreboard players set #final_breath_timer ste_cos.timer 0
+scoreboard players set #minigame_state ste_cos.flags 0
+scoreboard players set #minigame_resolved ste_cos.flags 0
+scoreboard players set #minigame_outcome ste_cos.flags 0
+scoreboard players set #carousel_active ste_cos.flags 0
+scoreboard players set #carousel_timer ste_cos.timer 0
+scoreboard players set #carrier_tick ste_cos.timer 0
+scoreboard players set #crystal_charge_timer ste_cos.timer 0
+
+# декоративные фантомы на кристаллах
+execute in minecraft:the_end positioned 0 65 0 as @e[type=end_crystal,distance=15..400,tag=!stellarity.respawn_crystal,tag=!ste_cos_portal_fix] at @s unless entity @e[type=area_effect_cloud,tag=ste_cos_guard_marker,distance=..6,limit=1] run function ste_cos:phantom/spawn_decorative_guard
 scoreboard players set @s trueEnding_bosstime 218
 tag @s add trueEnding_dragon_particlechecked

@@ -18,19 +18,19 @@ execute as @e[type=end_crystal,tag=ste_cos.shielded_crystal] if score @s ste_cos
 execute as @e[type=end_crystal,tag=ste_cos.shielded_crystal] if score @s ste_cos.id = #current_laser_id ste_cos.flags store result entity @s beam_target[1] int 1 run scoreboard players get #beam_y ste_cos.flags
 execute as @e[type=end_crystal,tag=ste_cos.shielded_crystal] if score @s ste_cos.id = #current_laser_id ste_cos.flags store result entity @s beam_target[2] int 1 run scoreboard players get #beam_z ste_cos.flags
 
-# урон
-execute as @a[distance=..2.5,gamemode=!creative,gamemode=!spectator] at @s run damage @s 10 magic
-execute if entity @a[distance=..2.5,gamemode=!creative,gamemode=!spectator] run function ste_cos:crystal/laser_projectile_hit
-execute if entity @a[distance=..2.5,gamemode=!creative,gamemode=!spectator] run return 1
-
-# дистанция
-execute unless entity @a[distance=..36,gamemode=!creative,gamemode=!spectator] run function ste_cos:crystal/laser_projectile_hit
-execute unless entity @a[distance=..36,gamemode=!creative,gamemode=!spectator] run return 1
-
-# столкновение с блоками
-execute unless block ~ ~ ~ #ste_cos:obsidian_filter run function ste_cos:crystal/laser_projectile_hit
-execute unless block ~ ~ ~ #ste_cos:obsidian_filter run return 1
+# попадание в игрока
+execute as @a[distance=..3.8,gamemode=!creative,gamemode=!spectator] at @s run damage @s 8.0 magic
+execute if entity @a[distance=..3.8,gamemode=!creative,gamemode=!spectator] run function ste_cos:crystal/laser_projectile_hit
+execute if entity @a[distance=..3.8,gamemode=!creative,gamemode=!spectator] run return 1
 
 # время жизни
 scoreboard players add @s ste_cos.timer 1
-execute if score @s ste_cos.timer matches 35.. run function ste_cos:crystal/laser_projectile_hit
+execute if score @s ste_cos.timer matches 45.. run function ste_cos:crystal/laser_projectile_hit
+execute if score @s ste_cos.timer matches 45.. run return 1
+
+# проверка препятствий вне башни
+execute if score @s ste_cos.timer matches 4.. unless block ~ ~ ~ #ste_cos:obsidian_filter run function ste_cos:crystal/laser_projectile_hit
+execute if score @s ste_cos.timer matches 4.. unless block ~ ~ ~ #ste_cos:obsidian_filter run return 1
+
+# дистанция до игроков
+execute unless entity @a[distance=..64,gamemode=!creative,gamemode=!spectator] run function ste_cos:crystal/laser_projectile_hit
