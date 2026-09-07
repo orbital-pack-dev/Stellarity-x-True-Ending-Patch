@@ -1,5 +1,5 @@
 # true_ending:boss/phase_totem
-# фаза тотема бессмертия
+# фаза тотема
 
 tag @s add trueEnding_inattack
 
@@ -13,7 +13,7 @@ execute if score @s trueEnding_bosstime matches 3031..3040 run tp @s ~ ~.25 ~
 execute if score @s trueEnding_bosstime matches 3050..3059 run tp @s ~ ~ ~ ~20 ~
 execute if score @s trueEnding_bosstime matches 3060..3069 run tp @s ~ ~ ~ ~10 ~
 
-# звуки и частицы перед ударом (вызов вихря True Ending)
+# звуки и частицы
 execute if score @s trueEnding_bosstime matches 3060.. run execute if predicate true_ending:chance/8_percent run playsound minecraft:ambient.basalt_deltas.mood hostile @a[distance=..128] ~ ~ ~ 6 1.2
 execute if score @s trueEnding_bosstime matches 3060.. run execute if predicate true_ending:chance/8_percent run playsound minecraft:ambient.warped_forest.additions hostile @a[distance=..128] ~ ~ ~ 6 .5
 execute if score @s trueEnding_bosstime matches 3060 run function true_ending:boss/phase_totem_growl
@@ -27,7 +27,7 @@ execute if score @s trueEnding_bosstime matches 3081 run playsound entity.warden
 execute if score @s trueEnding_bosstime matches 3081 run playsound block.amethyst_block.resonate hostile @a ~ ~ ~ 64.0 0.5
 
 
-# завершение взлета дракона с портала (без дублирования тотема)
+# завершение взлета
 execute if score @s trueEnding_bosstime matches 3090 if score @s ste_cos.health matches ..35 run data modify entity @s Health set value 36.0f
 execute if score @s trueEnding_bosstime matches 3090 if score @s ste_cos.health matches ..35 run scoreboard players set @s stellarity.dragon.health 36
 execute if score @s trueEnding_bosstime matches 3090 if score @s ste_cos.health matches ..35 run scoreboard players set @s stellarity.dragon.health_old 36
@@ -42,19 +42,20 @@ execute if score @s trueEnding_bosstime matches 3090 run tag @s remove stellarit
 execute if score @s trueEnding_bosstime matches 3090 run tag @s remove stellarity.portal_activated
 execute if score @s trueEnding_bosstime matches 3090 run tag @s add ste_cos.totem_used
 execute if score @s trueEnding_bosstime matches 3090 run scoreboard players set #ste_cos_totem_used ste_cos.flags 1
-execute if score @s trueEnding_bosstime matches 3090 run item replace entity @s weapon.mainhand with air
+execute if score @s trueEnding_bosstime matches 3090 run item replace entity @s weapon.mainhand with minecraft:feather[minecraft:death_protection={death_effects:[]}] 1
+execute if score @s trueEnding_bosstime matches 3090 run tag @s add ste_cos.has_death_feather
 
-# экранная тряска
+# тряска экрана
 execute if score @s trueEnding_bosstime matches 3090 run tag @a add stellarity.dragon.screenshake
 
-# звуки взлета и ярости дракона (громкость 64+)
+# звуки взлета
 execute if score @s trueEnding_bosstime matches 3090 run playsound entity.warden.heartbeat master @a ~ ~ ~ 64.0 0.6
 execute if score @s trueEnding_bosstime matches 3090 run playsound entity.warden.sonic_boom master @a ~ ~ ~ 64.0 0.7
 execute if score @s trueEnding_bosstime matches 3090 run playsound block.amethyst_block.resonate master @a ~ ~ ~ 64.0 0.5
 execute if score @s trueEnding_bosstime matches 3090 run playsound entity.ender_dragon.growl master @a ~ ~ ~ 64.0 0.75
 execute if score @s trueEnding_bosstime matches 3090 run playsound entity.ender_dragon.flap master @a ~ ~ ~ 64.0 0.8
 
-# вспышка и частицы взлета дракона (жёлто-оранжевые цвета тотема)
+# вспышка и частицы
 execute if score @s trueEnding_bosstime matches 3090 run particle flash{color:[1.0,0.85,0.15,1.0]} ~ ~2 ~ 0 0 0 0 2 force @a
 execute if score @s trueEnding_bosstime matches 3090 run particle flash{color:[1.0,0.55,0.05,1.0]} ~ ~2 ~ 0 0 0 0 2 force @a
 execute if score @s trueEnding_bosstime matches 3090 run particle sonic_boom ~ ~2 ~ 0 0 0 0 3 force @a
@@ -64,5 +65,5 @@ execute if score @s trueEnding_bosstime matches 3090 run particle end_rod ~ ~2 ~
 execute if score @s trueEnding_bosstime matches 3090 run particle electric_spark ~ ~2 ~ 4 3 4 0.35 90 force @a
 execute if score @s trueEnding_bosstime matches 3090 run scoreboard players set @s trueEnding_bosstime 0
 
-# зацикливание до выполнения
+# таймер
 execute if score @s trueEnding_bosstime matches 3095.. run scoreboard players set @s trueEnding_bosstime 3090

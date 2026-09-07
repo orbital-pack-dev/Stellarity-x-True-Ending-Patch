@@ -1,14 +1,14 @@
 # ste_cos:minigame_clones/tick_carrier
-# плавный взлет и полет армор-стенда с драконом по C-образной траектории от 0 67 0 до 28 85 0
+# полет носителя
 
 scoreboard players add #carrier_tick ste_cos.timer 1
 
-# космические частицы шлейфа
+# частицы шлейфа
 execute as @e[type=armor_stand,tag=ste_cos.minigame_carrier,limit=1] at @s run particle dust_color_transition{from_color:[0.85,0.2,1.0],scale:2.2,to_color:[0.15,0.0,0.4]} ~ ~ ~ 0.5 0.5 0.5 0.05 15 force @a
 execute as @e[type=armor_stand,tag=ste_cos.minigame_carrier,limit=1] at @s run particle reverse_portal ~ ~ ~ 0.5 0.5 0.5 0.04 8 force @a
 execute as @e[type=armor_stand,tag=ste_cos.minigame_carrier,limit=1] at @s run particle electric_spark ~ ~ ~ 0.4 0.4 0.4 0.02 5 force @a
 
-# звуки взмахов
+# звуки крыльев
 execute if score #carrier_tick ste_cos.timer matches 15 as @e[type=armor_stand,tag=ste_cos.minigame_carrier,limit=1] at @s run playsound entity.ender_dragon.flap hostile @a[distance=..16] ~ ~ ~ 1.0 1.0
 execute if score #carrier_tick ste_cos.timer matches 30 as @e[type=armor_stand,tag=ste_cos.minigame_carrier,limit=1] at @s run playsound entity.ender_dragon.flap hostile @a[distance=..16] ~ ~ ~ 1.0 1.0
 execute if score #carrier_tick ste_cos.timer matches 45 as @e[type=armor_stand,tag=ste_cos.minigame_carrier,limit=1] at @s run playsound entity.ender_dragon.flap hostile @a[distance=..16] ~ ~ ~ 1.0 1.0
@@ -74,5 +74,5 @@ execute if score #carrier_tick ste_cos.timer matches 58 as @e[type=armor_stand,t
 execute if score #carrier_tick ste_cos.timer matches 59 as @e[type=armor_stand,tag=ste_cos.minigame_carrier,limit=1] at @s run tp @s 27.99 84.99 -0.59 -2.3 -2.3
 execute if score #carrier_tick ste_cos.timer matches 60 as @e[type=armor_stand,tag=ste_cos.minigame_carrier,limit=1] at @s run tp @s 28.00 85.00 0.00 0.0 0.0
 
-# завершение полета и прибытие в точку 28 85 0 на тике 60
+# прибытие
 execute if score #carrier_tick ste_cos.timer matches 60.. run function ste_cos:minigame_clones/arrive_carrier

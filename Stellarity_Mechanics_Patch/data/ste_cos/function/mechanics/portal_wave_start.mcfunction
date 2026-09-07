@@ -1,7 +1,7 @@
 # ste_cos:mechanics/portal_wave_start
-# радиальный запуск интерактивной волны опасности от портала
+# старт волны
 
-# звук и частицы зарождения волны в центре портала
+# звуки волны
 execute if score temp2 ste_cos.flags matches 0 run playsound block.amethyst_block.chime ambient @a 0 65 0 16.0 1.4
 execute if score temp2 ste_cos.flags matches 0 run playsound block.amethyst_block.resonate ambient @a 0 65 0 16.0 0.8
 execute if score temp2 ste_cos.flags matches 0 run particle flash{color:[0.75,0.20,1.0,1.0]} 0 65 0 0 0 0 0 1 force

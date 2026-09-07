@@ -1,5 +1,5 @@
 # ste_cos:fresh_visual/shockwave_spawn_markers
-# радиальное создание 36 маркеров по горизонтальному кругу на высоте
+# спавн маркеров
 
 scoreboard players add #shockwave_count ste_cos.timer 1
 

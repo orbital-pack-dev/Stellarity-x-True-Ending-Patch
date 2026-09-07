@@ -4,25 +4,25 @@
 # Whitelist .gitignore, README, project files
 !.gitignore
 !README.md
+!README_RU.md
 !TODO.md
 !.gitattributes
 !compare_datapacks.py
 !sync_patches.py
 
-# Whitelist Data Packs
-
-!Stellarity_Compatibility_Patch/
-!Stellarity_Compatibility_Patch/**
-
+# Whitelist Data Packs (Unified Patch source)
 !Stellarity_Mechanics_Patch/
 !Stellarity_Mechanics_Patch/**
 
 # Ignore Tool
 **/.spyglassrc.json
 **/.vscode/
+**/.analyzer.py
 
-# Ignored
+# Ignored Folders & Reference Archives
 Stellarity-5.5.5/
+Stellarity-6.0.0-RP/
+Stellarity-6.0.0-beta/
 tru.e-ending-1.1.4d/
 Stellarity-5.5.5-RP/
 Stellarity_Cosmetic_RP/
@@ -30,12 +30,18 @@ STE-Mod/
 Stellarity_Load_Fix/
 Stellarity_Cosmetic_Patch/
 Stellarity_TrueEnding_Patch_old/
+Stellarity_Compatibility_Patch/
+temp_ste/
+temp_te/
 
+# Release artifacts
 !Release_Builds/
 !Release_Builds/**
 Release_Builds/*.zip
-!Release_Builds/Stellarity_Compatibility_Patch.zip
-!Release_Builds/Stellarity_Mechanics_Patch.zip
+!Release_Builds/Stellarity_Cosmetic_Patch.zip
+!Release_Builds/Stellarity_Cosmetic_Patch.jar
+
+!Stellarity_Cosmetic_Patch.zip
 
 !build.py
 !LICENSE

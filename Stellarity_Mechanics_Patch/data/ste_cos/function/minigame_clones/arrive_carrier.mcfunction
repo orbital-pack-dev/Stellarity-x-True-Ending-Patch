@@ -1,5 +1,5 @@
 # ste_cos:minigame_clones/arrive_carrier
-# прибытие в точку 28 85 0, спешивание дракона и переход к поэтапному призыву копий
+# прибытие носителя
 
 execute as @e[type=ender_dragon,tag=ste_cos.minigame_real,limit=1] run ride @s dismount
 kill @e[type=armor_stand,tag=ste_cos.minigame_carrier]
@@ -9,11 +9,11 @@ scoreboard players set #carousel_active ste_cos.flags 1
 scoreboard players set #carousel_timer ste_cos.timer 0
 scoreboard players set #minigame_resolved ste_cos.flags 0
 
-# создание центрального маркера карусели в 0 85 0 (угол -90 для старта в 28 85 0)
+# центр карусели
 kill @e[type=marker,tag=ste_cos.carousel_center]
 summon marker 0 85 0 {Rotation:[-90.0f,0.0f],Tags:["ste_cos.carousel_center"]}
 
-# мгновенный призыв обеих копий на орбите без пауз
+# призыв копий
 function ste_cos:minigame_clones/summon_clone_1
 function ste_cos:minigame_clones/summon_clone_2
 

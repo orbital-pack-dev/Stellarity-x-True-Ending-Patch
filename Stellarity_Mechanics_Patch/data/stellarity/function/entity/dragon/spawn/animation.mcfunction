@@ -1,17 +1,20 @@
-# анимация возрождения дракона
+# анимация
 scoreboard players add @s stellarity.dragon.respawn_animation_progress 1
 
-# отмена если кристаллов меньше четырех
+# отмена
 execute unless score #respawn_crystal_count stellarity.misc matches 4 run function stellarity:entity/dragon/spawn/cancel
 execute if score @s stellarity.dragon.respawn_animation_progress matches 1 run scoreboard players set #ste_cos_totem_used ste_cos.flags 0
 execute if score @s stellarity.dragon.respawn_animation_progress matches 1 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run function stellarity:entity/dragon/spawn/respawn_crystal/prepare_for_anim
 execute if score @s stellarity.dragon.respawn_animation_progress matches 1 as @a[distance=..32] at @s run playsound minecraft:entity.blaze.shoot block @s ~ ~ ~ 0.33 0.9
 execute if score @s stellarity.dragon.respawn_animation_progress matches 1 as @a[distance=..32] at @s run playsound minecraft:entity.blaze.shoot block @s ~ ~ ~ 0.33 0.7
-execute if score #stellarity.config stellarity.config.enable_dragon_screenshake matches 1 as @a[distance=..64] run tag @s add stellarity.dragon.screenshake
+execute as @a[distance=..128] run tag @s add stellarity.dragon.screenshake
 
 execute if score @s stellarity.dragon.respawn_animation_progress matches 100 run function stellarity:entity/dragon/spawn/proper_start
 
-# частицы чар вокруг центра
+# землетрясение
+execute if score @s stellarity.dragon.respawn_animation_progress matches 100..619 run function ste_cos:fresh_visual/earthquake_tick
+
+# частицы
 execute if score @s stellarity.dragon.respawn_animation_progress matches ..600 run particle enchant 0 63 0 0 0 0 10 5 normal
 execute if score @s stellarity.dragon.respawn_animation_progress matches ..600 run particle portal 0 63 0 0 0 0 10 5 normal
 
@@ -57,7 +60,7 @@ execute if score @s stellarity.dragon.respawn_animation_progress matches 500 pos
 # замена кристаллов
 execute as @e[type=minecraft:end_crystal,tag=stellarity.new_crystal] at @s run function stellarity:entity/dragon/spawn/replace_crystal
 
-# циклическая проверка и починка кристаллов на башнях перед кульминацией
+# проверка башен
 execute if score @s stellarity.dragon.respawn_animation_progress matches 510 run execute as @e[type=minecraft:end_crystal] run data merge entity @s {Invulnerable:1b}
 
 execute if score @s stellarity.dragon.respawn_animation_progress matches 515 run function stellarity:entity/dragon/spawn/check_towers
@@ -75,10 +78,11 @@ execute if score @s stellarity.dragon.respawn_animation_progress matches 585 if 
 execute if score @s stellarity.dragon.respawn_animation_progress matches 585 if score #tower_broken ste_cos.flags matches 1 if score #tower_retry_count ste_cos.flags matches ..3 run playsound minecraft:block.amethyst_block.resonate block @a 0 98 0 64.0 0.6
 execute if score @s stellarity.dragon.respawn_animation_progress matches 585 if score #tower_broken ste_cos.flags matches 1 if score #tower_retry_count ste_cos.flags matches ..3 run scoreboard players set @s stellarity.dragon.respawn_animation_progress 490
 
-# луч в конце
+# луч портала
 execute if score @s stellarity.dragon.respawn_animation_progress matches 531 run playsound minecraft:entity.warden.sonic_charge block @a ~ ~ ~ 64.0 0.50
 execute if score @s stellarity.dragon.respawn_animation_progress matches 590 run setblock 0 63 0 end_gateway
 execute if score @s stellarity.dragon.respawn_animation_progress matches 590 positioned 0 66 0 run function stellarity:entity/dragon/spawn/beam/shoot
+execute if score @s stellarity.dragon.respawn_animation_progress matches 590 run function ste_cos:fresh_visual/portal_crystals_pulse_start
 execute as @e[type=marker,tag=stellarity.dragon_respawn.beam] at @s run function stellarity:entity/dragon/spawn/beam/loop
 
 # световые импульсы
@@ -110,7 +114,7 @@ execute if score @s stellarity.dragon.respawn_animation_progress matches 550 run
 execute if score @s stellarity.dragon.respawn_animation_progress matches 555 run function stellarity:entity/dragon/spawn/pulse
 execute if score @s stellarity.dragon.respawn_animation_progress matches 560 run function stellarity:entity/dragon/spawn/pulse
 
-# кульминация возрождения
+# кульминация
 execute if score @s stellarity.dragon.respawn_animation_progress matches 580 run function ste_cos:fresh_visual/culmination_start
 execute if score @s stellarity.dragon.respawn_animation_progress matches 600 run function ste_cos:fresh_visual/culmination_warp
 

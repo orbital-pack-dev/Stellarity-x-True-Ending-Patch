@@ -1,5 +1,5 @@
 # stellarity:entity/dragon/spawn/respawn_finish
-# завершение анимации возрождения дракона
+# завершение анимации
 
 particle minecraft:explosion_emitter ~ ~ ~ 0 0 0 0 1 force
 
@@ -25,3 +25,4 @@ scoreboard players reset @s stellarity.dragon.respawn_animation_progress
 scoreboard players reset #respawn_crystal_count stellarity.misc
 scoreboard players set #clone_minigame_used ste_cos.flags 0
 scoreboard players set #tower_retry_count ste_cos.flags 0
+function ste_cos:fresh_visual/cleanup_all

@@ -1,5 +1,5 @@
 # ste_cos:crystal/trident_deflect
-# безопасный отскок трезубца от силового щита кристалла (предмет не удаляется!)
+# отскок трезубца
 
 tag @s add ste_cos.deflected
 execute facing entity @e[type=end_crystal,distance=..5,limit=1] eyes run tp @s ^ ^0.4 ^-2.0

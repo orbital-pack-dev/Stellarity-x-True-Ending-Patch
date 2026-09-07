@@ -1,5 +1,5 @@
 # stellarity:entity/dragon/death/at_portal_loop
-# фиксация дракона над центром портала во время гибели
+# фиксация над порталом
 
 tag @s add stellarity.at_portal
 tag @s remove stellarity.to_portal

@@ -1,7 +1,7 @@
 # ste_cos:phantom/guard_tick
 # тикер фантомов-стражей
 
-# удаление стражей только если дракона нет
+# очистка стражей
 execute in minecraft:the_end unless entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] run kill @e[type=phantom,tag=ste_cos_guard]
 execute in minecraft:the_end unless entity @e[type=ender_dragon,tag=stellarity.ender_dragon,limit=1] run kill @e[type=area_effect_cloud,tag=ste_cos_guard_marker]
 

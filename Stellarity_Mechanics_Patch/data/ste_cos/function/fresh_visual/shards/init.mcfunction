@@ -1,10 +1,10 @@
 # ste_cos:fresh_visual/shards/init
-# Инициализация орбиты и независимых таймеров пульсации осколков (14-46 тиков)
+# инициализация осколков
 
 scoreboard players set #shard_orbit_timer ste_cos.timer 0
 scoreboard players set #shard_orbit_step ste_cos.flags 0
 
-# Десинхронизированные начальные таймеры и цели (0.7-2.3 сек) для каждого осколка
+# начальные таймеры
 scoreboard players set #shard_0_timer ste_cos.timer 0
 scoreboard players set #shard_0_target ste_cos.timer 20
 scoreboard players set #shard_0_scale ste_cos.flags 0
@@ -37,5 +37,5 @@ scoreboard players set #shard_7_timer ste_cos.timer 10
 scoreboard players set #shard_7_target ste_cos.timer 38
 scoreboard players set #shard_7_scale ste_cos.flags 3
 
-# Применяем исходный шаг 0
+# шаг 0
 function ste_cos:fresh_visual/shards/step_0

@@ -19,16 +19,16 @@ execute store result score #int_health stellarity.misc run data get entity @s He
 execute unless score @s stellarity.dragon.health_old matches 1.. run scoreboard players operation @s stellarity.dragon.health_old = #int_health stellarity.misc
 scoreboard players operation @s stellarity.dragon.health_old = #int_health stellarity.misc
 
-# музыка битвы
+# музыка
 execute if entity @s[tag=!stellarity.to_portal,tag=!stellarity.at_portal] run function stellarity:entity/dragon/music/tick
 
-# фазы поведения дракона
+# фазы дракона
 execute store result score @s stellarity.misc run data get entity @s DragonPhase
 execute unless score @s[tag=!stellarity.at_portal] stellarity.misc matches 5..7 run function stellarity:entity/dragon/trail
 
-# отключена принудительная смена фазы чтобы не ломать фазы True Ending
+# фазы True Ending
 
-# отключение обычных атак во время мини-игры, финального вздоха, финальной стойки и при смерти
+# атаки
 execute unless entity @s[tag=ste_cos.minigame_active] unless entity @s[tag=ste_cos.final_breath_active] unless entity @s[tag=ste_cos.final_stand] unless entity @s[tag=stellarity.at_portal] unless score @s stellarity.dragon.health matches ..1 if score @s stellarity.misc matches 5 run function stellarity:entity/dragon/attacks/roar_breath/main
 execute unless score @s stellarity.dragon.shulker_hell matches 4 as @e[type=dragon_fireball] at @s run function stellarity:entity/dragon/attacks/fireball/summon
 execute if score @s stellarity.dragon.shulker_hell matches 4 as @e[type=dragon_fireball] at @s run function stellarity:entity/dragon/attacks/shulker_hell/trigger
@@ -37,20 +37,20 @@ execute unless entity @s[tag=ste_cos.minigame_active] unless entity @s[tag=ste_c
 execute if score @s stellarity.dragon.time_chainfiring matches 1.. run function stellarity:entity/dragon/attacks/chainfire/tickdown
 execute unless entity @s[tag=ste_cos.minigame_active] unless entity @s[tag=ste_cos.final_breath_active] unless entity @s[tag=ste_cos.final_stand] unless entity @s[tag=stellarity.at_portal] unless score @s stellarity.dragon.health matches ..1 unless score @s[scores={stellarity.dragon.health_percent=..50,stellarity.misc=0..1}] stellarity.dragon.ball_of_blight_cooldown matches 1.. run function stellarity:entity/dragon/attacks/ball_of_blight/cast
 
-# откат атак
+# кулдаун атак
 scoreboard players remove @s[scores={stellarity.dragon.perch_cooldown=1..}] stellarity.dragon.perch_cooldown 1
 scoreboard players remove @s[scores={stellarity.dragon.ball_of_blight_cooldown=1..}] stellarity.dragon.ball_of_blight_cooldown 1
 
-# возрождение кристаллов при четверти здоровья
+# кристаллы
 execute if score @s[tag=!stellarity.dragon.respawned_crystals] stellarity.dragon.health_percent matches ..25 run function stellarity:entity/dragon/attacks/revive_crystals/initiate
 
-# стук сердца при низком здоровье
+# стук сердца
 execute if score @s stellarity.dragon.health_percent matches ..25 run function stellarity:entity/dragon/heartbeat/main
 
-# гарантированный запуск Финального Вздоха после тотема при низком здоровье (1..8 ХП)
+# финальный вздох
 execute if score #ste_cos_totem_used ste_cos.flags matches 1 unless score #final_breath_used ste_cos.flags matches 1 as @s[tag=!ste_cos.final_breath_active,tag=!ste_cos.final_breath_ascending,tag=!ste_cos.final_breath_guided] if score @s stellarity.dragon.health matches 1..8 run function ste_cos:final_breath/check_trigger
 
-# полет к порталу при гибели (только после уничтожения всех кристаллов и завершения всех фаз)
+# смерть
 execute if score #final_breath_used ste_cos.flags matches 1 unless score #crystal_count stellarity.misc matches 1.. unless score #ste_cos_crystals ste_cos.flags matches 1.. if score @s[tag=!stellarity.at_portal] stellarity.dragon.health matches 0..1 run function stellarity:entity/dragon/death/fly_to_portal
 execute if score #final_breath_used ste_cos.flags matches 1 unless score #crystal_count stellarity.misc matches 1.. unless score #ste_cos_crystals ste_cos.flags matches 1.. if score @s stellarity.dragon.health matches 0..1 if score @s[tag=stellarity.to_portal] stellarity.misc matches 5..7 run tag @s add stellarity.at_portal
 execute if score #final_breath_used ste_cos.flags matches 1 unless score #crystal_count stellarity.misc matches 1.. unless score #ste_cos_crystals ste_cos.flags matches 1.. if entity @s[tag=stellarity.at_portal] run function stellarity:entity/dragon/death/at_portal_loop

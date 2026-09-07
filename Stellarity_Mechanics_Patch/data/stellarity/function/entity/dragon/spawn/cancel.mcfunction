@@ -1,5 +1,5 @@
 # stellarity:entity/dragon/spawn/cancel
-# отмена возрождения дракона
+# отмена возрождения
 
 execute if score @s stellarity.dragon.times_killed matches 1.. run function stellarity:structure/exit_portal/activated/generate
 execute unless score @s stellarity.dragon.times_killed matches 1.. run function stellarity:structure/exit_portal/deactivated/generate
@@ -14,7 +14,7 @@ kill @e[type=marker,tag=stellarity.dragon_respawn.beam]
 
 setblock 0 63 0 bedrock replace
 
-# гарантированная очистка всех визуальных эффектов патча и сброс камеры
+# очистка эффектов
 execute as @e[type=minecraft:end_crystal] run team leave @s
 execute as @e[type=minecraft:end_crystal] run data merge entity @s {Glowing:0b,Invulnerable:0b}
 scoreboard players set #tower_retry_count ste_cos.flags 0

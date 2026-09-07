@@ -1,5 +1,5 @@
 # ste_cos:fresh_visual/heart_shrink
-# плавное уменьшение модели сердца при входе в грудь дракона
+# уменьшение сердца
 execute if score #heart_shrunk ste_cos.flags matches 1 run return 0
 scoreboard players set #heart_shrunk ste_cos.flags 1
 

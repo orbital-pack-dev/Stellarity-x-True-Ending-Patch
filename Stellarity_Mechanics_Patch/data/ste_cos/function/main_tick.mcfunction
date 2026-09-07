@@ -7,29 +7,29 @@ execute as @a[tag=ste_cos_chorus_cleaned] at @s unless dimension minecraft:the_e
 execute as @a[tag=!ste_cos_chorus_cleaned] at @s if dimension minecraft:the_end run function ste_cos:portal/chorus_cleaner
 execute as @a[tag=!ste_cos_chorus_cleaned] at @s if dimension minecraft:the_end run tag @s add ste_cos_chorus_cleaned
 
-# подсчет кристаллов на столбах арены
+# подсчет кристаллов
 scoreboard players set #ste_cos_crystals ste_cos.flags 0
 execute in minecraft:the_end positioned 0 65 0 as @e[type=end_crystal,distance=15..400,tag=!stellarity.respawn_crystal,tag=!ste_cos_portal_fix] run scoreboard players add #ste_cos_crystals ste_cos.flags 1
 
-# игроки на острове Края
+# игроки
 tag @a remove ste_cos_has_dragon
 execute in minecraft:the_end positioned 0 65 0 as @a[distance=..500] run tag @s add ste_cos_has_dragon
 
-# обновление данных шкалы кристаллов
+# шкала кристаллов
 execute store result bossbar stellarity:crystal_count value run scoreboard players get #ste_cos_crystals ste_cos.flags
 bossbar set stellarity:crystal_count name [{"translate":"bossbar.stellarity.crystals_left","color":"#4C0081","with":[{"score":{"name": "#ste_cos_crystals","objective": "ste_cos.flags"},"color":"#620081"}]}]
 
-# видимость полосы дракона
+# полоса дракона
 execute in minecraft:the_end if entity @e[type=ender_dragon,tag=stellarity.ender_dragon] run bossbar set stellarity:ender_dragon players @a[tag=ste_cos_has_dragon]
 execute in minecraft:the_end unless entity @e[type=ender_dragon,tag=stellarity.ender_dragon] run bossbar set stellarity:ender_dragon players
 
-# видимость полосы кристаллов (видна только пока есть кристаллы на арене)
+# полоса кристаллов
 execute if score #ste_cos_crystals ste_cos.flags matches 1.. run bossbar set stellarity:crystal_count players @a[tag=ste_cos_has_dragon]
 execute if score #ste_cos_crystals ste_cos.flags matches 1.. run bossbar set stellarity:crystal_count visible true
 execute unless score #ste_cos_crystals ste_cos.flags matches 1.. run bossbar set stellarity:crystal_count players
 execute unless score #ste_cos_crystals ste_cos.flags matches 1.. run bossbar set stellarity:crystal_count visible false
 
-# цвет полосы дракона: БЕЛЫЙ пока живы кристаллы, РОЗОВЫЙ когда кристаллы уничтожены
+# цвет полосы дракона
 execute if score #ste_cos_crystals ste_cos.flags matches 1.. run bossbar set stellarity:ender_dragon color white
 execute unless score #ste_cos_crystals ste_cos.flags matches 1.. run bossbar set stellarity:ender_dragon color pink
 
@@ -44,7 +44,7 @@ execute if score #rng_ticker ste_cos.flags matches 25.. run scoreboard players s
 # нет игроков
 execute in minecraft:the_end unless entity @a run return 0
 
-# лучи кристаллов на 0 67 0 и поочередное исчезновение без дракона
+# лучи кристаллов
 execute in minecraft:the_end run function ste_cos:crystal/beam_cleaner
 
 # щит
@@ -61,7 +61,7 @@ execute in minecraft:the_end if score #portal_fix_done ste_cos.flags matches 0 r
 execute in minecraft:the_end if score #portal_fix ste_cos.timer matches 1..360 run function ste_cos:portal/fix_tick
 execute in minecraft:the_end if score #portal_fix ste_cos.timer matches 361.. run scoreboard players set #portal_fix_done ste_cos.flags 1
 
-# визуальные эффекты возрождения дракона
+# визуальные эффекты
 execute in minecraft:the_end as @e[type=marker,tag=ste_cos.shockwave] at @s run function ste_cos:fresh_visual/shockwave_step
 execute in minecraft:the_end as @e[type=marker,tag=ste_cos.tether_head] at @s run function ste_cos:fresh_visual/tether_head_step
 execute in minecraft:the_end if entity @e[type=marker,tag=ste_cos.heart_absorbing,limit=1] run scoreboard players add #absorb_time ste_cos.timer 1
@@ -70,7 +70,7 @@ execute in minecraft:the_end as @e[type=marker,tag=ste_cos.absorb_tendril] at @s
 execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.crystal_laser_projectile] at @s run function ste_cos:crystal/laser_projectile_tick
 execute in minecraft:the_end as @e[type=end_crystal] if data entity @s beam_target unless data entity @s beam_target[2] run data remove entity @s beam_target
 
-# общий таймер заряда кристаллов Фазы-3 (цикл 110 тиков = 5.5 секунд)
+# заряд кристаллов
 execute in minecraft:the_end if entity @e[type=end_crystal,tag=ste_cos.shielded_crystal,limit=1] run scoreboard players add #crystal_charge_timer ste_cos.timer 1
 execute in minecraft:the_end if score #crystal_charge_timer ste_cos.timer matches 80 run tag @e[type=end_crystal,tag=ste_cos.charging_crystal] remove ste_cos.charging_crystal
 execute in minecraft:the_end if score #crystal_charge_timer ste_cos.timer matches 80 as @e[type=end_crystal,tag=ste_cos.shielded_crystal,limit=1,sort=random] run tag @s add ste_cos.charging_crystal
@@ -81,12 +81,12 @@ execute in minecraft:the_end if score #crystal_charge_timer ste_cos.timer matche
 execute in minecraft:the_end if score #crystal_charge_timer ste_cos.timer matches 110.. run tag @e[type=end_crystal,tag=ste_cos.charging_crystal] remove ste_cos.charging_crystal
 execute in minecraft:the_end if score #crystal_charge_timer ste_cos.timer matches 110.. run scoreboard players set #crystal_charge_timer ste_cos.timer 0
 
-# мини-игра иллюзорных драконов
+# мини-игра
 execute in minecraft:the_end if score #minigame_state ste_cos.flags matches 1.. run function ste_cos:minigame_clones/tick
 execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.clones_diving] at @s run function ste_cos:minigame_clones/clone_dive_tick
 execute in minecraft:the_end as @e[type=marker,tag=ste_cos.feedback_projectile] at @s run function ste_cos:minigame_clones/feedback_projectile_step
 
-# разлет копий по противоположным C-дугам за остров при успехе
+# разлет копий
 execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.exit_1] at @s run tp @s ^0.15 ^0.03 ^1.6 ~0.8 ~
 execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.exit_2] at @s run tp @s ^-0.15 ^0.03 ^1.6 ~-0.8 ~
 execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.clone_exit_carrier] at @s positioned 0 0 0 unless entity @s[distance=..250] run kill @s
@@ -94,28 +94,32 @@ execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.clone_dragon] a
 execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.clone_exit_carrier] at @s run particle dust_color_transition{from_color:[0.6,0.1,0.8],scale:2.0,to_color:[0.1,0.0,0.3]} ~ ~ ~ 1 1 1 0.05 6 force
 execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.clone_exit_carrier] at @s run particle dragon_breath ~ ~ ~ 0.5 0.5 0.5 0.03 4 force
 
-# детекция расхода системного тотема (перо death_protection) -> переход в Финальный Вздох
-execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.has_death_feather] unless items entity @s weapon.* minecraft:feather run function ste_cos:final_breath/totem_feather_consumed
+# расход тотема
+execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.has_death_feather,tag=!ste_cos.totem_animating,tag=!ste_cos.final_breath_active,tag=!ste_cos.final_stand] unless items entity @s weapon.mainhand minecraft:feather run function ste_cos:final_breath/totem_feather_consumed
 
-# ультимативная атака Финальный Вздох
+# финальный вздох
 execute in minecraft:the_end if score #final_breath_state ste_cos.flags matches 1.. run function ste_cos:final_breath/tick
 
-# удержание дракона на портале после финального вздоха (финальная стойка до смерти)
+# парение над порталом
 execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] run tag @s add trueEnding_inattack
 execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] run scoreboard players set @s trueEnding_bosstime 0
 execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] at @s positioned 0 67 0 unless entity @s[distance=..20] run tag @s add stellarity.to_portal
 execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] at @s positioned 0 67 0 unless entity @s[distance=..20] run data modify entity @s DragonPhase set value 2
 execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] at @s positioned 0 67 0 if entity @s[distance=..20] run data modify entity @s DragonPhase set value 10
+execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] at @s positioned 0 67 0 if entity @s[distance=..20] run tp @s 0 79 0 ~0.5 0
 execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.final_stand] run data modify entity @s Motion set value [0.0d, 0.0d, 0.0d]
 
-# анимация оригинального вихря True Ending и площадки парения
+# импульс кристаллов
+execute in minecraft:the_end as @e[type=marker,tag=ste_cos.pulse_wave_marker] at @s run function ste_cos:fresh_visual/portal_crystals_pulse_step
+
+# вихрь и площадка
 execute in minecraft:the_end as @e[type=marker,tag=trueEnding_shockwave] at @s run function true_ending:boss/shockwave/root
 execute in minecraft:the_end as @e[type=marker,tag=trueEnding_shockwave2] at @s run function true_ending:boss/shockwave/root2
 execute in minecraft:the_end as @e[type=marker,tag=trueEnding_pad] at @s run function true_ending:boss/shockwave/pad
 
-# очистка тега отраженного трезубца после падения на землю
+# очистка трезубца
 execute as @e[type=trident,tag=ste_cos.deflected,nbt={inGround:1b}] run tag @s remove ste_cos.deflected
 
-# механики усложненного боя
+# механики боя
 execute in minecraft:the_end run function ste_cos:mechanics/tick
 execute as @a[predicate=ste_cos:enchantment/has_vortex] at @s run function ste_cos:mechanics/vortex_tick/main

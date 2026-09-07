@@ -1,5 +1,5 @@
 # ste_cos:crystal/despawn_one
-# магическое втягивание кристалла в портал
+# деспавн кристалла
 
 particle reverse_portal ~ ~1 ~ 0.5 0.5 0.5 0.1 60 force
 particle dragon_breath ~ ~1 ~ 0.4 0.4 0.4 0.02 30 force

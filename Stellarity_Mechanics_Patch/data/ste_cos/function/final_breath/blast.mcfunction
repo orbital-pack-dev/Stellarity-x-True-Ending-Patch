@@ -1,47 +1,53 @@
 # ste_cos:final_breath/blast
-# залп ультимативной атаки: рёв дракона + соникбум вардена + взрыв + выстрел лазера
-# пост-эффект: площадка парения (summon_pad) над порталом, дракон зависает на 0 77 0 (DragonPhase: 10), волны портала отключены
+# залп финального вздоха
 
-# разворот строго на ближайшего игрока
+# разворот на игрока
 execute facing entity @p[gamemode=!creative,gamemode=!spectator] eyes run tp @s ~ ~ ~ ~ ~
 
-# оглушительные звуки (громкость 1000 на всю арену)
+# звуки
 playsound entity.ender_dragon.growl master @a ~ ~ ~ 1000 0.60
 playsound entity.warden.sonic_boom master @a ~ ~ ~ 1000 0.75
 playsound entity.generic.explode master @a ~ ~ ~ 1000 0.80
 playsound block.amethyst_block.resonate master @a ~ ~ ~ 1000 0.50
 
-# колоссальный взрыв и звуковой удар вардена
+# взрыв
 particle explosion_emitter ~ ~ ~ 0 0 0 0 6 force @a
 particle sonic_boom ~ ~ ~ 0 0 0 0 4 force @a
 particle flash{color:[0.95,0.30,1.0,1.0]} ~ ~ ~ 0 0 0 0 3 force @a
 particle dragon_breath ~ ~ ~ 2 2 2 0.3 150 force @a
 
-# ровно 1 единичный выстрел лазера True Ending
-execute rotated ~ 0 positioned ^-3 ^ ^-5 rotated as @s rotated ~-180 ~ run function true_ending:boss/laser/raycast
+# луч вздоха
+particle sonic_boom ~ ~-2 ~ 0 0 0 0 3 force @a
+particle sonic_boom ~ ~-5 ~ 0 0 0 0 3 force @a
+particle sonic_boom ~ ~-8 ~ 0 0 0 0 3 force @a
+particle sonic_boom ~ ~-11 ~ 0 0 0 0 4 force @a
+particle flash{color:[1.0,0.2,0.9,1.0]} ~ ~-6 ~ 1 5 1 0.1 5 force @a
+particle explosion_emitter 0 67 0 2 1 2 0.1 8 force @a
+particle reverse_portal 0 67 0 4 2 4 0.2 120 force @a
+particle dust_color_transition{from_color:[1.0,0.2,0.9],scale:3.5,to_color:[0.2,0.0,0.4]} 0 67 0 5 2 5 0.3 200 force @a
 
-# тяжелый магический урон по конусу перед драконом
-execute positioned ^ ^ ^4 as @a[distance=..8,gamemode=!creative,gamemode=!spectator] run damage @s 16 magic by @e[type=ender_dragon,limit=1]
+# урон
+execute as @a[distance=..20,gamemode=!creative,gamemode=!spectator] run damage @s 16 magic by @e[type=ender_dragon,limit=1]
 
-# снятие слабости и тьмы с игроков
+# снятие эффектов
 effect clear @a weakness
 effect clear @a darkness
 
-# отключение опасных волн портала
+# отключение волн
 tag @s remove ste_cos.portal_danger_active
 tag @s remove stellarity.portal_activated
 kill @e[type=marker,tag=ste_cos.portal_wave]
 scoreboard players set #portal_danger_active ste_cos.flags 0
 
-# позиционирование дракона над порталом на высоте ~ ~12 ~ (0 79 0) в режиме парения (DragonPhase: 10)
+# позиция дракона
 tp @s 0 79 0
 data modify entity @s Motion set value [0.0d, 0.0d, 0.0d]
 data modify entity @s DragonPhase set value 10
 
-# призыв левитационной площадки True Ending на портал для финальных ударов игроков
+# площадка парения
 execute in minecraft:the_end positioned 0 67 0 run function true_ending:boss/shockwave/summon_pad
 
-# снятие неуязвимости (дракон остается строго с 1 ХП от системного пера без брони, добивается с 1 удара!)
+# снятие неуязвимости
 attribute @s minecraft:armor base set 0
 attribute @s minecraft:armor_toughness base set 0
 data modify entity @s Invulnerable set value 0b
@@ -52,7 +58,7 @@ scoreboard players set @s stellarity.dragon.health 1
 scoreboard players set @s stellarity.dragon.health_old 1
 bossbar set stellarity:ender_dragon value 1
 
-# финальная стойка до смерти
+# финал
 tag @s remove ste_cos.final_breath_active
 tag @s add ste_cos.final_stand
 tag @s add trueEnding_inattack

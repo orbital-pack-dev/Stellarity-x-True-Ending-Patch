@@ -1,5 +1,5 @@
 # stellarity:entity/dragon/spawn/summon
-# появление дракона с фиолетовым космическим взрывом
+# спавн дракона
 
 execute unless score #stellarity.config stellarity.config.dragon_health matches 1.. run scoreboard players set #stellarity.config stellarity.config.dragon_health 300
 scoreboard players set #stellarity.config stellarity.config.dragon_health 300
@@ -19,7 +19,7 @@ item replace entity @e[type=ender_dragon,tag=stellarity.ender_dragon] weapon.off
 
 execute if score #stellarity.config stellarity.config.boss_status_messages matches 1 run tellraw @a ["\n",{"translate":"entity.stellarity.dragon.spawn","with":[{"translate":"entity.minecraft.ender_dragon"}],"color":"#AF4BFF"},"\n"]
 
-# космический взрыв с фиолетовыми вспышками
+# взрыв
 particle minecraft:explosion_emitter ~ ~ ~ 3 3 3 1 10 force
 particle sonic_boom ~ ~ ~ 0 0 0 0 2 force @a
 particle flash{color:[0.90,0.25,1.0,1.0]} ~ ~ ~ 0 0 0 0 2 force @a
@@ -32,7 +32,7 @@ particle electric_spark ~ ~ ~ 2 2 2 0.2 80 force
 
 function stellarity:entity/dragon/spawn/spiral
 
-# звуки дракона, вардена, иллюзора и аметиста без молний и визера
+# звуки
 playsound minecraft:entity.ender_dragon.growl hostile @a[distance=0..] ~ ~ ~ 10 0.7
 playsound minecraft:entity.warden.sonic_boom hostile @a[distance=0..] ~ ~ ~ 10 0.75
 playsound minecraft:block.amethyst_block.resonate hostile @a[distance=0..] ~ ~ ~ 10 0.5

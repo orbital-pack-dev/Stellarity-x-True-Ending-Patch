@@ -33,3 +33,4 @@ tag @e[type=area_effect_cloud,tag=ste_cos_guard_marker_new] remove ste_cos_guard
 execute positioned ~4 ~3 ~ run summon phantom ~ ~ ~ {Tags:["ste_cos_guard","ste_cos_guard_new"],NoAI:0b,NoGravity:0b,Silent:0b,Health:20.0f,PersistenceRequired:1b}
 execute as @e[type=phantom,tag=ste_cos_guard_new,distance=..7,limit=1] run scoreboard players operation @s ste_cos.id = #guard_id ste_cos.flags
 tag @e[type=phantom,tag=ste_cos_guard_new] remove ste_cos_guard_new
+tag @e[type=end_crystal,distance=..3,limit=1] add ste_cos.shielded_crystal

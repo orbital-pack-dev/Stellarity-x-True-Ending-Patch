@@ -1,5 +1,5 @@
 # stellarity:entity/dragon/spawn/pulse
-# световые и магические кольцевые импульсы портала во время возрождения
+# импульсы портала
 
 scoreboard players add #wave stellarity.misc 1
 

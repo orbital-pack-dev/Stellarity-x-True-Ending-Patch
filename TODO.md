@@ -1,36 +1,66 @@
 # Patch Roadmap & Notes
 
-This document keeps track of where we are with the Stellarity x True Ending compatibility and mechanics patches, what has already been fixed, and what we want to tackle next.
+This document keeps track of the unified Stellarity x True Ending compatibility and overhaul patch (packaged as `Stellarity_Cosmetic_Patch`), completed fixes, and testing milestones.
 
 ## What's Done and Working
 
-- Fixed the chorus fruit cleanup around the main exit portal so it runs smoothly just once when a player enters the End, without spamming destructive fills or tearing down the bedrock structure.
-- Replaced the huge 14,000-line dragon egg search with a clean 19-page dispatcher that checks blocks in small 800-block slices with cooldowns, saving server tick time.
-- Brought pack metadata up to date with modern 1.21 standards (pack format 118, overlay support for 1.21.9+, and clean MCMeta files).
-- Slimmed down forceloaded chunks from a massive 196-chunk square to 11 targeted points covering the 10 obsidian towers and the central fountain.
-- Upgraded entity tags and NBT keys to 1.21 snake_case rules, such as switching FallDistance to fall_distance and using custom_particle components.
-- Integrated True Ending's native guarding phantoms directly into the Compatibility patch. Markers now target Stellarity's exact 10 pillar coordinates at height 115, and cage height checks accommodate Stellarity's taller 4-block iron cages so phantoms orbit caged towers and dive-bomb the bars when hit.
-- Overhauled the dragon vortex visual effects in the Mechanics patch. Instead of a rigid, rectangular wireframe cylinder, it now swirls as a dynamic, cone-shaped tornado with dragon breath, witch sparkles, portal suction streaks, and ascending spiral end rods.
-- Restored missing vortex frame triggers in vortex_tick so the full 4-second animation plays as intended.
-- Audited all files against Stellarity 6.0.0-beta and True Ending 1.1.4d. We restored full animation sequences (all 11 crystal beams and screenshake) while preserving custom pillar heights, and removed 100% identical files to prevent accidental upstream overrides.
-- Wrote sync_patches.py to effortlessly synchronize shared ste_cos logic between Compatibility and Mechanics while respecting Mechanics-exclusive features.
+### Boss Fight & Core Mechanics
 
-## What We're Working On Next
+- **Unified Patch Release**: Consolidated compatibility and mechanics into a single maintained build (`Stellarity_Cosmetic_Patch.zip` and `.jar` supporting Datapacks, Fabric, Quilt, NeoForge, Forge, Paper, and Purpur on 1.21+).
+- **Shielded End Crystals & Guardian Phantoms**:
+  - Bound tower phantoms to shielded crystals via `ste_cos:phantom/guard_killed`.
+  - Killing a guardian phantom immediately clears `{Invulnerable:0b, Glowing:0b}` from the tower crystal with break sounds and particles.
+  - Added safety guard in `crystal/loop.mcfunction` preventing unbreakable crystals if a phantom despawns or is killed from distance.
+- **Totem of Undying & Final Breath Phase Separation**:
+  - Resolved dragon offhand slot limitation (`ender_dragon` only supports `weapon.mainhand`).
+  - Totem cutscene plays cleanly upon first fatal hit (restoring 36 HP, shaking screen, and performing ascending flight).
+  - System totem feather with `death_protection` is equipped into `weapon.mainhand` at the climax of the totem ascent (tick 3090).
+  - Isolated Final Breath transition so it triggers only after the totem phase has fully completed.
+- **Final Breath Ascent & Hover Arena**:
+  - Replaced drifting relative teleportation with a deterministic 30-tick vertical ascent from portal level (Y=67) up to Y=79 (`~ ~12 ~`).
+  - During the 7-second Abyss Shriek charge, the dragon remains locked at `0 79 0` with cosmic matter suction and Warden heartbeat buildup.
+  - Overhauled Final Breath laser blast with multi-ring sonic booms, flash rays, and 16 magic damage.
+  - Dragon hovers at Y=79 with 1 HP for the final blow; levitation pad (`trueEnding_pad`) on the portal allows players in Survival to leap up and deliver the finishing hit.
+- **Residual Invulnerability Fix**:
+  - Disabled legacy True Ending 600-tick invulnerability loop (`a_main_final.mcfunction`).
+  - Ensured `{Invulnerable: 0b}` is applied whenever End Crystals are down (`#ste_cos_crystals == 0`) and the dragon is not mid-cutscene.
+- **Crystal Laser Defense & Deflection**:
+  - Fixed projectile deflection logic: tridents and arrows reflect away with positive vertical trajectory, avoiding crystal self-damage.
+  - Added audio spam cooldowns and grounded trident tag cleanup.
 
-- Dragon Wings custom item ID: waiting on the Stellarity team for the custom item component ID so we can properly stop vortex flight on custom wings rather than standard elytra alone.
-- Settings system (ste_settings): building an in-game configuration menu alongside safe island regeneration when a new fight begins.
-- Checking portal cooldown mechanics: verifying whether PortalCooldown still functions reliably on item displays and armor stands in Minecraft 1.21.x.
-- Looking into damage cooldowns on phantom attacks and evaluating macro support for cleaner orbital math.
+### Respawn Ritual & Visuals
 
-## Future Ideas
+- **Respawn Animation Crystals & Beams**:
+  - Re-aligned all crystal beam functions to height Y=98 to match Stellarity's taller tower structures.
+  - Fixed tower cage auto-repair and respawn height alignment.
+- **Cinematic Heart & Tornado Ritual**:
+  - Dynamic dragon heart pulsing in the sky, absorbing tether rays from all 10 towers.
+  - Swirling multi-layered particle tornado connecting the portal to the sky.
+  - End Crystals gain vibrant purple glow aura and flash bursts during the entire revival sequence.
+- **Earthquake & Island Shudder**:
+  - Stellarity screenshake triggers unconditionally for all players within 128 blocks during the ritual.
+  - Physical earthquake jitter ($\pm 0.04$ vertical shudder) affects all non-system entities on the island (players, endermen, animals, dropped items) during progress 100..619.
+- **Culmination Shockwave Pulse**:
+  - At tick 590, an expanding 16-radial shockwave radiates up to 200 blocks across the island from the 4 portal crystals, dealing 3.5 generic damage to living entities.
 
-- Gather feedback and bug reports from Modrinth users playing both mods together.
-- Add a lightweight GitHub Actions workflow to verify that Compatibility and Mechanics packs remain in sync on every push.
+### Technical & Compatibility
+
+- Clean pack metadata supporting 1.21 up to 1.21.9+ overlays without log warnings.
+- Fixed Minecraft 1.21 syntax deprecations (`fall_distance`, particle formats, team commands).
+- Full chunk cleanup and non-destructive chorus fruit removal around the main exit portal on Paper/Purpur.
+- Verified 100% valid UTF-8 encoding with zero BOM bytes across all files.
+
+## Testing & Quality Assurance Plan
+
+- [ ] **Survival Entry**: Verify initial End entry, portal generation, and chorus fruit clearing.
+- [ ] **Phase 1-2 Combat**: Test tower climbing, phantom guardian battles, shield breaking, and crystal destruction.
+- [ ] **Totem Phase**: Drop dragon HP to trigger Totem; verify clean portal ascent and sound/visual playback without premature Final Breath.
+- [ ] **Final Breath Climax**: Verify smooth ascent to Y=79, 7-second charge, laser blast, portal pad levitation, and 1-hit kill.
+- [ ] **Dragon Respawn**: Place 4 End Crystals on portal; observe beam alignment (Y=98), heart animation, screenshake, earthquake entity shudder, and tick 590 shockwave damage.
 
 ## Helpful Scripts
 
-- Check differences between two patch versions or archives:
-  python compare_datapacks.py old_pack.zip new_pack.zip --diff
-
-- Synchronize shared code from Compatibility to Mechanics:
-  python sync_patches.py --apply
+- Rebuild mod archives and datapack zip:
+  `python build.py`
+- Verify differences between builds:
+  `python compare_datapacks.py old_pack.zip new_pack.zip --diff`

@@ -1,10 +1,10 @@
 # ste_cos:fresh_visual/shielded_crystal_aura
-# отдельная уникальная аура силового щита защищенных кристаллов 3-й фазы
+# аура щита
 
-# яркая бирюзово-аметистовая вспышка силового поля
+# вспышка
 particle flash{color:[0.40,0.85,1.0,1.0]} ~ ~1.2 ~ 0 0 0 0 1 force @a[distance=..128]
 
-# звуки силового барьера и аметистового резонанса (только для находящихся рядом игроков)
+# звуки
 playsound block.beacon.ambient block @a[distance=..16] ~ ~ ~ 1.0 1.4
 playsound block.amethyst_block.resonate block @a[distance=..16] ~ ~ ~ 1.0 1.2
 playsound entity.illusioner.cast_spell block @a[distance=..16] ~ ~ ~ 1.0 1.1

@@ -1,5 +1,5 @@
 # ste_cos:minigame_clones/clone_dive_tick
-# пикирование копии в бездну с последующим удалением
+# пике в бездну
 
 scoreboard players add @s ste_cos.dive_timer 1
 tp @s ~ ~-2.0 ~

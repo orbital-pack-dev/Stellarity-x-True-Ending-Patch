@@ -1,5 +1,5 @@
 # ste_cos:fresh_visual/shards/orbit_step
-# Продвижение шага орбиты и вызов соответствующего шага трансформации
+# шаг орбиты
 
 scoreboard players set #shard_orbit_timer ste_cos.timer 0
 scoreboard players add #shard_orbit_step ste_cos.flags 1

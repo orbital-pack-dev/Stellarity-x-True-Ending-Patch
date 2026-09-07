@@ -1,5 +1,5 @@
 # ste_cos:final_breath/start
-# начало плавного взлета дракона к высоте 90 над порталом (БЕЗ мгновенного ТП)
+# старт взлета
 
 scoreboard players set #final_breath_state ste_cos.flags 2
 scoreboard players set #fb_ascend_tick ste_cos.timer 0
@@ -11,19 +11,19 @@ tag @s add ste_cos.final_breath_active
 tag @s add trueEnding_inattack
 tag @s add stellarity.at_portal
 
-# слабость 10 всем игрокам на время подготовки и зарядки (~8 секунд)
+# слабость игрокам
 effect give @a weakness 8 10 true
 
-# абсолютная неуязвимость на время зарядки (НЕЛЬЗЯ УДАРИТЬ!)
+# неуязвимость
 attribute @s minecraft:armor base set 1000
 attribute @s minecraft:armor_toughness base set 1000
 data modify entity @s Invulnerable set value 1b
 
-# фаза 10 — удержание над порталом во время подъема
+# фаза парения
 data modify entity @s DragonPhase set value 10
 data modify entity @s Motion set value [0.0d, 0.0d, 0.0d]
 
-# начальный глубокий звук без звуков якоря возрождения
+# звуки
 playsound entity.ender_dragon.growl master @a ~ ~ ~ 64.0 0.8
 playsound entity.warden.heartbeat master @a ~ ~ ~ 64.0 0.5
 playsound block.amethyst_block.resonate master @a ~ ~ ~ 64.0 0.5

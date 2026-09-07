@@ -1,11 +1,10 @@
 # ste_cos:fresh_visual/heart_absorb_arrive
-# финал всасывания: Сердце достигло Дракона (или таймаут на 35с)
-# воспроизведение звуков резонанса, вспышки частиц и удаление модели
+# финал поглощения
 
 execute if score #heart_absorbed ste_cos.flags matches 1 run return 0
 scoreboard players set #heart_absorbed ste_cos.flags 1
 
-# громкие глубокие звуки поглощения Сердца Драконом
+# звуки
 playsound entity.warden.heartbeat master @a ~ ~ ~ 64.0 0.65
 playsound block.amethyst_block.resonate master @a ~ ~ ~ 64.0 0.55
 playsound block.amethyst_block.chime master @a ~ ~ ~ 64.0 0.70
@@ -20,7 +19,7 @@ particle reverse_portal ~ ~ ~ 1.5 1.5 1.5 0.2 80 force @a
 particle electric_spark ~ ~ ~ 1.2 1.2 1.2 0.2 60 force @a
 particle dragon_breath ~ ~ ~ 1.5 1.5 1.5 0.1 50 force @a
 
-# удаление 3D-модели Сердца и всех ее компонентов
+# удаление модели
 function project:_/delete
 
 # удаление вспомогательных маркеров

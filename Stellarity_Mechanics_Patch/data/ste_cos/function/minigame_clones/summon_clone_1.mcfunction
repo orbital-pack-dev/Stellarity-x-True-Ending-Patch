@@ -1,5 +1,5 @@
 # ste_cos:minigame_clones/summon_clone_1
-# появление Копии 1 с эпическими эффектами и звуками
+# спавн копии 1
 
 summon ender_dragon -14 85 24.25 {Tags:["trueEnding_dragon_noAI","trueEnding_dragon_particlechecked","stellarity.ender_dragon","stellarity.dragon.invulnerable","smithed.strict","refresh_entity_exists","smithed.entity","ste_cos.clone_dragon","ste_cos.clone_1"],Health:300f,DragonPhase:3}
 

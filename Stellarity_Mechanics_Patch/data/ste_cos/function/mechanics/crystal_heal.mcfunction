@@ -1,5 +1,5 @@
 # ste_cos:mechanics/crystal_heal
-# периодическое лечение дракона от кристаллов края
+# исцеление дракона
 
 scoreboard objectives add ste_cos.health dummy
 scoreboard objectives add ste_cos.health_old dummy
@@ -9,13 +9,11 @@ execute unless score @s ste_cos.health matches 2.. run return 0
 
 scoreboard players add @s ste_cos.health 4
 
-# Максимальное здоровье дракона строго 300
+# лимит 300
 scoreboard players set #ste_cos_maxhp ste_cos.flags 300
-
-# Ограничиваем здоровье максимумом 300
 execute if score @s ste_cos.health > #ste_cos_maxhp ste_cos.flags run scoreboard players operation @s ste_cos.health = #ste_cos_maxhp ste_cos.flags
 
-# Запись нового здоровья только при безопасном значении (минимум 2 ХП)
+# запись здоровья
 execute if score @s ste_cos.health matches 2.. store result entity @s Health float 1 run scoreboard players get @s ste_cos.health
 
 execute store result score @s stellarity.dragon.health run data get entity @s Health 1
