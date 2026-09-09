@@ -2,7 +2,8 @@
 # залп финального вздоха
 
 # разворот на игрока
-execute facing entity @p[gamemode=!creative,gamemode=!spectator] eyes run tp @s ~ ~ ~ ~ ~
+execute facing entity @p[gamemode=!creative,gamemode=!spectator] eyes run tp @s 0 79 0 ~ ~
+execute unless entity @p[gamemode=!creative,gamemode=!spectator] facing 0 67 0 run tp @s 0 79 0 ~ ~
 
 # звуки
 playsound entity.ender_dragon.growl master @a ~ ~ ~ 1000 0.60
@@ -10,24 +11,39 @@ playsound entity.warden.sonic_boom master @a ~ ~ ~ 1000 0.75
 playsound entity.generic.explode master @a ~ ~ ~ 1000 0.80
 playsound block.amethyst_block.resonate master @a ~ ~ ~ 1000 0.50
 
-# взрыв
+# взрыв у дракона
 particle explosion_emitter ~ ~ ~ 0 0 0 0 6 force @a
 particle sonic_boom ~ ~ ~ 0 0 0 0 4 force @a
 particle flash{color:[0.95,0.30,1.0,1.0]} ~ ~ ~ 0 0 0 0 3 force @a
 particle dragon_breath ~ ~ ~ 2 2 2 0.3 150 force @a
 
-# луч вздоха
-particle sonic_boom ~ ~-2 ~ 0 0 0 0 3 force @a
-particle sonic_boom ~ ~-5 ~ 0 0 0 0 3 force @a
-particle sonic_boom ~ ~-8 ~ 0 0 0 0 3 force @a
-particle sonic_boom ~ ~-11 ~ 0 0 0 0 4 force @a
-particle flash{color:[1.0,0.2,0.9,1.0]} ~ ~-6 ~ 1 5 1 0.1 5 force @a
-particle explosion_emitter 0 67 0 2 1 2 0.1 8 force @a
-particle reverse_portal 0 67 0 4 2 4 0.2 120 force @a
-particle dust_color_transition{from_color:[1.0,0.2,0.9],scale:3.5,to_color:[0.2,0.0,0.4]} 0 67 0 5 2 5 0.3 200 force @a
+# луч вздоха в направлении цели
+particle sonic_boom ^ ^1.5 ^3 0 0 0 0 2 force @a
+particle sonic_boom ^ ^1.5 ^6 0 0 0 0 2 force @a
+particle sonic_boom ^ ^1.5 ^10 0 0 0 0 3 force @a
+particle sonic_boom ^ ^1.5 ^14 0 0 0 0 3 force @a
+particle sonic_boom ^ ^1.5 ^18 0 0 0 0 4 force @a
+particle sonic_boom ^ ^1.5 ^22 0 0 0 0 4 force @a
+particle sonic_boom ^ ^1.5 ^26 0 0 0 0 5 force @a
+particle sonic_boom ^ ^1.5 ^30 0 0 0 0 5 force @a
+particle flash{color:[1.0,0.2,0.9,1.0]} ^ ^1.5 ^8 1 1 1 0.1 4 force @a
+particle flash{color:[1.0,0.2,0.9,1.0]} ^ ^1.5 ^18 1.5 1.5 1.5 0.1 5 force @a
+particle flash{color:[1.0,0.2,0.9,1.0]} ^ ^1.5 ^28 2 2 2 0.1 6 force @a
+particle dragon_breath ^ ^1.5 ^10 1.2 1.2 1.2 0.1 50 force @a
+particle dragon_breath ^ ^1.5 ^20 1.8 1.8 1.8 0.1 70 force @a
+particle dust_color_transition{from_color:[1.0,0.2,0.9],scale:3.5,to_color:[0.2,0.0,0.4]} ^ ^1.5 ^12 1.5 1.5 1.5 0.2 60 force @a
+particle dust_color_transition{from_color:[1.0,0.2,0.9],scale:3.5,to_color:[0.2,0.0,0.4]} ^ ^1.5 ^25 2.5 2.5 2.5 0.2 100 force @a
 
-# урон
-execute as @a[distance=..20,gamemode=!creative,gamemode=!spectator] run damage @s 16 magic by @e[type=ender_dragon,limit=1]
+# попадание в цель / позицию игрока
+execute as @p[gamemode=!creative,gamemode=!spectator] at @s run particle explosion_emitter ~ ~1 ~ 1 1 1 0.1 8 force @a
+execute as @p[gamemode=!creative,gamemode=!spectator] at @s run particle reverse_portal ~ ~1 ~ 3 1.5 3 0.2 80 force @a
+execute as @p[gamemode=!creative,gamemode=!spectator] at @s run particle dust_color_transition{from_color:[1.0,0.2,0.9],scale:3.5,to_color:[0.2,0.0,0.4]} ~ ~1 ~ 3 1 3 0.3 120 force @a
+execute as @p[gamemode=!creative,gamemode=!spectator] at @s run playsound entity.generic.explode master @a ~ ~ ~ 1000 0.85
+execute unless entity @p[gamemode=!creative,gamemode=!spectator] run particle explosion_emitter 0 67 0 2 1 2 0.1 8 force @a
+execute unless entity @p[gamemode=!creative,gamemode=!spectator] run particle reverse_portal 0 67 0 4 2 4 0.2 120 force @a
+
+# урон игрокам на арене
+execute as @a[gamemode=!creative,gamemode=!spectator] at @s run damage @s 16 magic by @e[type=ender_dragon,limit=1]
 
 # снятие эффектов
 effect clear @a weakness

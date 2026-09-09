@@ -42,7 +42,7 @@ scoreboard objectives add stellarity.constants dummy
 # стартовые значения
 scoreboard players set $pull_timer ste_cos.flags 0
 scoreboard players set #rng_ticker ste_cos.flags 0
-scoreboard players set #egg_tracker_spawned ste_cos.flags 0
+execute unless score #egg_marker_fixed ste_cos.flags matches 1 run function ste_cos:fix/egg_marker_fix
 scoreboard players set #hundred stellarity.constants 100
 scoreboard players set #three stellarity.constants 3
 scoreboard objectives add stellarity.config.dragon_health dummy

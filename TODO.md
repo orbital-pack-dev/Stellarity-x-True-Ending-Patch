@@ -9,7 +9,7 @@ This document keeps track of the unified Stellarity x True Ending compatibility 
 - **Unified Patch Release**: Consolidated compatibility and mechanics into a single maintained build (`Stellarity_Cosmetic_Patch.zip` and `.jar` supporting Datapacks, Fabric, Quilt, NeoForge, Forge, Paper, and Purpur on 1.21+).
 - **Shielded End Crystals & Guardian Phantoms**:
   - Bound tower phantoms strictly to their revived crystals via unique `ste_cos.id`.
-  - In Phase 1, each of the 10 crystals on towers gets 1 decorative phantom circling it; the crystals remain completely normal and destructible.
+  - In Phase 1, each of the 10 crystals on towers gets 1 decorative phantom circling it; the crystals retain an ominous dark-purple glowing aura (`ste_cos.purple_glow`) while remaining completely normal and destructible (`Invulnerable:0b`).
   - Revived crystals in Phase 3 (`revive_crystals`) receive exactly 1 guardian phantom without duplications (strict `return 0` guards and picked marker tagging).
   - Killing a guardian phantom immediately clears `{Invulnerable:0b, Glowing:0b}` from the tower crystal with break sounds and particles; once killed, phantoms never respawn.
   - Crystal laser attack projectile overhauled: collision detection expanded to 3.8 blocks, safe obstacle clearance outside tower cages, dealing 8 magic damage.
@@ -21,8 +21,8 @@ This document keeps track of the unified Stellarity x True Ending compatibility 
   - Isolated Final Breath transition so it triggers only after the totem phase has fully completed.
 - **Final Breath Ascent & Hover Arena**:
   - Replaced drifting relative teleportation with a deterministic 30-tick vertical ascent from portal level (Y=67) up to Y=79 (`~ ~12 ~`).
-  - During the 7-second Abyss Shriek charge, the dragon remains locked at `0 79 0` with cosmic matter suction and Warden heartbeat buildup.
-  - Overhauled Final Breath laser blast with multi-ring sonic booms, flash rays, and 16 magic damage.
+  - During the 7-second Abyss Shriek charge, the dragon hovers at `0 79 0` dynamically tracking and locking gaze onto the nearest player in Survival/Adventure mode.
+  - Overhauled Final Breath laser blast: fires a concentrated destructive beam directly along line-of-sight at the targeted player with multi-ring sonic booms, flash rays, and 16 magic damage, exploding at the target position instead of shooting straight down into the portal floor.
   - Dragon hovers at Y=79 with 1 HP for the final blow; levitation pad (`trueEnding_pad`) on the portal allows players in Survival to leap up and deliver the finishing hit.
 - **Clone Carousel & Decoy Dragons**:
   - Locked dragon head orientation strictly tangent to the circular orbit via center facing, eliminating uncontrollable spinning on 2nd and subsequent rounds.
@@ -32,6 +32,7 @@ This document keeps track of the unified Stellarity x True Ending compatibility 
   - Disabled legacy True Ending 600-tick invulnerability loop (`a_main_final.mcfunction`).
   - Ensured `{Invulnerable: 0b}` is applied whenever End Crystals are down (`#ste_cos_crystals == 0`) and the dragon is not mid-cutscene.
   - 100% complete state and scoreboard reset on repeat battles (totem feather, final breath, clone carousel, flags, timers, and temporary markers/entities).
+  - Fixed dragon egg tracker duplicate marker issue from version 1.0.0 via dedicated cleanup routine `ste_cos:fix/egg_marker_fix` and strict single-instance spawning.
 
 ### Respawn Ritual & Visuals
 

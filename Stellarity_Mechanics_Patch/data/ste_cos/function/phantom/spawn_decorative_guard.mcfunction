@@ -38,7 +38,8 @@ execute positioned ~4 ~3 ~ run summon phantom ~ ~ ~ {Tags:["ste_cos_guard","ste_
 execute as @e[type=phantom,tag=ste_cos_guard_new,distance=..7,limit=1] run scoreboard players operation @s ste_cos.id = #guard_id ste_cos.flags
 tag @e[type=phantom,tag=ste_cos_guard_new] remove ste_cos_guard_new
 
-# кристалл остается обычным и разрушаемым
+# кристалл первой фазы
 execute as @e[type=end_crystal,distance=..3,limit=1] run tag @s remove ste_cos.shielded_crystal
-execute as @e[type=end_crystal,distance=..3,limit=1] run data merge entity @s {Invulnerable:0b,Glowing:0b}
-execute as @e[type=end_crystal,distance=..3,limit=1] run team leave @s
+execute as @e[type=end_crystal,distance=..3,limit=1] run tag @s add ste_cos.phase1_crystal
+execute as @e[type=end_crystal,distance=..3,limit=1] run data merge entity @s {Invulnerable:0b,Glowing:1b}
+execute as @e[type=end_crystal,distance=..3,limit=1] run team join ste_cos.purple_glow @s

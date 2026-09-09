@@ -3,9 +3,10 @@
 
 scoreboard players add #final_breath_timer ste_cos.timer 1
 
-# вращение
+# наведение на игрока при зарядке
 execute as @e[type=ender_dragon,tag=ste_cos.final_breath_active,limit=1] run data modify entity @s Motion set value [0.0d, 0.0d, 0.0d]
-execute as @e[type=ender_dragon,tag=ste_cos.final_breath_active,limit=1] at @s run tp @s 0 79 0 ~3.5 0
+execute as @e[type=ender_dragon,tag=ste_cos.final_breath_active,limit=1] at @s facing entity @p[gamemode=!creative,gamemode=!spectator] eyes run tp @s 0 79 0 ~ ~
+execute as @e[type=ender_dragon,tag=ste_cos.final_breath_active,limit=1] at @s unless entity @p[gamemode=!creative,gamemode=!spectator] run tp @s 0 79 0 ~3.5 0
 
 # слабость игрокам
 execute if score #final_breath_timer ste_cos.timer matches 1..135 run effect give @a weakness 2 10 true

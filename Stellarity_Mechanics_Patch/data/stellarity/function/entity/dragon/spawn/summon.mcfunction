@@ -37,10 +37,11 @@ kill @e[type=ender_dragon,tag=ste_cos.clone_dragon]
 kill @e[type=phantom,tag=ste_cos_guard]
 kill @e[type=area_effect_cloud,tag=ste_cos_guard_marker]
 
-# сброс кристаллов первой фазы
+# кристаллы первой фазы (разрушаемые, с темно-фиолетовым свечением)
 execute in minecraft:the_end as @e[type=end_crystal] run tag @s remove ste_cos.shielded_crystal
-execute in minecraft:the_end as @e[type=end_crystal] run data merge entity @s {Invulnerable:0b,Glowing:0b}
-execute in minecraft:the_end as @e[type=end_crystal] run team leave @s
+execute in minecraft:the_end as @e[type=end_crystal] run tag @s add ste_cos.phase1_crystal
+execute in minecraft:the_end as @e[type=end_crystal] run data merge entity @s {Invulnerable:0b,Glowing:1b}
+execute in minecraft:the_end as @e[type=end_crystal] run team join ste_cos.purple_glow @s
 
 # декоративные фантомы на 10 кристаллах
 execute in minecraft:the_end positioned 0 65 0 as @e[type=end_crystal,distance=15..400,tag=!stellarity.respawn_crystal,tag=!ste_cos_portal_fix] at @s unless entity @e[type=area_effect_cloud,tag=ste_cos_guard_marker,distance=..6,limit=1] run function ste_cos:phantom/spawn_decorative_guard
