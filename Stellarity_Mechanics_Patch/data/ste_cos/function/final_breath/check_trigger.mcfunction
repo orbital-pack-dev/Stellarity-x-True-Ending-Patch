@@ -3,11 +3,13 @@
 
 execute if score #final_breath_used ste_cos.flags matches 1 run return 0
 execute unless score #ste_cos_totem_used ste_cos.flags matches 1 run return 0
-execute unless score @s ste_cos.health matches 1..8 unless score @s stellarity.dragon.health matches 1..8 run return 0
+execute if entity @s[tag=ste_cos.has_death_feather] if items entity @s weapon.mainhand minecraft:feather run return 0
+execute if entity @s[tag=ste_cos.totem_animating] run return 0
 execute if entity @s[tag=ste_cos.final_breath_active] run return 0
 execute if entity @s[tag=ste_cos.final_breath_guided] run return 0
 execute if entity @s[tag=ste_cos.final_breath_ascending] run return 0
 execute if entity @s[tag=ste_cos.minigame_active] run return 0
+execute unless score @s ste_cos.health matches 1..8 unless score @s stellarity.dragon.health matches 1..8 run return 0
 
 # запуск фазы
 scoreboard players set #final_breath_used ste_cos.flags 1

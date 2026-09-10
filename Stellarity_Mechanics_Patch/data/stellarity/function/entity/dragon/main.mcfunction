@@ -47,8 +47,8 @@ execute if score @s[tag=!stellarity.dragon.respawned_crystals] stellarity.dragon
 # стук сердца
 execute if score @s stellarity.dragon.health_percent matches ..25 run function stellarity:entity/dragon/heartbeat/main
 
-# финальный вздох
-execute if score #ste_cos_totem_used ste_cos.flags matches 1 unless score #final_breath_used ste_cos.flags matches 1 as @s[tag=!ste_cos.final_breath_active,tag=!ste_cos.final_breath_ascending,tag=!ste_cos.final_breath_guided] if score @s stellarity.dragon.health matches 1..8 run function ste_cos:final_breath/check_trigger
+# финальный вздох (только после расхода пера-тотема)
+execute if score #ste_cos_totem_used ste_cos.flags matches 1 unless score #final_breath_used ste_cos.flags matches 1 as @s[tag=!ste_cos.final_breath_active,tag=!ste_cos.final_breath_ascending,tag=!ste_cos.final_breath_guided,tag=!ste_cos.totem_animating] unless items entity @s weapon.mainhand minecraft:feather if score @s stellarity.dragon.health matches ..1 run function ste_cos:final_breath/totem_feather_consumed
 
 # смерть
 execute if score #final_breath_used ste_cos.flags matches 1 unless score #crystal_count stellarity.misc matches 1.. unless score #ste_cos_crystals ste_cos.flags matches 1.. if score @s[tag=!stellarity.at_portal] stellarity.dragon.health matches 0..1 run function stellarity:entity/dragon/death/fly_to_portal

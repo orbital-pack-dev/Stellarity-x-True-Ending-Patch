@@ -3,18 +3,22 @@
 
 scoreboard players add #final_breath_timer ste_cos.timer 1
 
-# наведение на игрока при зарядке
+# наведение головы на игрока при зарядке
 execute as @e[type=ender_dragon,tag=ste_cos.final_breath_active,limit=1] run data modify entity @s Motion set value [0.0d, 0.0d, 0.0d]
-execute as @e[type=ender_dragon,tag=ste_cos.final_breath_active,limit=1] at @s facing entity @p[gamemode=!creative,gamemode=!spectator] eyes run tp @s 0 79 0 ~ ~
-execute as @e[type=ender_dragon,tag=ste_cos.final_breath_active,limit=1] at @s unless entity @p[gamemode=!creative,gamemode=!spectator] run tp @s 0 79 0 ~3.5 0
+execute as @e[type=ender_dragon,tag=ste_cos.final_breath_active,limit=1] at @s facing entity @p[gamemode=!creative,gamemode=!spectator] eyes run tp @s 0 79 0 ~180 ~
+execute as @e[type=ender_dragon,tag=ste_cos.final_breath_active,limit=1] at @s if entity @p[gamemode=creative] unless entity @p[gamemode=!creative,gamemode=!spectator] facing entity @p eyes run tp @s 0 79 0 ~180 ~
+execute as @e[type=ender_dragon,tag=ste_cos.final_breath_active,limit=1] at @s unless entity @p run tp @s 0 79 0 ~3.5 0
 
 # слабость игрокам
 execute if score #final_breath_timer ste_cos.timer matches 1..135 run effect give @a weakness 2 10 true
 
-# втягивание материи
-execute as @e[type=ender_dragon,tag=ste_cos.final_breath_active,limit=1] at @s positioned ^ ^1.2 ^2.5 run particle reverse_portal ~ ~ ~ 4.5 3.0 4.5 0.16 40 force @a
-execute as @e[type=ender_dragon,tag=ste_cos.final_breath_active,limit=1] at @s positioned ^ ^1.2 ^2.5 run particle dust_color_transition{from_color:[0.75,0.15,0.95],scale:2.4,to_color:[0.15,0.0,0.35]} ~ ~ ~ 3.5 2.0 3.5 0.08 25 force @a
-execute as @e[type=ender_dragon,tag=ste_cos.final_breath_active,limit=1] at @s positioned ^ ^1.2 ^2.5 run particle dragon_breath ~ ~ ~ 2.0 1.2 2.0 0.04 15 force @a
+# втягивание материи к пасти дракона
+execute in minecraft:the_end positioned 0 79 0 facing entity @p[gamemode=!creative,gamemode=!spectator] eyes positioned ^ ^1.2 ^3.0 run particle reverse_portal ~ ~ ~ 4.5 3.0 4.5 0.16 40 force @a
+execute in minecraft:the_end positioned 0 79 0 facing entity @p[gamemode=!creative,gamemode=!spectator] eyes positioned ^ ^1.2 ^3.0 run particle dust_color_transition{from_color:[0.75,0.15,0.95],scale:2.4,to_color:[0.15,0.0,0.35]} ~ ~ ~ 3.5 2.0 3.5 0.08 25 force @a
+execute in minecraft:the_end positioned 0 79 0 facing entity @p[gamemode=!creative,gamemode=!spectator] eyes positioned ^ ^1.2 ^3.0 run particle dragon_breath ~ ~ ~ 2.0 1.2 2.0 0.04 15 force @a
+execute in minecraft:the_end positioned 0 79 0 unless entity @p[gamemode=!creative,gamemode=!spectator] if entity @p[gamemode=creative] facing entity @p eyes positioned ^ ^1.2 ^3.0 run particle reverse_portal ~ ~ ~ 4.5 3.0 4.5 0.16 40 force @a
+execute in minecraft:the_end positioned 0 79 0 unless entity @p[gamemode=!creative,gamemode=!spectator] if entity @p[gamemode=creative] facing entity @p eyes positioned ^ ^1.2 ^3.0 run particle dust_color_transition{from_color:[0.75,0.15,0.95],scale:2.4,to_color:[0.15,0.0,0.35]} ~ ~ ~ 3.5 2.0 3.5 0.08 25 force @a
+execute in minecraft:the_end positioned 0 79 0 unless entity @p[gamemode=!creative,gamemode=!spectator] if entity @p[gamemode=creative] facing entity @p eyes positioned ^ ^1.2 ^3.0 run particle dragon_breath ~ ~ ~ 2.0 1.2 2.0 0.04 15 force @a
 
 # вспышки
 execute if score #final_breath_timer ste_cos.timer matches 1..40 as @e[type=ender_dragon,tag=ste_cos.final_breath_active,limit=1] at @s run particle flash{color:[0.90,0.35,1.0,1.0]} ~ ~1 ~ 0 0 0 0 1 force @a

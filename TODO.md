@@ -18,13 +18,14 @@ This document keeps track of the unified Stellarity x True Ending compatibility 
   - Resolved dragon offhand slot limitation (`ender_dragon` only supports `weapon.mainhand`).
   - Totem cutscene plays cleanly upon first fatal hit (restoring 36 HP, shaking screen, and performing ascending flight).
   - System totem feather with `death_protection` is equipped into `weapon.mainhand` at the climax of the totem ascent (tick 3090).
-  - Isolated Final Breath transition so it triggers only after the totem phase has fully completed.
+  - Final Breath is strictly locked until the death feather is actually consumed on lethal damage (`totem_feather_consumed`); premature 8 HP trigger removed so the dragon never drops artificially to 1 HP while the feather is intact.
 - **Final Breath Ascent & Hover Arena**:
   - Replaced drifting relative teleportation with a deterministic 30-tick vertical ascent from portal level (Y=67) up to Y=79 (`~ ~12 ~`).
-  - During the 7-second Abyss Shriek charge, the dragon hovers at `0 79 0` dynamically tracking and locking gaze onto the nearest player in Survival/Adventure mode.
+  - Dragon head orientation fixed (`~180 ~` model offset): dragon points its head and mouth directly at players in Survival/Adventure mode throughout the 7-second Abyss Shriek charge.
   - Overhauled Final Breath laser blast: fires a concentrated destructive beam directly along line-of-sight at the targeted player with multi-ring sonic booms, flash rays, and 16 magic damage, exploding at the target position instead of shooting straight down into the portal floor.
   - Dragon hovers at Y=79 with 1 HP for the final blow; levitation pad (`trueEnding_pad`) on the portal allows players in Survival to leap up and deliver the finishing hit.
 - **Clone Carousel & Decoy Dragons**:
+  - Corrected head orientation in orbit (`~90 0`) and exit flight (`~ ~ ~ ~180 ~`), ensuring clones and dragon fly forward head-first rather than tail-first.
   - Locked dragon head orientation strictly tangent to the circular orbit via center facing, eliminating uncontrollable spinning on 2nd and subsequent rounds.
   - Synchronized clone exit carriers and dragons so both clones fly away at the exact same forward velocity (`1.8` blocks/tick) into the void.
   - Homing feedback marker dynamically tracks the player's eyes and only deletes upon impact.

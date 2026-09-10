@@ -86,11 +86,11 @@ execute in minecraft:the_end if score #minigame_state ste_cos.flags matches 1.. 
 execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.clones_diving] at @s run function ste_cos:minigame_clones/clone_dive_tick
 execute in minecraft:the_end as @e[type=marker,tag=ste_cos.feedback_projectile] at @s run function ste_cos:minigame_clones/feedback_projectile_step
 
-# разлет копий
+# разлет копий (головой вперед)
 execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.exit_1] at @s run tp @s ^ ^0.04 ^1.8 ~0.4 ~
-execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.exit_1] at @s run tp @e[type=ender_dragon,tag=ste_cos.clone_1,limit=1] ~ ~ ~ ~ ~
+execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.exit_1] at @s run tp @e[type=ender_dragon,tag=ste_cos.clone_1,limit=1] ~ ~ ~ ~180 ~
 execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.exit_2] at @s run tp @s ^ ^0.04 ^1.8 ~-0.4 ~
-execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.exit_2] at @s run tp @e[type=ender_dragon,tag=ste_cos.clone_2,limit=1] ~ ~ ~ ~ ~
+execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.exit_2] at @s run tp @e[type=ender_dragon,tag=ste_cos.clone_2,limit=1] ~ ~ ~ ~180 ~
 execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.clone_exit_carrier] at @s positioned 0 0 0 unless entity @s[distance=..220] run kill @s
 execute in minecraft:the_end as @e[type=ender_dragon,tag=ste_cos.clone_dragon] at @s positioned 0 0 0 unless entity @s[distance=..220] run function ste_cos:minigame_clones/clone_void_kill
 execute in minecraft:the_end as @e[type=armor_stand,tag=ste_cos.clone_exit_carrier] at @s run particle dust_color_transition{from_color:[0.6,0.1,0.8],scale:2.0,to_color:[0.1,0.0,0.3]} ~ ~ ~ 1 1 1 0.05 6 force
