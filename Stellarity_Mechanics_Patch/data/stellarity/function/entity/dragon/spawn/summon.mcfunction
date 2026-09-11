@@ -6,10 +6,11 @@ scoreboard players set #stellarity.config stellarity.config.dragon_health 300
 scoreboard players set 1000 trueEnding_constants 1000
 scoreboard players set dragonhealth trueEnding_settings 300
 
-summon ender_dragon ~ ~ ~ {DragonPhase:0,Tags:["stellarity.ender_dragon","smithed.entity","smithed.strict","ste_cos_initialized"],Health:300f,attributes:[{id:"minecraft:max_health",base:300.0},{id:"armor",base:8d},{id:"armor_toughness",base:4d},{id:"knockback_resistance",base:1d},{id:"follow_range",base:80d}]}
+summon ender_dragon ~ ~ ~ {DragonPhase:0,Tags:["stellarity.ender_dragon","smithed.entity","smithed.strict","ste_cos_initialized"],Health:300f,attributes:[{id:"minecraft:max_health",base:300.0},{id:"armor",base:12d},{id:"armor_toughness",base:8d},{id:"knockback_resistance",base:1d},{id:"follow_range",base:80d}]}
 summon marker ~ ~ ~ {Tags:["stellarity.dragon_marker","stellarity.marker","smithed.entity","smithed.strict"]}
 scoreboard players set #clone_minigame_used ste_cos.flags 0
 scoreboard players set #tower_retry_count ste_cos.flags 0
+scoreboard players set #fight_stage ste_cos.stage 1
 scoreboard players set #ste_cos_totem_used ste_cos.flags 0
 scoreboard players set #final_breath_used ste_cos.flags 0
 scoreboard players set #final_breath_state ste_cos.flags 0

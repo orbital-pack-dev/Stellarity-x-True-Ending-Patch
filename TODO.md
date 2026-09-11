@@ -59,6 +59,26 @@ This document keeps track of the unified Stellarity x True Ending compatibility 
 - Full chunk cleanup and non-destructive chorus fruit removal around the main exit portal on Paper/Purpur.
 - Verified 100% valid UTF-8 encoding with zero BOM bytes across all files.
 
+
+### Paper Server Optimization & Exploit Fixes (1.1.0-hotfix)
+
+- **TPS Optimization & Selector Refactor**:
+  - `tether_ray_step.mcfunction`: Completely eliminated recursive `@e[type=marker,tag=ste_cos.respawn_heart]` world entity queries (which caused 14,000+ searches and consumed 60% of server ticks in profiler dumps `perf-1`/`perf-2`). Replaced with a lightweight in-memory scoreboard step counter (`#ray_step <= 15`) and `tether_ray_start.mcfunction`.
+  - `earthquake_tick.mcfunction`: Removed island-wide mob jitter teleports (`tp @s ~0.08 ~ ~`) and screenshake function calls that overloaded Paper tick loop and packet handling. Replaced with ambient ground sounds and player-local dust particles.
+  - `tornado_tick.mcfunction`: Constrained marker selectors with `type=marker,limit=1` to allow Paper's entity index to avoid full chunk scans.
+- **Paper Screenshake Lag & Space Launch Fix**:
+  - Overrode `stellarity:entity/dragon/spawn/screenshake/teleport` to prevent vertical relative teleportation.
+  - Completely resolved client FPS dropping to 1, packet queue desync, and players getting launched into deep space during boss animations on Paper/Purpur servers.
+- **Respawn Animation Skip Exploit Fixed**:
+  - Overrode `stellarity:entity/dragon/spawn/conditions` to detect crystals placed across all valid bedrock frames around the exit portal (`distance=..8`), tagging them as `stellarity.respawn_crystal` and ensuring `stellarity.respawn_dragon` is triggered.
+  - Added fail-safe detecting crystals with active beam targets: if vanilla Minecraft starts the respawn sequence, the visual ritual and custom animation automatically engage.
+  - Removed old crystal summoning lines from `fix_tick.mcfunction`.
+- **Dragon One-Shot Protection & Fight Stage Tracking**:
+  - Added dedicated boss fight stage objective `ste_cos.stage` tracking all phases (1: Initial crystals, 2: Mid-battle, 3: Revived shielded crystals, 4: Post-crystals vulnerability, 5: Totem cutscene, 6: Final Breath, 7: Final Stand).
+  - Configured totem trigger to require `#fight_stage ste_cos.stage matches 4..`, guaranteeing that the protected crystals phase is 100% complete before the totem can ever activate.
+  - Adjusted lethal health threshold from 45 HP to `<= 4` HP (`matches ..4`) with Resistance II low-health buffer (`<= 20` HP) and base armor/toughness protection.
+  - Enhanced `trigger_totem.mcfunction` with forced item clearance across all hand slots (`weapon.mainhand`, `weapon.offhand`, `HandItems`) on `@s` and all dragons, preventing any chance of phase duplication.
+
 ## Testing & Quality Assurance Plan
 
 - [ ] **Survival Entry**: Verify initial End entry, portal generation, and chorus fruit clearing.

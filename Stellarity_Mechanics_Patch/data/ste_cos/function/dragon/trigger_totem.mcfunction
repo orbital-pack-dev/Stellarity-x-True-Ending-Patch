@@ -6,14 +6,20 @@ execute if score #ste_cos_totem_used ste_cos.flags matches 1 run return 0
 execute if entity @s[tag=ste_cos.totem_used] run return 0
 
 scoreboard players set #ste_cos_totem_used ste_cos.flags 1
+scoreboard players set #fight_stage ste_cos.stage 5
 tag @s add ste_cos.totem_animating
 tag @s add ste_cos.totem_used
+tag @e[type=ender_dragon,tag=stellarity.ender_dragon] add ste_cos.totem_used
 tag @s add trueEnding_quarterhealth
 tag @s add trueEnding_halfhealth
 
-# очистка оружия
+# принудительное очищение всех тотемов и слотов оружия в руках (защита от дублирования стадии)
 item replace entity @s weapon.mainhand with air
 item replace entity @s weapon.offhand with air
+item replace entity @e[type=ender_dragon,tag=stellarity.ender_dragon] weapon.mainhand with air
+item replace entity @e[type=ender_dragon,tag=stellarity.ender_dragon] weapon.offhand with air
+data modify entity @s HandItems set value [{id:"minecraft:air",count:0},{id:"minecraft:air",count:0}]
+data modify entity @e[type=ender_dragon,tag=stellarity.ender_dragon] HandItems set value [{id:"minecraft:air",count:0},{id:"minecraft:air",count:0}]
 
 # здоровье дракона
 attribute @s minecraft:max_health base set 300

@@ -8,7 +8,9 @@ scoreboard objectives add ste_cos.health_diff dummy
 scoreboard objectives add ste_cos.heal_cd dummy
 
 # тотем бессмертия
-execute unless score #ste_cos_totem_used ste_cos.flags matches 1 as @s[tag=!ste_cos.totem_used,tag=!ste_cos.totem_animating] unless items entity @s weapon.mainhand minecraft:totem_of_undying run function ste_cos:dragon/trigger_totem
+execute if score #fight_stage ste_cos.stage matches 4.. unless score #ste_cos_totem_used ste_cos.flags matches 1 as @s[tag=!ste_cos.totem_used,tag=!ste_cos.totem_animating] if score @s ste_cos.health matches ..4 run function ste_cos:dragon/trigger_totem
+execute if score #fight_stage ste_cos.stage matches 4.. unless score #ste_cos_totem_used ste_cos.flags matches 1 as @s[tag=!ste_cos.totem_used,tag=!ste_cos.totem_animating] if score @s stellarity.dragon.health matches ..4 run function ste_cos:dragon/trigger_totem
+execute if score #fight_stage ste_cos.stage matches 4.. unless score #ste_cos_totem_used ste_cos.flags matches 1 as @s[tag=!ste_cos.totem_used,tag=!ste_cos.totem_animating] unless items entity @s weapon.mainhand minecraft:totem_of_undying run function ste_cos:dragon/trigger_totem
 execute if score @s ste_cos.heal_cd matches 1.. run scoreboard players remove @s ste_cos.heal_cd 1
 
 # мини-игра клонов

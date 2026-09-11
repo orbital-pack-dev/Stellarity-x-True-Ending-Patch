@@ -27,6 +27,7 @@ execute store result score @s stellarity.misc run data get entity @s DragonPhase
 execute unless score @s[tag=!stellarity.at_portal] stellarity.misc matches 5..7 run function stellarity:entity/dragon/trail
 
 # фазы True Ending
+execute if score #fight_stage ste_cos.stage matches 4.. unless score #ste_cos_totem_used ste_cos.flags matches 1 as @s[tag=!ste_cos.totem_used,tag=!ste_cos.totem_animating] if score @s stellarity.dragon.health matches ..4 run function ste_cos:dragon/trigger_totem
 
 # атаки
 execute unless entity @s[tag=ste_cos.minigame_active] unless entity @s[tag=ste_cos.final_breath_active] unless entity @s[tag=ste_cos.final_stand] unless entity @s[tag=stellarity.at_portal] unless score @s stellarity.dragon.health matches ..1 if score @s stellarity.misc matches 5 run function stellarity:entity/dragon/attacks/roar_breath/main

@@ -11,6 +11,7 @@ team modify ste_cos.anim_crystal color light_purple
 team modify ste_cos.anim_crystal collisionRule never
 
 # задачи счета
+scoreboard objectives add ste_cos.stage dummy '{"text":"STE-COS Stage"}'
 scoreboard objectives add ste_cos.flags dummy '{"text":"STE-COS Flags"}'
 scoreboard objectives add ste_cos.timer dummy '{"text":"STE-COS Timer"}'
 scoreboard objectives add ste_cos.egg_timer dummy '{"text":"STE-COS Egg Timer"}'
@@ -40,6 +41,7 @@ scoreboard objectives add ste_cos.swim custom:swim_one_cm
 scoreboard objectives add stellarity.constants dummy
 
 # стартовые значения
+scoreboard players set #fight_stage ste_cos.stage 0
 scoreboard players set $pull_timer ste_cos.flags 0
 scoreboard players set #rng_ticker ste_cos.flags 0
 execute unless score #egg_marker_fixed ste_cos.flags matches 1 run function ste_cos:fix/egg_marker_fix
