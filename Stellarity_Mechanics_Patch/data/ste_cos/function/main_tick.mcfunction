@@ -44,6 +44,10 @@ execute if score #rng_ticker ste_cos.flags matches 25.. run scoreboard players s
 # нет игроков
 execute in minecraft:the_end unless entity @a run return 0
 
+# удаление дублирующего/ванильного дракона (дефект генерации Paper)
+execute in minecraft:the_end as @e[type=ender_dragon,tag=!stellarity.ender_dragon,tag=!trueEnding_mirrordragon,tag=!ste_cos.clone_dragon] at @s run tp @s ~ -100 ~
+execute in minecraft:the_end as @e[type=ender_dragon,tag=!stellarity.ender_dragon,tag=!trueEnding_mirrordragon,tag=!ste_cos.clone_dragon] run kill @s
+
 # лучи кристаллов
 execute in minecraft:the_end run function ste_cos:crystal/beam_cleaner
 

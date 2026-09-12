@@ -13,13 +13,9 @@ tag @e[type=ender_dragon,tag=stellarity.ender_dragon] add ste_cos.totem_used
 tag @s add trueEnding_quarterhealth
 tag @s add trueEnding_halfhealth
 
-# принудительное очищение всех тотемов и слотов оружия в руках (защита от дублирования стадии)
-item replace entity @s weapon.mainhand with air
-item replace entity @s weapon.offhand with air
-item replace entity @e[type=ender_dragon,tag=stellarity.ender_dragon] weapon.mainhand with air
-item replace entity @e[type=ender_dragon,tag=stellarity.ender_dragon] weapon.offhand with air
-data modify entity @s HandItems set value [{id:"minecraft:air",count:0},{id:"minecraft:air",count:0}]
-data modify entity @e[type=ender_dragon,tag=stellarity.ender_dragon] HandItems set value [{id:"minecraft:air",count:0},{id:"minecraft:air",count:0}]
+# принудительное очищение тотемов из рук во избежание дублирования стадии
+execute if items entity @s weapon.mainhand minecraft:totem_of_undying run item replace entity @s weapon.mainhand with air
+execute if items entity @s weapon.offhand minecraft:totem_of_undying run item replace entity @s weapon.offhand with air
 
 # здоровье дракона
 attribute @s minecraft:max_health base set 300

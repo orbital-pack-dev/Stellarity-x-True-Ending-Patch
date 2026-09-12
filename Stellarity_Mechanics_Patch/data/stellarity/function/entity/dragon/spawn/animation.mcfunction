@@ -4,8 +4,9 @@ scoreboard players add @s stellarity.dragon.respawn_animation_progress 1
 # отмена
 execute unless score #respawn_crystal_count stellarity.misc matches 4 run function stellarity:entity/dragon/spawn/cancel
 execute if score @s stellarity.dragon.respawn_animation_progress matches 1 run scoreboard players set #ste_cos_totem_used ste_cos.flags 0
-execute if score @s stellarity.dragon.respawn_animation_progress matches 1 run scoreboard players set #stellarity.config stellarity.config.enable_dragon_screenshake 0
+execute if score @s stellarity.dragon.respawn_animation_progress matches 1 run scoreboard players set #stellarity.config stellarity.config.enable_dragon_screenshake 1
 execute if score @s stellarity.dragon.respawn_animation_progress matches 1 as @e[type=minecraft:end_crystal,distance=..5,tag=stellarity.respawn_crystal] run function stellarity:entity/dragon/spawn/respawn_crystal/prepare_for_anim
+execute if score @s stellarity.dragon.respawn_animation_progress matches 1 in minecraft:the_end positioned 0 65 0 as @e[type=end_crystal,distance=5..256,tag=!ste_cos_anim_glav_crystal,tag=!stellarity.respawn_crystal,tag=!stellarity.new_crystal] at @s run function ste_cos:crystal/despawn_one
 execute if score @s stellarity.dragon.respawn_animation_progress matches 1 as @a[distance=..32] at @s run playsound minecraft:entity.blaze.shoot block @s ~ ~ ~ 0.33 0.9
 execute if score @s stellarity.dragon.respawn_animation_progress matches 1 as @a[distance=..32] at @s run playsound minecraft:entity.blaze.shoot block @s ~ ~ ~ 0.33 0.7
 
