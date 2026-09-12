@@ -1,4 +1,4 @@
-﻿# ste_cos:crystal/anim_checkpoints
+# ste_cos:crystal/anim_checkpoints
 # валидация кристаллов на 4 кардинальных позициях и оркестратор призыва
 
 # сброс тегов главных кристаллов перед проверкой
