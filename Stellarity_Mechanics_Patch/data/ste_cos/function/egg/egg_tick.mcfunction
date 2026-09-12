@@ -1,18 +1,4 @@
 # ste_cos:egg/egg_tick
-# слежение за яйцом дракона
+# визуальные эффекты яйца дракона на алтаре портала (без сущностей-маркеров)
 
-execute in minecraft:the_end unless entity @e[type=marker,tag=ste_cos_egg_tracker,limit=1] run summon marker 0 67 0 {Tags:["ste_cos_egg_tracker"]}
-scoreboard players set #egg_tracker_spawned ste_cos.flags 1
-
-# эффекты
-execute in minecraft:the_end as @e[type=marker,tag=ste_cos_egg_tracker,limit=1] at @s if block ~ ~ ~ minecraft:dragon_egg run function ste_cos:egg/egg_glow
-
-# таймер
-execute in minecraft:the_end as @e[type=marker,tag=ste_cos_egg_tracker,limit=1] at @s unless block ~ ~ ~ minecraft:dragon_egg run scoreboard players add @s ste_cos.egg_timer 1
-
-# сброс таймера
-execute in minecraft:the_end as @e[type=marker,tag=ste_cos_egg_tracker,limit=1] at @s if block ~ ~ ~ minecraft:dragon_egg run scoreboard players set @s ste_cos.egg_timer 0
-
-# поиск
-execute in minecraft:the_end as @e[type=marker,tag=ste_cos_egg_tracker,limit=1] at @s unless block ~ ~ ~ minecraft:dragon_egg if score @s ste_cos.egg_timer matches 60 run function ste_cos:egg/egg_find
-execute in minecraft:the_end as @e[type=marker,tag=ste_cos_egg_tracker,limit=1] at @s unless block ~ ~ ~ minecraft:dragon_egg if score @s ste_cos.egg_timer matches 60 run scoreboard players set @s ste_cos.egg_timer 30
+execute in minecraft:the_end positioned 0 67 0 if entity @a[distance=..96] if block ~ ~ ~ minecraft:dragon_egg run function ste_cos:egg/egg_glow

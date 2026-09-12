@@ -8,7 +8,11 @@ execute if entity @s[tag=stellarity.respawn_dragon] if score #current_glav ste_c
 execute if entity @s[tag=stellarity.respawn_dragon] unless score #current_glav ste_cos.flags matches 4 run function stellarity:entity/dragon/spawn/cancel
 execute if entity @s[tag=stellarity.respawn_dragon] unless score #current_glav ste_cos.flags matches 4 run return 0
 
-# запуск валидации 4 чекпоинт-маркеров и оркестратора на 0 67 0
+# быстрая проверка: если рядом с алтарем вообще нет кристаллов, ритуал не может начаться
+execute in minecraft:the_end positioned 0 62 0 unless entity @e[type=end_crystal,distance=..8] run scoreboard players set #respawn_crystal_count stellarity.misc 0
+execute in minecraft:the_end positioned 0 62 0 unless entity @e[type=end_crystal,distance=..8] run return 0
+
+# запуск валидации 4 кардинальных кристаллов
 function ste_cos:crystal/anim_checkpoints
 
 # если на кардинальных точках не 4 кристалла - ритуал не может начаться

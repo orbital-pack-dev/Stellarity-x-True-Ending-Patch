@@ -1,12 +1,9 @@
 # ste_cos:fix/egg_marker_fix
-# фикс дублирования маркеров яйца из версии 1.0.0
+# полное удаление маркеров яйца (переход на систему без маркеров)
 
-# удаление дубликатов маркеров
-kill @e[type=marker,tag=ste_cos_egg_tracker]
-
-# призыв ровно одного трекера яйца
-execute in minecraft:the_end run summon marker 0 67 0 {Tags:["ste_cos_egg_tracker"]}
+execute in minecraft:the_end run kill @e[type=marker,tag=ste_cos_egg_tracker]
+execute in minecraft:the_end positioned 0.5 67.0 0.5 run kill @e[type=marker,distance=..3,tag=!stellarity.exit_portal]
 
 # фиксация флагов
-scoreboard players set #egg_tracker_spawned ste_cos.flags 1
+scoreboard players set #egg_tracker_spawned ste_cos.flags 0
 scoreboard players set #egg_marker_fixed ste_cos.flags 1

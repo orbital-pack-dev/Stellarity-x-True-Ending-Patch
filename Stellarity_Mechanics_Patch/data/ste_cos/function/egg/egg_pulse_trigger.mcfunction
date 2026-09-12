@@ -1,8 +1,8 @@
 # ste_cos:egg/egg_pulse_trigger
 
-execute if score @s ste_cos.id matches 0 run function ste_cos:egg/egg_pulse_bright
-execute if score @s ste_cos.id matches 1 run function ste_cos:egg/egg_pulse_dark
+execute if score #egg_pulse_id ste_cos.flags matches 0 run function ste_cos:egg/egg_pulse_bright
+execute if score #egg_pulse_id ste_cos.flags matches 1 run function ste_cos:egg/egg_pulse_dark
 
 # шаг
-scoreboard players add @s ste_cos.id 1
-execute if score @s ste_cos.id matches 2.. run scoreboard players set @s ste_cos.id 0
+scoreboard players add #egg_pulse_id ste_cos.flags 1
+execute if score #egg_pulse_id ste_cos.flags matches 2.. run scoreboard players set #egg_pulse_id ste_cos.flags 0

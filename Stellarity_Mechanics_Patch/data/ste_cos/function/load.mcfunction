@@ -44,7 +44,12 @@ scoreboard objectives add stellarity.constants dummy
 scoreboard players set #fight_stage ste_cos.stage 0
 scoreboard players set $pull_timer ste_cos.flags 0
 scoreboard players set #rng_ticker ste_cos.flags 0
-execute unless score #egg_marker_fixed ste_cos.flags matches 1 run function ste_cos:fix/egg_marker_fix
+# экстренная зачистка всех утекших сущностей-маркеров от старых версий
+execute in minecraft:the_end run kill @e[type=marker,tag=ste_cos_egg_tracker]
+execute in minecraft:the_end run kill @e[type=marker,tag=ste_cos_checkpoint_marker]
+execute in minecraft:the_end run kill @e[type=marker,tag=ste_cos_anim_orchestrator]
+execute in minecraft:the_end positioned 0.5 67.0 0.5 run kill @e[type=marker,distance=..3,tag=!stellarity.exit_portal]
+function ste_cos:fix/egg_marker_fix
 scoreboard players set #hundred stellarity.constants 100
 scoreboard players set #three stellarity.constants 3
 scoreboard objectives add stellarity.config.dragon_health dummy

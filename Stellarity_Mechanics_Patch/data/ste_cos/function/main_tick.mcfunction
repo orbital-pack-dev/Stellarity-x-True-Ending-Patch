@@ -9,7 +9,7 @@ execute as @a[tag=!ste_cos_chorus_cleaned] at @s if dimension minecraft:the_end 
 
 # подсчет кристаллов
 scoreboard players set #ste_cos_crystals ste_cos.flags 0
-execute in minecraft:the_end positioned 0 65 0 as @e[type=end_crystal,distance=15..400,tag=!stellarity.respawn_crystal,tag=!ste_cos_portal_fix] run scoreboard players add #ste_cos_crystals ste_cos.flags 1
+execute in minecraft:the_end positioned 0 65 0 as @e[type=end_crystal,distance=25..400,tag=!stellarity.respawn_crystal,tag=!ste_cos_portal_fix] run scoreboard players add #ste_cos_crystals ste_cos.flags 1
 
 # игроки
 tag @a remove ste_cos_has_dragon
@@ -36,7 +36,6 @@ execute unless score #ste_cos_crystals ste_cos.flags matches 1.. run bossbar set
 execute in minecraft:overworld if entity @a run execute as @e[type=marker,tag=stellarity.end_portal_animation,tag=!ste_cos.portal_lock_spawned] at @s run summon area_effect_cloud ~ ~ ~ {Duration:520,Radius:3.0f,RadiusPerTick:0f,custom_particle:{type:"minecraft:block",block_state:"minecraft:air"},Tags:["ste_cos_portal_lock"]}
 execute in minecraft:overworld if entity @a run execute as @e[type=marker,tag=stellarity.end_portal_animation,tag=!ste_cos.portal_lock_spawned] run tag @s add ste_cos.portal_lock_spawned
 execute in minecraft:overworld if entity @a run execute as @e[type=area_effect_cloud,tag=ste_cos_portal_lock] at @s run effect give @a[distance=..3] levitation 2 6 true
-
 # random
 scoreboard players add #rng_ticker ste_cos.flags 1
 execute if score #rng_ticker ste_cos.flags matches 25.. run scoreboard players set #rng_ticker ste_cos.flags 0
@@ -56,6 +55,11 @@ execute in minecraft:the_end run function ste_cos:dragon/invulnerability_guard
 
 # стражи кристаллов
 execute in minecraft:the_end run function ste_cos:phantom/guard_tick
+
+# зачистка утекших маркеров
+execute in minecraft:the_end run kill @e[type=marker,tag=ste_cos_egg_tracker]
+execute in minecraft:the_end run kill @e[type=marker,tag=ste_cos_checkpoint_marker]
+execute in minecraft:the_end run kill @e[type=marker,tag=ste_cos_anim_orchestrator]
 
 # яйцо
 execute in minecraft:the_end run function ste_cos:egg/egg_tick

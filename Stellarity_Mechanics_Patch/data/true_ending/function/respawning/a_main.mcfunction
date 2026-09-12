@@ -1,4 +1,10 @@
-# таймер возрождения дракона
+# true_ending:respawning/a_main
+# таймер возрождения дракона True Ending
+
+# жесткая валидация: ритуал разрешен ТОЛЬКО если подтверждены ровно 4 главных кристалла
+execute in minecraft:the_end positioned 0 62 0 unless score #respawn_crystal_count stellarity.misc matches 4 run scoreboard players reset respawn_ender_dragon trueEnding_storage
+execute in minecraft:the_end positioned 0 62 0 unless score #respawn_crystal_count stellarity.misc matches 4 run return 0
+
 scoreboard players add respawn_ender_dragon trueEnding_storage 1
 
 execute if score respawn_ender_dragon trueEnding_storage matches 400..580 if predicate true_ending:chance/15_percent run playsound minecraft:ambient.warped_forest.additions ambient @a[distance=..128] ~ ~ ~ 6 .9
@@ -6,12 +12,12 @@ execute if score respawn_ender_dragon trueEnding_storage matches 500 run playsou
 execute if score respawn_ender_dragon trueEnding_storage matches 500 run playsound minecraft:ambient.warped_forest.additions ambient @a[distance=..128] ~ ~ ~ 6 .9
 execute if score respawn_ender_dragon trueEnding_storage matches 500 run playsound minecraft:ambient.warped_forest.additions ambient @a[distance=..128] ~ ~ ~ 6 .9
 
-execute if score 10tick trueEnding_clock matches 1 if score respawn_ender_dragon trueEnding_storage matches 60..580 at @e[distance=..16,type=end_crystal] run function true_ending:ambience/wave_particle3
+execute in minecraft:the_end positioned 0 62 0 if score 10tick trueEnding_clock matches 1 if score respawn_ender_dragon trueEnding_storage matches 60..580 as @e[distance=..4.5,type=end_crystal,tag=stellarity.respawn_crystal] at @s run function true_ending:ambience/wave_particle3
 
 # запуск активации
 execute if score respawn_ender_dragon trueEnding_storage matches 15 run playsound minecraft:block.beacon.activate block @a[distance=..128] ~ ~ ~ 4 1
 execute if score respawn_ender_dragon trueEnding_storage matches 15 run playsound minecraft:block.beacon.activate block @a[distance=..128] ~ ~ ~ 4 .65
-execute if score respawn_ender_dragon trueEnding_storage matches 15 as @e[distance=..16,type=end_crystal] at @s positioned ~ ~1 ~ run function true_ending:ambience/wave_particle2
+execute in minecraft:the_end positioned 0 62 0 if score respawn_ender_dragon trueEnding_storage matches 15 as @e[distance=..4.5,type=end_crystal,tag=stellarity.respawn_crystal] at @s positioned ~ ~1 ~ run function true_ending:ambience/wave_particle2
 
 # лучи кристаллов по очереди
 execute if score respawn_ender_dragon trueEnding_storage matches 100 run function true_ending:respawning/set
@@ -28,7 +34,7 @@ execute if score respawn_ender_dragon trueEnding_storage matches 500 run functio
 execute if score respawn_ender_dragon trueEnding_storage matches 500 run playsound minecraft:block.beacon.power_select block @a[distance=..128] ~ ~ ~ 4 .5
 
 # столб света
-execute if score respawn_ender_dragon trueEnding_storage matches 600 as @e[distance=..16,type=end_crystal] at @s positioned ~ ~1 ~ run particle end_rod ~ ~50 ~ 0 50 0 .4 50 force @a[distance=..256]
+execute in minecraft:the_end positioned 0 62 0 if score respawn_ender_dragon trueEnding_storage matches 600 as @e[distance=..4.5,type=end_crystal,tag=stellarity.respawn_crystal] at @s positioned ~ ~1 ~ run particle end_rod ~ ~50 ~ 0 50 0 .4 50 force @a[distance=..256]
 
 # колокольный звон
 execute if score respawn_ender_dragon trueEnding_storage matches 525 run playsound block.bell.resonate block @a[distance=..128] ~ ~ ~ 4 .5
@@ -36,12 +42,12 @@ execute if score respawn_ender_dragon trueEnding_storage matches 525 run playsou
 
 execute if score respawn_ender_dragon trueEnding_storage matches 545.. run particle dragon_breath ~ ~62 ~ 0 0 0 .3 3 force @a[distance=..128]
 execute if score respawn_ender_dragon trueEnding_storage matches 590.. run particle end_rod ~ ~62 ~ 0 0 0 .3 3 force @a[distance=..128]
-execute if score respawn_ender_dragon trueEnding_storage matches 597..598 as @e[distance=..16,type=end_crystal] at @s run particle dust{color:[0.75, 0.0, 1.0], scale: 3.0} ~ ~ ~ 0 0 0 .2 4 force @a[distance=..128]
+execute in minecraft:the_end positioned 0 62 0 if score respawn_ender_dragon trueEnding_storage matches 597..598 as @e[distance=..4.5,type=end_crystal,tag=stellarity.respawn_crystal] at @s run particle dust{color:[0.75, 0.0, 1.0], scale: 3.0} ~ ~ ~ 0 0 0 .2 4 force @a[distance=..128]
 
 # появление дракона
 execute if score respawn_ender_dragon trueEnding_storage matches 601 if score globalsound trueEnding_settings matches 1 run function true_ending:respawning/end2
 execute if score respawn_ender_dragon trueEnding_storage matches 601 if score globalsound trueEnding_settings matches 0 run function true_ending:respawning/end2_nonglobal
-execute if score respawn_ender_dragon trueEnding_storage matches 601 as @e[distance=..16,type=end_crystal] at @s run function true_ending:respawning/end
-execute if score respawn_ender_dragon trueEnding_storage matches 40.. as @e[distance=..16,type=end_crystal] at @s run particle dragon_breath ~ ~1 ~ 0 0 0 .05 2 normal
+execute in minecraft:the_end positioned 0 62 0 if score respawn_ender_dragon trueEnding_storage matches 601 as @e[distance=..4.5,type=end_crystal,tag=stellarity.respawn_crystal] at @s run function true_ending:respawning/end
+execute in minecraft:the_end positioned 0 62 0 if score respawn_ender_dragon trueEnding_storage matches 40.. as @e[distance=..4.5,type=end_crystal,tag=stellarity.respawn_crystal] at @s run particle dragon_breath ~ ~1 ~ 0 0 0 .05 2 normal
 
 execute if score respawn_ender_dragon trueEnding_storage matches 601 run scoreboard players reset respawn_ender_dragon trueEnding_storage
